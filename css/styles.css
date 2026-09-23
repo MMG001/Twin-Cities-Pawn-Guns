@@ -1,133 +1,171 @@
-/* Twin Cities Pawn & Gun — custom styles
-   Complements Tailwind (CDN). Handles things the CDN build can't:
-   smooth scroll, custom scrollbar, hero overlay, animated nav underlines,
-   mobile-menu transition. */
+/* Twin Cities Pawn & Gun — Stitch "Sovereign Vault / Aura Vault" design system
+   Pure CSS complementing Tailwind CDN. Dark obsidian + gold neo-brutalist. */
 
-:root {
-  --bg: #131316;
-  --surface: #1f1f22;
-  --surface-2: #2a2a2d;
-  --gold: #facc15;
-  --gold-dim: #eec200;
-  --text: #e5e1e6;
-  --text-2: #d1c6ab;
-  --muted: #9a9078;
+/* ---------- Material Symbols ---------- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 /* ---------- Base ---------- */
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+body { background-color: #131316; color: #e5e1e6; }
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: 'Hanken Grotesk', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+::selection { background: #facc15; color: #131316; }
+
+/* ---------- Blueprint grid background ---------- */
+.blueprint-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
 }
 
-h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
-.font-mono { font-family: 'JetBrains Mono', monospace; }
+/* ---------- Gold glow effects ---------- */
+.gold-glow { box-shadow: 0 0 0 1px #facc15, 0 8px 32px -4px rgba(250,204,21,0.22); }
+.gold-hover { transition: box-shadow .25s ease, transform .15s ease; }
+.gold-hover:hover { box-shadow: 0 0 24px rgba(250,204,21,0.35); transform: translateY(-1px); }
+.gold-aura-hover { transition: box-shadow .3s ease, border-color .3s ease, transform .3s ease; }
+.gold-aura-hover:hover { box-shadow: 0 0 0 1px #facc15, 0 8px 32px -4px rgba(250,204,21,0.25); border-color: #facc15 !important; transform: translateY(-3px); }
 
-/* ---------- Custom scrollbar ---------- */
-* { scrollbar-width: thin; scrollbar-color: var(--gold) var(--bg); }
-::-webkit-scrollbar { width: 11px; height: 11px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb {
-  background: var(--gold-dim);
-  border-radius: 6px;
-  border: 2px solid var(--bg);
+/* ---------- Corner crosshairs ---------- */
+.crosshair-card { position: relative; }
+.crosshair-card .xh {
+  position: absolute;
+  color: #facc15;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1;
+  z-index: 5;
+  pointer-events: none;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+.crosshair-card .xh.tl { top: -6px; left: -6px; }
+.crosshair-card .xh.tr { top: -6px; right: -6px; }
+.crosshair-card .xh.bl { bottom: -6px; left: -6px; }
+.crosshair-card .xh.br { bottom: -6px; right: -6px; }
 
-/* ---------- Selection ---------- */
-::selection { background: var(--gold); color: #131316; }
-
-/* ---------- Hero overlay ---------- */
-.hero-overlay {
-  background:
-    linear-gradient(180deg, rgba(19,19,22,0.55) 0%, rgba(19,19,22,0.75) 60%, rgba(19,19,22,0.97) 100%);
+/* ---------- Dropdown nav (CSS hover) ---------- */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  z-index: 100;
 }
-.page-hero-overlay {
-  background:
-    linear-gradient(180deg, rgba(19,19,22,0.70) 0%, rgba(19,19,22,0.85) 100%);
-}
-
-/* ---------- Buttons ---------- */
-.btn-primary {
-  background: var(--gold);
-  color: #131316;
-  font-weight: 700;
-  transition: box-shadow .25s ease, transform .15s ease;
-}
-.btn-primary:hover {
-  box-shadow: 0 0 24px rgba(250,204,21,0.35);
-  transform: translateY(-1px);
-}
-.btn-secondary {
-  background: var(--surface);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
-  transition: border-color .25s ease, transform .15s ease;
-}
-.btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
-
-/* ---------- Cards ---------- */
-.tc-card {
-  background: var(--surface);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 4px;
-  transition: border-color .25s ease, transform .25s ease;
-}
-.tc-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-
-/* Category image cards */
-.cat-card img { transition: transform .5s ease; }
-.cat-card:hover img { transform: scale(1.06); }
-
-/* ---------- Animated nav underline ---------- */
-.nav-link { position: relative; }
-.nav-link::after {
+/* keep a hover bridge so the menu doesn't close in the gap */
+.dropdown::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -4px;
-  width: 0; height: 2px;
-  background: var(--gold);
-  transition: width .25s ease;
+  top: 100%;
+  left: 0;
+  height: 12px;
+  width: 100%;
 }
-.nav-link:hover::after,
-.nav-link.active::after { width: 100%; }
-.nav-link.active { color: var(--gold); }
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover { display: block; }
 
-/* ---------- Mobile menu transition ---------- */
-#mobile-menu {
-  max-height: 0;
+/* ---------- Nav links ---------- */
+.nav-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e1e6;
+  padding-bottom: 4px;
+  transition: color .2s ease;
+}
+.nav-link:hover { color: #facc15; }
+.nav-link.active { color: #facc15; border-bottom: 2px solid #facc15; }
+
+/* ---------- Mobile menu ---------- */
+#mobile-menu { display: none; }
+#mobile-menu.open { display: block; }
+
+/* ---------- Custom scrollbar ---------- */
+* { scrollbar-width: thin; scrollbar-color: #facc15 #0e0e11; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0e0e11; }
+::-webkit-scrollbar-thumb { background: #facc15; border-radius: 3px; }
+
+/* ---------- Range slider ---------- */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 12px;
+  background: #facc15;
+  cursor: pointer;
+  border: 1px solid #0e0e11;
+  border-radius: 1px;
+}
+
+/* ---------- Ticker marquee ---------- */
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.ticker-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 40s linear infinite;
+}
+.ticker-wrap:hover .ticker-inner { animation-play-state: paused; }
+
+/* ---------- Filter chips ---------- */
+.filter-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid #4d4632;
+  color: #d1c6ab;
+  background: #1b1b1e;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .2s ease;
+  white-space: nowrap;
+}
+.filter-chip:hover { border-color: #facc15; color: #facc15; }
+.filter-chip.active { background: #facc15; color: #131316; border-color: #facc15; font-weight: 700; }
+
+/* ---------- Inventory cards ---------- */
+.inv-card {
+  background: #1b1b1e;
+  border: 1px solid rgba(77,70,50,0.4);
+  border-radius: 2px;
   overflow: hidden;
-  transition: max-height .35s ease;
+  transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
 }
-#mobile-menu.open { max-height: 420px; }
-
-/* Hamburger animation */
-.hamburger span { transition: transform .3s ease, opacity .2s ease; }
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ---------- Fixed-height container for the sideways archery photo ---------- */
-.archery-frame {
-  max-height: 300px;
-  overflow: hidden;
-  border-radius: 4px;
+.inv-card:hover {
+  border-color: #facc15;
+  box-shadow: 0 0 24px rgba(250,204,21,0.18);
+  transform: translateY(-3px);
 }
-.archery-frame img { width: 100%; height: 300px; object-fit: cover; }
+.inv-card img { transition: transform .5s ease; }
+.inv-card:hover img { transform: scale(1.05); }
+
+/* ---------- Brand chips ---------- */
+.brand-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  padding: 10px 16px;
+  border: 1px solid #4d4632;
+  color: #d1c6ab;
+  background: #1b1b1e;
+  border-radius: 2px;
+  transition: all .2s ease;
+}
+.brand-chip:hover { border-color: #facc15; color: #facc15; }
+
+/* ---------- Archery sideways frame ---------- */
+.archery-frame { position: relative; height: 280px; overflow: hidden; border-radius: 2px; }
+.archery-frame img { width: 100%; height: 280px; object-fit: cover; object-position: center; }
+
+/* ---------- FAQ accordion ---------- */
+.faq-item .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item.open .faq-body { max-height: 400px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-icon { transition: transform .3s ease; }
 
 /* ---------- Utility ---------- */
-.section-line { height: 3px; width: 64px; background: var(--gold); }
-.brand-badge {
-  background: var(--surface-2);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: var(--text-2);
-  transition: border-color .2s ease, color .2s ease;
-}
-.brand-badge:hover { border-color: var(--gold); color: var(--gold); }
-
 img { max-width: 100%; height: auto; }
+.section-line { height: 3px; width: 56px; background: #facc15; }
