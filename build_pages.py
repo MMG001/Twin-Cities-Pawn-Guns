@@ -161,8 +161,8 @@ def page_index():
     body = (nav() + ticker() + hero + trust + cat_cards + showcase +
             brands_section() + keyword_entity_table() + online_cta() + hours_location() + footer())
     return head(
-        "Twin Cities Pawn & Gun | Firearms, Pawn Loans & Guns in Ramsey, MN",
-        "Twin Cities Pawn & Gun in Ramsey, MN \u2014 Home of the 0% Pawn. Hundreds of guns, rifles, shotguns & accessories in stock. Licensed FFL dealer, $50 transfers, 0% pawn loans since 2010.",
+        "Twin Cities Pawn & Gun | Firearms & Pawn Loans, Ramsey MN",
+        "Home of the 0% Pawn in Ramsey, MN. Hundreds of guns, rifles & accessories in stock. Licensed FFL dealer \u2014 $50 transfers & 0% pawn loans since 2010.",
         "index.html",
         "pawn shop Ramsey MN, gun store Ramsey, firearms dealer Minnesota, 0% pawn loans, FFL transfer, buy guns Ramsey, Twin Cities Pawn",
         schema=schema) + body
@@ -371,7 +371,7 @@ def page_accessories():
                 ("contact.html", "Visit The Store", "6650 US-10, Ramsey, MN &mdash; hours, map and directions."),
             ]) + footer())
     return head(
-        "Ammunition & Firearm Accessories | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
+        "Ammo & Firearm Accessories | Twin Cities Pawn, Ramsey MN",
         "Ammunition, optics, holsters, magazines, and gun safes at Twin Cities Pawn & Gun in Ramsey, MN. Everything you need for your firearms in one place.",
         "accessories.html",
         "ammunition Ramsey MN, ammo for sale Minnesota, rifle scopes, holsters, magazines, gun safes, firearm accessories Ramsey",
@@ -445,7 +445,7 @@ def page_pawn():
             ]) +
             hours_location() + footer())
     return head(
-        "0% Pawn Loans & FFL Transfers | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
+        "0% Pawn Loans & FFL Transfers | Twin Cities Pawn & Gun, MN",
         "Home of the 0% Pawn. Get fair pawn loans with zero interest at Twin Cities Pawn & Gun in Ramsey, MN. $50 FFL transfers, plus tools, electronics & jewelry.",
         "pawn-loans.html",
         "0% pawn loans Ramsey MN, pawn shop loans Minnesota, FFL transfer $50, sell jewelry Ramsey, pawn tools electronics, gold buyer Ramsey",
@@ -840,7 +840,7 @@ def page_resources():
             cta_band("Still Have Questions?", "Our knowledgeable staff is happy to walk you through the details. Give us a call or stop in.", "Contact Us", "contact.html") +
             footer())
     return head("Resources | Twin Cities Pawn & Gun | Ramsey, MN",
-        "Firearms and pawn resources from Twin Cities Pawn & Gun: 2026 gun law checklist, rules for pawning a gun, Minnesota gun licensing, and firearm registration law explained.",
+        "Gun law resources from Twin Cities Pawn & Gun: 2026 checklist, MN gun licensing, rules for pawning a firearm, and firearm registration law explained.",
         "resources.html",
         "gun pawn resources, Minnesota firearm law, gun license guide, pawn a gun rules, Twin Cities Pawn resources, 2026 gun laws",
         ) + body
