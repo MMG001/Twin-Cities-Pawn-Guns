@@ -752,22 +752,63 @@ tailwind.config = {
         </div>
       </div>
     </section>
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
-      <div class="grid md:grid-cols-2 gap-6">
-        <a href="https://www.armslist.com/store/227/twin-cities-pawn" target="_blank" rel="noopener" class="crosshair-card block bg-surface-container-low border border-outline-variant/40 p-8 gold-aura-hover">
-          <span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span>
-          <span class="material-symbols-outlined text-primary-container text-3xl">storefront</span>
-          <h3 class="font-headline font-bold text-headline-sm mt-3 text-on-surface">Armslist Store</h3>
-          <p class="text-sm text-on-surface-variant mt-2">Browse our current firearm listings on Armslist &mdash; new items added regularly.</p>
-          <span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">View listings <span class="material-symbols-outlined text-sm">arrow_outward</span></span>
-        </a>
-        <a href="https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13" target="_blank" rel="noopener" class="crosshair-card block bg-surface-container-low border border-outline-variant/40 p-8 gold-aura-hover">
-          <span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span>
-          <span class="material-symbols-outlined text-primary-container text-3xl">gavel</span>
-          <h3 class="font-headline font-bold text-headline-sm mt-3 text-on-surface">GunBroker</h3>
-          <p class="text-sm text-on-surface-variant mt-2">Shop our online auctions and inventory on GunBroker.</p>
-          <span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop online <span class="material-symbols-outlined text-sm">arrow_outward</span></span>
-        </a>
+    <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+        <!-- Section header -->
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4">
+            <span class="w-8 h-px bg-primary-container inline-block"></span>Shop Our Inventory Online<span class="w-8 h-px bg-primary-container inline-block"></span>
+          </div>
+          <h2 class="font-headline font-bold text-headline-lg text-on-surface">Buy Firearms Online &mdash; Ramsey, MN</h2>
+          <p class="mt-4 text-on-surface-variant max-w-2xl mx-auto">
+            Twin Cities Pawn &amp; Gun lists handguns, pistols, rifles, shotguns, and collectible firearms on Armslist and GunBroker. Browse current in-stock inventory, place bids, or call us to verify availability. New guns added regularly &mdash; inventory moves fast.
+          </p>
+        </div>
+        <!-- Marketplace cards -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="https://www.armslist.com/store/227/twin-cities-pawn" target="_blank" rel="noopener"
+             class="crosshair-card group relative block border border-primary-container/30 overflow-hidden gold-aura-hover"
+             style="min-height:360px">
+            <span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span>
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                 style="background-image:url('images/rifle-wall.webp')"></div>
+            <div class="absolute inset-0"
+                 style="background:linear-gradient(to bottom,rgba(0,0,0,0.60) 0%,rgba(0,0,0,0.80) 100%)"></div>
+            <div class="relative flex flex-col justify-end h-full p-8 md:p-10"
+                 style="min-height:360px;z-index:10">
+              <span class="material-symbols-outlined text-primary-container mb-3" style="font-size:2.5rem">storefront</span>
+              <h3 class="font-headline font-bold text-white"
+                  style="font-size:clamp(1.75rem,3vw,2.25rem);line-height:1.1">Armslist Store</h3>
+              <p class="text-white/75 mt-2 text-sm leading-relaxed max-w-sm">
+                Browse our current handgun, rifle, and shotgun listings on Armslist &mdash; new firearms added regularly.
+              </p>
+              <span class="inline-flex items-center gap-2 mt-5 font-mono text-xs uppercase tracking-wider text-primary-container font-bold">
+                View Listings <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </span>
+            </div>
+          </a>
+          <a href="https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13" target="_blank" rel="noopener"
+             class="crosshair-card group relative block border border-primary-container/30 overflow-hidden gold-aura-hover"
+             style="min-height:360px">
+            <span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span>
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                 style="background-image:url('images/handgun-case-display.webp')"></div>
+            <div class="absolute inset-0"
+                 style="background:linear-gradient(to bottom,rgba(0,0,0,0.60) 0%,rgba(0,0,0,0.80) 100%)"></div>
+            <div class="relative flex flex-col justify-end h-full p-8 md:p-10"
+                 style="min-height:360px;z-index:10">
+              <span class="material-symbols-outlined text-primary-container mb-3" style="font-size:2.5rem">gavel</span>
+              <h3 class="font-headline font-bold text-white"
+                  style="font-size:clamp(1.75rem,3vw,2.25rem);line-height:1.1">GunBroker</h3>
+              <p class="text-white/75 mt-2 text-sm leading-relaxed max-w-sm">
+                Online firearm auctions and buy-it-now listings. Pistols, revolvers, rifles, and collectible guns shipped to your local FFL.
+              </p>
+              <span class="inline-flex items-center gap-2 mt-5 font-mono text-xs uppercase tracking-wider text-primary-container font-bold">
+                Shop Online <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
     <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
