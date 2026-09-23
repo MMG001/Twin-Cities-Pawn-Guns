@@ -81,3 +81,21 @@
     });
   });
 })();
+
+/* ---- Click-to-load Google Maps ---- */
+function loadMap(holderId, src) {
+  var holder = document.getElementById(holderId);
+  if (!holder) return;
+  var iframe = document.createElement('iframe');
+  iframe.src = src;
+  iframe.width = '100%';
+  iframe.height = '100%';
+  iframe.style.border = '0';
+  iframe.style.minHeight = '300px';
+  iframe.allowFullscreen = true;
+  iframe.loading = 'lazy';
+  iframe.referrerPolicy = 'no-referrer-when-downgrade';
+  iframe.title = 'Map to Twin Cities Pawn & Gun';
+  holder.innerHTML = '';
+  holder.appendChild(iframe);
+}

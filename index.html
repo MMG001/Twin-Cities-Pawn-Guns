@@ -30,8 +30,11 @@
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <!-- Async font load: doesn't block render -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" /></noscript>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
 tailwind.config = {
@@ -623,6 +626,7 @@ tailwind.config = {
       </div>
     </div>
   </header>
+  <main id="main-content">
 
   <!-- ===== TICKER ===== -->
   <div class="ticker-wrap bg-surface-container-lowest border-b border-outline-variant/30 py-2 overflow-hidden">
@@ -642,7 +646,7 @@ tailwind.config = {
         </div>
         <div class="relative crosshair-card border border-outline-variant/40 gold-glow">
           <span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span>
-          <img src="images/storefront.webp" alt="Twin Cities Pawn & Gun storefront in Ramsey, Minnesota" class="w-full h-[420px] object-cover" />
+          <img src="images/storefront.webp" alt="Twin Cities Pawn & Gun storefront in Ramsey, Minnesota" class="w-full h-[420px] object-cover" fetchpriority="high" />
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-surface-container-lowest to-transparent p-6">
             <div class="font-mono text-xs text-primary-container uppercase tracking-widest">6650 US-10 &middot; Ramsey, MN</div>
           </div>
@@ -840,8 +844,13 @@ tailwind.config = {
     </section>
     <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-10 items-stretch">
-        <div class="crosshair-card border border-outline-variant/40 overflow-hidden min-h-[340px] gold-glow">
-          <iframe src="https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&output=embed" width="100%" height="100%" style="border:0;min-height:340px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Twin Cities Pawn & Gun"></iframe>
+        <div class="crosshair-card border border-outline-variant/40 overflow-hidden min-h-[340px] gold-glow" id="map-holder-hours">
+          <div class="map-placeholder flex flex-col items-center justify-center h-full min-h-[340px] bg-surface-container-lowest cursor-pointer select-none" onclick="loadMap('map-holder-hours','https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&amp;output=embed')">
+            <span class="material-symbols-outlined text-5xl text-primary-container mb-3">location_on</span>
+            <p class="font-mono text-sm text-on-surface mb-1">6650 US-10, Ramsey, MN 55303</p>
+            <p class="text-xs text-on-surface-variant mb-4">Interactive map loads on click</p>
+            <button class="bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-5 py-2.5 font-bold tracking-wider">Load Map</button>
+          </div>
         </div>
         <div>
           <div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4"><span class="w-6 h-px bg-primary-container"></span>Visit The Vault</div>
@@ -861,6 +870,7 @@ tailwind.config = {
         </div>
       </div>
     </section>
+  </main>
   <!-- ===== FOOTER ===== -->
   <footer class="bg-surface-container-lowest border-t border-outline-variant/30">
     <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 grid grid-cols-1 md:grid-cols-4 gap-8">

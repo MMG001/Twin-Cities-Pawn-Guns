@@ -84,8 +84,11 @@ def head(title, desc, canonical, keywords, schema=""):
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <!-- Async font load: doesn't block render -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" /></noscript>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
 {twcfg}
@@ -274,6 +277,7 @@ def nav():
       </div>
     </div>
   </header>
+  <main id="main-content">
 """.format(armslist=ARMSLIST, gunbroker=GUNBROKER)
 
 
@@ -292,6 +296,7 @@ def ticker():
 
 def footer():
     return """
+  </main>
   <!-- ===== FOOTER ===== -->
   <footer class="bg-surface-container-lowest border-t border-outline-variant/30">
     <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -588,8 +593,13 @@ def hours_location():
     return """
     <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-10 items-stretch">
-        <div class="crosshair-card border border-outline-variant/40 overflow-hidden min-h-[340px] gold-glow">
-          <iframe src="https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&output=embed" width="100%" height="100%" style="border:0;min-height:340px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Twin Cities Pawn & Gun"></iframe>
+        <div class="crosshair-card border border-outline-variant/40 overflow-hidden min-h-[340px] gold-glow" id="map-holder-hours">
+          <div class="map-placeholder flex flex-col items-center justify-center h-full min-h-[340px] bg-surface-container-lowest cursor-pointer select-none" onclick="loadMap('map-holder-hours','https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&amp;output=embed')">
+            <span class="material-symbols-outlined text-5xl text-primary-container mb-3">location_on</span>
+            <p class="font-mono text-sm text-on-surface mb-1">6650 US-10, Ramsey, MN 55303</p>
+            <p class="text-xs text-on-surface-variant mb-4">Interactive map loads on click</p>
+            <button class="bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-5 py-2.5 font-bold tracking-wider">Load Map</button>
+          </div>
         </div>
         <div>
           {label}

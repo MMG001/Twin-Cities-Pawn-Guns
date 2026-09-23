@@ -88,7 +88,7 @@ def page_index():
         </div>
         <div class="relative crosshair-card border border-outline-variant/40 gold-glow">
           {xh}
-          <img src="images/storefront.webp" alt="Twin Cities Pawn & Gun storefront in Ramsey, Minnesota" class="w-full h-[420px] object-cover" />
+          <img src="images/storefront.webp" alt="Twin Cities Pawn & Gun storefront in Ramsey, Minnesota" class="w-full h-[420px] object-cover" fetchpriority="high" />
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-surface-container-lowest to-transparent p-6">
             <div class="font-mono text-xs text-primary-container uppercase tracking-widest">6650 US-10 &middot; Ramsey, MN</div>
           </div>
@@ -508,8 +508,13 @@ def page_contact():
             <div class="flex justify-between"><span>Sunday</span><span class="text-outline">Closed</span></div>
           </div>
         </div>
-        <div class="crosshair-card border border-outline-variant/40 overflow-hidden gold-glow h-[300px]">
-          <iframe src="https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&output=embed" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Twin Cities Pawn & Gun"></iframe>
+        <div class="crosshair-card border border-outline-variant/40 overflow-hidden gold-glow h-[300px]" id="map-holder-contact">
+          <div class="map-placeholder flex flex-col items-center justify-center h-full min-h-[300px] bg-surface-container-lowest cursor-pointer select-none" onclick="loadMap('map-holder-contact','https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&amp;output=embed')">
+            <span class="material-symbols-outlined text-5xl text-primary-container mb-3">location_on</span>
+            <p class="font-mono text-sm text-on-surface mb-1">6650 US-10, Ramsey, MN 55303</p>
+            <p class="text-xs text-on-surface-variant mb-4">Interactive map loads on click</p>
+            <button class="bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-5 py-2.5 font-bold tracking-wider">Load Map</button>
+          </div>
         </div>
       </div>
     </section>""".format(label=label("Get In Touch"), xh=crosshairs(), gmaps=GMAPS)

@@ -30,8 +30,11 @@
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <!-- Async font load: doesn't block render -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" /></noscript>
   <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
 tailwind.config = {
@@ -594,6 +597,7 @@ tailwind.config = {
       </div>
     </div>
   </header>
+  <main id="main-content">
 
   <!-- ===== TICKER ===== -->
   <div class="ticker-wrap bg-surface-container-lowest border-b border-outline-variant/30 py-2 overflow-hidden">
@@ -612,6 +616,7 @@ tailwind.config = {
         <p>Welcome to Twin Cities Pawn &amp; Gun. By accessing or using our website and services, you agree to the following terms and conditions. Please read them carefully.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">1. Firearms Sales &amp; Compliance</h2><p>All firearm sales and transfers comply with federal, state, and local laws. A valid government-issued photo ID and a successful background check are required for all firearm purchases and transfers. We reserve the right to refuse any sale or transfer at our discretion, as permitted by law.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">2. FFL Transfers</h2><p>Incoming FFL transfers are handled for a flat $50 fee per firearm. The buyer is responsible for ensuring the firearm is legal to own in their jurisdiction. All standard background check and identification requirements apply.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">3. Pawn Loans</h2><p>Pawn loans are subject to a written pawn agreement provided at the time of the transaction. Items are held as collateral and may be reclaimed upon repayment within the agreed term. Failure to repay within the term may result in forfeiture of the pledged item.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">4. Inventory &amp; Pricing</h2><p>Inventory and pricing are subject to change without notice. Items shown online or in-store may sell quickly and availability is not guaranteed. Photographs are for illustration and may not depict the exact item in stock.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">5. Limitation of Liability</h2><p>Twin Cities Pawn &amp; Gun is not liable for any indirect, incidental, or consequential damages arising from the use of our website or services, to the fullest extent permitted by law.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">6. Changes to These Terms</h2><p>We may update these terms from time to time. Continued use of our website constitutes acceptance of any changes.</p><h2 class="font-headline font-bold text-headline-sm text-on-surface mt-8 mb-2">Contact</h2><p>Questions about these terms? Contact us at <a href="tel:7634274100" class="text-primary-container hover:underline">(763) 427-4100</a> or visit us at 6650 US-10, Ramsey, MN 55303.</p>
       </div>
     </section>
+  </main>
   <!-- ===== FOOTER ===== -->
   <footer class="bg-surface-container-lowest border-t border-outline-variant/30">
     <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
