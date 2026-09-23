@@ -67,6 +67,17 @@ body { background-color: #131316; color: #e5e1e6; }
 .dropdown:hover .dropdown-menu,
 .dropdown-menu:hover { display: block; }
 
+/* Wide 3-column mega menu */
+.dropdown-menu.mega {
+  min-width: 760px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 2px solid #facc15;
+}
+@media (max-width: 900px) {
+  .dropdown-menu.mega { min-width: 560px; }
+}
+
 /* ---------- Nav links ---------- */
 .nav-link {
   font-family: 'Space Grotesk', sans-serif;

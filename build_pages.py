@@ -642,6 +642,9 @@ def page_sitemap():
         ("pawn-loans.html#tools", "&rsaquo; Power Tools"), ("pawn-loans.html#electronics", "&rsaquo; Electronics"),
         ("pawn-loans.html#jewelry", "&rsaquo; Jewelry &amp; Gold"),
         ("contact.html", "Contact"), ("faq.html", "FAQ"),
+        ("faq-gun-pawns.html", "FAQ &ndash; Gun Pawns"), ("employment.html", "Employment"),
+        ("resources.html", "Resources"), ("rules-for-pawning.html", "&rsaquo; Rules for Pawning a Gun"),
+        ("gun-license-mn.html", "&rsaquo; Gun License in Minnesota"), ("unregistered-gun.html", "&rsaquo; Unregistered Firearms"),
         ("terms.html", "Terms &amp; Conditions"), ("privacy.html", "Privacy Policy"),
         ("equal-opportunity.html", "Equal Opportunity Employer"),
     ]
@@ -667,6 +670,224 @@ def page_sitemap():
         ) + body
 
 
+# ---------- NEW PAGES (mega-menu / resources update) ----------
+def faq_accordion(faqs):
+    items = []
+    for q, a in faqs:
+        items.append("""
+        <div class="faq-item border border-outline-variant/40 bg-surface-container-low">
+          <button class="faq-head w-full flex justify-between items-center gap-4 text-left px-6 py-5">
+            <span class="font-headline font-semibold text-on-surface">{q}</span>
+            <span class="material-symbols-outlined text-primary-container faq-icon">add</span>
+          </button>
+          <div class="faq-body px-6 text-on-surface-variant"><p class="pb-5">{a}</p></div>
+        </div>""".format(q=q, a=a))
+    return "".join(items)
+
+
+def page_faq_gun_pawns():
+    faqs = [
+        ("Can I pawn a firearm in Minnesota?", "Yes. Twin Cities Pawn &amp; Gun is a licensed FFL dealer and we regularly accept firearms as collateral for pawn loans. You must be the legal owner, at least 18 (21 for handguns), and pass identity verification. Prohibited persons under federal or Minnesota law cannot pawn a firearm."),
+        ("What ID do I need to pawn a gun?", "You'll need a valid, unexpired government-issued photo ID such as a Minnesota driver's license or state ID. We record the transaction as required by state pawn regulations and federal firearms law."),
+        ("How do you determine how much my gun is worth?", "Our firearms specialists evaluate make, model, caliber, condition, age, included accessories, and current market demand. We aim to offer a fair loan value and will explain how we arrived at the figure."),
+        ("What are the loan terms?", "Pawn loans are short-term and outlined in a written pawn ticket you receive at the time of the transaction. Twin Cities Pawn is Home of the 0% Pawn &mdash; ask our team about current terms, the redemption period, and how to extend a loan."),
+        ("How do I get my firearm back?", "Repay the loan amount according to the terms on your pawn ticket within the redemption period. Because a firearm is being returned to you, you must again pass a background check and complete the required federal paperwork before we can release it."),
+        ("Do I need a background check to reclaim my gun?", "Yes. Under federal law, returning a pawned firearm to its owner is treated as a transfer, so a NICS background check and ATF Form 4473 are required before the firearm can be handed back."),
+        ("What happens if I don't repay the loan?", "If the loan isn't repaid or extended within the agreed period, the firearm is forfeited and becomes store inventory, which we may sell in compliance with all applicable laws. You are never obligated to repay &mdash; the item is the collateral."),
+        ("Can I pawn a firearm that isn't registered to me?", "Minnesota does not maintain a general firearm registry, but you must be the lawful owner of any item you pawn. We cannot accept stolen property, and knowingly pawning a firearm you don't own is a crime."),
+        ("Are there firearms you won't accept?", "We cannot accept firearms that are stolen, illegally modified, have obliterated serial numbers, or that we're prohibited from handling under federal or state law. NFA items have additional requirements &mdash; ask our staff."),
+        ("Is my information kept private?", "We collect only what's required by law for firearms and pawn transactions and handle it in accordance with applicable regulations and our privacy policy. We do not sell your personal information."),
+    ]
+    content = """
+    <section class="max-w-[880px] mx-auto px-6 lg:px-margin py-16">
+      <div class="space-y-4">{items}</div>
+    </section>""".format(items=faq_accordion(faqs))
+    body = (nav() + ticker() +
+            text_hero("Help Center", "FAQ &ndash; Gun Pawns", "Everything you need to know about pawning a firearm at Twin Cities Pawn &amp; Gun in Ramsey, Minnesota.") +
+            content +
+            cta_band("Ready to Pawn Your Firearm?", "Stop by with a valid photo ID for a free, no-obligation valuation, or call us with any questions.", "Contact Us", "contact.html") +
+            footer())
+    return head("Gun Pawn FAQ | Twin Cities Pawn & Gun | Ramsey, MN",
+        "Answers to common questions about pawning firearms in Minnesota: required ID, valuations, loan terms, background checks, and reclaiming your gun.",
+        "faq-gun-pawns.html",
+        "pawn a gun Minnesota, gun pawn FAQ, firearm pawn loan Ramsey MN, how to pawn a firearm, get pawned gun back",
+        ) + body
+
+
+def page_employment():
+    positions = ["Sales Associate", "Firearms Specialist", "Pawn Specialist", "Manager", "Other"]
+    opts = "".join("<option>%s</option>" % pos for pos in positions)
+    form = """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 grid lg:grid-cols-2 gap-12">
+      <div>
+        {label}
+        <h2 class="font-headline font-bold text-headline-lg text-on-surface">Why Work With Us</h2>
+        <div class="mt-5 space-y-4 text-on-surface-variant">
+          <p>Twin Cities Pawn &amp; Gun has been a Ramsey fixture since 2010, and our team is the reason customers keep coming back. We're looking for friendly, honest, hard-working people who enjoy helping others.</p>
+          <p>Firearms enthusiasts are especially welcome &mdash; but a great attitude and a willingness to learn matter most. We offer a supportive environment, competitive pay, and the chance to work with an amazing selection of firearms, tools, electronics, and collectibles every day.</p>
+          <ul class="space-y-3 mt-6">
+            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>Friendly, team-oriented workplace</li>
+            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>On-the-job training &amp; growth</li>
+            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>Equal opportunity employer</li>
+          </ul>
+        </div>
+      </div>
+      <div class="crosshair-card relative border border-outline-variant/40 bg-surface-container-low p-7 gold-glow">
+        {xh}
+        <h3 class="font-headline font-bold text-headline-sm text-on-surface mb-5">Employment Application</h3>
+        <form action="#" method="POST" class="space-y-5">
+          <div>
+            <label for="name" class="block font-mono text-[11px] uppercase tracking-widest text-on-surface-variant mb-2">Full Name</label>
+            <input type="text" id="name" name="name" required class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface focus:border-primary-container focus:outline-none transition-colors" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="email" class="block font-mono text-[11px] uppercase tracking-widest text-on-surface-variant mb-2">Email</label>
+              <input type="email" id="email" name="email" required class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface focus:border-primary-container focus:outline-none transition-colors" />
+            </div>
+            <div>
+              <label for="phone" class="block font-mono text-[11px] uppercase tracking-widest text-on-surface-variant mb-2">Phone</label>
+              <input type="tel" id="phone" name="phone" class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface focus:border-primary-container focus:outline-none transition-colors" />
+            </div>
+          </div>
+          <div>
+            <label for="position" class="block font-mono text-[11px] uppercase tracking-widest text-on-surface-variant mb-2">Position Applying For</label>
+            <select id="position" name="position" class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface focus:border-primary-container focus:outline-none transition-colors">{opts}</select>
+          </div>
+          <div>
+            <label for="experience" class="block font-mono text-[11px] uppercase tracking-widest text-on-surface-variant mb-2">Relevant Experience</label>
+            <textarea id="experience" name="experience" rows="4" class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface focus:border-primary-container focus:outline-none transition-colors"></textarea>
+          </div>
+          <div>
+            <label for="why" class="block font-mono text-[11px] uppercase tracking-widest text-on-surface-variant mb-2">Why do you want to work here?</label>
+            <textarea id="why" name="why" rows="4" class="w-full bg-surface-container border border-outline-variant/40 px-4 py-3 text-on-surface focus:border-primary-container focus:outline-none transition-colors"></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center gap-2 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider gold-hover">Submit Application <span class="material-symbols-outlined text-base">send</span></button>
+        </form>
+      </div>
+    </section>""".format(label=label("Careers"), xh=crosshairs(), opts=opts)
+    body = (nav() + ticker() +
+            page_hero("pawn-counter-guitars.webp", "Inside Twin Cities Pawn & Gun store", "Careers", "Join Our Team", "Twin Cities Pawn &amp; Gun is always looking for great people. Apply below to become part of our Ramsey crew.") +
+            form + footer())
+    return head("Employment Application | Twin Cities Pawn & Gun | Ramsey, MN",
+        "Apply to join the team at Twin Cities Pawn & Gun in Ramsey, MN. We're hiring sales associates, firearms specialists, pawn specialists, and more.",
+        "employment.html",
+        "Twin Cities Pawn jobs, gun store jobs Ramsey MN, pawn shop employment Minnesota, firearms specialist job, apply now",
+        ) + body
+
+
+def page_resources():
+    cards = [
+        ("gavel", "Rules for Pawning a Gun", "Minnesota pawn laws, required ID, hold periods, and how to reclaim your firearm.", "rules-for-pawning.html"),
+        ("badge", "Gun License in Minnesota", "Permit to Purchase, Permit to Carry, background checks, and how to apply.", "gun-license-mn.html"),
+        ("warning", "Unregistered Firearms", "What \u201cregistered\u201d really means under federal NFA rules and how to stay legal.", "unregistered-gun.html"),
+    ]
+    card_html = []
+    for icon, t, d, href in cards:
+        card_html.append("""
+        <a href="{href}" class="crosshair-card group relative block border border-outline-variant/40 bg-surface-container-low p-8 gold-aura-hover">
+          {xh}
+          <span class="material-symbols-outlined text-primary-container text-4xl">{icon}</span>
+          <h3 class="font-headline font-bold text-headline-sm mt-4 text-on-surface">{t}</h3>
+          <p class="text-sm text-on-surface-variant mt-2">{d}</p>
+          <span class="inline-flex items-center gap-2 mt-5 font-mono text-xs uppercase tracking-wider text-primary-container">Learn More <span class="material-symbols-outlined text-sm">arrow_outward</span></span>
+        </a>""".format(href=href, xh=crosshairs(), icon=icon, t=t, d=d))
+    content = """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
+      <p class="text-on-surface-variant max-w-2xl mb-10">Firearms and pawn transactions come with important rules and responsibilities. We've put together plain-English guides to help you understand Minnesota law and shop with confidence. Explore the resources below.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">{cards}</div>
+    </section>""".format(cards="".join(card_html))
+    body = (nav() + ticker() +
+            text_hero("Know Before You Go", "Resources", "Helpful guides on pawning firearms, Minnesota gun licensing, and firearm registration law.") +
+            content +
+            cta_band("Still Have Questions?", "Our knowledgeable staff is happy to walk you through the details. Give us a call or stop in.", "Contact Us", "contact.html") +
+            footer())
+    return head("Resources | Twin Cities Pawn & Gun | Ramsey, MN",
+        "Firearms and pawn resources from Twin Cities Pawn & Gun: rules for pawning a gun, Minnesota gun licensing, and firearm registration law explained.",
+        "resources.html",
+        "gun pawn resources, Minnesota firearm law, gun license guide, pawn a gun rules, Twin Cities Pawn resources",
+        ) + body
+
+
+def page_rules_for_pawning():
+    c = "".join([
+        p("Pawning a firearm can be a fast, discreet way to get a short-term loan using something you already own. But because firearms are involved, the process is governed by both federal and Minnesota law. Here's what you need to know before you visit Twin Cities Pawn &amp; Gun."),
+        h3("Who Can Pawn a Firearm"),
+        p("You must be the lawful owner of the firearm and legally allowed to possess it. You must be at least 18 years old for long guns and 21 for handguns. Individuals prohibited from possessing firearms under federal or Minnesota law &mdash; including certain felony convictions, domestic-violence orders, or adjudications &mdash; cannot pawn a firearm."),
+        h3("What to Bring"),
+        p("Bring a valid, unexpired government-issued photo ID (such as a Minnesota driver's license or state ID) and the firearm itself, unloaded and cased if possible. Any accessories, cases, or original boxes can increase the loan value. We'll record the transaction as required by state pawn regulations."),
+        h3("How Valuation Works"),
+        p("Our firearms specialists assess the make, model, caliber, condition, age, market demand, and any included accessories. We'll explain how we arrived at your offer. As the Home of the 0% Pawn, our goal is a fair deal &mdash; ask about current loan terms and redemption periods."),
+        h3("The Hold &amp; Redemption Period"),
+        p("When you pawn an item you receive a written pawn ticket that spells out the loan amount, fees, and the redemption period during which you can repay and reclaim your firearm. Your firearm is stored securely for the duration of the loan. Minnesota pawn shops are also required to report transactions to help law enforcement identify stolen property, which typically involves a short investigatory hold on incoming items."),
+        h3("Reclaiming Your Firearm"),
+        p("To get your firearm back, repay the loan according to your pawn ticket within the redemption period. Because handing a firearm back to its owner is legally a transfer, federal law requires you to complete an ATF Form 4473 and pass a NICS background check before the firearm can be released &mdash; even though it's your own gun."),
+        h3("What Happens If You Don't Redeem"),
+        p("A pawn loan is non-recourse: if you choose not to repay, you simply forfeit the firearm, which becomes store inventory that we may sell in full compliance with the law. There's no impact on your credit and no further obligation."),
+        h3("Firearms We Cannot Accept"),
+        p("We cannot accept stolen firearms, guns with obliterated or altered serial numbers, illegally modified firearms, or any item we're prohibited from handling. NFA-regulated items such as suppressors and short-barreled rifles carry additional federal requirements &mdash; talk to our staff about the specifics."),
+        h3("FFL Considerations"),
+        p("Twin Cities Pawn &amp; Gun is a fully licensed FFL dealer, so every firearm transaction &mdash; including pawns and redemptions &mdash; is handled by the book with the proper paperwork and background checks. This protects both you and the shop."),
+        p('<span class="text-outline text-sm">This page is provided for general informational purposes and reflects our understanding of applicable rules; it is not legal advice. Laws change &mdash; contact us or a qualified attorney for guidance on your situation.</span>'),
+    ])
+    return legal_page("rules-for-pawning.html", "Rules for Pawning a Gun in Minnesota | Twin Cities Pawn & Gun",
+        "A plain-English guide to pawning a firearm in Minnesota: who qualifies, what ID to bring, how valuation works, hold periods, and reclaiming your gun.",
+        "rules for pawning a gun, pawn a firearm Minnesota, gun pawn requirements Ramsey MN, how to pawn a gun, reclaim pawned firearm",
+        "Guide", "Rules for Pawning a Gun", "What you need to know before pawning a firearm in Minnesota.", c)
+
+
+def page_gun_license_mn():
+    c = "".join([
+        p("Minnesota has specific requirements for purchasing and carrying firearms. Whether you're buying your first handgun or planning to carry, here's an overview of the permits and processes involved."),
+        h3("Permit to Purchase (PTP)"),
+        p("To buy a handgun or a semiautomatic military-style assault weapon from a dealer in Minnesota, you generally need either a Permit to Purchase or a valid Permit to Carry. The Permit to Purchase is issued free of charge by your local police chief or county sheriff, is valid for one year, and lets you buy eligible firearms during that time."),
+        h3("Permit to Carry (PTC)"),
+        p("A Minnesota Permit to Carry allows you to carry a handgun in public and also serves as a purchase permit. To qualify you must be at least 21, complete an approved firearms-training course from a certified instructor, and apply through your county sheriff. The permit is valid for five years statewide."),
+        h3("Background Checks"),
+        p("All firearm purchases from a licensed FFL dealer &mdash; including Twin Cities Pawn &amp; Gun &mdash; require a federal NICS background check via ATF Form 4473. Holding a valid PTP or PTC may streamline the process, but the dealer still verifies eligibility at the point of sale."),
+        h3("How to Apply"),
+        p("Applications for both the Permit to Purchase and Permit to Carry are submitted to your local sheriff or police department. You'll provide identification, complete the application, and (for the PTC) show proof of completed training. Authorities have a set number of days under state law to approve or deny the application."),
+        h3("Long Guns"),
+        p("Rifles and shotguns that are not classified as semiautomatic military-style assault weapons generally do not require a Permit to Purchase in Minnesota, though you still must be a legal buyer and pass the dealer's background check."),
+        h3("Who Cannot Obtain a Permit"),
+        p("Prohibited persons &mdash; including those with certain felony or domestic-violence convictions, active restraining orders, or specific mental-health adjudications &mdash; are not eligible. Federal and state law both apply."),
+        h3("The Role of Your FFL Dealer"),
+        p("As a licensed dealer, we help ensure your purchase is legal and properly documented. Our staff can answer general questions about permits, transfers, and the paperwork involved, and we handle incoming FFL transfers for a flat $50 fee."),
+        h3("Common Questions"),
+        p("Do I need a permit to buy a rifle? Usually no, for standard long guns. Does a Permit to Carry let me buy handguns? Yes. How long does a Permit to Purchase last? One year. Where do I apply? Your local sheriff or police department."),
+        p('<span class="text-outline text-sm">This overview is for general information only and is not legal advice. Permit rules and timelines can change &mdash; confirm current requirements with your local sheriff\'s office or the Minnesota Bureau of Criminal Apprehension.</span>'),
+    ])
+    return legal_page("gun-license-mn.html", "Minnesota Gun License & Permit | Twin Cities Pawn & Gun",
+        "Understand Minnesota gun licensing: Permit to Purchase, Permit to Carry, background checks, how to apply, and the role of your FFL dealer.",
+        "Minnesota gun license, permit to purchase MN, permit to carry Minnesota, MN firearms permit, how to apply gun permit Minnesota",
+        "Guide", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally in Minnesota.", c)
+
+
+def page_unregistered_gun():
+    c = "".join([
+        p("There's a lot of confusion about \u201cregistered\u201d and \u201cunregistered\u201d firearms. In most cases, everyday rifles, shotguns, and handguns are not registered with any government database in Minnesota &mdash; there is no general state firearm registry. The term \u201cregistration\u201d most often applies to specific federally regulated items under the National Firearms Act (NFA)."),
+        h3("What \u201cRegistered\u201d Actually Means"),
+        p("Under the federal NFA, certain items must be registered in the National Firearms Registration and Transfer Record: suppressors (silencers), short-barreled rifles (SBRs), short-barreled shotguns (SBS), machine guns, and destructive devices. Owning one of these items legally requires ATF approval, the proper paperwork, and an associated tax stamp."),
+        h3("Unregistered NFA Items Are Illegal"),
+        p("Possessing an NFA item that has not been properly registered &mdash; for example, an unregistered suppressor or an illegally shortened rifle &mdash; is a serious federal felony. Penalties can include years in prison and substantial fines. This is very different from simply owning a standard firearm that isn't in any registry."),
+        h3("Standard Firearms vs. NFA Items"),
+        p("An ordinary pistol, rifle, or shotgun that you legally purchased does not need to be \u201cregistered\u201d in Minnesota, and not having it in a database does not make it illegal. The legal concern arises specifically with NFA-regulated items, stolen firearms, or guns with obliterated serial numbers."),
+        h3("Minnesota State Law"),
+        p("Minnesota does not require registration of ordinary firearms, but it does regulate who may possess firearms and how certain purchases are permitted. Possessing a firearm as a prohibited person, or possessing an illegal NFA item, carries severe state and federal consequences."),
+        h3("Consequences of Getting Caught"),
+        p("Illegally possessing an unregistered NFA item or an otherwise prohibited firearm can lead to felony charges, forfeiture of the firearm, loss of firearm rights, heavy fines, and imprisonment. Serial-number tampering and possession of stolen firearms are also criminal offenses."),
+        h3("How to Stay Legal"),
+        p("Buy from a licensed FFL dealer, keep your purchase records, and never alter a firearm in a way that would make it an unregistered NFA item. If you want a suppressor or SBR, work with a dealer like Twin Cities Pawn &amp; Gun to complete the proper ATF Form 4, trust or individual registration, and tax stamp before you take possession."),
+        h3("We Can Help"),
+        p("Our staff can walk you through the legal path to owning NFA items and make sure every transaction is fully compliant. When in doubt, ask us before you buy, modify, or sell."),
+        p('<span class="text-outline text-sm">This information is for educational purposes only and does not constitute legal advice. Firearms laws are complex and change over time &mdash; consult the ATF or a qualified attorney regarding your specific circumstances.</span>'),
+    ])
+    return legal_page("unregistered-gun.html", "Unregistered Guns in Minnesota | Twin Cities Pawn & Gun",
+        "What \u201cregistered\u201d really means under federal NFA law, the difference between standard firearms and NFA items, and the consequences of unregistered guns.",
+        "unregistered firearms Minnesota, NFA registration, unregistered suppressor, SBR laws, illegal firearm consequences MN, stay legal firearms",
+        "Guide", "Unregistered Firearms in Minnesota", "Understanding firearm registration, NFA items, and how to stay on the right side of the law.", c)
+
+
 # ---------- WRITE-OUT ----------
 PAGES = {
     "index.html": page_index,
@@ -679,6 +900,12 @@ PAGES = {
     "privacy.html": page_privacy,
     "equal-opportunity.html": page_equal,
     "faq.html": page_faq,
+    "faq-gun-pawns.html": page_faq_gun_pawns,
+    "employment.html": page_employment,
+    "resources.html": page_resources,
+    "rules-for-pawning.html": page_rules_for_pawning,
+    "gun-license-mn.html": page_gun_license_mn,
+    "unregistered-gun.html": page_unregistered_gun,
     "sitemap.html": page_sitemap,
 }
 
