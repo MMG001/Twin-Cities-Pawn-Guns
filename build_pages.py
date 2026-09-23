@@ -159,7 +159,7 @@ def page_index():
               '}') % (BASE_URL, BASE_URL, BASE_URL, ARMSLIST, GUNBROKER)
 
     body = (nav() + ticker() + hero + trust + cat_cards + showcase +
-            brands_section() + online_cta() + hours_location() + footer())
+            brands_section() + keyword_entity_table() + online_cta() + hours_location() + footer())
     return head(
         "Twin Cities Pawn & Gun | Firearms, Pawn Loans & Guns in Ramsey, MN",
         "Twin Cities Pawn & Gun in Ramsey, MN \u2014 Home of the 0% Pawn. Hundreds of guns, rifles, shotguns & accessories in stock. Licensed FFL dealer, $50 transfers, 0% pawn loans since 2010.",
@@ -315,7 +315,12 @@ def page_guns():
             page_hero("rifle-wall.webp", "Wall of rifles at Twin Cities Pawn & Gun", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
             chips + handguns + revolvers + rifles + shotguns + archery + collectible + nfa +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html") +
-            brands_section() + footer())
+            brands_section() +
+            related_links([
+                ("accessories.html", "Ammo &amp; Accessories", "Ammunition, optics, holsters, magazines and gun safes."),
+                ("pawn-loans.html", "FFL Transfers ($50)", "Buy online? Ship it to us for a fast, licensed FFL transfer."),
+                ("gun-license-mn.html", "MN Gun License", "What you need to legally buy a firearm in Minnesota."),
+            ]) + footer())
     return head(
         "Guns & Rifles for Sale | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
         "Shop handguns, rifles, shotguns, revolvers, collectible & NFA firearms at Twin Cities Pawn & Gun in Ramsey, MN. Licensed FFL dealer with 300+ guns in stock.",
@@ -359,7 +364,12 @@ def page_accessories():
             page_hero("firearms-handguns-rifles.webp", "Firearms accessories display", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
             chips + ammo + optics + holsters + magazines +
             cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html") +
-            online_cta() + brands_section() + footer())
+            online_cta() + brands_section() +
+            related_links([
+                ("guns-rifles.html", "Guns &amp; Rifles", "300+ handguns, rifles and shotguns in stock in Ramsey, MN."),
+                ("pawn-loans.html", "Pawn &amp; Loans", "0% interest pawn loans on firearms, tools and more."),
+                ("contact.html", "Visit The Store", "6650 US-10, Ramsey, MN &mdash; hours, map and directions."),
+            ]) + footer())
     return head(
         "Ammunition & Firearm Accessories | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
         "Ammunition, optics, holsters, magazines, and gun safes at Twin Cities Pawn & Gun in Ramsey, MN. Everything you need for your firearms in one place.",
@@ -428,6 +438,11 @@ def page_pawn():
             page_hero("tools-power-tools.webp", "Pawn shop merchandise at Twin Cities Pawn & Gun", "Pawn &amp; Loans", "Pawn &amp; Loans", "Home of the 0% Pawn. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
             featured + ffl + tools + electronics + jewelry +
             cta_band("Have Something to Pawn or Sell?", "Bring it in for a free, no-obligation valuation. We loan on and buy firearms, tools, electronics, jewelry, and more.", "Get a Quote", "contact.html") +
+            related_links([
+                ("rules-for-pawning.html", "Rules for Pawning a Gun", "Minnesota pawn laws, ID requirements and hold periods."),
+                ("guns-rifles.html", "Shop Firearms", "Browse 300+ guns, rifles and shotguns in stock."),
+                ("faq-gun-pawns.html", "Gun Pawn FAQ", "Answers to common questions about pawning firearms."),
+            ]) +
             hours_location() + footer())
     return head(
         "0% Pawn Loans & FFL Transfers | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
@@ -1043,6 +1058,46 @@ PAGES = {
     "sitemap.html": page_sitemap,
 }
 
+# Priority hints for sitemap.xml (Cheirank / canonical consistency)
+SITEMAP_PRIORITY = {
+    "index.html": "1.0",
+    "guns-rifles.html": "0.9", "pawn-loans.html": "0.9", "accessories.html": "0.9",
+    "contact.html": "0.8", "about.html": "0.8",
+    "resources.html": "0.7", "gun-law-checklist.html": "0.7", "gun-license-mn.html": "0.7",
+    "rules-for-pawning.html": "0.7", "unregistered-gun.html": "0.6",
+    "faq.html": "0.6", "faq-gun-pawns.html": "0.6", "employment.html": "0.5",
+    "terms.html": "0.3", "privacy.html": "0.3", "equal-opportunity.html": "0.3",
+    "sitemap.html": "0.3",
+}
+
+
+def write_sitemap_xml():
+    import datetime
+    today = datetime.date.today().isoformat()
+    urls = ""
+    for fname in PAGES:
+        loc = "%s/%s" % (BASE_URL, fname)
+        prio = SITEMAP_PRIORITY.get(fname, "0.5")
+        urls += ('  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n'
+                 '    <changefreq>weekly</changefreq>\n    <priority>%s</priority>\n  </url>\n'
+                 % (loc, today, prio))
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           '%s</urlset>\n' % urls)
+    with open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(xml)
+    print("wrote sitemap.xml (%d urls)" % len(PAGES))
+
+
+def write_robots_txt():
+    txt = ("User-agent: *\n"
+           "Allow: /\n\n"
+           "Sitemap: %s/sitemap.xml\n" % BASE_URL)
+    with open(os.path.join(OUT, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write(txt)
+    print("wrote robots.txt")
+
+
 if __name__ == "__main__":
     for fname, fn in PAGES.items():
         html = fn()
@@ -1054,4 +1109,6 @@ if __name__ == "__main__":
     if os.path.exists(old):
         os.remove(old)
         print("removed services.html")
+    write_sitemap_xml()
+    write_robots_txt()
     print("DONE")

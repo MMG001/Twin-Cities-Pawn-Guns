@@ -64,14 +64,23 @@ def head(title, desc, canonical, keywords, schema=""):
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="{title}" />
   <meta property="og:description" content="{desc}" />
-  <meta property="og:image" content="images/og-image.jpg" />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{base}/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Twin Cities Pawn &amp; Gun storefront in Ramsey, Minnesota" />
+  <meta property="og:type" content="business.business" />
   <meta property="og:url" content="{base}/{canon}" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Twin Cities Pawn &amp; Gun" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{title}" />
   <meta name="twitter:description" content="{desc}" />
-  <meta name="twitter:image" content="images/og-image.jpg" />
+  <meta name="twitter:image" content="{base}/images/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Twin Cities Pawn &amp; Gun storefront in Ramsey, Minnesota" />
+  <meta name="geo.region" content="US-MN" />
+  <meta name="geo.placename" content="Ramsey, Minnesota" />
+  <meta name="geo.position" content="45.2619;-93.4499" />
+  <meta name="ICBM" content="45.2619, -93.4499" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -484,6 +493,89 @@ def online_cta():
         </div>
       </div>
     </section>""".format(armslist=ARMSLIST, gunbroker=GUNBROKER, xh=crosshairs())
+
+
+def keyword_entity_table():
+    """Semantic keyword/entity table for topical authority + contextual interlinking."""
+    rows = [
+        ("Firearms",
+         'Handguns, <a href="guns-rifles.html#handguns">pistols</a>, revolvers, semi-automatic pistols, '
+         '<a href="guns-rifles.html">rifles</a>, bolt-action rifles, AR-15 platform rifles, '
+         '<a href="guns-rifles.html#shotguns">shotguns</a>, collectible &amp; used guns, NFA items, suppressors, SBRs',
+         "guns-rifles.html"),
+        ("Firearm Brands",
+         'Glock, Smith &amp; Wesson, SIG Sauer, Ruger, Colt, Kimber, Taurus, Springfield Armory, '
+         'Remington, Mossberg, Henry Repeating Arms, Browning, Daniel Defense, Walther, Kel-Tec',
+         "guns-rifles.html"),
+        ("Ammunition &amp; Accessories",
+         'Ammunition (ammo), scopes &amp; optics, red dot sights, holsters, slings, magazines, '
+         'gun cases, cleaning kits, <a href="accessories.html">gun safes</a>',
+         "accessories.html"),
+        ("Pawn &amp; Loans",
+         '<a href="pawn-loans.html">0% interest pawn loans</a>, collateral loans, buy &amp; sell, '
+         'power tools, electronics, jewelry &amp; gold, fair appraisals, fast cash',
+         "pawn-loans.html"),
+        ("Licensed Services",
+         'Licensed <a href="pawn-loans.html">FFL dealer</a>, $50 FFL transfers, background checks, '
+         'firearm consignment, ATF Form 4 &amp; tax stamp guidance',
+         "pawn-loans.html"),
+        ("Location &amp; Service Area",
+         'Ramsey, Minnesota (MN) &middot; Twin Cities &middot; Minneapolis&ndash;St. Paul metro &middot; '
+         'Anoka County &middot; serving a 30-mile radius &middot; 6650 US-10, Ramsey, MN 55303',
+         "contact.html"),
+        ("Compliance &amp; Resources",
+         'Minnesota gun laws, <a href="gun-law-checklist.html">2026 gun law checklist</a>, '
+         '<a href="gun-license-mn.html">MN gun license</a>, '
+         '<a href="rules-for-pawning.html">rules for pawning a gun</a>, '
+         '<a href="resources.html">firearm resources</a>',
+         "resources.html"),
+    ]
+    trs = ""
+    for cat, terms, href in rows:
+        trs += (
+            '<tr>'
+            '<th scope="row"><a href="%s" class="hover:text-primary-container">%s</a></th>'
+            '<td>%s</td>'
+            '</tr>' % (href, cat, terms)
+        )
+    return """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16" aria-labelledby="semantic-heading">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4">
+          <span class="w-8 h-px bg-primary-container inline-block"></span>What We Offer<span class="w-8 h-px bg-primary-container inline-block"></span>
+        </div>
+        <h2 id="semantic-heading" class="font-headline font-bold text-headline-lg text-on-surface">Guns, Pawn Loans &amp; Firearm Services in Minnesota</h2>
+        <p class="mt-4 text-on-surface-variant max-w-3xl mx-auto">A complete look at the firearms, brands, ammunition, and pawn services Twin Cities Pawn &amp; Gun offers throughout Ramsey and the greater Twin Cities metro.</p>
+      </div>
+      <div class="seo-table-wrap crosshair-card border border-outline-variant/40">
+        {xh}
+        <table class="seo-table">
+          <thead>
+            <tr><th scope="col">Category</th><th scope="col">Keywords &amp; Entities</th></tr>
+          </thead>
+          <tbody>{trs}</tbody>
+        </table>
+      </div>
+    </section>""".format(trs=trs, xh=crosshairs())
+
+
+def related_links(links):
+    """Contextual 'Related pages' interlinking module. links = list of (href, label, desc)."""
+    cards = ""
+    for href, lbl, desc in links:
+        cards += (
+            '<a href="%s" class="related-card crosshair-card border border-outline-variant/40 bg-surface-container-low p-5 gold-aura-hover block">'
+            '%s'
+            '<div class="flex items-center gap-2 font-headline font-bold text-on-surface">%s '
+            '<span class="material-symbols-outlined text-primary-container text-base">arrow_outward</span></div>'
+            '<p class="text-sm text-on-surface-variant mt-1">%s</p>'
+            '</a>' % (href, crosshairs(), lbl, desc)
+        )
+    return """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 border-t border-outline-variant/20" aria-label="Related pages">
+      <div class="font-mono text-[11px] tracking-widest text-primary-container uppercase mb-6">Related Pages</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{cards}</div>
+    </section>""".format(cards=cards)
 
 
 def hours_location():
