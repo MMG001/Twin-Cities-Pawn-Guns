@@ -67,27 +67,372 @@ tailwind.config = {
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "PawnShop",
-  "name": "Twin Cities Pawn & Gun",
-  "image": "https://twin-cities-pawn-guns.pages.dev/images/og-image.jpg",
-  "@id": "https://twin-cities-pawn-guns.pages.dev",
-  "url": "https://twin-cities-pawn-guns.pages.dev",
-  "telephone": "+1-763-427-4100",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "6650 US-10",
-    "addressLocality": "Ramsey",
-    "addressRegion": "MN",
-    "postalCode": "55303",
-    "addressCountry": "US"
-  },
-  "geo": {"@type": "GeoCoordinates", "latitude": 45.2619, "longitude": -93.4499},
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "19:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00"}
-  ],
-  "sameAs": ["https://www.armslist.com/store/227/twin-cities-pawn", "https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#website",
+      "name": "Twin Cities Pawn & Gun",
+      "url": "https://twin-cities-pawn-guns.pages.dev",
+      "publisher": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "PawnShop",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#business",
+      "name": "Twin Cities Pawn & Gun",
+      "alternateName": "TC Pawn & Gun",
+      "slogan": "Home of the 0% Pawn",
+      "foundingDate": "2010",
+      "url": "https://twin-cities-pawn-guns.pages.dev",
+      "telephone": "+1-763-427-4100",
+      "priceRange": "$$",
+      "publicAccess": true,
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#logo",
+        "url": "https://twin-cities-pawn-guns.pages.dev/images/logo.png",
+        "width": 680,
+        "height": 280,
+        "caption": "Twin Cities Pawn & Gun"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://twin-cities-pawn-guns.pages.dev/images/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6650 US-10",
+        "addressLocality": "Ramsey",
+        "addressRegion": "MN",
+        "postalCode": "55303",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.2619,
+        "longitude": -93.4499
+      },
+      "hasMap": "https://maps.google.com/?q=Twin+Cities+Pawn+%26+Gun,+6650+US-10,+Ramsey,+MN+55303",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "GeoCircle",
+          "@id": "https://twin-cities-pawn-guns.pages.dev/#service-area",
+          "description": "30-mile service radius anchored on Ramsey, Minnesota",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.2619,
+            "longitude": -93.4499
+          },
+          "geoRadius": "48280"
+        },
+        {
+          "@type": "State",
+          "name": "Minnesota",
+          "sameAs": "https://en.wikipedia.org/wiki/Minnesota"
+        },
+        {
+          "@type": "City",
+          "name": "Ramsey",
+          "sameAs": "https://en.wikipedia.org/wiki/Ramsey,_Minnesota"
+        }
+      ],
+      "sameAs": [
+        "https://www.armslist.com/store/227/twin-cities-pawn",
+        "https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13"
+      ],
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Licensed FFL Dealer",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "On-Site FFL Transfer ($50)",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "0% Interest Pawn Loans",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Government-Issued ID Required for Firearm Purchase",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "300+ Firearms In Stock",
+          "value": true
+        }
+      ],
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Firearms",
+          "sameAs": "https://en.wikipedia.org/wiki/Firearm"
+        },
+        {
+          "@type": "Thing",
+          "name": "Pawnbroker",
+          "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"
+        },
+        {
+          "@type": "Thing",
+          "name": "Federal Firearms License",
+          "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"
+        },
+        {
+          "@type": "Thing",
+          "name": "Ammunition",
+          "sameAs": "https://en.wikipedia.org/wiki/Ammunition"
+        },
+        {
+          "@type": "Thing",
+          "name": "Colt",
+          "sameAs": "https://en.wikipedia.org/wiki/Colt%27s_Manufacturing_Company"
+        },
+        {
+          "@type": "Thing",
+          "name": "Walther",
+          "sameAs": "https://en.wikipedia.org/wiki/Carl_Walther_GmbH"
+        },
+        {
+          "@type": "Thing",
+          "name": "Taurus Firearms",
+          "sameAs": "https://en.wikipedia.org/wiki/Taurus_Firearms"
+        },
+        {
+          "@type": "Thing",
+          "name": "Daniel Defense",
+          "sameAs": "https://en.wikipedia.org/wiki/Daniel_Defense"
+        },
+        {
+          "@type": "Thing",
+          "name": "Kel-Tec",
+          "sameAs": "https://en.wikipedia.org/wiki/Kel-Tec"
+        },
+        {
+          "@type": "Thing",
+          "name": "Kimber Manufacturing",
+          "sameAs": "https://en.wikipedia.org/wiki/Kimber_Manufacturing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Smith & Wesson",
+          "sameAs": "https://en.wikipedia.org/wiki/Smith_%26_Wesson"
+        },
+        {
+          "@type": "Thing",
+          "name": "SIG Sauer",
+          "sameAs": "https://en.wikipedia.org/wiki/SIG_Sauer"
+        },
+        {
+          "@type": "Thing",
+          "name": "Ruger",
+          "sameAs": "https://en.wikipedia.org/wiki/Sturm,_Ruger_%26_Co."
+        },
+        {
+          "@type": "Thing",
+          "name": "Glock",
+          "sameAs": "https://en.wikipedia.org/wiki/Glock"
+        },
+        {
+          "@type": "Thing",
+          "name": "Remington Arms",
+          "sameAs": "https://en.wikipedia.org/wiki/Remington_Arms"
+        },
+        {
+          "@type": "Thing",
+          "name": "Springfield Armory",
+          "sameAs": "https://en.wikipedia.org/wiki/Springfield_Armory,_Inc."
+        },
+        {
+          "@type": "Thing",
+          "name": "Browning Arms",
+          "sameAs": "https://en.wikipedia.org/wiki/Browning_Arms_Company"
+        },
+        {
+          "@type": "Thing",
+          "name": "Henry Repeating Arms",
+          "sameAs": "https://en.wikipedia.org/wiki/Henry_Repeating_Arms"
+        },
+        {
+          "@type": "Thing",
+          "name": "Mossberg",
+          "sameAs": "https://en.wikipedia.org/wiki/O.F._Mossberg_%26_Sons"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Twin Cities Pawn & Gun Services",
+        "itemListElement": [
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-firearms"
+          },
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-accessories"
+          },
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-pawn-loans"
+          },
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-ffl-transfer"
+          }
+        ]
+      },
+      "potentialAction": [
+        {
+          "@type": "CommunicateAction",
+          "name": "Call Twin Cities Pawn & Gun",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "tel:+17634274100",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        },
+        {
+          "@type": "AskAction",
+          "name": "Request a Quote",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://twin-cities-pawn-guns.pages.dev/contact.html#contact-form",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/index.html#webpage",
+      "url": "https://twin-cities-pawn-guns.pages.dev/index.html",
+      "name": "Twin Cities Pawn & Gun | Firearms, Pawn Loans & Guns in Ramsey, MN",
+      "isPartOf": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#website"
+      },
+      "about": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/index.html#breadcrumb"
+      },
+      "description": "Ramsey's trusted firearms dealer and pawn shop since 2010. 300+ guns, rifles, shotguns. Licensed FFL dealer, 0% pawn loans.",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://twin-cities-pawn-guns.pages.dev/images/storefront.webp"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/index.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://twin-cities-pawn-guns.pages.dev/index.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-firearms",
+      "name": "Firearms Sales — Guns & Rifles",
+      "serviceType": "Retail Firearms Sales",
+      "description": "300+ handguns, rifles, shotguns, and collectible firearms in stock. Licensed FFL dealer in Ramsey, MN.",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "url": "https://twin-cities-pawn-guns.pages.dev/guns-rifles.html",
+      "areaServed": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#service-area"
+      },
+      "category": {
+        "@type": "Thing",
+        "name": "Firearms",
+        "sameAs": "https://en.wikipedia.org/wiki/Firearm"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-accessories",
+      "name": "Firearms Accessories",
+      "serviceType": "Retail Firearms Accessories",
+      "description": "Ammunition, optics, holsters, slings, magazines, and gun safes. Everything you need to keep your firearm ready.",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "url": "https://twin-cities-pawn-guns.pages.dev/accessories.html",
+      "areaServed": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#service-area"
+      },
+      "category": {
+        "@type": "Thing",
+        "name": "Firearm Accessories",
+        "sameAs": "https://en.wikipedia.org/wiki/Firearm_accessories"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-pawn-loans",
+      "name": "Pawn Loans — 0% Interest",
+      "serviceType": "Pawn Lending",
+      "description": "Get cash fast with our 0% interest pawn loans. We accept guns, tools, electronics, jewelry, and gold.",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "url": "https://twin-cities-pawn-guns.pages.dev/pawn-loans.html",
+      "areaServed": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#service-area"
+      },
+      "category": {
+        "@type": "Thing",
+        "name": "Pawnbroker",
+        "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-ffl-transfer",
+      "name": "FFL Firearms Transfer",
+      "url": "https://twin-cities-pawn-guns.pages.dev/pawn-loans.html",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      }
+    }
+  ]
 }
   </script>
 </head>
