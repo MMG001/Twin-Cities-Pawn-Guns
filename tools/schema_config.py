@@ -343,6 +343,11 @@ PAGES = {
         "name": "Unregistered Firearms in Minnesota: Legal Consequences | Twin Cities Pawn & Gun",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Unregistered Firearms", "unregistered-gun.html")],
     },
+    "gun-law-checklist.html": {
+        "webpage_type": "WebPage",
+        "name": "2026 Gun Law Checklist | Minnesota | Twin Cities Pawn & Gun",
+        "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("2026 Gun Law Checklist", "gun-law-checklist.html")],
+    },
     "terms.html": {
         "webpage_type": "WebPage",
         "name": "Terms & Conditions | Twin Cities Pawn & Gun",

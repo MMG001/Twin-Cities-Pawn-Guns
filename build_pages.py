@@ -2,6 +2,8 @@
 """Page-body functions + write-out logic. Imported/execfile'd after build.py helpers.
 This file is concatenated onto build.py by the shell before running."""
 
+import os
+from build import *
 
 # ---------- small structural helpers ----------
 def grid(cards, cols="sm:grid-cols-2 lg:grid-cols-3"):
@@ -643,7 +645,8 @@ def page_sitemap():
         ("pawn-loans.html#jewelry", "&rsaquo; Jewelry &amp; Gold"),
         ("contact.html", "Contact"), ("faq.html", "FAQ"),
         ("faq-gun-pawns.html", "FAQ &ndash; Gun Pawns"), ("employment.html", "Employment"),
-        ("resources.html", "Resources"), ("rules-for-pawning.html", "&rsaquo; Rules for Pawning a Gun"),
+        ("resources.html", "Resources"), ("gun-law-checklist.html", "&rsaquo; 2026 Gun Law Checklist"),
+        ("rules-for-pawning.html", "&rsaquo; Rules for Pawning a Gun"),
         ("gun-license-mn.html", "&rsaquo; Gun License in Minnesota"), ("unregistered-gun.html", "&rsaquo; Unregistered Firearms"),
         ("terms.html", "Terms &amp; Conditions"), ("privacy.html", "Privacy Policy"),
         ("equal-opportunity.html", "Equal Opportunity Employer"),
@@ -778,6 +781,7 @@ def page_employment():
 
 def page_resources():
     cards = [
+        ("checklist", "2026 Gun Law Checklist", "How Minnesota stacks up on gun safety laws, background checks, and concealed carry.", "gun-law-checklist.html"),
         ("gavel", "Rules for Pawning a Gun", "Minnesota pawn laws, required ID, hold periods, and how to reclaim your firearm.", "rules-for-pawning.html"),
         ("badge", "Gun License in Minnesota", "Permit to Purchase, Permit to Carry, background checks, and how to apply.", "gun-license-mn.html"),
         ("warning", "Unregistered Firearms", "What \u201cregistered\u201d really means under federal NFA rules and how to stay legal.", "unregistered-gun.html"),
@@ -792,20 +796,38 @@ def page_resources():
           <p class="text-sm text-on-surface-variant mt-2">{d}</p>
           <span class="inline-flex items-center gap-2 mt-5 font-mono text-xs uppercase tracking-wider text-primary-container">Learn More <span class="material-symbols-outlined text-sm">arrow_outward</span></span>
         </a>""".format(href=href, xh=crosshairs(), icon=icon, t=t, d=d))
+    
+    external_links = """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin pb-16">
+      <div class="border-t border-outline-variant/30 pt-10">
+        <div class="text-[10px] font-mono text-primary-container uppercase tracking-widest mb-5">External Resources</div>
+        <div class="space-y-3">
+          <a href="https://www.house.mn.gov/hrd/pubs/firearms.pdf" target="_blank" rel="noopener" class="flex items-center gap-3 text-on-surface-variant hover:text-primary-container transition-colors">
+            <span class="material-symbols-outlined text-lg">description</span>
+            <span>Minnesota House Research: Firearms Laws (PDF) &nearr;</span>
+          </a>
+          <a href="https://www.revisor.mn.gov/statutes/cite/624.714" target="_blank" rel="noopener" class="flex items-center gap-3 text-on-surface-variant hover:text-primary-container transition-colors">
+            <span class="material-symbols-outlined text-lg">gavel</span>
+            <span>MN Statute 624.714: Carry Permit &nearr;</span>
+          </a>
+        </div>
+      </div>
+    </section>"""
+    
     content = """
     <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
       <p class="text-on-surface-variant max-w-2xl mb-10">Firearms and pawn transactions come with important rules and responsibilities. We've put together plain-English guides to help you understand Minnesota law and shop with confidence. Explore the resources below.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">{cards}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">{cards}</div>
     </section>""".format(cards="".join(card_html))
     body = (nav() + ticker() +
-            text_hero("Know Before You Go", "Resources", "Helpful guides on pawning firearms, Minnesota gun licensing, and firearm registration law.") +
-            content +
+            text_hero("Know Before You Go", "Resources", "Helpful guides on pawning firearms, Minnesota gun licensing, firearm registration law, and current gun safety laws.") +
+            content + external_links +
             cta_band("Still Have Questions?", "Our knowledgeable staff is happy to walk you through the details. Give us a call or stop in.", "Contact Us", "contact.html") +
             footer())
     return head("Resources | Twin Cities Pawn & Gun | Ramsey, MN",
-        "Firearms and pawn resources from Twin Cities Pawn & Gun: rules for pawning a gun, Minnesota gun licensing, and firearm registration law explained.",
+        "Firearms and pawn resources from Twin Cities Pawn & Gun: 2026 gun law checklist, rules for pawning a gun, Minnesota gun licensing, and firearm registration law explained.",
         "resources.html",
-        "gun pawn resources, Minnesota firearm law, gun license guide, pawn a gun rules, Twin Cities Pawn resources",
+        "gun pawn resources, Minnesota firearm law, gun license guide, pawn a gun rules, Twin Cities Pawn resources, 2026 gun laws",
         ) + body
 
 
@@ -888,6 +910,117 @@ def page_unregistered_gun():
         "Guide", "Unregistered Firearms in Minnesota", "Understanding firearm registration, NFA items, and how to stay on the right side of the law.", c)
 
 
+def page_gun_law_checklist():
+    """2026 Minnesota Gun Law Checklist — based on Everytown Research rankings"""
+    intro = """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
+      <div class="flex items-start gap-6 mb-10 p-8 bg-surface-container-low border border-outline-variant/40">
+        <div class="flex-shrink-0 w-20 h-20 rounded-full bg-primary-container/10 flex items-center justify-center">
+          <span class="font-headline text-3xl font-bold text-primary-container">#14</span>
+        </div>
+        <div>
+          <h2 class="font-headline font-bold text-headline-md text-on-surface">Minnesota Gun Law Strength</h2>
+          <p class="text-on-surface-variant mt-2"><strong>Ranked #14 in the nation</strong> for gun law strength. Minnesota has passed strong gun safety policies including universal background checks, Extreme Risk laws, and domestic abuser prohibitions.</p>
+          <div class="grid grid-cols-2 gap-6 mt-5 text-sm">
+            <div><div class="font-mono text-xs text-primary-container uppercase tracking-widest">Composite Score</div><div class="text-on-surface font-bold text-2xl">55/100</div></div>
+            <div><div class="font-mono text-xs text-primary-container uppercase tracking-widest">Gun Death Rate</div><div class="text-on-surface font-bold text-2xl">9.8</div><div class="text-on-surface-variant text-xs">per 100k residents (national avg: 12.8)</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="text-on-surface-variant text-sm italic">Data sourced from <a href="https://everytownresearch.org/rankings/state/minnesota/" target="_blank" rel="noopener" class="text-primary-container hover:underline">Everytown Research &nearr;</a> (Last updated January 14, 2026)</p>
+    </section>"""
+    
+    def law_cat(title, laws):
+        laws_html = "".join('<li class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-primary-container text-lg flex-shrink-0">check_circle</span><span>%s</span></li>' % law for law in laws)
+        return """
+        <div class="mb-12">
+          <h3 class="font-headline font-bold text-headline-sm text-on-surface mb-5 pb-3 border-b border-outline-variant/30">%s</h3>
+          <ul class="space-y-3">%s</ul>
+        </div>""" % (title, laws_html)
+    
+    content = """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin pb-16">
+      {foundational}
+      {industry}
+      {public}
+      {wrong_hands}
+      {policing}
+      {sales}
+    </section>""".format(
+        foundational=law_cat("Foundational Laws", [
+            "<strong>Background checks required</strong> for handgun and semiautomatic assault weapon purchases (permit to purchase or point-of-sale)",
+            "<strong>Concealed carry permit required</strong> with training (including live-fire requirement)",
+            "<strong>Extreme Risk law</strong> allows temporary gun removal for individuals in crisis",
+            "<strong>No Shoot First law</strong> in place",
+            "<strong>Secure storage required</strong> when a child (under 18) may access the firearm"
+        ]),
+        industry=law_cat("Gun Industry & Product Safety", [
+            "<strong>Assault weapons prohibited</strong> (military-style weapons banned)",
+            "<strong>Auto sears / Glock switches prohibited</strong>",
+            "<strong>Bump stocks prohibited</strong>",
+            "<strong>Consumer safety:</strong> new handgun models must have childproofing features",
+            "<strong>Dealer license required</strong> at state level",
+            "<strong>Ghost guns regulated</strong> (serial numbers required, background checks enforced)",
+            "<strong>High-capacity magazines prohibited</strong>",
+            "<strong>Legal accountability for gun industry</strong> allowed",
+            "<strong>Microstamping for new handguns</strong> required"
+        ]),
+        public=law_cat("Guns in Public", [
+            "<strong>No carry after violent offense</strong> (3-year ban for assault/violent misdemeanor)",
+            "<strong>No guns mandate on college campuses</strong>",
+            "<strong>No guns at state capitol or demonstrations</strong>",
+            "<strong>No guns in bars</strong>",
+            "<strong>No guns in K-12 schools</strong> by staff or permit holders",
+            "<strong>Open carry regulated</strong> (permit required for all firearms)",
+            "<strong>Strong concealed carry authority</strong> (officials can deny for public safety)"
+        ]),
+        wrong_hands=law_cat("Keeping Guns Out of the Wrong Hands", [
+            "<strong>Emergency restraining order prohibitor</strong> (domestic abusers barred)",
+            "<strong>Felony prohibitor</strong> (indefinite)",
+            "<strong>Fugitive from justice prohibitor</strong>",
+            "<strong>Gun removal program</strong> (officials seek illegal guns)",
+            "<strong>Hate crime prohibitor</strong>",
+            "<strong>Mental health prohibitor</strong> (indefinite for involuntary commitments)",
+            "<strong>Minimum age:</strong> 21+ for handguns, 18+ for long guns",
+            "<strong>Assault/violent misdemeanor prohibitor</strong> (3-year ban)",
+            "<strong>Domestic abuser prohibition</strong> (misdemeanor conviction + restraining orders, covers dating partners)",
+            "<strong>Relinquishment required</strong> for convicted abusers and those under restraining orders",
+            "<strong>School threat assessment teams</strong> required",
+            "<strong>Stalker prohibitor</strong> (3-year ban)"
+        ]),
+        policing=law_cat("Policing & Civil Rights", [
+            "<strong>Funding for victims of gun violence</strong> via VOCA funds",
+            "<strong>Local gun laws allowed</strong> (no state preemption)",
+            "<strong>No Law Enforcement Officers Bill of Rights</strong>",
+            "<strong>Office of Violence Intervention</strong> exists",
+            "<strong>Police deadly force standard:</strong> only when necessary to prevent serious injury",
+            "<strong>Qualified immunity limited</strong>",
+            "<strong>Tools to address crime guns:</strong> tracing + trafficking/straw purchase crimes",
+            "<strong>Violence intervention program funding</strong> in state budget"
+        ]),
+        sales=law_cat("Sales & Permitting", [
+            "<strong>Authority to deny gun purchase</strong> if buyer poses danger",
+            "<strong>Charleston Loophole closed</strong> (30-day waiting period for handguns/assault weapons)",
+            "<strong>Lost and stolen reporting</strong> required",
+            "<strong>Mental health record reporting</strong> into background check system",
+            "<strong>Sales records sent to law enforcement</strong> (handguns)",
+            "<strong>Training required to purchase guns</strong>",
+            "<strong>Waiting periods</strong> enforced"
+        ])
+    )
+    
+    body = (nav() + ticker() +
+            text_hero("2026 Checklist", "Gun Law Checklist", "How Minnesota ranks on gun safety laws, background checks, concealed carry, and more.") +
+            intro + content +
+            cta_band("Questions About Minnesota Gun Laws?", "Our knowledgeable team can help you navigate firearms regulations in Minnesota. Give us a call or stop in.", "Contact Us", "contact.html") +
+            footer())
+    return head("2026 Gun Law Checklist | Minnesota | Twin Cities Pawn & Gun",
+        "Minnesota's 2026 gun law rankings: #14 in the nation for gun law strength. See how the state stacks up on background checks, permits, and gun safety policies.",
+        "gun-law-checklist.html",
+        "Minnesota gun laws 2026, gun law rankings Minnesota, background check laws MN, concealed carry permit Minnesota, gun safety laws",
+        ) + body
+
+
 # ---------- WRITE-OUT ----------
 PAGES = {
     "index.html": page_index,
@@ -906,6 +1039,7 @@ PAGES = {
     "rules-for-pawning.html": page_rules_for_pawning,
     "gun-license-mn.html": page_gun_license_mn,
     "unregistered-gun.html": page_unregistered_gun,
+    "gun-law-checklist.html": page_gun_law_checklist,
     "sitemap.html": page_sitemap,
 }
 
