@@ -118,6 +118,8 @@ BUSINESS = {
     "sameAs": [
         "https://www.armslist.com/store/227/twin-cities-pawn",
         "https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13",
+        "https://www.facebook.com/twincitiespawn",
+        "https://www.instagram.com/twincities_pawn/",
     ],
     "amenityFeature": [
         {"@type": "LocationFeatureSpecification", "name": "Licensed FFL Dealer", "value": True},
