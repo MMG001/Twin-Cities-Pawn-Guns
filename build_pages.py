@@ -159,7 +159,7 @@ def page_index():
               '}') % (BASE_URL, BASE_URL, BASE_URL, ARMSLIST, GUNBROKER)
 
     body = (nav() + ticker() + hero + trust + cat_cards + showcase +
-            brands_section() + keyword_entity_table() + online_cta() + hours_location() + footer())
+            brands_section() + online_cta() + hours_location() + footer())
     return head(
         "Twin Cities Pawn & Gun | Firearms & Pawn Loans, Ramsey MN",
         "Home of the 0% Pawn in Ramsey, MN. Hundreds of guns, rifles & accessories in stock. Licensed FFL dealer \u2014 $50 transfers & 0% pawn loans since 2010.",
@@ -223,7 +223,7 @@ def page_about():
 
     body = (nav() + ticker() +
             page_hero("gun-room-rifles.webp", "Firearms display at Twin Cities Pawn & Gun", "About Us", "About Twin Cities Pawn &amp; Gun", "Serving Ramsey and the Twin Cities with honest firearms sales and fair pawn loans since 2010.") +
-            story + stats + why + brands_section() + hours_location() + footer())
+            story + stats + why + brands_section() + keyword_entity_table() + hours_location() + footer())
     return head(
         "About Us | Twin Cities Pawn & Gun \u2014 Ramsey, MN Since 2010",
         "Learn about Twin Cities Pawn & Gun, Ramsey Minnesota's trusted licensed FFL firearms dealer and pawn shop since 2010. Home of the 0% Pawn.",
