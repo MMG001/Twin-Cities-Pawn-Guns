@@ -421,8 +421,8 @@ def page_hero(img, alt, label_text, h1, sub=""):
     sub_html = ('<p class="mt-4 text-on-surface-variant text-body-lg max-w-2xl">%s</p>' % sub) if sub else ""
     return """
     <section class="relative min-h-[46vh] flex items-end blueprint-grid" aria-label="Page header">
-      <img src="images/{img}" alt="{alt}" class="absolute inset-0 w-full h-full object-cover opacity-40" />
-      <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(19,19,22,0.55),rgba(19,19,22,0.95))"></div>
+      <img src="images/{img}" alt="{alt}" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
       <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin pb-12 pt-20 w-full">
         {label}
         <h1 class="font-headline font-bold text-headline-xl-mobile md:text-headline-xl text-on-surface">{h1}</h1>
