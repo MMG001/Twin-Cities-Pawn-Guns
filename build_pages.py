@@ -75,27 +75,19 @@ def page_index():
     </section>"""
 
     hero = """
-    <section class="relative blueprint-grid overflow-hidden">
-      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-10 items-center py-16 lg:py-24">
-        <div>
-          {label}
-          <h1 class="font-headline font-bold text-display-hero-mobile md:text-display-hero text-on-surface">Home of the <span class="text-primary-container">0% Pawn</span></h1>
-          <p class="mt-6 text-body-lg text-on-surface-variant max-w-xl">Ramsey's trusted firearms dealer and pawn shop since 2010. Hundreds of guns, rifles, and shotguns in stock &mdash; plus fair, honest pawn loans at zero percent interest.</p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="guns-rifles.html" class="inline-flex items-center gap-2 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Browse Inventory <span class="material-symbols-outlined text-base">arrow_outward</span></a>
-            <a href="pawn-loans.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider hover:border-primary-container hover:text-primary-container transition-colors">Get a Pawn Loan</a>
-          </div>
-        </div>
-        <div class="relative crosshair-card border border-outline-variant/40 gold-glow overflow-hidden">
-          {xh}
-          <img src="images/hero-interior.webp" alt="Interior of Twin Cities Pawn & Gun — hundreds of firearms in stock in Ramsey, MN" class="w-full h-[420px] object-cover" fetchpriority="high" />
-          <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <div class="font-mono text-xs text-primary-container uppercase tracking-widest">6650 US-10 &middot; Ramsey, MN</div>
-          </div>
+    <section class="relative min-h-[70vh] flex items-center blueprint-grid overflow-hidden" aria-label="Homepage hero">
+      <img src="images/hero-interior.webp" alt="Interior of Twin Cities Pawn & Gun — hundreds of firearms in stock in Ramsey, MN" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
+      <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
+      <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin py-24 w-full">
+        {label}
+        <h1 class="font-headline font-bold text-display-hero-mobile md:text-display-hero text-on-surface">Home of the <span class="text-primary-container">0% Pawn</span></h1>
+        <p class="mt-6 text-body-lg text-on-surface-variant max-w-2xl">Ramsey's trusted firearms dealer and pawn shop since 2010. Hundreds of guns, rifles, and shotguns in stock &mdash; plus fair, honest pawn loans at zero percent interest.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="guns-rifles.html" class="inline-flex items-center gap-2 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Browse Inventory <span class="material-symbols-outlined text-base">arrow_outward</span></a>
+          <a href="pawn-loans.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider hover:border-primary-container hover:text-primary-container transition-colors">Get a Pawn Loan</a>
         </div>
       </div>
-    </section>""".format(label=label("Firearms &middot; Pawn &middot; Loans"), xh=crosshairs())
+    </section>""".format(label=label("Firearms &middot; Pawn &middot; Loans"))
 
     cat_cards = """
     <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
