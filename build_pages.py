@@ -366,7 +366,9 @@ def page_accessories():
     optics = inv_section("optics", "Glass &amp; Electronics", "Sights, Scopes &amp; Optics",
         "Red dots, rifle scopes, thermal and night vision optics to complete your build.",
         grid([
-            inv_card("scopes-optics-store.webp", "Scopes, ammunition, sights and binoculars at Twin Cities Pawn &amp; Gun", "In Stock", "Scopes, Sights &amp; Binoculars", "New &amp; Used", light=True),
+            inv_card("optics-scope.jpg", "Rifle scope at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Rifle Scopes", "New &amp; Used", light=True),
+            inv_card("optics-sights.jpg", "Red dot and rifle sights at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Sights &amp; Red Dots", "New &amp; Used", light=True),
+            inv_card("optics-scope-kit.jpg", "Scope kit with mounts at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Scope Kits &amp; Mounts", "New &amp; Used", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters &amp; Slings",
@@ -489,7 +491,7 @@ def page_pawn():
                 ("guns-rifles.html", "Shop Firearms", "Browse 300+ guns, rifles and shotguns in stock."),
                 ("faq-gun-pawns.html", "Gun Pawn FAQ", "Answers to common questions about pawning firearms."),
             ]) +
-            hours_location() + footer())
+            footer())
     return head(
         "0% Pawn Loans & FFL Transfers | Twin Cities Pawn & Gun, MN",
         "Home of the 0% Pawn. Get fair pawn loans with zero interest at Twin Cities Pawn & Gun in Ramsey, MN. $50 FFL transfers, plus tools, electronics & jewelry.",
