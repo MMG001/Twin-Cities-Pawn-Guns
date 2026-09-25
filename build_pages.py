@@ -305,9 +305,9 @@ def page_guns():
     collectible = inv_section("collectible", "Curios &amp; Relics", "Collectible Firearms",
         "Vintage, surplus, and collectible firearms for the discerning enthusiast. Ask our staff about current C&amp;R inventory.",
         grid([
-            inv_card("rifles-vintage.webp", "Vintage and antique rifles at Twin Cities Pawn &amp; Gun", "Consignment", "Vintage &amp; Antique Rifles", "Collectible"),
-            inv_card("rifles-wall.webp", "Wall of collectible and surplus rifles", "Consignment", "Surplus &amp; Milsurp Rifles", "Collectible"),
-            inv_card("pawn-showroom.webp", "Twin Cities Pawn &amp; Gun showroom with collectible firearms", "Consignment", "Classic Revolvers &amp; Pistols", "Collectible"),
+            inv_card("collectible-firearms.webp", "Collectible vintage and curio firearms", "Consignment", "Vintage &amp; Collectible Guns", "Collectible"),
+            inv_card("collectible-firearms-2.webp", "Classic and collectible firearms collection", "Consignment", "Surplus &amp; Milsurp Rifles", "Collectible"),
+            inv_card("collectible-firearms-3.webp", "Fine collectible and antique firearms", "Consignment", "Classic Revolvers &amp; Pistols", "Collectible"),
         ]))
 
     nfa = """
