@@ -97,7 +97,7 @@ def page_index():
           <a href="guns-rifles.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
             <img src="images/cat-guns-rifles.webp" alt="Guns and rifles for sale at Twin Cities Pawn &amp; Gun in Ramsey, MN" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers, collectibles &amp; NFA items.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; NFA items.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="accessories.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
@@ -250,7 +250,7 @@ def page_about():
 def page_guns():
     chips = filter_bar([
         ("handguns", "Handguns"), ("revolvers", "Revolvers"), ("rifles", "Rifles"),
-        ("shotguns", "Shotguns"), ("archery", "Archery"), ("collectible", "Collectible"), ("nfa", "NFA"),
+        ("shotguns", "Shotguns"), ("archery", "Archery"), ("nfa", "NFA"),
     ])
 
     handguns = inv_section("handguns", "Pistols &amp; Semi-Autos", "Handguns &amp; Pistols",
@@ -302,13 +302,7 @@ def page_guns():
       </div>
     </section>""".format(label=label("Bows &amp; Gear"), xh=crosshairs())
 
-    collectible = inv_section("collectible", "Curios &amp; Relics", "Collectible Firearms",
-        "Vintage, surplus, and collectible firearms for the discerning enthusiast. Ask our staff about current C&amp;R inventory.",
-        grid([
-            inv_card("collectible-firearms.webp", "Collectible vintage and curio firearms", "Consignment", "Vintage &amp; Collectible Guns", "Collectible"),
-            inv_card("collectible-firearms-2.webp", "Classic and collectible firearms collection", "Consignment", "Surplus &amp; Milsurp Rifles", "Collectible"),
-            inv_card("collectible-firearms-3.webp", "Fine collectible and antique firearms", "Consignment", "Classic Revolvers &amp; Pistols", "Collectible"),
-        ]))
+
 
     nfa = """
     <section id="nfa" data-section="nfa" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -327,7 +321,7 @@ def page_guns():
 
     body = (nav() + ticker() +
             page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
-            chips + handguns + revolvers + rifles + shotguns + archery + collectible + nfa +
+            chips + handguns + revolvers + rifles + shotguns + archery + nfa +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html") +
             related_links([
                 ("accessories.html", "Ammo &amp; Accessories", "Ammunition, optics, holsters, magazines and gun safes."),
@@ -336,7 +330,7 @@ def page_guns():
             ]) + footer())
     return head(
         "Guns & Rifles for Sale | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
-        "Shop handguns, rifles, shotguns, revolvers, collectible & NFA firearms at Twin Cities Pawn & Gun in Ramsey, MN. Licensed FFL dealer with 300+ guns in stock.",
+        "Shop handguns, rifles, shotguns, revolvers & NFA firearms at Twin Cities Pawn & Gun in Ramsey, MN. Licensed FFL dealer with 300+ guns in stock.",
         "guns-rifles.html",
         "guns for sale Ramsey MN, rifles for sale Minnesota, handguns Ramsey, shotguns, buy firearms, FFL dealer, NFA items, suppressors Minnesota",
         ) + body
@@ -684,7 +678,7 @@ def page_sitemap():
         ("guns-rifles.html", "Guns &amp; Rifles"), ("guns-rifles.html#handguns", "&rsaquo; Handguns &amp; Pistols"),
         ("guns-rifles.html#revolvers", "&rsaquo; Revolvers"), ("guns-rifles.html#rifles", "&rsaquo; Rifles"),
         ("guns-rifles.html#shotguns", "&rsaquo; Shotguns"), ("guns-rifles.html#archery", "&rsaquo; Archery"),
-        ("guns-rifles.html#collectible", "&rsaquo; Collectible Firearms"), ("guns-rifles.html#nfa", "&rsaquo; NFA Items"),
+        ("guns-rifles.html#nfa", "&rsaquo; NFA Items"),
         ("accessories.html", "Accessories &amp; Ammo"), ("accessories.html#ammo", "&rsaquo; Ammunition"),
         ("accessories.html#optics", "&rsaquo; Optics"), ("accessories.html#holsters", "&rsaquo; Holsters"),
         ("accessories.html#magazines", "&rsaquo; Magazines &amp; Safes"),
