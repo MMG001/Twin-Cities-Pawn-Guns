@@ -326,7 +326,7 @@ def page_guns():
     </section>""".format(label=label("Class III"), xh=crosshairs())
 
     body = (nav() + ticker() +
-            page_hero("rifle-wall.webp", "Wall of rifles at Twin Cities Pawn & Gun", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
+            page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
             chips + handguns + revolvers + rifles + shotguns + archery + collectible + nfa +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html") +
             related_links([
@@ -374,7 +374,7 @@ def page_accessories():
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     body = (nav() + ticker() +
-            page_hero("firearms-handguns-rifles.webp", "Firearms accessories display", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
+            page_hero("accessories-hero.webp", "Leupold rifle scope mounted on precision firearm", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
             chips + ammo + optics + holsters + magazines +
             cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html") +
             online_cta() +
@@ -533,7 +533,7 @@ def page_contact():
     </section>""".format(label=label("Get In Touch"), xh=crosshairs(), gmaps=GMAPS)
 
     body = (nav() + ticker() +
-            page_hero("storefront.webp", "Twin Cities Pawn & Gun storefront", "Contact", "Contact Us", "Stop by, call, or send us a message. We're here to help with firearms, pawn loans, and FFL transfers.") +
+            page_hero("contact-hero.webp", "Handguns with yellow price tags on display counter", "Contact", "Contact Us", "Stop by, call, or send us a message. We're here to help with firearms, pawn loans, and FFL transfers.") +
             form + online_cta() + footer())
     return head(
         "Contact Us | Twin Cities Pawn & Gun \u2014 Ramsey, MN | (763) 427-4100",
@@ -547,6 +547,20 @@ def page_contact():
 def legal_page(canon, title, meta_desc, keywords, label_text, h1, sub, content_html):
     body = (nav() + ticker() +
             text_hero(label_text, h1, sub) +
+            """
+    <section class="max-w-[880px] mx-auto px-6 lg:px-margin py-16">
+      <div class="prose-legal space-y-6 text-on-surface-variant">
+        {content}
+      </div>
+    </section>""".format(content=content_html) +
+            footer())
+    return head(title, meta_desc, canon, keywords) + body
+
+
+def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html):
+    """Info page with image hero (for guides with photos)"""
+    body = (nav() + ticker() +
+            page_hero(hero_img, hero_alt, label_text, h1, sub) +
             """
     <section class="max-w-[880px] mx-auto px-6 lg:px-margin py-16">
       <div class="prose-legal space-y-6 text-on-surface-variant">
@@ -885,9 +899,10 @@ def page_rules_for_pawning():
         p("Twin Cities Pawn &amp; Gun is a fully licensed FFL dealer, so every firearm transaction &mdash; including pawns and redemptions &mdash; is handled by the book with the proper paperwork and background checks. This protects both you and the shop."),
         p('<span class="text-outline text-sm">This page is provided for general informational purposes and reflects our understanding of applicable rules; it is not legal advice. Laws change &mdash; contact us or a qualified attorney for guidance on your situation.</span>'),
     ])
-    return legal_page("rules-for-pawning.html", "Rules for Pawning a Gun in Minnesota | Twin Cities Pawn & Gun",
+    return info_page("rules-for-pawning.html", "Rules for Pawning a Gun in Minnesota | Twin Cities Pawn & Gun",
         "A plain-English guide to pawning a firearm in Minnesota: who qualifies, what ID to bring, how valuation works, hold periods, and reclaiming your gun.",
         "rules for pawning a gun, pawn a firearm Minnesota, gun pawn requirements Ramsey MN, how to pawn a gun, reclaim pawned firearm",
+        "rules-pawning-hero.webp", "Vintage revolver with wood grips on wooden surface", 
         "Guide", "Rules for Pawning a Gun", "What you need to know before pawning a firearm in Minnesota.", c)
 
 
@@ -912,9 +927,10 @@ def page_gun_license_mn():
         p("Do I need a permit to buy a rifle? Usually no, for standard long guns. Does a Permit to Carry let me buy handguns? Yes. How long does a Permit to Purchase last? One year. Where do I apply? Your local sheriff or police department."),
         p('<span class="text-outline text-sm">This overview is for general information only and is not legal advice. Permit rules and timelines can change &mdash; confirm current requirements with your local sheriff\'s office or the Minnesota Bureau of Criminal Apprehension.</span>'),
     ])
-    return legal_page("gun-license-mn.html", "Minnesota Gun License & Permit | Twin Cities Pawn & Gun",
+    return info_page("gun-license-mn.html", "Minnesota Gun License & Permit | Twin Cities Pawn & Gun",
         "Understand Minnesota gun licensing: Permit to Purchase, Permit to Carry, background checks, how to apply, and the role of your FFL dealer.",
         "Minnesota gun license, permit to purchase MN, permit to carry Minnesota, MN firearms permit, how to apply gun permit Minnesota",
+        "gun-license-mn-hero.webp", "Handgun with scattered ammunition on dark blue surface",
         "Guide", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally in Minnesota.", c)
 
 
@@ -1043,7 +1059,7 @@ def page_gun_law_checklist():
     )
     
     body = (nav() + ticker() +
-            text_hero("2026 Checklist", "Gun Law Checklist", "How Minnesota ranks on gun safety laws, background checks, concealed carry, and more.") +
+            page_hero("gun-law-checklist-hero.webp", "Classic hunting shotguns displayed in wooden rack", "2026 Checklist", "Gun Law Checklist", "How Minnesota ranks on gun safety laws, background checks, concealed carry, and more.") +
             intro + content +
             cta_band("Questions About Minnesota Gun Laws?", "Our knowledgeable team can help you navigate firearms regulations in Minnesota. Give us a call or stop in.", "Contact Us", "contact.html") +
             footer())
