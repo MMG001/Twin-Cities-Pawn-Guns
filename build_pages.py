@@ -440,28 +440,49 @@ def page_pawn():
     </section>
     </div>""".format(xh=crosshairs())
 
-    tools = inv_section("tools", "Buy &amp; Pawn", "Power Tools",
-        "We buy, sell, and loan on quality power tools &mdash; drills, saws, and more from trusted brands.",
-        grid([
-            inv_card("tools-power-tools.webp", "Power tools available at pawn shop", "In Stock", "Power Tools", "Used", light=True),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
-
-    electronics = inv_section("electronics", "Buy &amp; Pawn", "Electronics",
-        "Laptops, game consoles, audio gear and more. Selection rotates constantly &mdash; stop in to see what's available.",
-        grid([
-            inv_card("tools-electronics.webp", "Electronics for sale at pawn shop", "In Stock", "Electronics", "Used", light=True),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
-
-    jewelry = inv_section("jewelry", "Buy &amp; Pawn", "Jewelry &amp; Gold",
-        "Gold, diamonds, and fine jewelry. We offer fair valuations for buying, selling, and pawn loans.",
-        grid([
-            inv_card("https://parkerpawn.com/wp-content/uploads/2023/04/gold-jewelry-diamond-shop-with-rings-necklaces-luxury-retail-store-window-display-showcase-1024x768.jpg", "Gold and diamond jewelry display", "In Stock", "Fine Jewelry", "New &amp; Used", cdn=True, light=True),
-            inv_card("https://www.pauldingpawnshop.com/wp-content/uploads/2022/05/gold-jewelry-rings-2022-02-28-20-56-06-utc-scaled.jpg", "Gold rings", "In Stock", "Gold &amp; Rings", "New &amp; Used", cdn=True, light=True),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
+    photo_grid = """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-12">
+      <h2 class="font-headline font-bold text-headline-md text-on-surface mb-2">What We Buy &amp; Sell</h2>
+      <p class="text-on-surface-variant text-sm mb-8">Rotating inventory &mdash; stop in or call to check current stock.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-tools.jpg" alt="Power tools at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Power Tools</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-tvs.jpg" alt="TVs and electronics at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">TVs &amp; Electronics</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-speakers.jpg" alt="Speakers and audio at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Audio &amp; Speakers</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-instruments.jpg" alt="Musical instruments at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Instruments</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-jewelry.jpg" alt="Jewelry and watches at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Jewelry &amp; Watches</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-jewelry-01.jpg" alt="Gold and diamond jewelry at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Gold &amp; Diamonds</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-knives.jpg" alt="Knives and collectibles at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Knives &amp; Collectibles</span></div>
+        </div>
+        <div class="relative overflow-hidden group">
+          <img src="images/pawn-bikes.jpg" alt="Bikes and sporting goods at Twin Cities Pawn &amp; Gun" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Bikes &amp; Sporting Goods</span></div>
+        </div>
+      </div>
+    </section>"""
 
     body = (nav() + ticker() +
-            page_hero("tools-power-tools.webp", "Pawn shop merchandise at Twin Cities Pawn & Gun", "Pawn &amp; Loans", "Pawn &amp; Loans", "Home of the 0% Pawn. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
-            featured + ffl + tools + electronics + jewelry +
+            page_hero("pawn-tools.jpg", "Pawn shop merchandise at Twin Cities Pawn & Gun", "Pawn &amp; Loans", "Pawn &amp; Loans", "Home of the 0% Pawn. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
+            featured + ffl + photo_grid +
             cta_band("Have Something to Pawn or Sell?", "Bring it in for a free, no-obligation valuation. We loan on and buy firearms, tools, electronics, jewelry, and more.", "Get a Quote", "contact.html") +
             related_links([
                 ("rules-for-pawning.html", "Rules for Pawning a Gun", "Minnesota pawn laws, ID requirements and hold periods."),
