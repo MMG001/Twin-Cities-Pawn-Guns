@@ -272,7 +272,7 @@ def page_about():
 def page_guns():
     chips = filter_bar([
         ("handguns", "Handguns"), ("revolvers", "Revolvers"), ("rifles", "Rifles"),
-        ("shotguns", "Shotguns"), ("archery", "Archery"), ("nfa", "NFA"),
+        ("shotguns", "Shotguns"), ("archery", "Archery"),
     ])
 
     handguns = inv_section("handguns", "Pistols &amp; Semi-Autos", "Handguns &amp; Pistols",
@@ -331,24 +331,11 @@ def page_guns():
 
 
 
-    nfa = """
-    <section id="nfa" data-section="nfa" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
-      <div class="mb-8">{label}<h2 class="font-headline font-bold text-headline-lg text-on-surface">NFA Items</h2>
-        <p class="mt-2 text-on-surface-variant max-w-2xl">Suppressors, SBRs, and other NFA-regulated items. All NFA transactions require ATF approval and applicable tax stamps &mdash; our staff will walk you through the process.</p></div>
-      <div class="crosshair-card relative border border-outline-variant/40 bg-surface-container-low p-8 md:p-10 gold-glow">
-        {xh}
-        <div class="grid md:grid-cols-3 gap-6">
-          <div><span class="material-symbols-outlined text-primary-container text-3xl">graphic_eq</span><h3 class="font-headline font-bold text-headline-sm mt-3 text-on-surface">Suppressors</h3><p class="text-sm text-on-surface-variant mt-2">A growing selection of suppressors for rifle and pistol calibers.</p></div>
-          <div><span class="material-symbols-outlined text-primary-container text-3xl">straighten</span><h3 class="font-headline font-bold text-headline-sm mt-3 text-on-surface">SBRs &amp; SBS</h3><p class="text-sm text-on-surface-variant mt-2">Short-barreled rifles and shotguns available with proper paperwork.</p></div>
-          <div><span class="material-symbols-outlined text-primary-container text-3xl">description</span><h3 class="font-headline font-bold text-headline-sm mt-3 text-on-surface">Tax Stamp Help</h3><p class="text-sm text-on-surface-variant mt-2">We guide you through Form 4, trusts, and the ATF approval process.</p></div>
-        </div>
-        <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-6 py-3 font-bold tracking-wider gold-hover">Ask About NFA <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
-      </div>
-    </section>""".format(label=label("Class III"), xh=crosshairs())
+
 
     body = (nav() + ticker() +
             page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
-            chips + handguns + revolvers + rifles + shotguns + archery + nfa +
+            chips + handguns + revolvers + rifles + shotguns + archery +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html") +
             related_links([
                 ("accessories.html", "Ammo &amp; Accessories", "Ammunition, optics, holsters, magazines and gun safes."),
@@ -357,9 +344,9 @@ def page_guns():
             ]) + footer())
     return head(
         "Guns & Rifles for Sale | Twin Cities Pawn & Gun \u2014 Ramsey, MN",
-        "Shop handguns, rifles, shotguns, revolvers & NFA firearms at Twin Cities Pawn & Gun in Ramsey, MN. Licensed FFL dealer with 300+ guns in stock.",
+        "Shop handguns, rifles, shotguns, and revolvers at Twin Cities Pawn & Gun in Ramsey, MN. Licensed FFL dealer with hundreds of guns in stock.",
         "guns-rifles.html",
-        "guns for sale Ramsey MN, rifles for sale Minnesota, handguns Ramsey, shotguns, buy firearms, FFL dealer, NFA items, suppressors Minnesota",
+        "guns for sale Ramsey MN, rifles for sale Minnesota, handguns Ramsey, shotguns, buy firearms, FFL dealer, revolvers Minnesota",
         ) + body
 
 
@@ -707,7 +694,6 @@ def page_sitemap():
         ("guns-rifles.html", "Guns &amp; Rifles"), ("guns-rifles.html#handguns", "&rsaquo; Handguns &amp; Pistols"),
         ("guns-rifles.html#revolvers", "&rsaquo; Revolvers"), ("guns-rifles.html#rifles", "&rsaquo; Rifles"),
         ("guns-rifles.html#shotguns", "&rsaquo; Shotguns"), ("guns-rifles.html#archery", "&rsaquo; Archery"),
-        ("guns-rifles.html#nfa", "&rsaquo; NFA Items"),
         ("accessories.html", "Accessories &amp; Ammo"), ("accessories.html#ammo", "&rsaquo; Ammunition"),
         ("accessories.html#optics", "&rsaquo; Optics"), ("accessories.html#holsters", "&rsaquo; Holsters"),
         ("accessories.html#magazines", "&rsaquo; Magazines &amp; Safes"),

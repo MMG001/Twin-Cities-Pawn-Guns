@@ -204,7 +204,7 @@ SERVICES = {
         "url": u("guns-rifles.html"),
         "category": {"@type": "Thing", "name": "Firearms", "sameAs": "https://en.wikipedia.org/wiki/Firearm"},
         "desc_full": ("Twin Cities Pawn & Gun carries 300+ handguns, pistols, revolvers, rifles, "
-                      "shotguns, semi-automatic firearms, collectible guns, and NFA items in Ramsey, MN. "
+                      "shotguns, semi-automatic firearms, and collectible guns in Ramsey, MN. "
                       "Licensed FFL dealer serving the Twin Cities metro within a 30-mile radius."),
         "desc_card": ("300+ handguns, rifles, shotguns, and collectible firearms in stock. "
                       "Licensed FFL dealer in Ramsey, MN."),

@@ -155,7 +155,7 @@ def nav():
                 <a href="guns-rifles.html#rifles" class="mega-item">Semi-Automatic</a>
                 <a href="guns-rifles.html#rifles" class="mega-item">Hunting &amp; Tactical Rifles</a>
                 <a href="guns-rifles.html#shotguns" class="mega-item">Shotguns</a>
-                <a href="guns-rifles.html#nfa" class="mega-item">NFA Items</a>
+
                 <a href="guns-rifles.html#archery" class="mega-item">Archery</a>
               </div>
               <div class="mega-col" role="group">
@@ -519,7 +519,7 @@ def keyword_entity_table():
         ("Firearms",
          'Handguns, <a href="guns-rifles.html#handguns">pistols</a>, revolvers, semi-automatic pistols, '
          '<a href="guns-rifles.html">rifles</a>, bolt-action rifles, AR-15 platform rifles, '
-         '<a href="guns-rifles.html#shotguns">shotguns</a>, collectible &amp; used guns, NFA items, suppressors, SBRs',
+         '<a href="guns-rifles.html#shotguns">shotguns</a>, collectible &amp; used guns',
          "guns-rifles.html"),
         ("Firearm Brands",
          'Glock, Smith &amp; Wesson, SIG Sauer, Ruger, Colt, Kimber, Taurus, Springfield Armory, '
