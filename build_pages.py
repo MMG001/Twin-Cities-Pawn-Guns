@@ -10,16 +10,38 @@ def grid(cards, cols="sm:grid-cols-2 lg:grid-cols-3"):
     return '<div class="grid grid-cols-1 %s gap-6">%s\n        </div>' % (cols, "".join(cards))
 
 
-def inv_section(sec_id, label_text, h2, sub, cards_html):
-    return """
+def inv_section(sec_id, label_text, h2, sub, cards_html, bg="dark"):
+    if bg == "white":
+        outer = '<div style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">'
+        outer_end = '</div>'
+        h2_extra = ' style="color:#111827"'
+        sub_extra = ' style="color:#4b5563"'
+        h2_cls = 'font-headline font-bold text-headline-lg'
+        sub_cls = 'mt-2 max-w-2xl'
+    elif bg == "gray":
+        outer = '<div style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">'
+        outer_end = '</div>'
+        h2_extra = ' style="color:#111827"'
+        sub_extra = ' style="color:#4b5563"'
+        h2_cls = 'font-headline font-bold text-headline-lg'
+        sub_cls = 'mt-2 max-w-2xl'
+    else:
+        outer = ''
+        outer_end = ''
+        h2_extra = ''
+        sub_extra = ''
+        h2_cls = 'font-headline font-bold text-headline-lg text-on-surface'
+        sub_cls = 'mt-2 text-on-surface-variant max-w-2xl'
+    return """{outer}
     <section id="{sid}" data-section="{sid}" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
       <div class="mb-8">
         {label}
-        <h2 class="font-headline font-bold text-headline-lg text-on-surface">{h2}</h2>
-        <p class="mt-2 text-on-surface-variant max-w-2xl">{sub}</p>
+        <h2 class="{h2_cls}"{h2_extra}>{h2}</h2>
+        <p class="{sub_cls}"{sub_extra}>{sub}</p>
       </div>
       {cards}
-    </section>""".format(sid=sec_id, label=label(label_text), h2=h2, sub=sub, cards=cards_html)
+    </section>{outer_end}""".format(outer=outer, outer_end=outer_end, sid=sec_id, label=label(label_text),
+        h2=h2, sub=sub, cards=cards_html, h2_cls=h2_cls, sub_cls=sub_cls, h2_extra=h2_extra, sub_extra=sub_extra)
 
 
 def filter_bar(chips):
@@ -264,25 +286,25 @@ def page_guns():
     revolvers = inv_section("revolvers", "Wheelguns", "Revolvers",
         "Classic and modern revolvers from Smith &amp; Wesson, Ruger, Colt, Taurus and more.",
         grid([
-            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Pawn &amp; Gun, Ramsey MN", "In Stock", "Double-Action Revolvers", "New &amp; Used"),
-            inv_card("revolver-01.webp", "Multiple revolvers on display including single-action and double-action wheelguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used"),
-            inv_card("revolver-single.webp", "Smith &amp; Wesson stainless steel revolver with wood grips", "In Stock", "Magnum Revolvers", "New &amp; Used"),
-        ]))
+            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Pawn &amp; Gun, Ramsey MN", "In Stock", "Double-Action Revolvers", "New &amp; Used", light=True),
+            inv_card("revolver-01.webp", "Multiple revolvers on display including single-action and double-action wheelguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used", light=True),
+            inv_card("revolver-single.webp", "Smith &amp; Wesson stainless steel revolver with wood grips", "In Stock", "Magnum Revolvers", "New &amp; Used", light=True),
+        ]), bg="white")
 
     rifles = inv_section("rifles", "Hunting &amp; Tactical", "Hunting &amp; Tactical Rifles",
         "AR-platform rifles, bolt-action hunting rifles, and everything in between from Ruger, Daniel Defense, Remington and more.",
         grid([
-            inv_card("ar-rifles-store.webp", "AR semi-automatic rifles at Twin Cities Pawn &amp; Gun", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used"),
-            inv_card("hunting-rifles-store.webp", "Bolt-action hunting rifles wall display", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used"),
-            inv_card("rifles-wall.webp", "Rifle wall display at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Modern Sporting Rifles", "New &amp; Used"),
-        ]))
+            inv_card("ar-rifles-store.webp", "AR semi-automatic rifles at Twin Cities Pawn &amp; Gun", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True),
+            inv_card("hunting-rifles-store.webp", "Bolt-action hunting rifles wall display", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used", light=True),
+            inv_card("rifles-wall.webp", "Rifle wall display at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Modern Sporting Rifles", "New &amp; Used", light=True),
+        ]), bg="gray")
 
     shotguns = inv_section("shotguns", "Field &amp; Home Defense", "Shotguns",
         "Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.",
         grid([
-            inv_card("shotguns-store.webp", "Shotgun display rack at Twin Cities Pawn &amp; Gun", "In Stock", "Pump-Action Shotguns", "New &amp; Used"),
-            inv_card("shotguns-02.webp", "Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition", "In Stock", "We Carry a Variety of Shotguns", "New &amp; Used"),
-        ]))
+            inv_card("shotguns-store.webp", "Shotgun display rack at Twin Cities Pawn &amp; Gun", "In Stock", "Pump-Action Shotguns", "New &amp; Used", light=True),
+            inv_card("shotguns-02.webp", "Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition", "In Stock", "We Carry a Variety of Shotguns", "New &amp; Used", light=True),
+        ]), bg="white")
 
     archery = """
     <section id="archery" data-section="archery" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -356,22 +378,22 @@ def page_accessories():
     optics = inv_section("optics", "Glass &amp; Electronics", "Sights, Scopes &amp; Optics",
         "Red dots, rifle scopes, thermal and night vision optics to complete your build.",
         grid([
-            inv_card("scopes-optics-store.webp", "Scopes, ammunition, sights and binoculars at Twin Cities Pawn &amp; Gun", "In Stock", "Scopes, Sights &amp; Binoculars", "New &amp; Used"),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"))
+            inv_card("scopes-optics-store.webp", "Scopes, ammunition, sights and binoculars at Twin Cities Pawn &amp; Gun", "In Stock", "Scopes, Sights &amp; Binoculars", "New &amp; Used", light=True),
+        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters, Slings &amp; Cases",
         "Concealed carry holsters, rifle slings, and protective cases for transport and storage.",
         grid([
-            inv_card("holsters-store.webp", "Concealed carry holster for pistols", "In Stock", "Holsters &amp; Slings", "New"),
-            inv_card("accessories-store.webp", "Firearm accessories, cleaning kits and carry cases", "In Stock", "Cases &amp; Cleaning Kits", "New &amp; Used"),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"))
+            inv_card("holsters-store.webp", "Concealed carry holster for pistols", "In Stock", "Holsters &amp; Slings", "New", light=True),
+            inv_card("accessories-store.webp", "Firearm accessories, cleaning kits and carry cases", "In Stock", "Cases &amp; Cleaning Kits", "New &amp; Used", light=True),
+        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
     magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines &amp; Safes",
         "Factory and aftermarket magazines, plus gun safes and lockboxes to keep your firearms secure.",
         grid([
-            inv_card("magazines-safes-store.webp", "Gun safe magazine storage panels for pistol and rifle", "In Stock", "Pistol &amp; Rifle Magazines", "New &amp; Used"),
-            inv_card("gun-showroom-3.webp", "Firearms display and secure storage at Twin Cities Pawn &amp; Gun", "In Stock", "Safes &amp; Lockboxes", "New &amp; Used"),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"))
+            inv_card("magazines-safes-store.webp", "Gun safe magazine storage panels for pistol and rifle", "In Stock", "Pistol &amp; Rifle Magazines", "New &amp; Used", light=True),
+            inv_card("gun-showroom-3.webp", "Firearms display and secure storage at Twin Cities Pawn &amp; Gun", "In Stock", "Safes &amp; Lockboxes", "New &amp; Used", light=True),
+        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     body = (nav() + ticker() +
             page_hero("accessories-hero.webp", "Leupold rifle scope mounted on precision firearm", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
@@ -416,36 +438,38 @@ def page_pawn():
     </section>""".format(xh=crosshairs(), label=label("Home of the 0% Pawn"))
 
     ffl = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin pb-4">
-      <div class="crosshair-card relative border border-outline-variant/40 bg-surface-container-low p-8 md:p-10 gold-aura-hover grid md:grid-cols-[auto_1fr_auto] gap-6 items-center">
+    <div style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-10">
+      <div class="crosshair-card relative border border-slate-200 bg-white p-8 md:p-10 gold-aura-hover grid md:grid-cols-[auto_1fr_auto] gap-6 items-center">
         {xh}
         <span class="material-symbols-outlined text-primary-container text-5xl">swap_horiz</span>
         <div>
-          <h3 class="font-headline font-bold text-headline-sm text-on-surface">$50 FFL Transfers</h3>
-          <p class="text-sm text-on-surface-variant mt-2 max-w-2xl">Bought a firearm online? We handle incoming FFL transfers for a flat <span class="font-mono text-primary-container">$50</span> fee. Have it shipped to us and we'll take care of the paperwork and background check.</p>
+          <h3 class="font-headline font-bold text-headline-sm" style="color:#131316;">$50 FFL Transfers</h3>
+          <p class="text-sm mt-2 max-w-2xl" style="color:#4b5563;">Bought a firearm online? We handle incoming FFL transfers for a flat <span class="font-mono text-primary-container">$50</span> fee. Have it shipped to us and we'll take care of the paperwork and background check.</p>
         </div>
-        <a href="contact.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface font-headline text-xs uppercase px-6 py-3 font-bold tracking-wider hover:border-primary-container hover:text-primary-container transition-colors whitespace-nowrap">Start a Transfer <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+        <a href="contact.html" class="inline-flex items-center gap-2 border border-slate-300 font-headline text-xs uppercase px-6 py-3 font-bold tracking-wider hover:border-primary-container hover:text-primary-container transition-colors whitespace-nowrap" style="color:#131316;">Start a Transfer <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
       </div>
-    </section>""".format(xh=crosshairs())
+    </section>
+    </div>""".format(xh=crosshairs())
 
     tools = inv_section("tools", "Buy &amp; Pawn", "Power Tools",
         "We buy, sell, and loan on quality power tools &mdash; drills, saws, and more from trusted brands.",
         grid([
-            inv_card("tools-power-tools.webp", "Power tools available at pawn shop", "In Stock", "Power Tools", "Used"),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"))
+            inv_card("tools-power-tools.webp", "Power tools available at pawn shop", "In Stock", "Power Tools", "Used", light=True),
+        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
     electronics = inv_section("electronics", "Buy &amp; Pawn", "Electronics",
         "Laptops, game consoles, audio gear and more. Selection rotates constantly &mdash; stop in to see what's available.",
         grid([
-            inv_card("tools-electronics.webp", "Electronics for sale at pawn shop", "In Stock", "Electronics", "Used"),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"))
+            inv_card("tools-electronics.webp", "Electronics for sale at pawn shop", "In Stock", "Electronics", "Used", light=True),
+        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     jewelry = inv_section("jewelry", "Buy &amp; Pawn", "Jewelry &amp; Gold",
         "Gold, diamonds, and fine jewelry. We offer fair valuations for buying, selling, and pawn loans.",
         grid([
-            inv_card("https://parkerpawn.com/wp-content/uploads/2023/04/gold-jewelry-diamond-shop-with-rings-necklaces-luxury-retail-store-window-display-showcase-1024x768.jpg", "Gold and diamond jewelry display", "In Stock", "Fine Jewelry", "New &amp; Used", cdn=True),
-            inv_card("https://www.pauldingpawnshop.com/wp-content/uploads/2022/05/gold-jewelry-rings-2022-02-28-20-56-06-utc-scaled.jpg", "Gold rings", "In Stock", "Gold &amp; Rings", "New &amp; Used", cdn=True),
-        ], cols="sm:grid-cols-2 lg:grid-cols-3"))
+            inv_card("https://parkerpawn.com/wp-content/uploads/2023/04/gold-jewelry-diamond-shop-with-rings-necklaces-luxury-retail-store-window-display-showcase-1024x768.jpg", "Gold and diamond jewelry display", "In Stock", "Fine Jewelry", "New &amp; Used", cdn=True, light=True),
+            inv_card("https://www.pauldingpawnshop.com/wp-content/uploads/2022/05/gold-jewelry-rings-2022-02-28-20-56-06-utc-scaled.jpg", "Gold rings", "In Stock", "Gold &amp; Rings", "New &amp; Used", cdn=True, light=True),
+        ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
     body = (nav() + ticker() +
             page_hero("tools-power-tools.webp", "Pawn shop merchandise at Twin Cities Pawn & Gun", "Pawn &amp; Loans", "Pawn &amp; Loans", "Home of the 0% Pawn. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
