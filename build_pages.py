@@ -281,7 +281,7 @@ def page_guns():
         "Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.",
         grid([
             inv_card("shotguns-store.webp", "Shotgun display rack at Twin Cities Pawn &amp; Gun", "In Stock", "Pump-Action Shotguns", "New &amp; Used"),
-            inv_card("gun-showroom-2.webp", "Shotgun and rifle showroom at Twin Cities Pawn &amp; Gun", "In Stock", "Semi-Auto &amp; Home Defense", "New &amp; Used"),
+            inv_card("shotguns-02.webp", "Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition", "In Stock", "Semi-Auto &amp; Home Defense", "New &amp; Used"),
         ]))
 
     archery = """
