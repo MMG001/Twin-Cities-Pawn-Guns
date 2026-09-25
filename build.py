@@ -433,7 +433,7 @@ def page_hero(img, alt, label_text, h1, sub=""):
     return """
     <section class="relative min-h-[46vh] flex items-end blueprint-grid" aria-label="Page header">
       <img src="images/{img}" alt="{alt}" class="absolute inset-0 w-full h-full object-cover" />
-      <div class="absolute inset-0" style="background:rgba(0,0,0,0.20)"></div>
+      <div class="absolute inset-0" style="background:rgba(0,0,0,0.40)"></div>
       <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin pb-12 pt-20 w-full">
         {label}
         <h1 class="font-headline font-bold text-headline-xl-mobile md:text-headline-xl text-on-surface">{h1}</h1>
