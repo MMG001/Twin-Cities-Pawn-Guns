@@ -256,33 +256,33 @@ def page_guns():
     handguns = inv_section("handguns", "Pistols &amp; Semi-Autos", "Handguns &amp; Pistols",
         "From everyday carry to full-size duty pistols &mdash; Glock, Sig Sauer, Smith &amp; Wesson, Springfield and more.",
         grid([
-            inv_card("firearms-handguns-rifles.webp", "Handguns and pistols in glass display case", "In Stock", "Semi-Auto Pistols", "New &amp; Used"),
-            inv_card("1911-pistols.webp", "1911 pistols on display", "In Stock", "1911 Pistols", "New &amp; Used"),
-            inv_card("handgun-case-display.webp", "Handgun case display", "In Stock", "Concealed Carry Pistols", "New &amp; Used"),
-            inv_card("pistol-glass-case.webp", "Pistols in glass case", "In Stock", "Duty &amp; Range Pistols", "New &amp; Used"),
+            inv_card("semi-auto-pistols.webp", "Semi-automatic pistols in glass display case at Twin Cities Pawn &amp; Gun", "In Stock", "Semi-Auto Pistols", "New &amp; Used"),
+            inv_card("1911-pistols-store.webp", "1911 semi-automatic pistols on display at Twin Cities Pawn &amp; Gun", "In Stock", "1911 Pistols", "New &amp; Used"),
+            inv_card("semi-auto-pistols-2.webp", "Compact and concealed carry pistols in display case", "In Stock", "Concealed Carry Pistols", "New &amp; Used"),
+            inv_card("gun-showroom-3.webp", "Handgun display cases and showroom at Twin Cities Pawn &amp; Gun", "In Stock", "Duty &amp; Range Pistols", "New &amp; Used"),
         ]))
 
     revolvers = inv_section("revolvers", "Wheelguns", "Revolvers",
         "Classic and modern revolvers from Smith &amp; Wesson, Ruger, Colt, Taurus and more.",
         grid([
-            inv_card("revolver-showcase.webp", "Revolver showcase display case", "In Stock", "Double-Action Revolvers", "New &amp; Used"),
-            inv_card("handgun-case-display.webp", "Handgun and revolver display", "In Stock", "Concealed Carry Revolvers", "New &amp; Used"),
-            inv_card("pistol-glass-case.webp", "Revolvers in glass case", "In Stock", "Magnum Revolvers", "New &amp; Used"),
+            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Pawn &amp; Gun, Ramsey MN", "In Stock", "Double-Action Revolvers", "New &amp; Used"),
+            inv_card("gun-showroom.webp", "Gun showroom featuring revolvers and handguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used"),
+            inv_card("guns-rifles-showroom.webp", "Firearms showroom with revolvers and long guns", "In Stock", "Magnum Revolvers", "New &amp; Used"),
         ]))
 
     rifles = inv_section("rifles", "Hunting &amp; Tactical", "Hunting &amp; Tactical Rifles",
         "AR-platform rifles, bolt-action hunting rifles, and everything in between from Ruger, Daniel Defense, Remington and more.",
         grid([
-            inv_card("gun-room-rifles.webp", "Rifle room with hunting and tactical rifles", "In Stock", "AR-Platform Rifles", "New &amp; Used"),
-            inv_card("rifle-wall.webp", "Wall of rifles", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used"),
-            inv_card("glock-wall-rifles.webp", "Rifles and pistols wall display", "In Stock", "Modern Sporting Rifles", "New &amp; Used"),
+            inv_card("ar-rifles-store.webp", "AR semi-automatic rifles at Twin Cities Pawn &amp; Gun", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used"),
+            inv_card("hunting-rifles-store.webp", "Bolt-action hunting rifles wall display", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used"),
+            inv_card("rifles-wall.webp", "Rifle wall display at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Modern Sporting Rifles", "New &amp; Used"),
         ]))
 
     shotguns = inv_section("shotguns", "Field &amp; Home Defense", "Shotguns",
         "Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.",
         grid([
-            inv_card("shotgun-rack.webp", "Rack of shotguns", "In Stock", "Pump-Action Shotguns", "New &amp; Used"),
-            inv_card("glock-shotgun-wall.webp", "Shotgun wall display", "In Stock", "Semi-Auto &amp; Home Defense", "New &amp; Used"),
+            inv_card("shotguns-store.webp", "Shotgun display rack at Twin Cities Pawn &amp; Gun", "In Stock", "Pump-Action Shotguns", "New &amp; Used"),
+            inv_card("gun-showroom-2.webp", "Shotgun and rifle showroom at Twin Cities Pawn &amp; Gun", "In Stock", "Semi-Auto &amp; Home Defense", "New &amp; Used"),
         ]))
 
     archery = """
@@ -292,7 +292,7 @@ def page_guns():
       <div class="grid md:grid-cols-2 gap-6 items-center">
         <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame">
           {xh}
-          <img src="images/archery-compound-bows.webp" alt="Compound bows available at Twin Cities Pawn & Gun" />
+          <img src="images/compound-bows-store.webp" alt="Compound bows for sale at Twin Cities Pawn &amp; Gun Ramsey MN" />
         </div>
         <div>
           <h3 class="font-headline font-bold text-headline-sm text-on-surface">Compound Bows &amp; Gear</h3>
@@ -305,9 +305,9 @@ def page_guns():
     collectible = inv_section("collectible", "Curios &amp; Relics", "Collectible Firearms",
         "Vintage, surplus, and collectible firearms for the discerning enthusiast. Ask our staff about current C&amp;R inventory.",
         grid([
-            inv_card("1911-pistols.webp", "Collectible 1911 pistols", "Consignment", "Vintage Pistols", "Collectible"),
-            inv_card("rifle-wall.webp", "Collectible rifles on wall", "Consignment", "Surplus &amp; Milsurp Rifles", "Collectible"),
-            inv_card("revolver-showcase.webp", "Collectible revolvers", "Consignment", "Classic Revolvers", "Collectible"),
+            inv_card("rifles-vintage.webp", "Vintage and antique rifles at Twin Cities Pawn &amp; Gun", "Consignment", "Vintage &amp; Antique Rifles", "Collectible"),
+            inv_card("rifles-wall.webp", "Wall of collectible and surplus rifles", "Consignment", "Surplus &amp; Milsurp Rifles", "Collectible"),
+            inv_card("pawn-showroom.webp", "Twin Cities Pawn &amp; Gun showroom with collectible firearms", "Consignment", "Classic Revolvers &amp; Pistols", "Collectible"),
         ]))
 
     nfa = """
@@ -351,26 +351,27 @@ def page_accessories():
     ammo = inv_section("ammo", "Rounds &amp; Calibers", "Ammunition &amp; Ammo",
         "Handgun, rifle, and shotgun ammunition in popular calibers. Stock and pricing change frequently &mdash; call for current availability.",
         grid([
-            inv_card("https://www.berrysmfg.com/wp-content/uploads/2026/02/Safari-Trio-scaled.jpg", "Boxes of ammunition", "In Stock", "Handgun &amp; Rifle Ammo", "New", cdn=True),
+            inv_card("accessories-ammo-store.webp", "Ammunition and accessories at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used"),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     optics = inv_section("optics", "Glass &amp; Electronics", "Sights, Scopes &amp; Optics",
         "Red dots, rifle scopes, thermal and night vision optics to complete your build.",
         grid([
-            inv_card("https://infitacusa.com/cdn/shop/articles/IOP13_ImagesDSC05691.jpg?v=1776079529&width=1500", "Thermal optic scope", "In Stock", "Thermal &amp; Night Vision", "New &amp; Used", cdn=True),
+            inv_card("scopes-optics-store.webp", "Scopes, ammunition, sights and binoculars at Twin Cities Pawn &amp; Gun", "In Stock", "Scopes, Sights &amp; Binoculars", "New &amp; Used"),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters, Slings &amp; Cases",
         "Concealed carry holsters, rifle slings, and protective cases for transport and storage.",
         grid([
-            inv_card("https://formsv2.soundestlink.com/images/1400/6a85cba1c5aa8a2a0175784a", "Concealed carry holster", "In Stock", "Holsters &amp; Slings", "New", cdn=True),
+            inv_card("holsters-store.webp", "Concealed carry holster for pistols", "In Stock", "Holsters &amp; Slings", "New"),
+            inv_card("accessories-store.webp", "Firearm accessories, cleaning kits and carry cases", "In Stock", "Cases &amp; Cleaning Kits", "New &amp; Used"),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines &amp; Safes",
         "Factory and aftermarket magazines, plus gun safes and lockboxes to keep your firearms secure.",
         grid([
-            inv_card("firearms-handguns-rifles.webp", "Magazines and firearm accessories", "In Stock", "Pistol &amp; Rifle Magazines", "New &amp; Used"),
-            inv_card("handgun-case-display.webp", "Gun cases and storage", "In Stock", "Safes &amp; Lockboxes", "New &amp; Used"),
+            inv_card("magazines-safes-store.webp", "Gun safe magazine storage panels for pistol and rifle", "In Stock", "Pistol &amp; Rifle Magazines", "New &amp; Used"),
+            inv_card("gun-showroom-3.webp", "Firearms display and secure storage at Twin Cities Pawn &amp; Gun", "In Stock", "Safes &amp; Lockboxes", "New &amp; Used"),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     body = (nav() + ticker() +
