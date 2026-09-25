@@ -953,9 +953,10 @@ def page_unregistered_gun():
         p("Our staff can walk you through the legal path to owning NFA items and make sure every transaction is fully compliant. When in doubt, ask us before you buy, modify, or sell."),
         p('<span class="text-outline text-sm">This information is for educational purposes only and does not constitute legal advice. Firearms laws are complex and change over time &mdash; consult the ATF or a qualified attorney regarding your specific circumstances.</span>'),
     ])
-    return legal_page("unregistered-gun.html", "Unregistered Guns in Minnesota | Twin Cities Pawn & Gun",
+    return info_page("unregistered-gun.html", "Unregistered Guns in Minnesota | Twin Cities Pawn & Gun",
         "What \u201cregistered\u201d really means under federal NFA law, the difference between standard firearms and NFA items, and the consequences of unregistered guns.",
         "unregistered firearms Minnesota, NFA registration, unregistered suppressor, SBR laws, illegal firearm consequences MN, stay legal firearms",
+        "unregistered-gun-hero.webp", "Firearms laid out on a table — unregistered firearms Minnesota guide",
         "Guide", "Unregistered Firearms in Minnesota", "Understanding firearm registration, NFA items, and how to stay on the right side of the law.", c)
 
 
