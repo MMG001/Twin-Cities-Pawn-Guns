@@ -353,13 +353,14 @@ def page_guns():
 # ================= ACCESSORIES =================
 def page_accessories():
     chips = filter_bar([
-        ("ammo", "Ammunition"), ("optics", "Optics"), ("holsters", "Holsters"), ("magazines", "Magazines &amp; Safes"),
+        ("ammo", "Ammunition"), ("optics", "Optics"), ("holsters", "Holsters"), ("magazines", "Magazines"),
     ])
 
     ammo = inv_section("ammo", "Rounds &amp; Calibers", "Ammunition &amp; Ammo",
         "Handgun, rifle, and shotgun ammunition in popular calibers. Stock and pricing change frequently &mdash; call for current availability.",
         grid([
-            inv_card("accessories-ammo-store.webp", "Ammunition and accessories at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used"),
+            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used"),
+            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Pistol Ammo", "New &amp; Used"),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     optics = inv_section("optics", "Glass &amp; Electronics", "Sights, Scopes &amp; Optics",
@@ -368,18 +369,18 @@ def page_accessories():
             inv_card("scopes-optics-store.webp", "Scopes, ammunition, sights and binoculars at Twin Cities Pawn &amp; Gun", "In Stock", "Scopes, Sights &amp; Binoculars", "New &amp; Used", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
-    holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters, Slings &amp; Cases",
-        "Concealed carry holsters, rifle slings, and protective cases for transport and storage.",
+    holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters &amp; Slings",
+        "Concealed carry holsters and rifle slings to keep your firearm secure and accessible.",
         grid([
-            inv_card("holsters-store.webp", "Concealed carry holster for pistols", "In Stock", "Holsters &amp; Slings", "New", light=True),
-            inv_card("accessories-store.webp", "Firearm accessories, cleaning kits and carry cases", "In Stock", "Cases &amp; Cleaning Kits", "New &amp; Used", light=True),
+            inv_card("holsters-owb.jpg", "OWB holsters for pistols at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "OWB Holsters", "New", light=True),
+            inv_card("holsters-iwb.jpg", "IWB concealed carry holsters at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "IWB Holsters", "New", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
-    magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines &amp; Safes",
-        "Factory and aftermarket magazines, plus gun safes and lockboxes to keep your firearms secure.",
+    magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines",
+        "Factory and aftermarket pistol and rifle magazines.",
         grid([
-            inv_card("magazines-safes-store.webp", "Gun safe magazine storage panels for pistol and rifle", "In Stock", "Pistol &amp; Rifle Magazines", "New &amp; Used", light=True),
-
+            inv_card("magazines-pistol.jpg", "Pistol magazines at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Pistol Magazines", "New &amp; Used", light=True),
+            inv_card("magazines-rifle.jpg", "Rifle magazines at Twin Cities Pawn &amp; Gun Ramsey MN", "In Stock", "Rifle Magazines", "New &amp; Used", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     body = (nav() + ticker() +
@@ -696,7 +697,7 @@ def page_sitemap():
         ("guns-rifles.html#shotguns", "&rsaquo; Shotguns"), ("guns-rifles.html#archery", "&rsaquo; Archery"),
         ("accessories.html", "Accessories &amp; Ammo"), ("accessories.html#ammo", "&rsaquo; Ammunition"),
         ("accessories.html#optics", "&rsaquo; Optics"), ("accessories.html#holsters", "&rsaquo; Holsters"),
-        ("accessories.html#magazines", "&rsaquo; Magazines &amp; Safes"),
+        ("accessories.html#magazines", "&rsaquo; Magazines"),
         ("pawn-loans.html", "Pawn &amp; Loans"), ("pawn-loans.html#loans", "&rsaquo; 0% Pawn Loans"),
         ("pawn-loans.html#tools", "&rsaquo; Power Tools"), ("pawn-loans.html#electronics", "&rsaquo; Electronics"),
         ("pawn-loans.html#jewelry", "&rsaquo; Jewelry &amp; Gold"),

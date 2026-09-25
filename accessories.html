@@ -643,7 +643,7 @@ tailwind.config = {
         <button class="filter-chip" data-filter="ammo">Ammunition</button>
         <button class="filter-chip" data-filter="optics">Optics</button>
         <button class="filter-chip" data-filter="holsters">Holsters</button>
-        <button class="filter-chip" data-filter="magazines">Magazines &amp; Safes</button>
+        <button class="filter-chip" data-filter="magazines">Magazines</button>
       </div>
     </div>
     <section id="ammo" data-section="ammo" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -655,10 +655,22 @@ tailwind.config = {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <article class="inv-card group">
           <div class="relative overflow-hidden h-56">
-            <img src="images/accessories-ammo-store.webp" alt="Ammunition and accessories at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
+            <img src="images/bullets-boxes.jpg" alt="Ammunition boxes in stock at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="">Handgun &amp; Rifle Ammo</h3>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+            </div>
+          </div>
+        </article>
+        <article class="inv-card group">
+          <div class="relative overflow-hidden h-56">
+            <img src="images/bullets-handgun.jpg" alt="Handgun ammunition at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-headline font-semibold text-lg" style="">Pistol Ammo</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
@@ -691,16 +703,16 @@ tailwind.config = {
     <section id="holsters" data-section="holsters" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
       <div class="mb-8">
         <div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4"><span class="w-6 h-px bg-primary-container"></span>Carry &amp; Storage</div>
-        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Holsters, Slings &amp; Cases</h2>
-        <p class="mt-2 max-w-2xl" style="color:#4b5563">Concealed carry holsters, rifle slings, and protective cases for transport and storage.</p>
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Holsters &amp; Slings</h2>
+        <p class="mt-2 max-w-2xl" style="color:#4b5563">Concealed carry holsters and rifle slings to keep your firearm secure and accessible.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <article class="inv-card-light group">
           <div class="relative overflow-hidden h-56">
-            <img src="images/holsters-store.webp" alt="Concealed carry holster for pistols" class="w-full h-56 object-cover" loading="lazy" />
+            <img src="images/holsters-owb.jpg" alt="OWB holsters for pistols at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg" style="color:#111827">Holsters &amp; Slings</h3>
+            <h3 class="font-headline font-semibold text-lg" style="color:#111827">OWB Holsters</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
@@ -709,12 +721,12 @@ tailwind.config = {
         </article>
         <article class="inv-card-light group">
           <div class="relative overflow-hidden h-56">
-            <img src="images/accessories-store.webp" alt="Firearm accessories, cleaning kits and carry cases" class="w-full h-56 object-cover" loading="lazy" />
+            <img src="images/holsters-iwb.jpg" alt="IWB concealed carry holsters at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg" style="color:#111827">Cases &amp; Cleaning Kits</h3>
+            <h3 class="font-headline font-semibold text-lg" style="color:#111827">IWB Holsters</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
@@ -724,16 +736,28 @@ tailwind.config = {
     <section id="magazines" data-section="magazines" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
       <div class="mb-8">
         <div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4"><span class="w-6 h-px bg-primary-container"></span>Feed &amp; Secure</div>
-        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Magazines &amp; Safes</h2>
-        <p class="mt-2 max-w-2xl" style="color:#4b5563">Factory and aftermarket magazines, plus gun safes and lockboxes to keep your firearms secure.</p>
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Magazines</h2>
+        <p class="mt-2 max-w-2xl" style="color:#4b5563">Factory and aftermarket pistol and rifle magazines.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <article class="inv-card-light group">
           <div class="relative overflow-hidden h-56">
-            <img src="images/magazines-safes-store.webp" alt="Gun safe magazine storage panels for pistol and rifle" class="w-full h-56 object-cover" loading="lazy" />
+            <img src="images/magazines-pistol.jpg" alt="Pistol magazines at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg" style="color:#111827">Pistol &amp; Rifle Magazines</h3>
+            <h3 class="font-headline font-semibold text-lg" style="color:#111827">Pistol Magazines</h3>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+            </div>
+          </div>
+        </article>
+        <article class="inv-card-light group">
+          <div class="relative overflow-hidden h-56">
+            <img src="images/magazines-rifle.jpg" alt="Rifle magazines at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-56 object-cover" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-headline font-semibold text-lg" style="color:#111827">Rifle Magazines</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
