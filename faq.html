@@ -604,7 +604,15 @@ tailwind.config = {
             </div>
           </div>
         </div>
-        <a href="contact.html" data-nav="contact.html" class="nav-link">Contact</a>
+        <div class="dropdown relative">
+          <button class="nav-link flex items-center gap-1">Contact <span class="material-symbols-outlined text-base leading-none">expand_more</span></button>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:240px">
+            <a href="contact.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">Contact Us</a>
+            <a href="faq.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">FAQ</a>
+            <a href="faq-gun-pawns.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">Gun Pawn FAQ</a>
+            <a href="employment.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container font-headline font-bold">Employment</a>
+          </div>
+        </div>
       </nav>
       <div class="hidden md:flex items-center gap-3">
         <a href="tel:7634274100" class="font-mono text-sm text-primary-container hover:text-primary-fixed">(763) 427-4100</a>

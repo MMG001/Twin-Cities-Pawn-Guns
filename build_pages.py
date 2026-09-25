@@ -379,7 +379,7 @@ def page_accessories():
         "Factory and aftermarket magazines, plus gun safes and lockboxes to keep your firearms secure.",
         grid([
             inv_card("magazines-safes-store.webp", "Gun safe magazine storage panels for pistol and rifle", "In Stock", "Pistol &amp; Rifle Magazines", "New &amp; Used", light=True),
-            inv_card("gun-showroom-3.webp", "Firearms display and secure storage at Twin Cities Pawn &amp; Gun", "In Stock", "Safes &amp; Lockboxes", "New &amp; Used", light=True),
+
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     body = (nav() + ticker() +
