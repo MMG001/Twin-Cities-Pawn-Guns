@@ -414,7 +414,6 @@ def inv_card(img, alt, badge, title, cond, cdn=False, lazy=True, light=False):
         <article class="{card_class} group">
           <div class="relative overflow-hidden h-56">
             <img src="{src}" alt="{alt}" class="w-full h-56 object-cover"{loading} />
-            <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">{badge}</span>
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="{title_style}">{title}</h3>

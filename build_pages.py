@@ -259,7 +259,6 @@ def page_guns():
             inv_card("semi-auto-pistols.webp", "Semi-automatic pistols in glass display case at Twin Cities Pawn &amp; Gun", "In Stock", "Semi-Auto Pistols", "New &amp; Used"),
             inv_card("1911-pistols-store.webp", "1911 semi-automatic pistols on display at Twin Cities Pawn &amp; Gun", "In Stock", "1911 Pistols", "New &amp; Used"),
             inv_card("semi-auto-pistols-2.webp", "Compact and concealed carry pistols in display case", "In Stock", "Concealed Carry Pistols", "New &amp; Used"),
-            inv_card("gun-showroom-3.webp", "Handgun display cases and showroom at Twin Cities Pawn &amp; Gun", "In Stock", "Duty &amp; Range Pistols", "New &amp; Used"),
         ]))
 
     revolvers = inv_section("revolvers", "Wheelguns", "Revolvers",
