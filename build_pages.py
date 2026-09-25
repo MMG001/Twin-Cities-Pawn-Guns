@@ -185,7 +185,7 @@ def page_about():
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-12 items-center">
         <div class="relative crosshair-card gold-glow" style="border:1px solid #e2e8f0">
           {xh}
-          <img src="images/pawn-counter-guitars.webp" alt="Inside Twin Cities Pawn & Gun store" class="w-full h-[420px] object-cover" />
+          <img src="images/storefront-exterior.webp" alt="Twin Cities Pawn &amp; Gun storefront exterior in Ramsey, MN" class="w-full h-[420px] object-cover" />
         </div>
         <div>
           {label}
@@ -236,8 +236,8 @@ def page_about():
     </section>""".format(label=label("The Difference"), grid=grid(reason_cards))
 
     body = (nav() + ticker() +
-            page_hero("gun-room-rifles.webp", "Firearms display at Twin Cities Pawn & Gun", "About Us", "About Twin Cities Pawn &amp; Gun", "Serving Ramsey and the Twin Cities with honest firearms sales and fair pawn loans since 2010.") +
-            story + stats + why + brands_section() + keyword_entity_table() + hours_location() + footer())
+            page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Pawn & Gun", "About Us", "About Twin Cities Pawn &amp; Gun", "Serving Ramsey and the Twin Cities with honest firearms sales and fair pawn loans since 2010.") +
+            story + stats + why + brands_section() + keyword_entity_table() + footer())
     return head(
         "About Us | Twin Cities Pawn & Gun \u2014 Ramsey, MN Since 2010",
         "Learn about Twin Cities Pawn & Gun, Ramsey Minnesota's trusted licensed FFL firearms dealer and pawn shop since 2010. Home of the 0% Pawn.",
