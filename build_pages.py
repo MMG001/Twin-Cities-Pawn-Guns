@@ -266,8 +266,8 @@ def page_guns():
         "Classic and modern revolvers from Smith &amp; Wesson, Ruger, Colt, Taurus and more.",
         grid([
             inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Pawn &amp; Gun, Ramsey MN", "In Stock", "Double-Action Revolvers", "New &amp; Used"),
-            inv_card("gun-showroom.webp", "Gun showroom featuring revolvers and handguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used"),
-            inv_card("guns-rifles-showroom.webp", "Firearms showroom with revolvers and long guns", "In Stock", "Magnum Revolvers", "New &amp; Used"),
+            inv_card("revolver-01.webp", "Multiple revolvers on display including single-action and double-action wheelguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used"),
+            inv_card("revolver-single.webp", "Smith &amp; Wesson stainless steel revolver with wood grips", "In Stock", "Magnum Revolvers", "New &amp; Used"),
         ]))
 
     rifles = inv_section("rifles", "Hunting &amp; Tactical", "Hunting &amp; Tactical Rifles",
