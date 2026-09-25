@@ -119,7 +119,7 @@ def page_index():
           <a href="guns-rifles.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
             <img src="images/cat-guns-rifles.webp" alt="Guns and rifles for sale at Twin Cities Pawn &amp; Gun in Ramsey, MN" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; NFA items.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="accessories.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
@@ -660,7 +660,7 @@ def page_faq():
         ("Where are you located?", "We're at 6650 US-10, Ramsey, MN 55303, conveniently serving the Minneapolis\u2013St. Paul metro area."),
         ("Can I see your inventory online?", "Yes &mdash; browse our listings on Armslist and GunBroker via the links on our site. Note that much of our inventory is in-store only and turns over quickly, so call us to check availability."),
         ("Do you buy items?", "Absolutely. We buy firearms, tools, electronics, jewelry, and more. Bring your item in for a free, no-obligation valuation."),
-        ("Do you handle NFA items like suppressors?", "Yes. We carry suppressors, SBRs, and other NFA items. Our staff will guide you through the ATF Form 4, trust, and tax stamp process."),
+
     ]
     items = []
     for q, a in faqs:

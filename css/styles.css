@@ -83,7 +83,8 @@ body { background-color: #131316; color: #e5e1e6; }
 }
 
 /* hover bridge so menu doesn't close in the gap */
-#inv-dropdown::after {
+#inv-dropdown::after,
+#res-dropdown::after {
   content: '';
   position: absolute;
   top: 100%;
@@ -92,6 +93,7 @@ body { background-color: #131316; color: #e5e1e6; }
   width: 100%;
 }
 #inv-dropdown:hover .mega-menu,
+#res-dropdown:hover .mega-menu,
 .mega-menu:hover { display: block; }
 
 /* -- Column Headers -- */
