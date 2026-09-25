@@ -289,9 +289,15 @@ def page_guns():
       <div class="mb-8">{label}<h2 class="font-headline font-bold text-headline-lg text-on-surface">Archery</h2>
         <p class="mt-2 text-on-surface-variant max-w-2xl">Compound bows and archery gear for hunters and target shooters. Selection varies &mdash; call to check current stock.</p></div>
       <div class="grid md:grid-cols-2 gap-6 items-center">
-        <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame">
-          {xh}
-          <img src="images/compound-bows-store.webp" alt="Compound bows for sale at Twin Cities Pawn &amp; Gun Ramsey MN" />
+        <div class="grid grid-cols-2 gap-4">
+          <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame overflow-hidden">
+            {xh}
+            <img src="images/archery-bows-01.webp" alt="Compound bows wall display at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-full object-cover" />
+          </div>
+          <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame overflow-hidden">
+            {xh}
+            <img src="images/archery-bows-02.webp" alt="Compound bows and arrows at Twin Cities Pawn &amp; Gun Ramsey MN" class="w-full h-full object-cover" />
+          </div>
         </div>
         <div>
           <h3 class="font-headline font-bold text-headline-sm text-on-surface">Compound Bows &amp; Gear</h3>
