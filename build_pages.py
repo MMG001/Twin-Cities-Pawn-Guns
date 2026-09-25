@@ -169,7 +169,7 @@ def page_index():
               '}') % (BASE_URL, BASE_URL, BASE_URL, ARMSLIST, GUNBROKER)
 
     body = (nav() + ticker() + hero + trust + cat_cards + showcase + gold_cta +
-            brands_section() + online_cta() + hours_location() + footer())
+            online_cta() + hours_location() + footer())
     return head(
         "Twin Cities Pawn & Gun | Firearms & Pawn Loans, Ramsey MN",
         "Home of the 0% Pawn in Ramsey, MN. Hundreds of guns, rifles & accessories in stock. Licensed FFL dealer \u2014 $50 transfers & 0% pawn loans since 2010.",
@@ -329,7 +329,6 @@ def page_guns():
             page_hero("rifle-wall.webp", "Wall of rifles at Twin Cities Pawn & Gun", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
             chips + handguns + revolvers + rifles + shotguns + archery + collectible + nfa +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html") +
-            brands_section() +
             related_links([
                 ("accessories.html", "Ammo &amp; Accessories", "Ammunition, optics, holsters, magazines and gun safes."),
                 ("pawn-loans.html", "FFL Transfers ($50)", "Buy online? Ship it to us for a fast, licensed FFL transfer."),
@@ -378,7 +377,7 @@ def page_accessories():
             page_hero("firearms-handguns-rifles.webp", "Firearms accessories display", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
             chips + ammo + optics + holsters + magazines +
             cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html") +
-            online_cta() + brands_section() +
+            online_cta() +
             related_links([
                 ("guns-rifles.html", "Guns &amp; Rifles", "300+ handguns, rifles and shotguns in stock in Ramsey, MN."),
                 ("pawn-loans.html", "Pawn &amp; Loans", "0% interest pawn loans on firearms, tools and more."),
