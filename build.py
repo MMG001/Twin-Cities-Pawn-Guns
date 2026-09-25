@@ -24,7 +24,9 @@ TAILWIND_CONFIG = """tailwind.config = {
       "secondary": "#c7c5d0", "secondary-container": "#46464f", "on-secondary-container": "#b6b4bf",
       "outline": "#9a9078", "outline-variant": "#4d4632",
       "inverse-surface": "#e5e1e6", "inverse-on-surface": "#303033",
-      "background": "#131316", "on-background": "#e5e1e6", "surface-variant": "#353438"
+      "background": "#131316", "on-background": "#e5e1e6", "surface-variant": "#353438",
+      "white": "#ffffff", "gray-50": "#f8f9fa", "gray-100": "#f1f5f9", "gray-200": "#e2e8f0",
+      "gray-600": "#4b5563", "gray-700": "#374151", "gray-900": "#111827"
     },
     borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
     spacing: { "gutter": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem",
@@ -388,6 +390,11 @@ def brand_chips():
     return chips
 
 
+def brand_chips_light():
+    chips = "\n".join('        <span class="brand-chip-light">%s</span>' % b for b in BRANDS)
+    return chips
+
+
 def label(text):
     return ('<div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest '
             'text-primary-container uppercase mb-4"><span class="w-6 h-px bg-primary-container"></span>%s</div>' % text)
@@ -398,23 +405,27 @@ def crosshairs():
             '<span class="xh bl">+</span><span class="xh br">+</span>')
 
 
-def inv_card(img, alt, badge, title, cond, cdn=False, lazy=True):
+def inv_card(img, alt, badge, title, cond, cdn=False, lazy=True, light=False):
     src = img if cdn else ("images/" + img)
     loading = ' loading="lazy"' if lazy else ''
+    card_class = "inv-card-light" if light else "inv-card"
+    title_style = "color:#111827" if light else ""
+    cond_style = "color:#6b7280" if light else "color:#9a9078"
     return """
-        <article class="inv-card group">
+        <article class="{card_class} group">
           <div class="relative overflow-hidden h-56">
             <img src="{src}" alt="{alt}" class="w-full h-56 object-cover"{loading} />
             <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">{badge}</span>
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg text-on-surface">{title}</h3>
+            <h3 class="font-headline font-semibold text-lg" style="{title_style}">{title}</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-outline uppercase tracking-wider">{cond}</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="{cond_style}">{cond}</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
-        </article>""".format(src=src, alt=alt, badge=badge, title=title, cond=cond, loading=loading)
+        </article>""".format(card_class=card_class, src=src, alt=alt, badge=badge, title=title,
+                             cond=cond, loading=loading, title_style=title_style, cond_style=cond_style)
 
 
 def page_hero(img, alt, label_text, h1, sub=""):
@@ -591,29 +602,29 @@ def related_links(links):
 
 def hours_location():
     return """
-    <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
+    <section class="py-16" style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-10 items-stretch">
-        <div class="crosshair-card border border-outline-variant/40 overflow-hidden min-h-[340px] gold-glow" id="map-holder-hours">
-          <div class="map-placeholder flex flex-col items-center justify-center h-full min-h-[340px] bg-surface-container-lowest cursor-pointer select-none" onclick="loadMap('map-holder-hours','https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&amp;output=embed')">
+        <div class="crosshair-card overflow-hidden min-h-[340px] gold-glow" style="border:1px solid #e2e8f0" id="map-holder-hours">
+          <div class="map-placeholder flex flex-col items-center justify-center h-full min-h-[340px] cursor-pointer select-none" style="background:#f1f5f9" onclick="loadMap('map-holder-hours','https://maps.google.com/maps?q=6650+US-10,+Ramsey,+MN+55303&amp;output=embed')">
             <span class="material-symbols-outlined text-5xl text-primary-container mb-3">location_on</span>
-            <p class="font-mono text-sm text-on-surface mb-1">6650 US-10, Ramsey, MN 55303</p>
-            <p class="text-xs text-on-surface-variant mb-4">Interactive map loads on click</p>
+            <p class="font-mono text-sm mb-1" style="color:#111827">6650 US-10, Ramsey, MN 55303</p>
+            <p class="text-xs mb-4" style="color:#4b5563">Interactive map loads on click</p>
             <button class="bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-5 py-2.5 font-bold tracking-wider">Load Map</button>
           </div>
         </div>
         <div>
           {label}
-          <h2 class="font-headline font-bold text-headline-lg text-on-surface">Hours &amp; Location</h2>
-          <address class="not-italic mt-5 text-on-surface-variant">
-            <p class="text-lg font-semibold text-on-surface">6650 US-10, Ramsey, MN 55303</p>
+          <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Hours &amp; Location</h2>
+          <address class="not-italic mt-5" style="color:#4b5563">
+            <p class="text-lg font-semibold" style="color:#111827">6650 US-10, Ramsey, MN 55303</p>
             <p class="mt-1"><a href="tel:7634274100" class="font-mono text-primary-container hover:underline">(763) 427-4100</a></p>
             <p class="mt-1"><a href="{gmaps}" target="_blank" rel="noopener" class="text-primary-container hover:underline">Get directions &rarr;</a></p>
           </address>
-          <table class="mt-6 w-full font-mono text-sm border border-outline-variant/40">
+          <table class="mt-6 w-full font-mono text-sm" style="border:1px solid #e2e8f0">
             <tbody>
-              <tr class="border-b border-outline-variant/30"><td class="py-3 px-4 text-on-surface-variant">Monday &ndash; Friday</td><td class="py-3 px-4 text-right text-on-surface">10 AM &ndash; 7 PM</td></tr>
-              <tr class="border-b border-outline-variant/30"><td class="py-3 px-4 text-on-surface-variant">Saturday</td><td class="py-3 px-4 text-right text-on-surface">10 AM &ndash; 5 PM</td></tr>
-              <tr><td class="py-3 px-4 text-on-surface-variant">Sunday</td><td class="py-3 px-4 text-right text-outline">Closed</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0"><td class="py-3 px-4" style="color:#4b5563">Monday &ndash; Friday</td><td class="py-3 px-4 text-right" style="color:#111827">10 AM &ndash; 7 PM</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0"><td class="py-3 px-4" style="color:#4b5563">Saturday</td><td class="py-3 px-4 text-right" style="color:#111827">10 AM &ndash; 5 PM</td></tr>
+              <tr><td class="py-3 px-4" style="color:#4b5563">Sunday</td><td class="py-3 px-4 text-right" style="color:#9ca3af">Closed</td></tr>
             </tbody>
           </table>
         </div>

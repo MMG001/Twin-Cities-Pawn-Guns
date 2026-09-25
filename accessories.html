@@ -52,7 +52,9 @@ tailwind.config = {
       "secondary": "#c7c5d0", "secondary-container": "#46464f", "on-secondary-container": "#b6b4bf",
       "outline": "#9a9078", "outline-variant": "#4d4632",
       "inverse-surface": "#e5e1e6", "inverse-on-surface": "#303033",
-      "background": "#131316", "on-background": "#e5e1e6", "surface-variant": "#353438"
+      "background": "#131316", "on-background": "#e5e1e6", "surface-variant": "#353438",
+      "white": "#ffffff", "gray-50": "#f8f9fa", "gray-100": "#f1f5f9", "gray-200": "#e2e8f0",
+      "gray-600": "#4b5563", "gray-700": "#374151", "gray-900": "#111827"
     },
     borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
     spacing: { "gutter": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem",
@@ -665,9 +667,9 @@ tailwind.config = {
             <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">In Stock</span>
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg text-on-surface">Handgun &amp; Rifle Ammo</h3>
+            <h3 class="font-headline font-semibold text-lg" style="">Handgun &amp; Rifle Ammo</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-outline uppercase tracking-wider">New</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
@@ -687,9 +689,9 @@ tailwind.config = {
             <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">In Stock</span>
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg text-on-surface">Thermal &amp; Night Vision</h3>
+            <h3 class="font-headline font-semibold text-lg" style="">Thermal &amp; Night Vision</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-outline uppercase tracking-wider">New &amp; Used</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
@@ -709,9 +711,9 @@ tailwind.config = {
             <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">In Stock</span>
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg text-on-surface">Holsters &amp; Slings</h3>
+            <h3 class="font-headline font-semibold text-lg" style="">Holsters &amp; Slings</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-outline uppercase tracking-wider">New</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
@@ -731,9 +733,9 @@ tailwind.config = {
             <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">In Stock</span>
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg text-on-surface">Pistol &amp; Rifle Magazines</h3>
+            <h3 class="font-headline font-semibold text-lg" style="">Pistol &amp; Rifle Magazines</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-outline uppercase tracking-wider">New &amp; Used</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
@@ -744,9 +746,9 @@ tailwind.config = {
             <span class="absolute top-3 left-3 bg-primary-container text-surface-container-lowest font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1">In Stock</span>
           </div>
           <div class="p-5">
-            <h3 class="font-headline font-semibold text-lg text-on-surface">Safes &amp; Lockboxes</h3>
+            <h3 class="font-headline font-semibold text-lg" style="">Safes &amp; Lockboxes</h3>
             <div class="mt-2 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-outline uppercase tracking-wider">New &amp; Used</span>
+              <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
               <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
             </div>
           </div>
@@ -820,27 +822,27 @@ tailwind.config = {
         </div>
       </div>
     </section>
-    <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
+    <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
         <div class="flex justify-center"><div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4"><span class="w-6 h-px bg-primary-container"></span>Trusted Manufacturers</div></div>
-        <h2 class="font-headline font-bold text-headline-lg text-on-surface">Brands We Carry</h2>
-        <p class="mt-2 text-on-surface-variant max-w-2xl mx-auto">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Brands We Carry</h2>
+        <p class="mt-2 max-w-2xl mx-auto" style="color:#4b5563">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <span class="brand-chip">Glock</span>
-        <span class="brand-chip">Smith &amp; Wesson</span>
-        <span class="brand-chip">Sig Sauer</span>
-        <span class="brand-chip">Ruger</span>
-        <span class="brand-chip">Colt</span>
-        <span class="brand-chip">Kimber</span>
-        <span class="brand-chip">Taurus</span>
-        <span class="brand-chip">Springfield Armory</span>
-        <span class="brand-chip">Remington</span>
-        <span class="brand-chip">Mossberg</span>
-        <span class="brand-chip">Henry</span>
-        <span class="brand-chip">Browning</span>
-        <span class="brand-chip">Daniel Defense</span>
-        <span class="brand-chip">Walther</span>
-        <span class="brand-chip">KelTec</span>
+        <span class="brand-chip-light">Glock</span>
+        <span class="brand-chip-light">Smith &amp; Wesson</span>
+        <span class="brand-chip-light">Sig Sauer</span>
+        <span class="brand-chip-light">Ruger</span>
+        <span class="brand-chip-light">Colt</span>
+        <span class="brand-chip-light">Kimber</span>
+        <span class="brand-chip-light">Taurus</span>
+        <span class="brand-chip-light">Springfield Armory</span>
+        <span class="brand-chip-light">Remington</span>
+        <span class="brand-chip-light">Mossberg</span>
+        <span class="brand-chip-light">Henry</span>
+        <span class="brand-chip-light">Browning</span>
+        <span class="brand-chip-light">Daniel Defense</span>
+        <span class="brand-chip-light">Walther</span>
+        <span class="brand-chip-light">KelTec</span>
         </div>
       </div>
     </section>

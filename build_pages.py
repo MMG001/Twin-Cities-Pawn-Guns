@@ -50,16 +50,16 @@ def cta_band(title, sub, btn_text, btn_href, external=False):
 
 def brands_section():
     return """
-    <section class="bg-surface-container-lowest border-y border-outline-variant/30 py-16">
+    <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
         {label_center}
-        <h2 class="font-headline font-bold text-headline-lg text-on-surface">Brands We Carry</h2>
-        <p class="mt-2 text-on-surface-variant max-w-2xl mx-auto">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Brands We Carry</h2>
+        <p class="mt-2 max-w-2xl mx-auto" style="color:#4b5563">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
 {chips}
         </div>
       </div>
-    </section>""".format(label_center=('<div class="flex justify-center">%s</div>' % label("Trusted Manufacturers")), chips=brand_chips())
+    </section>""".format(label_center=('<div class="flex justify-center">%s</div>' % label("Trusted Manufacturers")), chips=brand_chips_light())
 
 
 # ================= INDEX =================
@@ -90,41 +90,58 @@ def page_index():
     </section>""".format(label=label("Firearms &middot; Pawn &middot; Loans"))
 
     cat_cards = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
-      <div class="mb-10">{label}<h2 class="font-headline font-bold text-headline-lg text-on-surface">Explore The Vault</h2></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="guns-rifles.html" class="crosshair-card group relative block border border-outline-variant/40 overflow-hidden gold-aura-hover">
-          {xh}
-          <img src="images/cat-guns-rifles.webp" alt="Guns and rifles for sale at Twin Cities Pawn & Gun in Ramsey, MN" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="p-6"><h3 class="font-headline font-bold text-headline-sm text-on-surface">Guns &amp; Rifles</h3><p class="text-sm text-on-surface-variant mt-2">Handguns, rifles, shotguns, revolvers, collectibles &amp; NFA items.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
-        </a>
-        <a href="accessories.html" class="crosshair-card group relative block border border-outline-variant/40 overflow-hidden gold-aura-hover">
-          {xh}
-          <img src="images/cat-accessories-ammo.webp" alt="Ammunition and firearm accessories at Twin Cities Pawn & Gun" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="p-6"><h3 class="font-headline font-bold text-headline-sm text-on-surface">Accessories &amp; Ammo</h3><p class="text-sm text-on-surface-variant mt-2">Ammunition, optics, holsters, magazines, cases &amp; safes.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop gear <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
-        </a>
-        <a href="pawn-loans.html" class="crosshair-card group relative block border border-outline-variant/40 overflow-hidden gold-aura-hover">
-          {xh}
-          <img src="images/cat-pawn-loans.webp" alt="Pawn loans at Twin Cities Pawn & Gun — gun and cash" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="p-6"><h3 class="font-headline font-bold text-headline-sm text-on-surface">Pawn &amp; Loans</h3><p class="text-sm text-on-surface-variant mt-2">0% pawn loans, tools, electronics, jewelry &amp; gold.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Get a loan <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
-        </a>
+    <section class="py-16" style="background:#ffffff">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+        <div class="mb-10">{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Explore The Vault</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="guns-rifles.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
+            {xh}
+            <img src="images/cat-guns-rifles.webp" alt="Guns and rifles for sale at Twin Cities Pawn &amp; Gun in Ramsey, MN" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers, collectibles &amp; NFA items.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+          </a>
+          <a href="accessories.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
+            {xh}
+            <img src="images/cat-accessories-ammo.webp" alt="Ammunition and firearm accessories at Twin Cities Pawn &amp; Gun" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Accessories &amp; Ammo</h3><p class="text-sm mt-2" style="color:#4b5563">Ammunition, optics, holsters, magazines, cases &amp; safes.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop gear <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+          </a>
+          <a href="pawn-loans.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
+            {xh}
+            <img src="images/cat-pawn-loans.webp" alt="Pawn loans at Twin Cities Pawn &amp; Gun — gun and cash" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Pawn &amp; Loans</h3><p class="text-sm mt-2" style="color:#4b5563">0% pawn loans, tools, electronics, jewelry &amp; gold.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Get a loan <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+          </a>
+        </div>
       </div>
     </section>""".format(label=label("Categories"), xh=crosshairs())
 
     showcase_cards = [
-        inv_card("gun-room-rifles.webp", "Rifle room with tactical and hunting rifles", "In Stock", "Tactical &amp; Hunting Rifles", "New &amp; Used"),
-        inv_card("1911-pistols.webp", "1911 pistols in display case", "In Stock", "1911 Pistols", "New &amp; Used"),
-        inv_card("revolver-showcase.webp", "Revolver showcase display", "In Stock", "Revolvers", "New &amp; Used"),
-        inv_card("shotgun-rack.webp", "Rack of shotguns", "In Stock", "Shotguns", "New &amp; Used"),
+        inv_card("gun-room-rifles.webp", "Rifle room with tactical and hunting rifles", "In Stock", "Tactical &amp; Hunting Rifles", "New &amp; Used", light=True),
+        inv_card("1911-pistols.webp", "1911 pistols in display case", "In Stock", "1911 Pistols", "New &amp; Used", light=True),
+        inv_card("revolver-showcase.webp", "Revolver showcase display", "In Stock", "Revolvers", "New &amp; Used", light=True),
+        inv_card("shotgun-rack.webp", "Rack of shotguns", "In Stock", "Shotguns", "New &amp; Used", light=True),
     ]
     showcase = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
-      <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
-        <div>{label}<h2 class="font-headline font-bold text-headline-lg text-on-surface">Firearms Showcase</h2></div>
-        <a href="guns-rifles.html" class="font-mono text-xs uppercase tracking-wider text-primary-container hover:text-primary-fixed inline-flex items-center gap-2">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+    <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div>{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Firearms Showcase</h2></div>
+          <a href="guns-rifles.html" class="font-mono text-xs uppercase tracking-wider text-primary-container hover:text-primary-fixed inline-flex items-center gap-2">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        {grid}
       </div>
-      {grid}
     </section>""".format(label=label("Featured"), grid=grid(showcase_cards, cols="sm:grid-cols-2 lg:grid-cols-4"))
+
+    gold_cta = """
+    <section class="py-14" style="background:#facc15">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
+        <div class="font-mono text-[11px] tracking-widest uppercase mb-4" style="color:#6c5700">&#9733; Home of the 0% Pawn &#9733;</div>
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#131316;line-height:1.1">Ready to Buy, Sell, or Get a Loan?</h2>
+        <p class="mt-4 max-w-xl mx-auto" style="color:#3c2f00">Visit our Ramsey store on US-10. Open Monday&ndash;Friday 10AM&ndash;7PM, Saturday 10AM&ndash;5PM. Walk-ins always welcome.</p>
+        <div class="mt-8 flex flex-wrap gap-4 justify-center">
+          <a href="contact.html" class="inline-flex items-center gap-2 font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider" style="background:#131316;color:#facc15">Visit Our Store <span class="material-symbols-outlined text-base" style="color:#facc15">arrow_outward</span></a>
+          <a href="tel:7634274100" class="inline-flex items-center gap-2 font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider" style="border:2px solid #131316;color:#131316">(763) 427-4100</a>
+        </div>
+      </div>
+    </section>"""
 
     schema = ('{\n'
               '  "@context": "https://schema.org",\n'
@@ -151,7 +168,7 @@ def page_index():
               '  "sameAs": ["%s", "%s"]\n'
               '}') % (BASE_URL, BASE_URL, BASE_URL, ARMSLIST, GUNBROKER)
 
-    body = (nav() + ticker() + hero + trust + cat_cards + showcase +
+    body = (nav() + ticker() + hero + trust + cat_cards + showcase + gold_cta +
             brands_section() + online_cta() + hours_location() + footer())
     return head(
         "Twin Cities Pawn & Gun | Firearms & Pawn Loans, Ramsey MN",
@@ -164,20 +181,22 @@ def page_index():
 # ================= ABOUT =================
 def page_about():
     story = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 grid lg:grid-cols-2 gap-12 items-center">
-      <div class="relative crosshair-card border border-outline-variant/40 gold-glow">
-        {xh}
-        <img src="images/pawn-counter-guitars.webp" alt="Inside Twin Cities Pawn & Gun store" class="w-full h-[420px] object-cover" />
-      </div>
-      <div>
-        {label}
-        <h2 class="font-headline font-bold text-headline-lg text-on-surface">Ramsey's Trusted Pawn &amp; Gun Shop</h2>
-        <div class="mt-5 space-y-4 text-on-surface-variant">
-          <p>Twin Cities Pawn &amp; Gun has proudly served the Minneapolis&ndash;St. Paul metro area since 2010. What started as a local pawn shop has grown into one of the region's most trusted destinations for firearms, ammunition, and fair pawn loans.</p>
-          <p>We're a fully licensed FFL dealer with hundreds of handguns, rifles, and shotguns in stock at any given time. Whether you're a first-time buyer, a seasoned collector, or you simply need a short-term loan, our knowledgeable staff treats every customer with honesty and respect.</p>
-          <p>We're best known as the <span class="text-primary-container font-semibold">Home of the 0% Pawn</span> &mdash; because we believe in giving our neighbors a fair deal. Stop by our Ramsey location on US-10 and see the difference for yourself.</p>
+    <section class="py-16" style="background:#ffffff">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-12 items-center">
+        <div class="relative crosshair-card gold-glow" style="border:1px solid #e2e8f0">
+          {xh}
+          <img src="images/pawn-counter-guitars.webp" alt="Inside Twin Cities Pawn & Gun store" class="w-full h-[420px] object-cover" />
         </div>
-        <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Visit Us <span class="material-symbols-outlined text-base">arrow_outward</span></a>
+        <div>
+          {label}
+          <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Ramsey's Trusted Pawn &amp; Gun Shop</h2>
+          <div class="mt-5 space-y-4" style="color:#4b5563">
+            <p>Twin Cities Pawn &amp; Gun has proudly served the Minneapolis&ndash;St. Paul metro area since 2010. What started as a local pawn shop has grown into one of the region's most trusted destinations for firearms, ammunition, and fair pawn loans.</p>
+            <p>We're a fully licensed FFL dealer with hundreds of handguns, rifles, and shotguns in stock at any given time. Whether you're a first-time buyer, a seasoned collector, or you simply need a short-term loan, our knowledgeable staff treats every customer with honesty and respect.</p>
+            <p>We're best known as the <span class="text-primary-container font-semibold">Home of the 0% Pawn</span> &mdash; because we believe in giving our neighbors a fair deal. Stop by our Ramsey location on US-10 and see the difference for yourself.</p>
+          </div>
+          <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Visit Us <span class="material-symbols-outlined text-base">arrow_outward</span></a>
+        </div>
       </div>
     </section>""".format(xh=crosshairs(), label=label("Our Story"))
 
@@ -202,16 +221,18 @@ def page_about():
     reason_cards = []
     for icon, t, d in reasons:
         reason_cards.append("""
-        <div class="crosshair-card relative border border-outline-variant/40 bg-surface-container-low p-7 gold-aura-hover">
+        <div class="crosshair-card relative p-7 gold-aura-hover" style="border:1px solid #e2e8f0;background:#ffffff">
           {xh}
           <span class="material-symbols-outlined text-primary-container text-3xl">{icon}</span>
-          <h3 class="font-headline font-bold text-headline-sm mt-4 text-on-surface">{t}</h3>
-          <p class="text-sm text-on-surface-variant mt-2">{d}</p>
+          <h3 class="font-headline font-bold text-headline-sm mt-4" style="color:#111827">{t}</h3>
+          <p class="text-sm mt-2" style="color:#4b5563">{d}</p>
         </div>""".format(xh=crosshairs(), icon=icon, t=t, d=d))
     why = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
-      <div class="mb-10">{label}<h2 class="font-headline font-bold text-headline-lg text-on-surface">Why Choose Us</h2></div>
-      {grid}
+    <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+        <div class="mb-10">{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Why Choose Us</h2></div>
+        {grid}
+      </div>
     </section>""".format(label=label("The Difference"), grid=grid(reason_cards))
 
     body = (nav() + ticker() +
