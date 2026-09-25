@@ -504,55 +504,28 @@ tailwind.config = {
           <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
             Inventory <span class="material-symbols-outlined text-base leading-none">expand_more</span>
           </button>
-          <div class="mega-menu" role="menu">
-            <!-- Column Headers -->
-            <div class="mega-headers">
-              <a href="guns-rifles.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">local_police</span>
-                <div><div class="mega-col-title">Guns &amp; Rifles</div><div class="mega-col-sub">300+ firearms in stock</div></div>
-              </a>
-              <a href="accessories.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">target</span>
-                <div><div class="mega-col-title">Accessories</div><div class="mega-col-sub">Ammo, optics &amp; gear</div></div>
-              </a>
-              <a href="pawn-loans.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">payments</span>
-                <div><div class="mega-col-title">Pawn &amp; Loans</div><div class="mega-col-sub">0% interest pawn loans</div></div>
-              </a>
-            </div>
-            <!-- Sub-items -->
-            <div class="mega-items">
-              <div class="mega-col" role="group">
-                <a href="guns-rifles.html#handguns" class="mega-item">Handguns &amp; Pistols</a>
-                <a href="guns-rifles.html#revolvers" class="mega-item">Revolvers</a>
-                <a href="guns-rifles.html#rifles" class="mega-item">Semi-Automatic</a>
-                <a href="guns-rifles.html#rifles" class="mega-item">Hunting &amp; Tactical Rifles</a>
-                <a href="guns-rifles.html#shotguns" class="mega-item">Shotguns</a>
-                <a href="guns-rifles.html#archery" class="mega-item">Archery</a>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="guns-rifles.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128299;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Guns &amp; Rifles</div>
+                <div class="text-xs text-on-surface-variant">300+ firearms in stock</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="accessories.html#ammo" class="mega-item">Ammunition &amp; Ammo</a>
-                <a href="accessories.html#optics" class="mega-item">Sights, Scopes &amp; Optics</a>
-                <a href="accessories.html#holsters" class="mega-item">Holsters, Slings &amp; Cases</a>
-                <a href="accessories.html#magazines" class="mega-item">Magazines &amp; Safes</a>
+            </a>
+            <a href="accessories.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#127919;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Accessories</div>
+                <div class="text-xs text-on-surface-variant">Ammo, optics &amp; gear</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="pawn-loans.html#tools" class="mega-item">Power Tools</a>
-                <a href="pawn-loans.html#electronics" class="mega-item">Electronics</a>
-                <a href="pawn-loans.html#jewelry" class="mega-item">Jewelry &amp; Gold</a>
-                <a href="pawn-loans.html#loans" class="mega-item">Pawn Loans (0%)</a>
+            </a>
+            <a href="pawn-loans.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#128176;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Pawn &amp; Loans</div>
+                <div class="text-xs text-on-surface-variant">0% interest pawn loans</div>
               </div>
-            </div>
-            <!-- Footer Action Bar -->
-            <div class="mega-footer">
-              <a href="guns-rifles.html" class="mega-footer-all">Browse All Inventory <span class="material-symbols-outlined text-sm leading-none">arrow_forward</span></a>
-              <div class="mega-footer-right">
-                <a href="https://www.armslist.com/store/227/twin-cities-pawn" target="_blank" rel="noopener" class="mega-footer-link">Shop Armslist</a>
-                <span class="mega-footer-sep">|</span>
-                <a href="https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13" target="_blank" rel="noopener" class="mega-footer-link">Shop GunBroker</a>
-                <a href="contact.html" class="mega-footer-cta">Get a Quote &rarr;</a>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="dropdown relative" id="store-dropdown">
@@ -653,12 +626,9 @@ tailwind.config = {
         <a href="about.html" class="py-2 font-headline text-on-surface hover:text-primary-container">About</a>
         <button data-accordion-toggle="m-inv" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Inventory <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
         <div id="m-inv" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
-          <a href="guns-rifles.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Guns &amp; Rifles</a>
-          <a href="guns-rifles.html#handguns" class="block py-1 text-xs text-on-surface-variant hover:text-primary-container">&rsaquo; Handguns &amp; Pistols</a>
-          <a href="guns-rifles.html#rifles" class="block py-1 text-xs text-on-surface-variant hover:text-primary-container">&rsaquo; Rifles</a>
-          <a href="guns-rifles.html#shotguns" class="block py-1 text-xs text-on-surface-variant hover:text-primary-container">&rsaquo; Shotguns</a>
-          <a href="accessories.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Accessories &amp; Ammo</a>
-          <a href="pawn-loans.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Pawn &amp; Loans</a>
+          <a href="guns-rifles.html" class="block py-1 text-on-surface-variant hover:text-primary-container">&#128299; Guns &amp; Rifles</a>
+          <a href="accessories.html" class="block py-1 text-on-surface-variant hover:text-primary-container">&#127919; Accessories</a>
+          <a href="pawn-loans.html" class="block py-1 text-on-surface-variant hover:text-primary-container">&#128176; Pawn &amp; Loans</a>
         </div>
         <button data-accordion-toggle="m-store" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Online Store <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
         <div id="m-store" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
