@@ -490,15 +490,15 @@ tailwind.config = {
             <div class="mega-headers">
               <a href="guns-rifles.html" class="mega-col-hd" role="menuitem">
                 <span class="mega-col-icon material-symbols-outlined">local_police</span>
-                <div class="mega-col-title">Guns &amp; Rifles</div>
+                <div><div class="mega-col-title">Guns &amp; Rifles</div><div class="mega-col-sub">300+ firearms in stock</div></div>
               </a>
               <a href="accessories.html" class="mega-col-hd" role="menuitem">
                 <span class="mega-col-icon material-symbols-outlined">target</span>
-                <div class="mega-col-title">Accessories</div>
+                <div><div class="mega-col-title">Accessories</div><div class="mega-col-sub">Ammo, optics &amp; gear</div></div>
               </a>
               <a href="pawn-loans.html" class="mega-col-hd" role="menuitem">
                 <span class="mega-col-icon material-symbols-outlined">payments</span>
-                <div class="mega-col-title">Pawn &amp; Loans</div>
+                <div><div class="mega-col-title">Pawn &amp; Loans</div><div class="mega-col-sub">0% interest pawn loans</div></div>
               </a>
             </div>
             <!-- Sub-items -->
@@ -536,62 +536,88 @@ tailwind.config = {
             </div>
           </div>
         </div>
+        <div class="dropdown relative" id="store-dropdown">
+          <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+            Online Store <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+          </button>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="https://www.armslist.com/store/227/twin-cities-pawn" target="_blank" rel="noopener" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128299;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Armslist</div>
+                <div class="text-xs text-on-surface-variant">Browse our live gun listings</div>
+              </div>
+            </a>
+            <a href="https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13" target="_blank" rel="noopener" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#127991;&#65039;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">GunBroker</div>
+                <div class="text-xs text-on-surface-variant">Bid &amp; buy on GunBroker</div>
+              </div>
+            </a>
+          </div>
+        </div>
         <div class="dropdown relative" id="res-dropdown">
           <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
             Resources <span class="material-symbols-outlined text-base leading-none">expand_more</span>
           </button>
-          <div class="mega-menu" role="menu">
-            <!-- Column Headers -->
-            <div class="mega-headers">
-              <a href="resources.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">menu_book</span>
-                <div class="mega-col-title">MN Gun Laws &amp; Guides</div>
-              </a>
-              <a href="faq.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">quiz</span>
-                <div class="mega-col-title">FAQ</div>
-              </a>
-              <a href="contact.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">support_agent</span>
-                <div class="mega-col-title">Contact &amp; Help</div>
-              </a>
-            </div>
-            <!-- Sub-items -->
-            <div class="mega-items">
-              <div class="mega-col" role="group">
-                <a href="gun-law-checklist.html" class="mega-item">2026 Gun Law Checklist</a>
-                <a href="rules-for-pawning.html" class="mega-item">Rules for Pawning a Gun</a>
-                <a href="gun-license-mn.html" class="mega-item">Gun License in Minnesota</a>
-                <a href="unregistered-gun.html" class="mega-item">Unregistered Firearms</a>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="gun-law-checklist.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128203;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">2026 Gun Law Checklist</div>
+                <div class="text-xs text-on-surface-variant">MN firearms laws updated for 2026</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="faq.html" class="mega-item">General FAQ</a>
-                <a href="faq-gun-pawns.html" class="mega-item">Gun Pawn FAQ</a>
+            </a>
+            <a href="rules-for-pawning.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#129309;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Rules for Pawning a Gun</div>
+                <div class="text-xs text-on-surface-variant">What to bring &amp; what to expect</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="contact.html" class="mega-item">Contact Us</a>
-                <a href="employment.html" class="mega-item">Employment</a>
-                <a href="about.html" class="mega-item">About Us</a>
+            </a>
+            <a href="gun-license-mn.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#129370;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Gun License in Minnesota</div>
+                <div class="text-xs text-on-surface-variant">Permit to purchase &amp; carry laws</div>
               </div>
-            </div>
-            <!-- Footer Action Bar -->
-            <div class="mega-footer">
-              <a href="resources.html" class="mega-footer-all">Browse All Resources <span class="material-symbols-outlined text-sm leading-none">arrow_forward</span></a>
-              <div class="mega-footer-right">
-                <a href="https://www.armslist.com/store/227/twin-cities-pawn" target="_blank" rel="noopener" class="mega-footer-link">Shop Armslist</a>
-                <span class="mega-footer-sep">|</span>
-                <a href="https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13" target="_blank" rel="noopener" class="mega-footer-link">Shop GunBroker</a>
+            </a>
+            <a href="unregistered-gun.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#128274;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Unregistered Firearms</div>
+                <div class="text-xs text-on-surface-variant">MN laws on unregistered guns</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="dropdown relative">
-          <button class="nav-link flex items-center gap-1">Contact <span class="material-symbols-outlined text-base leading-none">expand_more</span></button>
-          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:240px">
-            <a href="contact.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">Contact Us</a>
-            <a href="faq.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">FAQ</a>
-            <a href="faq-gun-pawns.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">Gun Pawn FAQ</a>
-            <a href="employment.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container font-headline font-bold">Employment</a>
+          <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+            Contact <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+          </button>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="contact.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128205;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Contact Us</div>
+                <div class="text-xs text-on-surface-variant">Hours, location &amp; directions</div>
+              </div>
+            </a>
+            <a href="faq-gun-pawns.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128299;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">FAQ Gun Pawns</div>
+                <div class="text-xs text-on-surface-variant">Common questions about pawning guns</div>
+              </div>
+            </a>
+            <a href="employment.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#128188;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Employment</div>
+                <div class="text-xs text-on-surface-variant">Join our team in Ramsey, MN</div>
+              </div>
+            </a>
           </div>
         </div>
       </nav>
@@ -615,17 +641,24 @@ tailwind.config = {
           <a href="accessories.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Accessories &amp; Ammo</a>
           <a href="pawn-loans.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Pawn &amp; Loans</a>
         </div>
+        <button data-accordion-toggle="m-store" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Online Store <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
+        <div id="m-store" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
+          <a href="https://www.armslist.com/store/227/twin-cities-pawn" target="_blank" rel="noopener" class="block py-1 text-on-surface-variant hover:text-primary-container">&#128299; Armslist</a>
+          <a href="https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13" target="_blank" rel="noopener" class="block py-1 text-on-surface-variant hover:text-primary-container">&#127991;&#65039; GunBroker</a>
+        </div>
         <button data-accordion-toggle="m-res" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Resources <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
         <div id="m-res" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
           <a href="gun-law-checklist.html" class="block py-1 text-on-surface-variant hover:text-primary-container">2026 Gun Law Checklist</a>
           <a href="rules-for-pawning.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Rules for Pawning a Gun</a>
           <a href="gun-license-mn.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Gun License in Minnesota</a>
           <a href="unregistered-gun.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Unregistered Firearms</a>
-          <a href="faq.html" class="block py-1 text-on-surface-variant hover:text-primary-container">General FAQ</a>
-          <a href="faq-gun-pawns.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Gun Pawn FAQ</a>
+        </div>
+        <button data-accordion-toggle="m-contact" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Contact <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
+        <div id="m-contact" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
+          <a href="contact.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Contact Us</a>
+          <a href="faq-gun-pawns.html" class="block py-1 text-on-surface-variant hover:text-primary-container">FAQ Gun Pawns</a>
           <a href="employment.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Employment</a>
         </div>
-        <a href="contact.html" class="py-2 font-headline text-on-surface hover:text-primary-container">Contact</a>
         <a href="contact.html" class="mt-2 bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-5 py-3 font-bold tracking-wider text-center">Get a Quote</a>
         <a href="tel:7634274100" class="mt-1 font-mono text-sm text-primary-container text-center py-2">(763) 427-4100</a>
       </div>
