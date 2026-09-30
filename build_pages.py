@@ -755,18 +755,82 @@ def legal_page(canon, title, meta_desc, keywords, label_text, h1, sub, content_h
     return head(title, meta_desc, canon, keywords) + body
 
 
-def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html):
-    """Info page with image hero (for guides with photos)"""
+def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html, quick_facts=None):
+    """Info page: hero + optional quick-facts bar + sticky TOC sidebar + numbered content."""
+    import re
+
+    # --- Auto-number h2 sections and collect TOC titles ---
+    counter_val = [0]
+    toc_titles = []
+
+    def replace_h2(m):
+        counter_val[0] += 1
+        n = counter_val[0]
+        plain = re.sub(r'<[^>]+>', '', m.group(2))
+        plain = plain.replace('&amp;', '&').replace('&mdash;', '\u2014').replace('&#8211;', '\u2013')
+        toc_titles.append((n, plain))
+        return (
+            '<div class="guide-section" id="s%d">'
+            '<div class="guide-h2-meta"><span class="guide-num">%02d</span>'
+            '<div class="guide-rule"></div></div>'
+            '<h2 class="guide-h2 font-headline font-bold">%s</h2>'
+            '</div>' % (n, n, m.group(2))
+        )
+
+    anchored = re.sub(r'<h2([^>]*)>(.*?)</h2>', replace_h2, content_html, flags=re.DOTALL)
+
+    # --- TOC sidebar ---
+    toc_links = "\n".join(
+        '<a href="#s%d" class="toc-link flex items-center gap-2 py-2 border-l-2 pl-3 text-sm"'
+        ' style="border-color:#2e2c28;color:#6b7280">'
+        '<span class="font-mono text-[10px] text-primary-container flex-shrink-0">%02d</span>'
+        '<span>%s</span></a>' % (n, n, t)
+        for n, t in toc_titles
+    )
+
+    sidebar = """
+      <aside class="hidden lg:block w-52 flex-shrink-0">
+        <div class="sticky" style="top:88px">
+          <div class="font-mono text-[10px] tracking-widest uppercase mb-3 text-primary-container">Contents</div>
+          <nav class="space-y-0.5">
+            %s
+          </nav>
+          <div class="mt-8 p-5" style="background:#1b1b1e;border:1px solid #2e2c28">
+            <div class="font-mono text-[10px] text-primary-container uppercase tracking-widest mb-2">Need Help?</div>
+            <p class="text-xs mb-4" style="color:#a0a0a8">Our staff can answer questions in person or by phone.</p>
+            <a href="contact.html" class="inline-flex items-center gap-1 text-xs font-headline font-bold uppercase tracking-widest text-primary-container gold-hover">Contact Us <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+          </div>
+        </div>
+      </aside>""" % toc_links
+
+    # --- Quick-facts bar ---
+    qf = ""
+    if quick_facts:
+        facts_html = "".join(
+            '<div class="flex items-center gap-2">'
+            '<span class="material-symbols-outlined text-primary-container text-base flex-shrink-0">check_circle</span>'
+            '<span class="text-sm" style="color:#e5e7eb">%s</span></div>' % f
+            for f in quick_facts
+        )
+        qf = """
+    <div style="background:#1b1b1e;border-bottom:1px solid #2e2c28">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-5 flex flex-wrap gap-x-8 gap-y-3">
+        %s
+      </div>
+    </div>""" % facts_html
+
     body = (nav() + ticker() +
             page_hero(hero_img, hero_alt, label_text, h1, sub) +
+            qf +
             """
-    <div style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
-    <section class="max-w-[880px] mx-auto px-6 lg:px-margin py-16">
-      <div class="prose-legal space-y-6" style="color:#374151">
-        {content}
+    <div style="background:#ffffff;border-top:1px solid #e2e8f0">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 flex gap-16 items-start">
+        %s
+        <main class="flex-1 min-w-0 guide-article">
+          %s
+        </main>
       </div>
-    </section>
-    </div>""".format(content=content_html) +
+    </div>""" % (sidebar, anchored) +
             footer())
     return head(title, meta_desc, canon, keywords) + body
 
@@ -1113,7 +1177,8 @@ def page_rules_for_pawning():
         "A plain-English guide to pawning a firearm in Minnesota: who qualifies, what ID to bring, how valuation works, hold periods, and reclaiming your gun.",
         "rules for pawning a gun, pawn a firearm Minnesota, gun pawn requirements Ramsey MN, how to pawn a gun, reclaim pawned firearm",
         "rules-pawning-hero.webp", "Vintage revolver with wood grips on wooden surface", 
-        "Guide", "Rules for Pawning a Gun", "What you need to know before pawning a firearm in Minnesota.", c)
+        "Guide", "Rules for Pawning a Gun", "What you need to know before pawning a firearm in Minnesota.", c,
+        quick_facts=["Valid government photo ID required", "18+ for long guns &mdash; 21+ for handguns", "ATF Form 4473 required on redemption", "Non-recourse loan &mdash; no credit impact if you forfeit"])
 
 
 def page_gun_license_mn():
@@ -1141,7 +1206,8 @@ def page_gun_license_mn():
         "Understand Minnesota gun licensing: Permit to Purchase, Permit to Carry, background checks, how to apply, and the role of your FFL dealer.",
         "Minnesota gun license, permit to purchase MN, permit to carry Minnesota, MN firearms permit, how to apply gun permit Minnesota",
         "gun-license-mn-hero.webp", "Handgun with scattered ammunition on dark blue surface",
-        "Guide", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally in Minnesota.", c)
+        "Guide", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally in Minnesota.", c,
+        quick_facts=["Permit to Purchase (PTP) is free &mdash; valid 1 year", "Permit to Carry (PTC) valid 5 years statewide", "Must be 21+ to carry", "NICS background check required at every purchase"])
 
 
 def page_unregistered_gun():
@@ -1167,7 +1233,8 @@ def page_unregistered_gun():
         "What \u201cregistered\u201d really means under federal NFA law, the difference between standard firearms and NFA items, and the consequences of unregistered guns.",
         "unregistered firearms Minnesota, NFA registration, unregistered suppressor, SBR laws, illegal firearm consequences MN, stay legal firearms",
         "unregistered-gun-hero.webp", "Firearms laid out on a table — unregistered firearms Minnesota guide",
-        "Guide", "Unregistered Firearms in Minnesota", "Understanding firearm registration, NFA items, and how to stay on the right side of the law.", c)
+        "Guide", "Unregistered Firearms in Minnesota", "Understanding firearm registration, NFA items, and how to stay on the right side of the law.", c,
+        quick_facts=["No general firearm registry in Minnesota", "NFA items must be federally registered", "Unregistered NFA item = serious federal felony", "Work with a licensed FFL for legal NFA ownership"])
 
 
 def page_gun_law_checklist():

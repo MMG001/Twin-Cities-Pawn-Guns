@@ -400,3 +400,62 @@ img { max-width: 100%; height: auto; }
   transition: all .2s ease;
 }
 .brand-chip-light:hover { border-color: #facc15; color: #131316; background: #fffbeb; }
+
+/* ========================================
+   Guide / Info Page Layout
+   ======================================== */
+
+/* Sticky TOC link hover */
+.toc-link { transition: border-color 0.2s ease, color 0.2s ease; }
+.toc-link:hover { border-color: #facc15 !important; color: #facc15 !important; }
+
+/* Guide article: paragraph base */
+.guide-article p {
+  color: #374151;
+  line-height: 1.75;
+  font-size: 15px;
+  margin-bottom: 0.875rem;
+}
+
+/* Guide section wrapper */
+.guide-section {
+  margin-top: 2.75rem;
+  padding-top: 0.25rem;
+  scroll-margin-top: 100px;
+}
+.guide-section:first-child { margin-top: 0; }
+
+/* Number + rule row above each heading */
+.guide-h2-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.guide-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #facc15;
+  flex-shrink: 0;
+}
+.guide-rule {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* Section heading */
+.guide-h2 {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #111827;
+  border-left: 3px solid #facc15;
+  padding-left: 10px;
+  margin-bottom: 0.625rem;
+}
+
+/* Disclaimer text at end */
+.guide-article .text-outline {
+  color: #9ca3af;
+  font-size: 13px;
+}
