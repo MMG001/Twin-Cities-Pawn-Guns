@@ -91,15 +91,12 @@ def head(title, desc, canonical, keywords, schema=""):
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" /></noscript>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script id="tailwind-config">
-{twcfg}
-  </script>
+  <link rel="stylesheet" href="css/tailwind.min.css" />
   <link rel="stylesheet" href="css/styles.css" />{schema}
 </head>
 <body class="font-body bg-surface text-on-surface antialiased">
 """.format(title=title, desc=desc, keywords=keywords, base=BASE_URL, canon=canonical,
-           twcfg=TAILWIND_CONFIG, schema=schema_block)
+           schema=schema_block)
 
 
 
@@ -372,9 +369,14 @@ def footer():
 
 
 # ---------- Reusable helpers ----------
-BRANDS = ["Glock", "Smith &amp; Wesson", "Sig Sauer", "Ruger", "Colt", "Kimber", "Taurus",
-          "Springfield Armory", "Remington", "Mossberg", "Henry", "Browning",
-          "Daniel Defense", "Walther", "KelTec"]
+BRANDS = ["A.P.F.", "Benelli", "Beretta", "Browning", "Bushmaster", "Canik",
+          "Charter Arms", "Citadel", "Colt", "Commando", "Daniel Defense",
+          "Diamondback", "FNH USA", "Glock", "H&amp;K", "Henry", "Howa", "Ithaca",
+          "Kahr Arms", "Kel-Tec", "Kimber", "Kral", "Marlin", "Mauser", "Merak",
+          "Mossberg", "Norinco", "Perazzi", "Remington", "Rock Island", "Rossi",
+          "Ruger", "Savage", "Sig Sauer", "Smith &amp; Wesson", "Springfield Armory",
+          "Stoeger", "Taurus", "Thompson Center", "Walther", "Weatherby",
+          "Winchester", "Windham Weaponry"]
 
 
 def brand_chips():
@@ -515,8 +517,12 @@ def keyword_entity_table():
          '<a href="guns-rifles.html#shotguns">shotguns</a>, collectible &amp; used guns',
          "guns-rifles.html"),
         ("Firearm Brands",
-         'Glock, Smith &amp; Wesson, SIG Sauer, Ruger, Colt, Kimber, Taurus, Springfield Armory, '
-         'Remington, Mossberg, Henry Repeating Arms, Browning, Daniel Defense, Walther, Kel-Tec',
+         'A.P.F., Benelli, Beretta, Browning, Bushmaster, Canik, Charter Arms, Citadel, Colt, '
+         'Commando, Daniel Defense, Diamondback, FNH USA, Glock, H&amp;K, Henry, Howa, Ithaca, '
+         'Kahr Arms, Kel-Tec, Kimber, Kral, Marlin, Mauser, Merak, Mossberg, Norinco, Perazzi, '
+         'Remington, Rock Island, Rossi, Ruger, Savage, SIG Sauer, Smith &amp; Wesson, '
+         'Springfield Armory, Stoeger, Taurus, Thompson Center, Walther, Weatherby, Winchester, '
+         'Windham Weaponry',
          "guns-rifles.html"),
         ("Ammunition &amp; Accessories",
          'Ammunition (ammo), scopes &amp; optics, red dot sights, holsters, slings, magazines, '

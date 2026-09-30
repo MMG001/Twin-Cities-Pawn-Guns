@@ -1,5 +1,33 @@
 /* Twin Cities Pawn & Gun — Stitch "Sovereign Vault / Aura Vault" design system
-   Pure CSS complementing Tailwind CDN. Dark obsidian + gold neo-brutalist. */
+   Pure CSS complementing compiled Tailwind. Dark obsidian + gold neo-brutalist. */
+
+/* ---------- Size-adjusted fallback fonts (reduce CLS on webfont swap) ---------- */
+/* These metric-matched fallbacks occupy nearly the same space as the real
+   webfonts, so text does not reflow when Google Fonts finish loading. */
+@font-face {
+  font-family: 'Montserrat Fallback';
+  src: local('Arial');
+  ascent-override: 85.32%;
+  descent-override: 22.12%;
+  line-gap-override: 0%;
+  size-adjust: 113.05%;
+}
+@font-face {
+  font-family: 'Barlow Condensed Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  ascent-override: 100%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 80%;
+}
+@font-face {
+  font-family: 'JetBrains Mono Fallback';
+  src: local('Consolas'), local('Menlo'), local('monospace');
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 100%;
+}
 
 /* ---------- Material Symbols ---------- */
 .material-symbols-outlined {

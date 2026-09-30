@@ -137,17 +137,17 @@ def page_index():
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <a href="guns-rifles.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
-            <img src="images/cat-guns-rifles-real.jpg" alt="Guns and rifles for sale at Twin Cities Gun &amp; Pawn in the Twin Cities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/cat-guns-rifles-real.webp" alt="Guns and rifles for sale at Twin Cities Gun &amp; Pawn in the Twin Cities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="accessories.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
-            <img src="images/cat-accessories-ammo-real.jpg" alt="Ammunition and firearm accessories at Twin Cities Gun &amp; Pawn" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/cat-accessories-ammo-real.webp" alt="Ammunition and firearm accessories at Twin Cities Gun &amp; Pawn" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Accessories &amp; Ammo</h3><p class="text-sm mt-2" style="color:#4b5563">Ammunition, optics, holsters, magazines, cases &amp; safes.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop gear <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="pawn-loans.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
-            <img src="images/cat-pawn-loans-real.jpg" alt="Pawn loans at Twin Cities Gun &amp; Pawn — gun and cash" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/cat-pawn-loans-real.webp" alt="Pawn loans at Twin Cities Gun &amp; Pawn — gun and cash" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Pawn &amp; Loans</h3><p class="text-sm mt-2" style="color:#4b5563">Pawn your items or shop our store — tools, electronics, jewelry &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">See inventory <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
         </div>
@@ -244,7 +244,7 @@ def page_index():
         <div class="flex flex-col md:flex-row items-stretch" style="min-height:460px">
           <!-- Store interior photo left -->
           <div class="md:w-1/2 relative overflow-hidden" style="min-height:420px">
-            <img src="images/store-interior.jpg" alt="Twin Cities Gun &amp; Pawn store interior — pawn counter, guitars, tools, and jewelry in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" />
+            <img src="images/store-interior.webp" alt="Twin Cities Gun &amp; Pawn store interior — pawn counter, guitars, tools, and jewelry in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <!-- Broker content right -->
           <div class="md:w-1/2 flex flex-col justify-center px-10 py-16 lg:px-16" style="background:#f8f9fa">

@@ -35,49 +35,376 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" /></noscript>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: { extend: {
-    colors: {
-      "primary-container": "#facc15", "on-primary-container": "#6c5700",
-      "surface": "#131316", "surface-dim": "#131316",
-      "surface-container-lowest": "#0e0e11", "surface-container-low": "#1b1b1e",
-      "surface-container": "#1f1f22", "surface-container-high": "#2a2a2d",
-      "surface-container-highest": "#353438", "surface-bright": "#39393c",
-      "surface-tint": "#eec200", "on-surface": "#e5e1e6", "on-surface-variant": "#cac4d0",
-      "primary": "#ffecb9", "on-primary": "#3c2f00", "primary-fixed": "#ffe083",
-      "primary-fixed-dim": "#eec200", "inverse-primary": "#735c00",
-      "secondary": "#c7c5d0", "secondary-container": "#46464f", "on-secondary-container": "#b6b4bf",
-      "outline": "#9a9078", "outline-variant": "#4d4632",
-      "inverse-surface": "#e5e1e6", "inverse-on-surface": "#303033",
-      "background": "#131316", "on-background": "#e5e1e6", "surface-variant": "#353438",
-      "white": "#ffffff", "gray-50": "#f8f9fa", "gray-100": "#f1f5f9", "gray-200": "#e2e8f0",
-      "gray-600": "#4b5563", "gray-700": "#374151", "gray-900": "#111827"
+  <link rel="stylesheet" href="css/tailwind.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#website",
+      "name": "Twin Cities Pawn & Gun",
+      "url": "https://twin-cities-pawn-guns.pages.dev",
+      "publisher": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "inLanguage": "en-US"
     },
-    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-    spacing: { "gutter": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem",
-      "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem" },
-    fontFamily: { "headline": ["Barlow Condensed"], "body": ["Montserrat"], "mono": ["JetBrains Mono"] },
-    fontSize: {
-      "display-hero": ["72px", { lineHeight: "80px", letterSpacing: "-0.03em", fontWeight: "700" }],
-      "display-hero-mobile": ["40px", { lineHeight: "46px", letterSpacing: "-0.02em", fontWeight: "700" }],
-      "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
-      "headline-xl-mobile": ["32px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "700" }],
-      "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.015em", fontWeight: "600" }],
-      "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
-      "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
-      "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-      "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
-      "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
-      "label-data": ["13px", { lineHeight: "18px", letterSpacing: "0.04em", fontWeight: "500" }],
-      "label-caps": ["11px", { lineHeight: "14px", letterSpacing: "0.12em", fontWeight: "700" }]
+    {
+      "@type": "PawnShop",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#business",
+      "name": "Twin Cities Pawn & Gun",
+      "alternateName": "TC Pawn & Gun",
+      "slogan": "Home of the 0% Pawn",
+      "foundingDate": "2010",
+      "url": "https://twin-cities-pawn-guns.pages.dev",
+      "telephone": "+1-763-427-4100",
+      "priceRange": "$$",
+      "publicAccess": true,
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#logo",
+        "url": "https://twin-cities-pawn-guns.pages.dev/images/logo.png",
+        "width": 680,
+        "height": 280,
+        "caption": "Twin Cities Pawn & Gun"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://twin-cities-pawn-guns.pages.dev/images/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6650 US-10",
+        "addressLocality": "Ramsey",
+        "addressRegion": "MN",
+        "postalCode": "55303",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.2619,
+        "longitude": -93.4499
+      },
+      "hasMap": "https://maps.google.com/?q=Twin+Cities+Pawn+%26+Gun,+6650+US-10,+Ramsey,+MN+55303",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "GeoCircle",
+          "@id": "https://twin-cities-pawn-guns.pages.dev/#service-area",
+          "description": "30-mile service radius anchored on Ramsey, Minnesota",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.2619,
+            "longitude": -93.4499
+          },
+          "geoRadius": "48280"
+        },
+        {
+          "@type": "State",
+          "name": "Minnesota",
+          "sameAs": "https://en.wikipedia.org/wiki/Minnesota"
+        },
+        {
+          "@type": "City",
+          "name": "Ramsey",
+          "sameAs": "https://en.wikipedia.org/wiki/Ramsey,_Minnesota"
+        }
+      ],
+      "sameAs": [
+        "https://www.armslist.com/store/227/twin-cities-pawn",
+        "https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13",
+        "https://www.facebook.com/twincitiespawn",
+        "https://www.instagram.com/twincities_pawn/"
+      ],
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Licensed FFL Dealer",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "On-Site FFL Transfer ($50)",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "0% Interest Pawn Loans",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Government-Issued ID Required for Firearm Purchase",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "300+ Firearms In Stock",
+          "value": true
+        }
+      ],
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Firearms",
+          "sameAs": "https://en.wikipedia.org/wiki/Firearm"
+        },
+        {
+          "@type": "Thing",
+          "name": "Pawnbroker",
+          "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"
+        },
+        {
+          "@type": "Thing",
+          "name": "Federal Firearms License",
+          "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"
+        },
+        {
+          "@type": "Thing",
+          "name": "Ammunition",
+          "sameAs": "https://en.wikipedia.org/wiki/Ammunition"
+        },
+        {
+          "@type": "Thing",
+          "name": "Colt",
+          "sameAs": "https://en.wikipedia.org/wiki/Colt%27s_Manufacturing_Company"
+        },
+        {
+          "@type": "Thing",
+          "name": "Walther",
+          "sameAs": "https://en.wikipedia.org/wiki/Carl_Walther_GmbH"
+        },
+        {
+          "@type": "Thing",
+          "name": "Taurus Firearms",
+          "sameAs": "https://en.wikipedia.org/wiki/Taurus_Firearms"
+        },
+        {
+          "@type": "Thing",
+          "name": "Daniel Defense",
+          "sameAs": "https://en.wikipedia.org/wiki/Daniel_Defense"
+        },
+        {
+          "@type": "Thing",
+          "name": "Kel-Tec",
+          "sameAs": "https://en.wikipedia.org/wiki/Kel-Tec"
+        },
+        {
+          "@type": "Thing",
+          "name": "Kimber Manufacturing",
+          "sameAs": "https://en.wikipedia.org/wiki/Kimber_Manufacturing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Smith & Wesson",
+          "sameAs": "https://en.wikipedia.org/wiki/Smith_%26_Wesson"
+        },
+        {
+          "@type": "Thing",
+          "name": "SIG Sauer",
+          "sameAs": "https://en.wikipedia.org/wiki/SIG_Sauer"
+        },
+        {
+          "@type": "Thing",
+          "name": "Ruger",
+          "sameAs": "https://en.wikipedia.org/wiki/Sturm,_Ruger_%26_Co."
+        },
+        {
+          "@type": "Thing",
+          "name": "Glock",
+          "sameAs": "https://en.wikipedia.org/wiki/Glock"
+        },
+        {
+          "@type": "Thing",
+          "name": "Remington Arms",
+          "sameAs": "https://en.wikipedia.org/wiki/Remington_Arms"
+        },
+        {
+          "@type": "Thing",
+          "name": "Springfield Armory",
+          "sameAs": "https://en.wikipedia.org/wiki/Springfield_Armory,_Inc."
+        },
+        {
+          "@type": "Thing",
+          "name": "Browning Arms",
+          "sameAs": "https://en.wikipedia.org/wiki/Browning_Arms_Company"
+        },
+        {
+          "@type": "Thing",
+          "name": "Henry Repeating Arms",
+          "sameAs": "https://en.wikipedia.org/wiki/Henry_Repeating_Arms"
+        },
+        {
+          "@type": "Thing",
+          "name": "Mossberg",
+          "sameAs": "https://en.wikipedia.org/wiki/O.F._Mossberg_%26_Sons"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Twin Cities Pawn & Gun Services",
+        "itemListElement": [
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-firearms"
+          },
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-accessories"
+          },
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-pawn-loans"
+          },
+          {
+            "@id": "https://twin-cities-pawn-guns.pages.dev/#service-ffl-transfer"
+          }
+        ]
+      },
+      "potentialAction": [
+        {
+          "@type": "CommunicateAction",
+          "name": "Call Twin Cities Pawn & Gun",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "tel:+17634274100",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        },
+        {
+          "@type": "AskAction",
+          "name": "Request a Quote",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://twin-cities-pawn-guns.pages.dev/contact.html#contact-form",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/contact.html#webpage",
+      "url": "https://twin-cities-pawn-guns.pages.dev/contact.html",
+      "name": "Contact Twin Cities Pawn & Gun | Ramsey, MN | (763) 427-4100",
+      "isPartOf": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#website"
+      },
+      "about": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/contact.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/contact.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://twin-cities-pawn-guns.pages.dev/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://twin-cities-pawn-guns.pages.dev/contact.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-firearms",
+      "name": "Firearms Sales — Guns & Rifles",
+      "url": "https://twin-cities-pawn-guns.pages.dev/guns-rifles.html",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-accessories",
+      "name": "Firearms Accessories",
+      "url": "https://twin-cities-pawn-guns.pages.dev/accessories.html",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-pawn-loans",
+      "name": "Pawn Loans — 0% Interest",
+      "url": "https://twin-cities-pawn-guns.pages.dev/pawn-loans.html",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://twin-cities-pawn-guns.pages.dev/#service-ffl-transfer",
+      "name": "FFL Firearms Transfer",
+      "url": "https://twin-cities-pawn-guns.pages.dev/pawn-loans.html",
+      "provider": {
+        "@id": "https://twin-cities-pawn-guns.pages.dev/#business"
+      }
+    },
+    {
+      "@type": "AskAction",
+      "name": "Request a Quote",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://twin-cities-pawn-guns.pages.dev/contact.html#contact-form",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      }
+    },
+    {
+      "@type": "ApplyAction",
+      "name": "Apply for Employment",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://twin-cities-pawn-guns.pages.dev/employment.html#application-form",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      }
     }
-  } }
+  ]
 }
   </script>
-  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="font-body bg-surface text-on-surface antialiased">
 
