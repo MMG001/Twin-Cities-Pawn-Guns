@@ -138,17 +138,17 @@ def page_index():
           <a href="guns-rifles.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
             <img src="images/cat-guns-rifles-real.webp" alt="Guns and rifles for sale at Twin Cities Gun &amp; Pawn in the Twin Cities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs font-bold uppercase tracking-wider px-3 py-1.5" style="background:#facc15;color:#000000">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="accessories.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
             <img src="images/cat-accessories-ammo-real.webp" alt="Ammunition and firearm accessories at Twin Cities Gun &amp; Pawn" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Accessories &amp; Ammo</h3><p class="text-sm mt-2" style="color:#4b5563">Ammunition, optics, holsters, magazines, cases &amp; safes.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop gear <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Accessories &amp; Ammo</h3><p class="text-sm mt-2" style="color:#4b5563">Ammunition, optics, holsters, magazines, cases &amp; safes.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs font-bold uppercase tracking-wider px-3 py-1.5" style="background:#facc15;color:#000000">Shop gear <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="pawn-loans.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
             <img src="images/cat-pawn-loans-real.webp" alt="Pawn loans at Twin Cities Gun &amp; Pawn — gun and cash" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Pawn &amp; Loans</h3><p class="text-sm mt-2" style="color:#4b5563">Pawn your items or shop our store — tools, electronics, jewelry &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">See inventory <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
+            <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Pawn &amp; Loans</h3><p class="text-sm mt-2" style="color:#4b5563">Pawn your items or shop our store — tools, electronics, jewelry &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs font-bold uppercase tracking-wider px-3 py-1.5" style="background:#facc15;color:#000000">See inventory <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
         </div>
       </div>
@@ -265,9 +265,7 @@ def page_index():
       <div class="absolute inset-0" style="background:rgba(0,0,0,0.82)"></div>
       <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin">
         <div class="text-center mb-10">
-          <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4">
-            <span class="w-8 h-px bg-primary-container inline-block"></span>Google Reviews<span class="w-8 h-px bg-primary-container inline-block"></span>
-          </div>
+          <div class="inline-flex items-center font-mono text-[11px] font-bold tracking-widest uppercase mb-4 px-3 py-1.5" style="background:#facc15;color:#000000">Google Reviews</div>
           <h2 class="font-headline font-bold text-headline-lg text-on-surface">What Our Customers Say</h2>
           <div class="flex items-center justify-center gap-2 mt-3">
             <span class="text-primary-container text-xl">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -325,7 +323,7 @@ def page_index():
           </address>
         </div>
         <div>
-          <div class="font-mono text-[11px] tracking-widest text-primary-container uppercase mb-3">Store Hours</div>
+          <div class="inline-flex items-center font-mono text-[11px] font-bold tracking-widest uppercase mb-3 px-3 py-1.5" style="background:#facc15;color:#000000">Store Hours</div>
           <table class="w-full font-mono text-sm" style="border:1px solid #e2e8f0">
             <tbody>
               <tr style="border-bottom:1px solid #e2e8f0"><td class="py-2.5 px-4" style="color:#4b5563">Mon &ndash; Fri</td><td class="py-2.5 px-4 text-right" style="color:#111827">10 AM &ndash; 7 PM</td></tr>
@@ -335,7 +333,7 @@ def page_index():
           </table>
         </div>
         <div class="flex flex-col gap-3">
-          <div class="font-mono text-[11px] tracking-widest text-primary-container uppercase mb-1">Find Us</div>
+          <div class="inline-flex items-center font-mono text-[11px] font-bold tracking-widest uppercase mb-3 px-3 py-1.5" style="background:#facc15;color:#000000">Find Us</div>
           <a href="{gmaps}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary-container font-headline text-xs uppercase px-5 py-3 font-bold tracking-wider gold-hover" style="color:#131316"><span class="material-symbols-outlined text-base">location_on</span>Open in Maps</a>
           <a href="contact.html" class="inline-flex items-center gap-2 font-headline text-xs uppercase px-5 py-3 font-bold tracking-wider" style="border:1px solid #e2e8f0;color:#374151;">Contact &amp; Directions <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
         </div>
@@ -933,7 +931,7 @@ def page_sitemap():
     <section class="max-w-[880px] mx-auto px-6 lg:px-margin py-16">
       <ul class="space-y-3 text-lg">%s</ul>
       <div class="mt-10 border-t border-outline-variant/20 pt-6">
-        <div class="text-[10px] font-mono text-primary-container uppercase tracking-widest mb-3">Shop Online</div>
+        <div class="inline-flex items-center font-mono text-[10px] font-bold uppercase tracking-widest mb-3 px-3 py-1.5" style="background:#facc15;color:#000000">Shop Online</div>
         <ul class="space-y-3 text-lg">
           <li><a href="%s" target="_blank" rel="noopener" class="hover:text-primary-container" style="color:#374151">Armslist Store &nearr;</a></li>
           <li><a href="%s" target="_blank" rel="noopener" class="hover:text-primary-container" style="color:#374151">GunBroker Listings &nearr;</a></li>

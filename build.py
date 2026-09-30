@@ -390,8 +390,8 @@ def brand_chips_light():
 
 
 def label(text):
-    return ('<div class="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest '
-            'text-primary-container uppercase mb-4"><span class="w-6 h-px bg-primary-container"></span>%s</div>' % text)
+    return ('<div class="inline-flex items-center font-mono text-[11px] font-bold tracking-widest '
+            'uppercase mb-4 px-3 py-1.5" style="background:#facc15;color:#000000">%s</div>' % text)
 
 
 def crosshairs():
