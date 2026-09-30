@@ -361,7 +361,7 @@ def page_about():
         </div>
         <div>
           {label}
-          <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Twin Cities' Trusted Pawn &amp; Gun Shop</h2>
+          <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Twin Cities' Trusted Gun &amp; Pawn Shop</h2>
           <div class="mt-5 space-y-4" style="color:#4b5563">
             <p>Twin Cities Gun &amp; Pawn has proudly served the Minneapolis&ndash;St. Paul metro area since 2010. What started as a local pawn shop has grown into one of the region's most trusted destinations for firearms, ammunition, and fair pawn loans.</p>
             <p>We're a fully licensed FFL dealer with hundreds of handguns, rifles, and shotguns in stock at any given time. Whether you're a first-time buyer, a seasoned collector, or you simply need a short-term loan, our knowledgeable staff treats every customer with honesty and respect.</p>

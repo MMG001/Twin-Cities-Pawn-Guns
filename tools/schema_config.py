@@ -2,7 +2,7 @@
 """Schema.org JSON-LD configuration — single source of truth (v3.1 spec).
 
 All business facts, service metadata, and per-page graph configuration for the
-Twin Cities Pawn & Gun website live here. `build_schema.py` reads this module,
+Twin Cities Gun & Pawn website live here. `build_schema.py` reads this module,
 assembles a per-page {"@context": "https://schema.org", "@graph": [...]} document,
 and injects it into each HTML file. `check_schema.py` validates the output.
 
@@ -138,7 +138,7 @@ BRAND_KNOWS_ABOUT = [
 WEBSITE = {
     "@type": "WebSite",
     "@id": u("#website"),
-    "name": "Twin Cities Pawn & Gun",
+    "name": "Twin Cities Gun & Pawn",
     "url": DOMAIN,
     "publisher": {"@id": u("#business")},
     "inLanguage": "en-US",
@@ -152,8 +152,8 @@ WEBSITE = {
 BUSINESS = {
     "@type": "PawnShop",
     "@id": u("#business"),
-    "name": "Twin Cities Pawn & Gun",
-    "alternateName": "TC Pawn & Gun",
+    "name": "Twin Cities Gun & Pawn",
+    "alternateName": "TC Gun & Pawn",
     "foundingDate": "2010",
     "url": DOMAIN,
     "telephone": "+1-763-427-4100",
@@ -167,7 +167,7 @@ BUSINESS = {
         "url": u("images/logo.png"),
         "width": 680,
         "height": 280,
-        "caption": "Twin Cities Pawn & Gun",
+        "caption": "Twin Cities Gun & Pawn",
     },
     "image": {
         "@type": "ImageObject",
@@ -244,7 +244,7 @@ BUSINESS = {
     "knowsAbout": CONCEPT_KNOWS_ABOUT + BRAND_KNOWS_ABOUT,
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Twin Cities Pawn & Gun Services",
+        "name": "Twin Cities Gun & Pawn Services",
         "itemListElement": [
             {"@id": u("#service-firearms")},
             {"@id": u("#service-accessories")},
@@ -255,7 +255,7 @@ BUSINESS = {
     "potentialAction": [
         {
             "@type": "CommunicateAction",
-            "name": "Call Twin Cities Pawn & Gun",
+            "name": "Call Twin Cities Gun & Pawn",
             "target": {
                 "@type": "EntryPoint",
                 "urlTemplate": "tel:+17634274100",
@@ -296,7 +296,7 @@ SERVICES = {
         "url": u("guns-rifles.html"),
         "category": {"@type": "Thing", "name": "Firearms",
                      "sameAs": "https://en.wikipedia.org/wiki/Firearm"},
-        "desc_full": ("Twin Cities Pawn & Gun carries 300+ handguns, pistols, revolvers, rifles, "
+        "desc_full": ("Twin Cities Gun & Pawn carries 300+ handguns, pistols, revolvers, rifles, "
                       "shotguns, semi-automatic firearms, and collectible guns in the Twin Cities, MN. "
                       "Licensed FFL dealer serving the Twin Cities metro within a 30-mile radius."),
         "desc_card": ("300+ handguns, rifles, shotguns, and collectible firearms in stock. "
@@ -311,7 +311,7 @@ SERVICES = {
         "url": u("accessories.html"),
         "category": {"@type": "Thing", "name": "Firearm Accessories",
                      "sameAs": "https://en.wikipedia.org/wiki/Firearm_accessories"},
-        "desc_full": ("Twin Cities Pawn & Gun stocks ammunition, scopes and optics, holsters, slings, "
+        "desc_full": ("Twin Cities Gun & Pawn stocks ammunition, scopes and optics, holsters, slings, "
                       "cases, magazines, and gun safes in the Twin Cities, MN. Serving the Twin Cities metro within 30 miles."),
         "desc_card": ("Ammunition, optics, holsters, slings, magazines, and gun safes. "
                       "Everything you need to keep your firearm ready."),
@@ -325,7 +325,7 @@ SERVICES = {
         "url": u("pawn-loans.html"),
         "category": {"@type": "Thing", "name": "Pawnbroker",
                      "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"},
-        "desc_full": ("Twin Cities Pawn & Gun offers fair pawn loans in the Twin Cities, MN. We buy and loan "
+        "desc_full": ("Twin Cities Gun & Pawn offers fair pawn loans in the Twin Cities, MN. We buy and loan "
                       "against guns, power tools, electronics, jewelry, and gold. Fair appraisals, fast cash. "
                       "No credit check required. Serving the Twin Cities metro within 30 miles."),
         "desc_card": ("Get cash fast with our fair pawn loans. No credit check required. "
@@ -341,9 +341,9 @@ SERVICES = {
         "category": {"@type": "Thing", "name": "Federal Firearms License",
                      "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"},
         "desc_full": ("Licensed FFL dealer offering $50 firearms transfers in the Twin Cities, MN. Transfer any legally "
-                      "purchased firearm through Twin Cities Pawn & Gun."),
+                      "purchased firearm through Twin Cities Gun & Pawn."),
         "desc_card": ("Licensed FFL dealer offering $50 firearms transfers serving the Twin Cities metro. "
-                      "Transfer any legally purchased firearm through Twin Cities Pawn & Gun."),
+                      "Transfer any legally purchased firearm through Twin Cities Gun & Pawn."),
         "own_page": "pawn-loans.html",
         "related": [],
     },
@@ -368,7 +368,7 @@ INDEX_CARD_SERVICES = ["firearms", "accessories", "pawn-loans"]
 PAGES = {
     "index.html": {
         "webpage_type": "WebPage",
-        "name": "Twin Cities Pawn & Gun | Firearms, Pawn Loans & Guns in the Twin Cities, MN",
+        "name": "Twin Cities Gun & Pawn | Firearms, Pawn Loans & Guns in the Twin Cities, MN",
         "description": ("Twin Cities trusted firearms dealer and pawn shop since 2010. 300+ guns, rifles, "
                         "shotguns. Licensed FFL dealer serving the Twin Cities metro."),
         "breadcrumb": [("Home", "index.html")],
@@ -376,94 +376,94 @@ PAGES = {
     },
     "about.html": {
         "webpage_type": "AboutPage",
-        "name": "About Twin Cities Pawn & Gun | Twin Cities, MN Firearms & Pawn Shop Since 2010",
+        "name": "About Twin Cities Gun & Pawn | Twin Cities, MN Firearms & Pawn Shop Since 2010",
         "breadcrumb": [("Home", "index.html"), ("About", "about.html")],
     },
     "guns-rifles.html": {
         "webpage_type": "CollectionPage",
-        "name": "Guns & Rifles | 300+ Firearms In Stock | Twin Cities Pawn & Gun",
+        "name": "Guns & Rifles | 300+ Firearms In Stock | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Guns & Rifles", "guns-rifles.html")],
         "main_entity": "firearms",
     },
     "accessories.html": {
         "webpage_type": "CollectionPage",
-        "name": "Firearms Accessories | Ammo, Optics, Holsters & Safes | Twin Cities Pawn & Gun",
+        "name": "Firearms Accessories | Ammo, Optics, Holsters & Safes | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Accessories", "accessories.html")],
         "main_entity": "accessories",
     },
     "pawn-loans.html": {
         "webpage_type": "WebPage",
-        "name": "Pawn Loans & $50 FFL Transfers | Twin Cities Pawn & Gun",
+        "name": "Pawn Loans & $50 FFL Transfers | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Pawn & Loans", "pawn-loans.html")],
         "main_entity": "pawn-loans",
     },
     "contact.html": {
         "webpage_type": "ContactPage",
-        "name": "Contact Twin Cities Pawn & Gun | Twin Cities, MN | (763) 427-4100",
+        "name": "Contact Twin Cities Gun & Pawn | Twin Cities, MN | (763) 427-4100",
         "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html")],
         "actions": ["ask", "apply"],
     },
     "faq.html": {
         "webpage_type": "WebPage",
-        "name": "FAQ | Twin Cities Pawn & Gun | Twin Cities, MN",
+        "name": "FAQ | Twin Cities Gun & Pawn | Twin Cities, MN",
         "breadcrumb": [("Home", "index.html"), ("FAQ", "faq.html")],
         "faq": True,
     },
     "faq-gun-pawns.html": {
         "webpage_type": "WebPage",
-        "name": "FAQ: Pawning Guns | Twin Cities Pawn & Gun | Twin Cities, MN",
+        "name": "FAQ: Pawning Guns | Twin Cities Gun & Pawn | Twin Cities, MN",
         "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html"), ("FAQ \u2013 Gun Pawns", "faq-gun-pawns.html")],
         "faq": True,
     },
     "employment.html": {
         "webpage_type": "WebPage",
-        "name": "Employment Application | Join Our Team | Twin Cities Pawn & Gun",
+        "name": "Employment Application | Join Our Team | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html"), ("Employment", "employment.html")],
         "actions": ["apply"],
     },
     "resources.html": {
         "webpage_type": "CollectionPage",
-        "name": "Firearms & Pawn Resources | Twin Cities Pawn & Gun | Twin Cities, MN",
+        "name": "Firearms & Pawn Resources | Twin Cities Gun & Pawn | Twin Cities, MN",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html")],
     },
     "rules-for-pawning.html": {
         "webpage_type": "WebPage",
-        "name": "Rules for Pawning a Gun in Minnesota | Twin Cities Pawn & Gun",
+        "name": "Rules for Pawning a Gun in Minnesota | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Rules for Pawning a Gun", "rules-for-pawning.html")],
     },
     "gun-license-mn.html": {
         "webpage_type": "WebPage",
-        "name": "Gun License & Permit Requirements in Minnesota | Twin Cities Pawn & Gun",
+        "name": "Gun License & Permit Requirements in Minnesota | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Gun License in Minnesota", "gun-license-mn.html")],
     },
     "unregistered-gun.html": {
         "webpage_type": "WebPage",
-        "name": "Unregistered Firearms in Minnesota: Legal Consequences | Twin Cities Pawn & Gun",
+        "name": "Unregistered Firearms in Minnesota: Legal Consequences | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Unregistered Firearms", "unregistered-gun.html")],
     },
     "gun-law-checklist.html": {
         "webpage_type": "WebPage",
-        "name": "2026 Gun Law Checklist | Minnesota | Twin Cities Pawn & Gun",
+        "name": "2026 Gun Law Checklist | Minnesota | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("2026 Gun Law Checklist", "gun-law-checklist.html")],
     },
     "terms.html": {
         "webpage_type": "WebPage",
-        "name": "Terms & Conditions | Twin Cities Pawn & Gun",
+        "name": "Terms & Conditions | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Terms & Conditions", "terms.html")],
     },
     "privacy.html": {
         "webpage_type": "WebPage",
-        "name": "Privacy Policy | Twin Cities Pawn & Gun",
+        "name": "Privacy Policy | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Privacy Policy", "privacy.html")],
     },
     "sitemap.html": {
         "webpage_type": "WebPage",
-        "name": "Sitemap | Twin Cities Pawn & Gun",
+        "name": "Sitemap | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Sitemap", "sitemap.html")],
     },
     "equal-opportunity.html": {
         "webpage_type": "WebPage",
-        "name": "Equal Opportunity Employer | Twin Cities Pawn & Gun",
+        "name": "Equal Opportunity Employer | Twin Cities Gun & Pawn",
         "breadcrumb": [("Home", "index.html"), ("Equal Opportunity Employer", "equal-opportunity.html")],
     },
 }
