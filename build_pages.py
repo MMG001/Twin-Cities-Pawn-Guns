@@ -57,8 +57,21 @@ def filter_bar(chips):
     </div>""" % "\n        ".join(btns)
 
 
-def cta_band(title, sub, btn_text, btn_href, external=False):
+def cta_band(title, sub, btn_text, btn_href, external=False, bg_img=None):
     tgt = ' target="_blank" rel="noopener"' if external else ""
+    if bg_img:
+        return """
+    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
+      <div class="crosshair-card relative border border-outline-variant/40 p-10 md:p-14 text-center gold-glow overflow-hidden" style="background:#111">
+        {xh}
+        <img src="images/{bg_img}" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none" loading="lazy" />
+        <div class="relative z-10">
+          <h2 class="font-headline font-bold text-headline-lg" style="color:#ffffff">{title}</h2>
+          <p class="mt-3 max-w-2xl mx-auto" style="color:#d1d5db">{sub}</p>
+          <a href="{href}"{tgt} class="inline-flex items-center gap-2 mt-7 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider gold-hover">{btn} <span class="material-symbols-outlined text-base">arrow_outward</span></a>
+        </div>
+      </div>
+    </section>""".format(xh=crosshairs(), bg_img=bg_img, title=title, sub=sub, href=btn_href, tgt=tgt, btn=btn_text)
     return """
     <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
       <div class="crosshair-card relative bg-surface-container-low border border-outline-variant/40 p-10 md:p-14 text-center gold-glow">
@@ -476,7 +489,7 @@ def page_guns():
     body = (nav() + ticker() +
             page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
             chips + handguns + revolvers + rifles + shotguns + archery +
-            online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html") +
+            online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html", bg_img="cta-rifles-bg.webp") +
             related_links([
                 ("accessories.html", "Ammo &amp; Accessories", "Ammunition, optics, holsters, magazines and gun safes."),
                 ("pawn-loans.html", "FFL Transfers ($50)", "Buy online? Ship it to us for a fast, licensed FFL transfer."),
@@ -528,7 +541,7 @@ def page_accessories():
     body = (nav() + ticker() +
             page_hero("accessories-hero.webp", "Leupold rifle scope mounted on precision firearm", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
             chips + ammo + optics + holsters + magazines +
-            cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html") +
+            cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html", bg_img="cta-rifles-bg.webp") +
             online_cta() +
             related_links([
                 ("guns-rifles.html", "Guns &amp; Rifles", "300+ handguns, rifles and shotguns in stock in Ramsey, MN."),
@@ -634,7 +647,7 @@ def page_pawn():
     body = (nav() + ticker() +
             page_hero("pawn-tools.jpg", "Pawn shop merchandise at Twin Cities Gun & Pawn", "Pawn &amp; Loans", "Pawn &amp; Loans", "Licensed FFL dealer. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
             featured + ffl + photo_grid +
-            cta_band("Have Something to Pawn or Sell?", "Bring it in for a free, no-obligation valuation. We loan on and buy firearms, tools, electronics, jewelry, and more.", "Get a Quote", "contact.html") +
+            cta_band("Have Something to Pawn or Sell?", "Bring it in for a free, no-obligation valuation. We loan on and buy firearms, tools, electronics, jewelry, and more.", "Get a Quote", "contact.html", bg_img="cta-rifles-bg.webp") +
             related_links([
                 ("rules-for-pawning.html", "Rules for Pawning a Gun", "Minnesota pawn laws, ID requirements and hold periods."),
                 ("guns-rifles.html", "Shop Firearms", "Browse 300+ guns, rifles and shotguns in stock."),
