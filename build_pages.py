@@ -248,8 +248,10 @@ def page_index():
     </section>""".format(label=label("Minnesota Gun Broker"))
 
     reviews = """
-    <section class="bg-surface-container-lowest border-y border-outline-variant/20 py-16">
-      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+    <section class="relative border-y border-outline-variant/20 py-16 overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('images/reviews-bg.webp')"></div>
+      <div class="absolute inset-0" style="background:rgba(0,0,0,0.82)"></div>
+      <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin">
         <div class="text-center mb-10">
           <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4">
             <span class="w-8 h-px bg-primary-container inline-block"></span>Google Reviews<span class="w-8 h-px bg-primary-container inline-block"></span>
