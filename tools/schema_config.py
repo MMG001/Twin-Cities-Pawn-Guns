@@ -22,6 +22,117 @@ def u(path=""):
 
 
 # ---------------------------------------------------------------------------
+# CONCEPT knowsAbout entries — general topics, legal concepts, geo entities
+# ---------------------------------------------------------------------------
+CONCEPT_KNOWS_ABOUT = [
+    {"@type": "Thing", "name": "Firearms",
+     "sameAs": "https://en.wikipedia.org/wiki/Firearm"},
+    {"@type": "Thing", "name": "Pawnbroker",
+     "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"},
+    {"@type": "Thing", "name": "Federal Firearms License",
+     "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"},
+    {"@type": "Thing", "name": "Ammunition",
+     "sameAs": "https://en.wikipedia.org/wiki/Ammunition"},
+    {"@type": "Thing", "name": "Gun Broker",
+     "sameAs": "https://en.wikipedia.org/wiki/Arms_dealer"},
+    {"@type": "Thing", "name": "Pawn Shop",
+     "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"},
+    {"@type": "Thing", "name": "Ramsey, Minnesota",
+     "sameAs": "https://en.wikipedia.org/wiki/Ramsey,_Minnesota"},
+    {"@type": "Thing", "name": "Minnesota",
+     "sameAs": "https://en.wikipedia.org/wiki/Minnesota"},
+    {"@type": "Thing", "name": "Minneapolis\u2013Saint Paul",
+     "sameAs": "https://en.wikipedia.org/wiki/Minneapolis%E2%80%93Saint_Paul"},
+]
+
+# ---------------------------------------------------------------------------
+# BRAND knowsAbout entries — all 43 firearm brands carried in-store
+# ---------------------------------------------------------------------------
+BRAND_KNOWS_ABOUT = [
+    {"@type": "Brand", "name": "A.P.F."},
+    {"@type": "Brand", "name": "Benelli",
+     "sameAs": "https://en.wikipedia.org/wiki/Benelli_Armi_SpA"},
+    {"@type": "Brand", "name": "Beretta",
+     "sameAs": "https://en.wikipedia.org/wiki/Beretta"},
+    {"@type": "Brand", "name": "Browning Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Browning_Arms_Company"},
+    {"@type": "Brand", "name": "Bushmaster",
+     "sameAs": "https://en.wikipedia.org/wiki/Bushmaster_Firearms_International"},
+    {"@type": "Brand", "name": "Canik",
+     "sameAs": "https://en.wikipedia.org/wiki/Canik_(manufacturer)"},
+    {"@type": "Brand", "name": "Charter Arms"},
+    {"@type": "Brand", "name": "Citadel"},
+    {"@type": "Brand", "name": "Colt",
+     "sameAs": "https://en.wikipedia.org/wiki/Colt%27s_Manufacturing_Company"},
+    {"@type": "Brand", "name": "Commando"},
+    {"@type": "Brand", "name": "Daniel Defense",
+     "sameAs": "https://en.wikipedia.org/wiki/Daniel_Defense"},
+    {"@type": "Brand", "name": "Diamondback Firearms",
+     "sameAs": "https://en.wikipedia.org/wiki/Diamondback_Firearms"},
+    {"@type": "Brand", "name": "FN Herstal",
+     "sameAs": "https://en.wikipedia.org/wiki/FN_Herstal"},
+    {"@type": "Brand", "name": "Glock",
+     "sameAs": "https://en.wikipedia.org/wiki/Glock"},
+    {"@type": "Brand", "name": "Heckler \u0026 Koch",
+     "sameAs": "https://en.wikipedia.org/wiki/Heckler_%26_Koch"},
+    {"@type": "Brand", "name": "Henry Repeating Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Henry_Repeating_Arms"},
+    {"@type": "Brand", "name": "Howa",
+     "sameAs": "https://en.wikipedia.org/wiki/Howa"},
+    {"@type": "Brand", "name": "Ithaca Gun Company",
+     "sameAs": "https://en.wikipedia.org/wiki/Ithaca_Gun_Company"},
+    {"@type": "Brand", "name": "Kahr Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Kahr_Arms"},
+    {"@type": "Brand", "name": "Kel-Tec",
+     "sameAs": "https://en.wikipedia.org/wiki/Kel-Tec"},
+    {"@type": "Brand", "name": "Kimber Manufacturing",
+     "sameAs": "https://en.wikipedia.org/wiki/Kimber_Manufacturing"},
+    {"@type": "Brand", "name": "Kral"},
+    {"@type": "Brand", "name": "Marlin Firearms",
+     "sameAs": "https://en.wikipedia.org/wiki/Marlin_Firearms"},
+    {"@type": "Brand", "name": "Mauser",
+     "sameAs": "https://en.wikipedia.org/wiki/Mauser"},
+    {"@type": "Brand", "name": "Merak"},
+    {"@type": "Brand", "name": "O.F. Mossberg \u0026 Sons",
+     "sameAs": "https://en.wikipedia.org/wiki/O.F._Mossberg_%26_Sons"},
+    {"@type": "Brand", "name": "Norinco",
+     "sameAs": "https://en.wikipedia.org/wiki/Norinco"},
+    {"@type": "Brand", "name": "Perazzi",
+     "sameAs": "https://en.wikipedia.org/wiki/Perazzi"},
+    {"@type": "Brand", "name": "Remington Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Remington_Arms"},
+    {"@type": "Brand", "name": "Rock Island Armory",
+     "sameAs": "https://en.wikipedia.org/wiki/Armscor_(manufacturer)"},
+    {"@type": "Brand", "name": "Rossi Firearms",
+     "sameAs": "https://en.wikipedia.org/wiki/Amadeo_Rossi_S.A."},
+    {"@type": "Brand", "name": "Ruger",
+     "sameAs": "https://en.wikipedia.org/wiki/Sturm,_Ruger_%26_Co."},
+    {"@type": "Brand", "name": "Savage Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Savage_Arms"},
+    {"@type": "Brand", "name": "SIG Sauer",
+     "sameAs": "https://en.wikipedia.org/wiki/SIG_Sauer"},
+    {"@type": "Brand", "name": "Smith \u0026 Wesson",
+     "sameAs": "https://en.wikipedia.org/wiki/Smith_%26_Wesson"},
+    {"@type": "Brand", "name": "Springfield Armory",
+     "sameAs": "https://en.wikipedia.org/wiki/Springfield_Armory,_Inc."},
+    {"@type": "Brand", "name": "Stoeger Industries",
+     "sameAs": "https://en.wikipedia.org/wiki/Stoeger_Industries"},
+    {"@type": "Brand", "name": "Taurus Firearms",
+     "sameAs": "https://en.wikipedia.org/wiki/Taurus_Firearms"},
+    {"@type": "Brand", "name": "Thompson/Center Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Thompson/Center_Arms"},
+    {"@type": "Brand", "name": "Carl Walther GmbH",
+     "sameAs": "https://en.wikipedia.org/wiki/Carl_Walther_GmbH"},
+    {"@type": "Brand", "name": "Weatherby",
+     "sameAs": "https://en.wikipedia.org/wiki/Weatherby"},
+    {"@type": "Brand", "name": "Winchester Repeating Arms",
+     "sameAs": "https://en.wikipedia.org/wiki/Winchester_Repeating_Arms_Company"},
+    {"@type": "Brand", "name": "Windham Weaponry",
+     "sameAs": "https://en.wikipedia.org/wiki/Windham_Weaponry"},
+]
+
+
+# ---------------------------------------------------------------------------
 # WEBSITE NODE — identical on every page
 # ---------------------------------------------------------------------------
 WEBSITE = {
@@ -43,12 +154,13 @@ BUSINESS = {
     "@id": u("#business"),
     "name": "Twin Cities Pawn & Gun",
     "alternateName": "TC Pawn & Gun",
-    "slogan": "Home of the 0% Pawn",
     "foundingDate": "2010",
     "url": DOMAIN,
     "telephone": "+1-763-427-4100",
     "priceRange": "$$",
     "publicAccess": True,
+    "paymentAccepted": "Cash, Debit Card, Credit Card",
+    "currenciesAccepted": "USD",
     "logo": {
         "@type": "ImageObject",
         "@id": u("#logo"),
@@ -111,8 +223,8 @@ BUSINESS = {
         },
         {
             "@type": "City",
-            "name": "Ramsey",
-            "sameAs": "https://en.wikipedia.org/wiki/Ramsey,_Minnesota",
+            "name": "Minneapolis\u2013Saint Paul",
+            "sameAs": "https://en.wikipedia.org/wiki/Minneapolis%E2%80%93Saint_Paul",
         },
     ],
     "sameAs": [
@@ -124,32 +236,12 @@ BUSINESS = {
     "amenityFeature": [
         {"@type": "LocationFeatureSpecification", "name": "Licensed FFL Dealer", "value": True},
         {"@type": "LocationFeatureSpecification", "name": "On-Site FFL Transfer ($50)", "value": True},
-        {"@type": "LocationFeatureSpecification", "name": "0% Interest Pawn Loans", "value": True},
+        {"@type": "LocationFeatureSpecification", "name": "Fair Pawn Loans \u2014 No Credit Check", "value": True},
         {"@type": "LocationFeatureSpecification", "name": "Government-Issued ID Required for Firearm Purchase", "value": True},
         {"@type": "LocationFeatureSpecification", "name": "300+ Firearms In Stock", "value": True},
     ],
-    # 19 knowsAbout entries: general concepts + 15 firearm brands
-    "knowsAbout": [
-        {"@type": "Thing", "name": "Firearms", "sameAs": "https://en.wikipedia.org/wiki/Firearm"},
-        {"@type": "Thing", "name": "Pawnbroker", "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"},
-        {"@type": "Thing", "name": "Federal Firearms License", "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"},
-        {"@type": "Thing", "name": "Ammunition", "sameAs": "https://en.wikipedia.org/wiki/Ammunition"},
-        {"@type": "Thing", "name": "Colt", "sameAs": "https://en.wikipedia.org/wiki/Colt%27s_Manufacturing_Company"},
-        {"@type": "Thing", "name": "Walther", "sameAs": "https://en.wikipedia.org/wiki/Carl_Walther_GmbH"},
-        {"@type": "Thing", "name": "Taurus Firearms", "sameAs": "https://en.wikipedia.org/wiki/Taurus_Firearms"},
-        {"@type": "Thing", "name": "Daniel Defense", "sameAs": "https://en.wikipedia.org/wiki/Daniel_Defense"},
-        {"@type": "Thing", "name": "Kel-Tec", "sameAs": "https://en.wikipedia.org/wiki/Kel-Tec"},
-        {"@type": "Thing", "name": "Kimber Manufacturing", "sameAs": "https://en.wikipedia.org/wiki/Kimber_Manufacturing"},
-        {"@type": "Thing", "name": "Smith & Wesson", "sameAs": "https://en.wikipedia.org/wiki/Smith_%26_Wesson"},
-        {"@type": "Thing", "name": "SIG Sauer", "sameAs": "https://en.wikipedia.org/wiki/SIG_Sauer"},
-        {"@type": "Thing", "name": "Ruger", "sameAs": "https://en.wikipedia.org/wiki/Sturm,_Ruger_%26_Co."},
-        {"@type": "Thing", "name": "Glock", "sameAs": "https://en.wikipedia.org/wiki/Glock"},
-        {"@type": "Thing", "name": "Remington Arms", "sameAs": "https://en.wikipedia.org/wiki/Remington_Arms"},
-        {"@type": "Thing", "name": "Springfield Armory", "sameAs": "https://en.wikipedia.org/wiki/Springfield_Armory,_Inc."},
-        {"@type": "Thing", "name": "Browning Arms", "sameAs": "https://en.wikipedia.org/wiki/Browning_Arms_Company"},
-        {"@type": "Thing", "name": "Henry Repeating Arms", "sameAs": "https://en.wikipedia.org/wiki/Henry_Repeating_Arms"},
-        {"@type": "Thing", "name": "Mossberg", "sameAs": "https://en.wikipedia.org/wiki/O.F._Mossberg_%26_Sons"},
-    ],
+    # knowsAbout: 9 concepts + 43 brands = 52 entries
+    "knowsAbout": CONCEPT_KNOWS_ABOUT + BRAND_KNOWS_ABOUT,
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Twin Cities Pawn & Gun Services",
@@ -202,12 +294,13 @@ SERVICES = {
         "name": "Firearms Sales — Guns & Rifles",
         "serviceType": "Retail Firearms Sales",
         "url": u("guns-rifles.html"),
-        "category": {"@type": "Thing", "name": "Firearms", "sameAs": "https://en.wikipedia.org/wiki/Firearm"},
+        "category": {"@type": "Thing", "name": "Firearms",
+                     "sameAs": "https://en.wikipedia.org/wiki/Firearm"},
         "desc_full": ("Twin Cities Pawn & Gun carries 300+ handguns, pistols, revolvers, rifles, "
-                      "shotguns, semi-automatic firearms, and collectible guns in Ramsey, MN. "
+                      "shotguns, semi-automatic firearms, and collectible guns in the Twin Cities, MN. "
                       "Licensed FFL dealer serving the Twin Cities metro within a 30-mile radius."),
         "desc_card": ("300+ handguns, rifles, shotguns, and collectible firearms in stock. "
-                      "Licensed FFL dealer in Ramsey, MN."),
+                      "Licensed FFL dealer serving the Twin Cities metro area."),
         "own_page": "guns-rifles.html",
         "related": ["accessories", "pawn-loans"],
     },
@@ -216,9 +309,10 @@ SERVICES = {
         "name": "Firearms Accessories",
         "serviceType": "Retail Firearms Accessories",
         "url": u("accessories.html"),
-        "category": {"@type": "Thing", "name": "Firearm Accessories", "sameAs": "https://en.wikipedia.org/wiki/Firearm_accessories"},
+        "category": {"@type": "Thing", "name": "Firearm Accessories",
+                     "sameAs": "https://en.wikipedia.org/wiki/Firearm_accessories"},
         "desc_full": ("Twin Cities Pawn & Gun stocks ammunition, scopes and optics, holsters, slings, "
-                      "cases, magazines, and gun safes in Ramsey, MN. Serving the Twin Cities metro within 30 miles."),
+                      "cases, magazines, and gun safes in the Twin Cities, MN. Serving the Twin Cities metro within 30 miles."),
         "desc_card": ("Ammunition, optics, holsters, slings, magazines, and gun safes. "
                       "Everything you need to keep your firearm ready."),
         "own_page": "accessories.html",
@@ -226,15 +320,16 @@ SERVICES = {
     },
     "pawn-loans": {
         "id": u("#service-pawn-loans"),
-        "name": "Pawn Loans — 0% Interest",
+        "name": "Pawn Loans",
         "serviceType": "Pawn Lending",
         "url": u("pawn-loans.html"),
-        "category": {"@type": "Thing", "name": "Pawnbroker", "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"},
-        "desc_full": ("Twin Cities Pawn & Gun offers 0% interest pawn loans in Ramsey, MN. We buy and loan "
+        "category": {"@type": "Thing", "name": "Pawnbroker",
+                     "sameAs": "https://en.wikipedia.org/wiki/Pawnbroker"},
+        "desc_full": ("Twin Cities Pawn & Gun offers fair pawn loans in the Twin Cities, MN. We buy and loan "
                       "against guns, power tools, electronics, jewelry, and gold. Fair appraisals, fast cash. "
-                      "Serving the Twin Cities metro within 30 miles."),
-        "desc_card": ("Get cash fast with our 0% interest pawn loans. We accept guns, tools, electronics, "
-                      "jewelry, and gold."),
+                      "No credit check required. Serving the Twin Cities metro within 30 miles."),
+        "desc_card": ("Get cash fast with our fair pawn loans. No credit check required. "
+                      "We accept guns, tools, electronics, jewelry, and gold."),
         "own_page": "pawn-loans.html",
         "related": ["ffl-transfer", "firearms"],
     },
@@ -243,11 +338,12 @@ SERVICES = {
         "name": "FFL Firearms Transfer",
         "serviceType": "Federal Firearms License Transfer",
         "url": u("pawn-loans.html"),
-        "category": {"@type": "Thing", "name": "Federal Firearms License", "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"},
-        "desc_full": ("Licensed FFL dealer offering $50 firearms transfers in Ramsey, MN. Transfer any legally "
+        "category": {"@type": "Thing", "name": "Federal Firearms License",
+                     "sameAs": "https://en.wikipedia.org/wiki/Federal_Firearms_License"},
+        "desc_full": ("Licensed FFL dealer offering $50 firearms transfers in the Twin Cities, MN. Transfer any legally "
                       "purchased firearm through Twin Cities Pawn & Gun."),
-        "desc_card": ("Licensed FFL dealer offering $50 firearms transfers in Ramsey, MN. Transfer any legally "
-                      "purchased firearm through Twin Cities Pawn & Gun."),
+        "desc_card": ("Licensed FFL dealer offering $50 firearms transfers serving the Twin Cities metro. "
+                      "Transfer any legally purchased firearm through Twin Cities Pawn & Gun."),
         "own_page": "pawn-loans.html",
         "related": [],
     },
@@ -272,20 +368,20 @@ INDEX_CARD_SERVICES = ["firearms", "accessories", "pawn-loans"]
 PAGES = {
     "index.html": {
         "webpage_type": "WebPage",
-        "name": "Twin Cities Pawn & Gun | Firearms, Pawn Loans & Guns in Ramsey, MN",
-        "description": ("Ramsey's trusted firearms dealer and pawn shop since 2010. 300+ guns, rifles, "
-                        "shotguns. Licensed FFL dealer, 0% pawn loans."),
+        "name": "Twin Cities Pawn & Gun | Firearms, Pawn Loans & Guns in the Twin Cities, MN",
+        "description": ("Twin Cities trusted firearms dealer and pawn shop since 2010. 300+ guns, rifles, "
+                        "shotguns. Licensed FFL dealer serving the Twin Cities metro."),
         "breadcrumb": [("Home", "index.html")],
         "primary_image": "images/storefront.webp",
     },
     "about.html": {
         "webpage_type": "AboutPage",
-        "name": "About Twin Cities Pawn & Gun | Ramsey, MN Firearms & Pawn Shop Since 2010",
+        "name": "About Twin Cities Pawn & Gun | Twin Cities, MN Firearms & Pawn Shop Since 2010",
         "breadcrumb": [("Home", "index.html"), ("About", "about.html")],
     },
     "guns-rifles.html": {
         "webpage_type": "CollectionPage",
-        "name": "Guns & Rifles | 300+ Firearms In Stock | Twin Cities Pawn & Gun Ramsey MN",
+        "name": "Guns & Rifles | 300+ Firearms In Stock | Twin Cities Pawn & Gun",
         "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Guns & Rifles", "guns-rifles.html")],
         "main_entity": "firearms",
     },
@@ -297,26 +393,26 @@ PAGES = {
     },
     "pawn-loans.html": {
         "webpage_type": "WebPage",
-        "name": "0% Pawn Loans & $50 FFL Transfers | Twin Cities Pawn & Gun Ramsey MN",
+        "name": "Pawn Loans & $50 FFL Transfers | Twin Cities Pawn & Gun",
         "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Pawn & Loans", "pawn-loans.html")],
         "main_entity": "pawn-loans",
     },
     "contact.html": {
         "webpage_type": "ContactPage",
-        "name": "Contact Twin Cities Pawn & Gun | Ramsey, MN | (763) 427-4100",
+        "name": "Contact Twin Cities Pawn & Gun | Twin Cities, MN | (763) 427-4100",
         "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html")],
         "actions": ["ask", "apply"],
     },
     "faq.html": {
         "webpage_type": "WebPage",
-        "name": "FAQ | Twin Cities Pawn & Gun | Ramsey, MN",
+        "name": "FAQ | Twin Cities Pawn & Gun | Twin Cities, MN",
         "breadcrumb": [("Home", "index.html"), ("FAQ", "faq.html")],
         "faq": True,
     },
     "faq-gun-pawns.html": {
         "webpage_type": "WebPage",
-        "name": "FAQ: Pawning Guns | Twin Cities Pawn & Gun | Ramsey, MN",
-        "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html"), ("FAQ – Gun Pawns", "faq-gun-pawns.html")],
+        "name": "FAQ: Pawning Guns | Twin Cities Pawn & Gun | Twin Cities, MN",
+        "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html"), ("FAQ \u2013 Gun Pawns", "faq-gun-pawns.html")],
         "faq": True,
     },
     "employment.html": {
@@ -327,7 +423,7 @@ PAGES = {
     },
     "resources.html": {
         "webpage_type": "CollectionPage",
-        "name": "Firearms & Pawn Resources | Twin Cities Pawn & Gun | Ramsey, MN",
+        "name": "Firearms & Pawn Resources | Twin Cities Pawn & Gun | Twin Cities, MN",
         "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html")],
     },
     "rules-for-pawning.html": {
