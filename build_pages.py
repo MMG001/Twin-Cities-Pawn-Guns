@@ -72,16 +72,16 @@ def cta_band(title, sub, btn_text, btn_href, external=False):
 
 def brands_section():
     return """
-    <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+    <section class="py-16" style="background:#1b1b1e;border-top:1px solid #2e2c28;border-bottom:1px solid #2e2c28">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
         {label_center}
-        <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Brands We Carry</h2>
-        <p class="mt-2 max-w-2xl mx-auto" style="color:#4b5563">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#ffffff">Brands We Carry</h2>
+        <p class="mt-2 max-w-2xl mx-auto" style="color:#a0a0a8">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
 {chips}
         </div>
       </div>
-    </section>""".format(label_center=('<div class="flex justify-center">%s</div>' % label("Trusted Manufacturers")), chips=brand_chips_light())
+    </section>""".format(label_center=('<div class="flex justify-center">%s</div>' % label("Trusted Manufacturers")), chips=brand_chips())
 
 
 # ================= INDEX =================
@@ -351,7 +351,7 @@ def page_about():
         </div>
         <div>
           {label}
-          <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Ramsey's Trusted Pawn &amp; Gun Shop</h2>
+          <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Twin Cities' Trusted Pawn &amp; Gun Shop</h2>
           <div class="mt-5 space-y-4" style="color:#4b5563">
             <p>Twin Cities Gun &amp; Pawn has proudly served the Minneapolis&ndash;St. Paul metro area since 2010. What started as a local pawn shop has grown into one of the region's most trusted destinations for firearms, ammunition, and fair pawn loans.</p>
             <p>We're a fully licensed FFL dealer with hundreds of handguns, rifles, and shotguns in stock at any given time. Whether you're a first-time buyer, a seasoned collector, or you simply need a short-term loan, our knowledgeable staff treats every customer with honesty and respect.</p>
@@ -398,8 +398,8 @@ def page_about():
     </section>""".format(label=label("The Difference"), grid=grid(reason_cards))
 
     body = (nav() + ticker() +
-            page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Gun & Pawn", "About Us", "About Twin Cities Gun &amp; Pawn", "Serving Ramsey and the Twin Cities with honest firearms sales and fair pawn loans since 2010.") +
-            story + stats + why + brands_section() + keyword_entity_table() + footer())
+            page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Gun & Pawn", "About Us", "About Twin Cities Gun &amp; Pawn", "Licensed FFL dealer &mdash; buying, selling &amp; pawn loans since 2010.") +
+            stats + story + why + brands_section() + keyword_entity_table() + footer())
     return head(
         "About Us | Twin Cities Gun & Pawn \u2014 Ramsey, MN Since 2010",
         "Learn about Twin Cities Gun & Pawn, Ramsey Minnesota's trusted licensed FFL firearms dealer and pawn shop since 2010. Licensed FFL dealer.",
