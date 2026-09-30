@@ -756,54 +756,21 @@ def legal_page(canon, title, meta_desc, keywords, label_text, h1, sub, content_h
 
 
 def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html, quick_facts=None):
-    """Info page: hero + optional quick-facts bar + sticky TOC sidebar + numbered content."""
+    """Info page: hero + quick-facts bar + full-width dark numbered content. No sidebar."""
     import re
 
-    # --- Auto-number h2 sections and collect TOC titles ---
     counter_val = [0]
-    toc_titles = []
-
     def replace_h2(m):
         counter_val[0] += 1
         n = counter_val[0]
-        plain = re.sub(r'<[^>]+>', '', m.group(2))
-        plain = plain.replace('&amp;', '&').replace('&mdash;', '\u2014').replace('&#8211;', '\u2013')
-        toc_titles.append((n, plain))
         return (
             '<div class="guide-section" id="s%d">'
-            '<div class="guide-h2-meta"><span class="guide-num">%02d</span>'
-            '<div class="guide-rule"></div></div>'
+            '<span class="guide-num">%02d</span>'
             '<h2 class="guide-h2 font-headline font-bold">%s</h2>'
             '</div>' % (n, n, m.group(2))
         )
-
     anchored = re.sub(r'<h2([^>]*)>(.*?)</h2>', replace_h2, content_html, flags=re.DOTALL)
 
-    # --- TOC sidebar ---
-    toc_links = "\n".join(
-        '<a href="#s%d" class="toc-link flex items-center gap-2 py-2 border-l-2 pl-3 text-sm"'
-        ' style="border-color:#2e2c28;color:#6b7280">'
-        '<span class="font-mono text-[10px] text-primary-container flex-shrink-0">%02d</span>'
-        '<span>%s</span></a>' % (n, n, t)
-        for n, t in toc_titles
-    )
-
-    sidebar = """
-      <aside class="hidden lg:block w-52 flex-shrink-0">
-        <div class="sticky" style="top:88px">
-          <div class="font-mono text-[10px] tracking-widest uppercase mb-3 text-primary-container">Contents</div>
-          <nav class="space-y-0.5">
-            %s
-          </nav>
-          <div class="mt-8 p-5" style="background:#1b1b1e;border:1px solid #2e2c28">
-            <div class="font-mono text-[10px] text-primary-container uppercase tracking-widest mb-2">Need Help?</div>
-            <p class="text-xs mb-4" style="color:#a0a0a8">Our staff can answer questions in person or by phone.</p>
-            <a href="contact.html" class="inline-flex items-center gap-1 text-xs font-headline font-bold uppercase tracking-widest text-primary-container gold-hover">Contact Us <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
-          </div>
-        </div>
-      </aside>""" % toc_links
-
-    # --- Quick-facts bar ---
     qf = ""
     if quick_facts:
         facts_html = "".join(
@@ -814,23 +781,18 @@ def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text,
         )
         qf = """
     <div style="background:#1b1b1e;border-bottom:1px solid #2e2c28">
-      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-5 flex flex-wrap gap-x-8 gap-y-3">
-        %s
-      </div>
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-5 flex flex-wrap gap-x-8 gap-y-3">%s</div>
     </div>""" % facts_html
 
     body = (nav() + ticker() +
             page_hero(hero_img, hero_alt, label_text, h1, sub) +
             qf +
             """
-    <div style="background:#ffffff;border-top:1px solid #e2e8f0">
-      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 flex gap-16 items-start">
-        %s
-        <main class="flex-1 min-w-0 guide-article">
-          %s
-        </main>
+    <div style="background:#131316">
+      <div class="max-w-[860px] mx-auto px-6 lg:px-margin py-16">
+        <div class="guide-article-dark">%s</div>
       </div>
-    </div>""" % (sidebar, anchored) +
+    </div>""" % anchored +
             footer())
     return head(title, meta_desc, canon, keywords) + body
 
@@ -1238,109 +1200,124 @@ def page_unregistered_gun():
 
 
 def page_gun_law_checklist():
-    """2026 Minnesota Gun Law Checklist — based on Everytown Research rankings"""
-    intro = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
-      <div class="flex items-start gap-6 mb-10 p-8 border" style="background:#fff;border-color:#e2e8f0">
-        <div class="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center" style="background:#eec20015">
-          <span class="font-headline text-3xl font-bold text-primary-container">#14</span>
-        </div>
-        <div>
-          <h2 class="font-headline font-bold text-headline-md" style="color:#111827">Minnesota Gun Law Strength</h2>
-          <p class="mt-2" style="color:#374151"><strong>Ranked #14 in the nation</strong> for gun law strength. Minnesota has passed strong gun safety policies including universal background checks, Extreme Risk laws, and domestic abuser prohibitions.</p>
-          <div class="grid grid-cols-2 gap-6 mt-5 text-sm">
-            <div><div class="font-mono text-xs text-primary-container uppercase tracking-widest">Composite Score</div><div class="font-bold text-2xl" style="color:#111827">55/100</div></div>
-            <div><div class="font-mono text-xs text-primary-container uppercase tracking-widest">Gun Death Rate</div><div class="font-bold text-2xl" style="color:#111827">9.8</div><div class="text-xs" style="color:#6b7280">per 100k residents (national avg: 12.8)</div></div>
+    """2026 Minnesota Gun Law Checklist — dark card grid layout inspired by numbered template"""
+
+    # Dark stats banner
+    stats = """
+    <div style="background:#0d0d10;border-bottom:1px solid #2e2c28">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div style="background:#1b1b1e;border:1px solid #2e2c28;border-top:3px solid #facc15" class="p-8">
+            <div class="font-mono text-xs tracking-widest uppercase mb-3" style="color:#facc15">National Ranking</div>
+            <div class="font-headline font-bold" style="font-size:clamp(2.5rem,5vw,4rem);color:#e5e1e6;line-height:1">#14</div>
+            <div class="text-sm mt-3" style="color:#9ca3af">out of 50 states for gun law strength</div>
+          </div>
+          <div style="background:#1b1b1e;border:1px solid #2e2c28;border-top:3px solid #facc15" class="p-8">
+            <div class="font-mono text-xs tracking-widest uppercase mb-3" style="color:#facc15">Composite Score</div>
+            <div class="font-headline font-bold" style="font-size:clamp(2.5rem,5vw,4rem);color:#e5e1e6;line-height:1">55<span class="text-2xl" style="color:#6b7280">/100</span></div>
+            <div class="text-sm mt-3" style="color:#9ca3af">Everytown Research composite index</div>
+          </div>
+          <div style="background:#1b1b1e;border:1px solid #2e2c28;border-top:3px solid #facc15" class="p-8">
+            <div class="font-mono text-xs tracking-widest uppercase mb-3" style="color:#facc15">Gun Death Rate</div>
+            <div class="font-headline font-bold" style="font-size:clamp(2.5rem,5vw,4rem);color:#e5e1e6;line-height:1">9.8<span class="text-xl" style="color:#6b7280">/100k</span></div>
+            <div class="text-sm mt-3" style="color:#9ca3af">vs. national avg of 12.8 per 100k residents</div>
           </div>
         </div>
+        <p class="text-xs italic" style="color:#4b5563">Data sourced from <a href="https://everytownresearch.org/rankings/state/minnesota/" target="_blank" rel="noopener" style="color:#facc15">Everytown Research &nearr;</a> &nbsp;&middot;&nbsp; Last updated January 14, 2026</p>
       </div>
-      <p class="text-sm italic" style="color:#6b7280">Data sourced from <a href="https://everytownresearch.org/rankings/state/minnesota/" target="_blank" rel="noopener" class="text-primary-container hover:underline">Everytown Research &nearr;</a> (Last updated January 14, 2026)</p>
-    </section>"""
-    
+    </div>"""
+
+    _cat_counter = [0]
     def law_cat(title, laws):
-        laws_html = "".join('<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg flex-shrink-0">check_circle</span><span style="color:#374151">%s</span></li>' % law for law in laws)
+        _cat_counter[0] += 1
+        n = _cat_counter[0]
+        cards = "".join(
+            '<div style="background:#1b1b1e;border:1px solid #2e2c28" class="p-4 flex items-start gap-3">'
+            '<span class="material-symbols-outlined text-base flex-shrink-0 mt-0.5" style="color:#facc15">check_circle</span>'
+            '<span class="text-sm leading-relaxed" style="color:#d1d5db">%s</span>'
+            '</div>' % law
+            for law in laws
+        )
         return """
-        <div class="mb-12">
-          <h3 class="font-headline font-bold text-headline-sm mb-5 pb-3 border-b" style="color:#111827;border-color:#e2e8f0">%s</h3>
-          <ul class="space-y-3">%s</ul>
-        </div>""" % (title, laws_html)
-    
-    content = """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin pb-16">
-      {foundational}
-      {industry}
-      {public}
-      {wrong_hands}
-      {policing}
-      {sales}
-    </section>""".format(
-        foundational=law_cat("Foundational Laws", [
-            "<strong>Background checks required</strong> for handgun and semiautomatic assault weapon purchases (permit to purchase or point-of-sale)",
-            "<strong>Concealed carry permit required</strong> with training (including live-fire requirement)",
-            "<strong>Extreme Risk law</strong> allows temporary gun removal for individuals in crisis",
-            "<strong>No Shoot First law</strong> in place",
-            "<strong>Secure storage required</strong> when a child (under 18) may access the firearm"
+        <div class="mb-14">
+          <div class="flex items-center gap-4 mb-6 pb-4 border-b" style="border-color:#2e2c28">
+            <span class="font-mono font-bold text-2xl flex-shrink-0" style="color:#facc15">%02d</span>
+            <h2 class="font-headline font-bold text-headline-sm" style="color:#e5e1e6">%s</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">%s</div>
+        </div>""" % (n, title, cards)
+
+    cats = "".join([
+        law_cat("Foundational Laws", [
+            "<strong style='color:#e5e1e6'>Background checks required</strong> for handgun and semiautomatic assault weapon purchases",
+            "<strong style='color:#e5e1e6'>Concealed carry permit required</strong> with training including live-fire requirement",
+            "<strong style='color:#e5e1e6'>Extreme Risk law</strong> allows temporary gun removal for individuals in crisis",
+            "<strong style='color:#e5e1e6'>No Shoot First law</strong> in place",
+            "<strong style='color:#e5e1e6'>Secure storage required</strong> when a child under 18 may access the firearm"
         ]),
-        industry=law_cat("Gun Industry & Product Safety", [
-            "<strong>Assault weapons prohibited</strong> (military-style weapons banned)",
-            "<strong>Auto sears / Glock switches prohibited</strong>",
-            "<strong>Bump stocks prohibited</strong>",
-            "<strong>Consumer safety:</strong> new handgun models must have childproofing features",
-            "<strong>Dealer license required</strong> at state level",
-            "<strong>Ghost guns regulated</strong> (serial numbers required, background checks enforced)",
-            "<strong>High-capacity magazines prohibited</strong>",
-            "<strong>Legal accountability for gun industry</strong> allowed",
-            "<strong>Microstamping for new handguns</strong> required"
+        law_cat("Gun Industry &amp; Product Safety", [
+            "<strong style='color:#e5e1e6'>Assault weapons prohibited</strong> — military-style weapons banned",
+            "<strong style='color:#e5e1e6'>Auto sears / Glock switches prohibited</strong>",
+            "<strong style='color:#e5e1e6'>Bump stocks prohibited</strong>",
+            "<strong style='color:#e5e1e6'>Consumer safety:</strong> new handguns must have childproofing features",
+            "<strong style='color:#e5e1e6'>Dealer license required</strong> at state level",
+            "<strong style='color:#e5e1e6'>Ghost guns regulated</strong> — serial numbers required, background checks enforced",
+            "<strong style='color:#e5e1e6'>High-capacity magazines prohibited</strong>",
+            "<strong style='color:#e5e1e6'>Legal accountability for gun industry</strong> allowed",
+            "<strong style='color:#e5e1e6'>Microstamping for new handguns</strong> required"
         ]),
-        public=law_cat("Guns in Public", [
-            "<strong>No carry after violent offense</strong> (3-year ban for assault/violent misdemeanor)",
-            "<strong>No guns mandate on college campuses</strong>",
-            "<strong>No guns at state capitol or demonstrations</strong>",
-            "<strong>No guns in bars</strong>",
-            "<strong>No guns in K-12 schools</strong> by staff or permit holders",
-            "<strong>Open carry regulated</strong> (permit required for all firearms)",
-            "<strong>Strong concealed carry authority</strong> (officials can deny for public safety)"
+        law_cat("Guns in Public", [
+            "<strong style='color:#e5e1e6'>No carry after violent offense</strong> — 3-year ban for assault/violent misdemeanor",
+            "<strong style='color:#e5e1e6'>No guns mandate on college campuses</strong>",
+            "<strong style='color:#e5e1e6'>No guns at state capitol or demonstrations</strong>",
+            "<strong style='color:#e5e1e6'>No guns in bars</strong>",
+            "<strong style='color:#e5e1e6'>No guns in K-12 schools</strong> by staff or permit holders",
+            "<strong style='color:#e5e1e6'>Open carry regulated</strong> — permit required for all firearms",
+            "<strong style='color:#e5e1e6'>Strong concealed carry authority</strong> — officials can deny for public safety"
         ]),
-        wrong_hands=law_cat("Keeping Guns Out of the Wrong Hands", [
-            "<strong>Emergency restraining order prohibitor</strong> (domestic abusers barred)",
-            "<strong>Felony prohibitor</strong> (indefinite)",
-            "<strong>Fugitive from justice prohibitor</strong>",
-            "<strong>Gun removal program</strong> (officials seek illegal guns)",
-            "<strong>Hate crime prohibitor</strong>",
-            "<strong>Mental health prohibitor</strong> (indefinite for involuntary commitments)",
-            "<strong>Minimum age:</strong> 21+ for handguns, 18+ for long guns",
-            "<strong>Assault/violent misdemeanor prohibitor</strong> (3-year ban)",
-            "<strong>Domestic abuser prohibition</strong> (misdemeanor conviction + restraining orders, covers dating partners)",
-            "<strong>Relinquishment required</strong> for convicted abusers and those under restraining orders",
-            "<strong>School threat assessment teams</strong> required",
-            "<strong>Stalker prohibitor</strong> (3-year ban)"
+        law_cat("Keeping Guns Out of the Wrong Hands", [
+            "<strong style='color:#e5e1e6'>Emergency restraining order prohibitor</strong> — domestic abusers barred",
+            "<strong style='color:#e5e1e6'>Felony prohibitor</strong> indefinite",
+            "<strong style='color:#e5e1e6'>Fugitive from justice prohibitor</strong>",
+            "<strong style='color:#e5e1e6'>Gun removal program</strong> — officials actively seek illegal guns",
+            "<strong style='color:#e5e1e6'>Hate crime prohibitor</strong>",
+            "<strong style='color:#e5e1e6'>Mental health prohibitor</strong> — indefinite for involuntary commitments",
+            "<strong style='color:#e5e1e6'>Minimum age:</strong> 21+ for handguns, 18+ for long guns",
+            "<strong style='color:#e5e1e6'>Assault/violent misdemeanor prohibitor</strong> — 3-year ban",
+            "<strong style='color:#e5e1e6'>Domestic abuser prohibition</strong> covers misdemeanor convictions &amp; dating partners",
+            "<strong style='color:#e5e1e6'>Relinquishment required</strong> for convicted abusers and those under restraining orders",
+            "<strong style='color:#e5e1e6'>School threat assessment teams</strong> required by law",
+            "<strong style='color:#e5e1e6'>Stalker prohibitor</strong> — 3-year ban"
         ]),
-        policing=law_cat("Policing & Civil Rights", [
-            "<strong>Funding for victims of gun violence</strong> via VOCA funds",
-            "<strong>Local gun laws allowed</strong> (no state preemption)",
-            "<strong>No Law Enforcement Officers Bill of Rights</strong>",
-            "<strong>Office of Violence Intervention</strong> exists",
-            "<strong>Police deadly force standard:</strong> only when necessary to prevent serious injury",
-            "<strong>Qualified immunity limited</strong>",
-            "<strong>Tools to address crime guns:</strong> tracing + trafficking/straw purchase crimes",
-            "<strong>Violence intervention program funding</strong> in state budget"
+        law_cat("Policing &amp; Civil Rights", [
+            "<strong style='color:#e5e1e6'>Funding for victims of gun violence</strong> via VOCA funds",
+            "<strong style='color:#e5e1e6'>Local gun laws allowed</strong> — no state preemption",
+            "<strong style='color:#e5e1e6'>Office of Violence Intervention</strong> exists",
+            "<strong style='color:#e5e1e6'>Police deadly force standard:</strong> only when necessary to prevent serious injury",
+            "<strong style='color:#e5e1e6'>Qualified immunity limited</strong>",
+            "<strong style='color:#e5e1e6'>Tools to address crime guns:</strong> tracing + trafficking/straw purchase crimes",
+            "<strong style='color:#e5e1e6'>Violence intervention program funding</strong> in state budget"
         ]),
-        sales=law_cat("Sales & Permitting", [
-            "<strong>Authority to deny gun purchase</strong> if buyer poses danger",
-            "<strong>Charleston Loophole closed</strong> (30-day waiting period for handguns/assault weapons)",
-            "<strong>Lost and stolen reporting</strong> required",
-            "<strong>Mental health record reporting</strong> into background check system",
-            "<strong>Sales records sent to law enforcement</strong> (handguns)",
-            "<strong>Training required to purchase guns</strong>",
-            "<strong>Waiting periods</strong> enforced"
+        law_cat("Sales &amp; Permitting", [
+            "<strong style='color:#e5e1e6'>Authority to deny gun purchase</strong> if buyer poses danger",
+            "<strong style='color:#e5e1e6'>Charleston Loophole closed</strong> — 30-day waiting period for handguns/assault weapons",
+            "<strong style='color:#e5e1e6'>Lost and stolen reporting</strong> required",
+            "<strong style='color:#e5e1e6'>Mental health record reporting</strong> into background check system",
+            "<strong style='color:#e5e1e6'>Sales records sent to law enforcement</strong> for handguns",
+            "<strong style='color:#e5e1e6'>Training required to purchase guns</strong>",
+            "<strong style='color:#e5e1e6'>Waiting periods</strong> enforced"
         ])
-    )
-    
-    light_content = ('<div style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">'
-                     + intro + content + '</div>')
+    ])
+
+    dark_content = """
+    <div style="background:#131316">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">%s</div>
+    </div>""" % cats
+
     body = (nav() + ticker() +
             page_hero("gun-law-checklist-hero.webp", "Classic hunting shotguns displayed in wooden rack", "2026 Checklist", "Gun Law Checklist", "How Minnesota ranks on gun safety laws, background checks, concealed carry, and more.") +
-            light_content +
+            stats +
+            dark_content +
             cta_band("Questions About Minnesota Gun Laws?", "Our knowledgeable team can help you navigate firearms regulations in Minnesota. Give us a call or stop in.", "Contact Us", "contact.html") +
             footer())
     return head("2026 Gun Law Checklist | Minnesota | Twin Cities Gun & Pawn",
