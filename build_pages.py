@@ -108,7 +108,7 @@ def page_index():
 
     hero = """
     <section class="relative min-h-[70vh] flex items-center blueprint-grid overflow-hidden" aria-label="Homepage hero">
-      <img src="images/hero-interior.webp" alt="Interior of Twin Cities Gun & Pawn — hundreds of firearms in stock in Ramsey, MN" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
+      <img src="images/hero-interior.webp" alt="Interior of Twin Cities Gun & Pawn — hundreds of firearms in stock in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
       <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
       <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin py-24 w-full">
         {label}
@@ -137,7 +137,7 @@ def page_index():
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <a href="guns-rifles.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
             {xh}
-            <img src="images/cat-guns-rifles-real.jpg" alt="Guns and rifles for sale at Twin Cities Gun &amp; Pawn in Ramsey, MN" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/cat-guns-rifles-real.jpg" alt="Guns and rifles for sale at Twin Cities Gun &amp; Pawn in the Twin Cities" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="p-6" style="background:#ffffff"><h3 class="font-headline font-bold text-headline-sm" style="color:#111827">Guns &amp; Rifles</h3><p class="text-sm mt-2" style="color:#4b5563">Handguns, rifles, shotguns, revolvers &amp; more.</p><span class="inline-flex items-center gap-2 mt-4 font-mono text-xs uppercase tracking-wider text-primary-container">Shop firearms <span class="material-symbols-outlined text-sm">arrow_outward</span></span></div>
           </a>
           <a href="accessories.html" class="crosshair-card group relative block overflow-hidden gold-aura-hover" style="border:1px solid #e2e8f0">
@@ -160,7 +160,7 @@ def page_index():
         <div class="flex flex-col md:flex-row gap-0 items-stretch">
           <!-- Image left -->
           <div class="md:w-1/2 relative overflow-hidden" style="min-height:420px">
-            <img src="images/gun-pawn-transaction.webp" alt="Twin Cities Gun & Pawn staff and customer completing a firearm transaction in Ramsey, MN" class="absolute inset-0 w-full h-full object-cover" />
+            <img src="images/gun-pawn-transaction.webp" alt="Twin Cities Gun & Pawn staff and customer completing a firearm transaction in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <!-- Content right -->
           <div class="md:w-1/2 flex flex-col justify-center px-8 py-14" style="background:#f8f9fa">
@@ -190,20 +190,22 @@ def page_index():
     showcase = """
     <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
-        <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
-          <div>{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Twin Cities Largest Gun Selection</h2></div>
-          <a href="guns-rifles.html" class="font-mono text-xs uppercase tracking-wider text-primary-container hover:text-primary-fixed inline-flex items-center gap-2">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        <div class="mb-10">
+          {label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Twin Cities Largest Used Gun Selection</h2>
         </div>
         {grid}
+        <div class="mt-10 flex justify-center">
+          <a href="guns-rifles.html" class="inline-flex items-center gap-3 font-headline font-bold text-sm uppercase tracking-wider px-10 py-4" style="background:#131316;color:#facc15">Browse All Guns &amp; Rifles <span class="material-symbols-outlined text-base">arrow_outward</span></a>
+        </div>
       </div>
     </section>""".format(label=label("Featured"), grid=grid(showcase_cards, cols="sm:grid-cols-2 lg:grid-cols-4"))
 
     gold_cta = """
     <section class="py-14" style="background:#facc15">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
-        <div class="font-mono text-[11px] tracking-widest uppercase mb-4" style="color:#6c5700">&#9733; Ramsey, MN &middot; Since 2010 &#9733;</div>
+        <div class="font-mono text-[11px] tracking-widest uppercase mb-4" style="color:#6c5700">&#9733; Twin Cities, MN &middot; Since 2010 &#9733;</div>
         <h2 class="font-headline font-bold text-headline-lg" style="color:#131316;line-height:1.1">Ready to Buy, Sell, or Get a Loan?</h2>
-        <p class="mt-4 max-w-xl mx-auto" style="color:#3c2f00">Visit our Ramsey store on US-10. Open Monday&ndash;Friday 10AM&ndash;7PM, Saturday 10AM&ndash;5PM. Walk-ins always welcome.</p>
+        <p class="mt-4 max-w-xl mx-auto" style="color:#3c2f00">Visit us on US-10 in the Twin Cities. Open Monday&ndash;Friday 10AM&ndash;7PM, Saturday 10AM&ndash;5PM. Walk-ins always welcome.</p>
         <div class="mt-8 flex flex-wrap gap-4 justify-center">
           <a href="contact.html" class="inline-flex items-center gap-2 font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider" style="background:#131316;color:#facc15">Visit Our Store <span class="material-symbols-outlined text-base" style="color:#facc15">arrow_outward</span></a>
           <a href="tel:7634274100" class="inline-flex items-center gap-2 font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider" style="border:2px solid #131316;color:#131316">(763) 427-4100</a>
@@ -242,7 +244,7 @@ def page_index():
         <div class="flex flex-col md:flex-row items-stretch" style="min-height:460px">
           <!-- Store interior photo left -->
           <div class="md:w-1/2 relative overflow-hidden" style="min-height:420px">
-            <img src="images/store-interior.jpg" alt="Twin Cities Gun &amp; Pawn store interior — pawn counter, guitars, tools, and jewelry in Ramsey, MN" class="absolute inset-0 w-full h-full object-cover" />
+            <img src="images/store-interior.jpg" alt="Twin Cities Gun &amp; Pawn store interior — pawn counter, guitars, tools, and jewelry in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <!-- Broker content right -->
           <div class="md:w-1/2 flex flex-col justify-center px-10 py-16 lg:px-16" style="background:#f8f9fa">
@@ -343,10 +345,10 @@ def page_index():
     body = (nav() + ticker() + hero + trust + store_split + cat_cards + pawn_loan_split + showcase + gold_cta +
             online_cta() + reviews + hours_compact + footer())
     return head(
-        "Twin Cities Gun & Pawn | Firearms & Pawn Loans, Ramsey MN",
-        "Hundreds of guns, rifles & accessories in stock in Ramsey, MN. Licensed FFL dealer \u2014 $50 transfers & pawn loans since 2010.",
+        "Twin Cities Gun & Pawn | Firearms & Pawn Loans, Twin Cities MN",
+        "Hundreds of guns, rifles & accessories in stock in the Twin Cities. Licensed FFL dealer \u2014 $50 transfers & pawn loans since 2010.",
         "index.html",
-        "pawn shop Ramsey MN, gun store Ramsey, firearms dealer Minnesota, pawn loans Ramsey, FFL transfer, buy guns Ramsey, Twin Cities Pawn",
+        "pawn shop Twin Cities MN, gun store Twin Cities, firearms dealer Minnesota, pawn loans Twin Cities, FFL transfer, buy guns Twin Cities, Twin Cities Pawn",
         schema=schema) + body
 
 
@@ -357,7 +359,7 @@ def page_about():
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-12 items-center">
         <div class="relative crosshair-card gold-glow" style="border:1px solid #e2e8f0">
           {xh}
-          <img src="images/storefront-exterior.webp" alt="Twin Cities Gun &amp; Pawn storefront exterior in Ramsey, MN" class="w-full h-[420px] object-cover" />
+          <img src="images/storefront-exterior.webp" alt="Twin Cities Gun &amp; Pawn storefront exterior in the Twin Cities" class="w-full h-[420px] object-cover" />
         </div>
         <div>
           {label}
@@ -365,7 +367,7 @@ def page_about():
           <div class="mt-5 space-y-4" style="color:#4b5563">
             <p>Twin Cities Gun &amp; Pawn has proudly served the Minneapolis&ndash;St. Paul metro area since 2010. What started as a local pawn shop has grown into one of the region's most trusted destinations for firearms, ammunition, and fair pawn loans.</p>
             <p>We're a fully licensed FFL dealer with hundreds of handguns, rifles, and shotguns in stock at any given time. Whether you're a first-time buyer, a seasoned collector, or you simply need a short-term loan, our knowledgeable staff treats every customer with honesty and respect.</p>
-            <p>We believe in giving our neighbors a fair deal. Stop by our Ramsey location on US-10 and see the difference for yourself.</p>
+            <p>We believe in giving our neighbors a fair deal. Stop by our Twin Cities location on US-10 and see the difference for yourself.</p>
           </div>
           <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Visit Us <span class="material-symbols-outlined text-base">arrow_outward</span></a>
         </div>
@@ -388,7 +390,7 @@ def page_about():
         ("diversity_3", "Huge Selection", "Hundreds of firearms plus tools, electronics, jewelry, and more. Our inventory changes daily."),
         ("handshake", "Honest &amp; Fair", "Straightforward pricing and respectful service for buyers, sellers, and borrowers alike."),
         ("swap_horiz", "$50 FFL Transfers", "Buying online? We handle incoming FFL transfers for a flat $50 fee."),
-        ("storefront", "Local &amp; Trusted", "A Ramsey fixture since 2010, proudly serving the Twin Cities community."),
+        ("storefront", "Local &amp; Trusted", "A Twin Cities fixture since 2010, proudly serving the metro community."),
     ]
     reason_cards = []
     for icon, t, d in reasons:
@@ -411,10 +413,10 @@ def page_about():
             page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Gun & Pawn", "About Us", "About Twin Cities Gun &amp; Pawn", "Licensed FFL dealer &mdash; buying, selling &amp; pawn loans since 2010.") +
             stats + story + why + brands_section() + keyword_entity_table() + footer())
     return head(
-        "About Us | Twin Cities Gun & Pawn \u2014 Ramsey, MN Since 2010",
-        "Learn about Twin Cities Gun & Pawn, Ramsey Minnesota's trusted licensed FFL firearms dealer and pawn shop since 2010. Licensed FFL dealer.",
+        "About Us | Twin Cities Gun & Pawn \u2014 Twin Cities, MN Since 2010",
+        "Learn about Twin Cities Gun & Pawn, the Twin Cities' trusted licensed FFL firearms dealer and pawn shop since 2010. Licensed FFL dealer.",
         "about.html",
-        "about Twin Cities Pawn, gun store history Ramsey MN, licensed FFL dealer Minnesota, trusted pawn shop",
+        "about Twin Cities Gun and Pawn, gun store history Twin Cities MN, licensed FFL dealer Minnesota, trusted pawn shop",
         ) + body
 
 
@@ -436,7 +438,7 @@ def page_guns():
     revolvers = inv_section("revolvers", "Wheelguns", "Revolvers",
         "Classic and modern revolvers from Smith &amp; Wesson, Ruger, Colt, Taurus and more.",
         grid([
-            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Gun &amp; Pawn, Ramsey MN", "In Stock", "Double-Action Revolvers", "New &amp; Used", light=True),
+            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Gun &amp; Pawn, Twin Cities MN", "In Stock", "Double-Action Revolvers", "New &amp; Used", light=True),
             inv_card("revolver-01.webp", "Multiple revolvers on display including single-action and double-action wheelguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used", light=True),
             inv_card("revolver-single.webp", "Smith &amp; Wesson stainless steel revolver with wood grips", "In Stock", "Magnum Revolvers", "New &amp; Used", light=True),
         ]), bg="white")
@@ -446,7 +448,7 @@ def page_guns():
         grid([
             inv_card("ar-rifles-store.webp", "AR semi-automatic rifles at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True),
             inv_card("hunting-rifles-store.webp", "Bolt-action hunting rifles wall display", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used", light=True),
-            inv_card("rifles-wall.webp", "Rifle wall display at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Modern Sporting Rifles", "New &amp; Used", light=True),
+            inv_card("rifles-wall.webp", "Rifle wall display at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Modern Sporting Rifles", "New &amp; Used", light=True),
         ]), bg="gray")
 
     shotguns = inv_section("shotguns", "Field &amp; Home Defense", "Shotguns",
@@ -464,11 +466,11 @@ def page_guns():
         <div class="grid grid-cols-2 gap-4">
           <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame overflow-hidden">
             {xh}
-            <img src="images/archery-bows-01.webp" alt="Compound bows wall display at Twin Cities Gun &amp; Pawn Ramsey MN" class="w-full h-full object-cover" />
+            <img src="images/archery-bows-01.webp" alt="Compound bows wall display at Twin Cities Gun &amp; Pawn Twin Cities, MN" class="w-full h-full object-cover" />
           </div>
           <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame overflow-hidden">
             {xh}
-            <img src="images/archery-bows-02.webp" alt="Compound bows and arrows at Twin Cities Gun &amp; Pawn Ramsey MN" class="w-full h-full object-cover" />
+            <img src="images/archery-bows-02.webp" alt="Compound bows and arrows at Twin Cities Gun &amp; Pawn Twin Cities, MN" class="w-full h-full object-cover" />
           </div>
         </div>
         <div>
@@ -484,7 +486,7 @@ def page_guns():
 
 
     body = (nav() + ticker() +
-            page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in Ramsey.") +
+            page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in the Twin Cities.") +
             chips + handguns + revolvers + rifles + shotguns + archery +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html", bg_img="cta-rifles-bg.webp") +
             related_links([
@@ -493,10 +495,10 @@ def page_guns():
                 ("gun-license-mn.html", "MN Gun License", "What you need to legally buy a firearm in Minnesota."),
             ]) + footer())
     return head(
-        "Guns & Rifles for Sale | Twin Cities Gun & Pawn \u2014 Ramsey, MN",
-        "Shop handguns, rifles, shotguns, and revolvers at Twin Cities Gun & Pawn in Ramsey, MN. Licensed FFL dealer with hundreds of guns in stock.",
+        "Guns & Rifles for Sale | Twin Cities Gun & Pawn \u2014 Twin Cities, MN",
+        "Shop handguns, rifles, shotguns, and revolvers at Twin Cities Gun & Pawn in the Twin Cities. Licensed FFL dealer with hundreds of guns in stock.",
         "guns-rifles.html",
-        "guns for sale Ramsey MN, rifles for sale Minnesota, handguns Ramsey, shotguns, buy firearms, FFL dealer, revolvers Minnesota",
+        "guns for sale Twin Cities MN, rifles for sale Minnesota, handguns Twin Cities MN, shotguns, buy firearms, FFL dealer, revolvers Minnesota",
         ) + body
 
 
@@ -509,30 +511,30 @@ def page_accessories():
     ammo = inv_section("ammo", "Rounds &amp; Calibers", "Ammunition &amp; Ammo",
         "Handgun, rifle, and shotgun ammunition in popular calibers. Stock and pricing change frequently &mdash; call for current availability.",
         grid([
-            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used"),
-            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Pistol Ammo", "New &amp; Used"),
+            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used"),
+            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Ammo", "New &amp; Used"),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     optics = inv_section("optics", "Glass &amp; Electronics", "Sights, Scopes &amp; Optics",
         "Red dots, rifle scopes, thermal and night vision optics to complete your build.",
         grid([
-            inv_card("optics-scope.jpg", "Rifle scope at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Rifle Scopes", "New &amp; Used", light=True),
-            inv_card("optics-sights.jpg", "Red dot and rifle sights at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Sights &amp; Red Dots", "New &amp; Used", light=True),
-            inv_card("optics-scope-kit.jpg", "Scope kit with mounts at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Scope Kits &amp; Mounts", "New &amp; Used", light=True),
+            inv_card("optics-scope.jpg", "Rifle scope at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Scopes", "New &amp; Used", light=True),
+            inv_card("optics-sights.jpg", "Red dot and rifle sights at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Sights &amp; Red Dots", "New &amp; Used", light=True),
+            inv_card("optics-scope-kit.jpg", "Scope kit with mounts at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Scope Kits &amp; Mounts", "New &amp; Used", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters &amp; Slings",
         "Concealed carry holsters and rifle slings to keep your firearm secure and accessible.",
         grid([
-            inv_card("holsters-owb.jpg", "OWB holsters for pistols at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "OWB Holsters", "New", light=True),
-            inv_card("holsters-iwb.jpg", "IWB concealed carry holsters at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "IWB Holsters", "New", light=True),
+            inv_card("holsters-owb.jpg", "OWB holsters for pistols at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "OWB Holsters", "New", light=True),
+            inv_card("holsters-iwb.jpg", "IWB concealed carry holsters at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "IWB Holsters", "New", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
     magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines",
         "Factory and aftermarket pistol and rifle magazines.",
         grid([
-            inv_card("magazines-pistol.jpg", "Pistol magazines at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Pistol Magazines", "New &amp; Used", light=True),
-            inv_card("magazines-rifle.jpg", "Rifle magazines at Twin Cities Gun &amp; Pawn Ramsey MN", "In Stock", "Rifle Magazines", "New &amp; Used", light=True),
+            inv_card("magazines-pistol.jpg", "Pistol magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Magazines", "New &amp; Used", light=True),
+            inv_card("magazines-rifle.jpg", "Rifle magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Magazines", "New &amp; Used", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     body = (nav() + ticker() +
@@ -541,15 +543,15 @@ def page_accessories():
             cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html", bg_img="cta-rifles-bg.webp") +
             online_cta() +
             related_links([
-                ("guns-rifles.html", "Guns &amp; Rifles", "300+ handguns, rifles and shotguns in stock in Ramsey, MN."),
+                ("guns-rifles.html", "Guns &amp; Rifles", "300+ handguns, rifles and shotguns in stock in the Twin Cities."),
                 ("pawn-loans.html", "Pawn &amp; Loans", "Pawn your items or shop our store &mdash; firearms, tools, electronics &amp; more."),
                 ("contact.html", "Visit The Store", "6650 US-10, Ramsey, MN &mdash; hours, map and directions."),
             ]) + footer())
     return head(
-        "Ammo & Firearm Accessories | Twin Cities Gun & Pawn, Ramsey MN",
-        "Ammunition, optics, holsters, magazines, and gun safes at Twin Cities Gun & Pawn in Ramsey, MN. Everything you need for your firearms in one place.",
+        "Ammo & Firearm Accessories | Twin Cities Gun & Pawn, Twin Cities MN",
+        "Ammunition, optics, holsters, magazines, and gun safes at Twin Cities Gun & Pawn in the Twin Cities. Everything you need for your firearms in one place.",
         "accessories.html",
-        "ammunition Ramsey MN, ammo for sale Minnesota, rifle scopes, holsters, magazines, gun safes, firearm accessories Ramsey",
+        "ammunition Twin Cities MN, ammo for sale Minnesota, rifle scopes, holsters, magazines, gun safes, firearm accessories Twin Cities",
         ) + body
 
 
@@ -653,9 +655,9 @@ def page_pawn():
             footer())
     return head(
         "Pawn Your Items or Shop Our Store | Twin Cities Gun & Pawn, MN",
-        "Pawn your firearms, tools, electronics or jewelry at Twin Cities Gun & Pawn in Ramsey, MN. Fair valuations, no credit check. Plus $50 FFL transfers and a huge rotating inventory.",
+        "Pawn your firearms, tools, electronics or jewelry at Twin Cities Gun & Pawn in the Twin Cities. Fair valuations, no credit check. Plus $50 FFL transfers and a huge rotating inventory.",
         "pawn-loans.html",
-        "pawn shop Ramsey MN, pawn items Minnesota, FFL transfer $50, sell jewelry Ramsey, pawn tools electronics, gold buyer Ramsey, shop inventory Twin Cities",
+        "pawn shop Twin Cities MN, pawn items Minnesota, FFL transfer $50, sell jewelry Twin Cities, pawn tools electronics, gold buyer Twin Cities, shop inventory Twin Cities",
         ) + body
 
 
@@ -732,10 +734,10 @@ def page_contact():
             page_hero("contact-hero.webp", "Glock pistol and AR-15 rifle laid out on dark surface — Twin Cities Gun &amp; Pawn contact", "Contact", "Contact Us", "Stop by, call, or send us a message. We're here to help with firearms, pawn loans, and FFL transfers.") +
             form + online_cta() + footer())
     return head(
-        "Contact Us | Twin Cities Gun & Pawn \u2014 Ramsey, MN | (763) 427-4100",
-        "Contact Twin Cities Gun & Pawn in Ramsey, MN. Visit us at 6650 US-10, call (763) 427-4100, or send a message. Open Mon\u2013Fri 10\u20137, Sat 10\u20135.",
+        "Contact Us | Twin Cities Gun & Pawn \u2014 Twin Cities, MN | (763) 427-4100",
+        "Contact Twin Cities Gun & Pawn in the Twin Cities. Visit us at 6650 US-10, call (763) 427-4100, or send a message. Open Mon\u2013Fri 10\u20137, Sat 10\u20135.",
         "contact.html",
-        "contact Twin Cities Pawn, gun store Ramsey MN phone, pawn shop directions Ramsey, 6650 US-10, firearms dealer contact Minnesota",
+        "contact Twin Cities Pawn, gun store Twin Cities MN phone, pawn shop directions Twin Cities, 6650 US-10, firearms dealer contact Twin Cities",
         ) + body
 
 
@@ -824,7 +826,7 @@ def page_terms():
         p('Questions about these terms? Contact us at <a href="tel:7634274100" class="text-primary-container hover:underline">(763) 427-4100</a> or visit us at 6650 US-10, Ramsey, MN 55303.'),
     ])
     return legal_page("terms.html", "Terms & Conditions | Twin Cities Gun & Pawn",
-        "Terms and conditions for Twin Cities Gun & Pawn in Ramsey, MN, including firearms sales compliance, FFL transfers, and pawn loan policies.",
+        "Terms and conditions for Twin Cities Gun & Pawn in the Twin Cities, including firearms sales compliance, FFL transfers, and pawn loan policies.",
         "terms and conditions, Twin Cities Pawn policies, firearms sale terms, pawn loan terms",
         "Legal", "Terms &amp; Conditions", "Last updated 2026. Please review these terms governing the use of our website and services.", c)
 
@@ -846,7 +848,7 @@ def page_privacy():
         p('For privacy questions, contact us at <a href="tel:7634274100" class="text-primary-container hover:underline">(763) 427-4100</a> or 6650 US-10, Ramsey, MN 55303.'),
     ])
     return legal_page("privacy.html", "Privacy Policy | Twin Cities Gun & Pawn",
-        "Privacy policy for Twin Cities Gun & Pawn in Ramsey, MN. Learn what information we collect and how we protect it.",
+        "Privacy policy for Twin Cities Gun & Pawn in the Twin Cities. Learn what information we collect and how we protect it.",
         "privacy policy, Twin Cities Pawn privacy, data protection pawn shop",
         "Legal", "Privacy Policy", "How we collect, use, and protect your information.", c)
 
@@ -898,7 +900,7 @@ def page_faq():
             content +
             cta_band("Still Have Questions?", "We're happy to help. Give us a call or stop by the store and our team will get you sorted.", "Contact Us", "contact.html") +
             footer())
-    return head("FAQ | Twin Cities Gun & Pawn \u2014 Ramsey, MN",
+    return head("FAQ | Twin Cities Gun & Pawn \u2014 Twin Cities, MN",
         "Frequently asked questions about Twin Cities Gun & Pawn: pawn loans, FFL transfers, buying firearms, hours, location, and more.",
         "faq.html",
         "pawn shop FAQ, FFL transfer questions, buy gun requirements Minnesota, pawn loan questions, Twin Cities Pawn hours",
@@ -942,7 +944,7 @@ def page_sitemap():
     body = (nav() + ticker() +
             text_hero("Navigation", "Sitemap", "Every page on the Twin Cities Gun &amp; Pawn website, all in one place.") +
             content + footer())
-    return head("Sitemap | Twin Cities Gun & Pawn \u2014 Ramsey, MN",
+    return head("Sitemap | Twin Cities Gun & Pawn \u2014 Twin Cities, MN",
         "Full sitemap of the Twin Cities Gun & Pawn website \u2014 firearms, accessories, pawn loans, and more.",
         "sitemap.html",
         "Twin Cities Pawn sitemap, site navigation, pawn shop pages",
@@ -984,14 +986,14 @@ def page_faq_gun_pawns():
     </section>
     </div>""".format(items=faq_accordion(faqs))
     body = (nav() + ticker() +
-            text_hero("Help Center", "FAQ &ndash; Gun Pawns", "Everything you need to know about pawning a firearm at Twin Cities Gun &amp; Pawn in Ramsey, Minnesota.") +
+            text_hero("Help Center", "FAQ &ndash; Gun Pawns", "Everything you need to know about pawning a firearm at Twin Cities Gun &amp; Pawn in the Twin Cities.") +
             content +
             cta_band("Ready to Pawn Your Firearm?", "Stop by with a valid photo ID for a free, no-obligation valuation, or call us with any questions.", "Contact Us", "contact.html") +
             footer())
-    return head("Gun Pawn FAQ | Twin Cities Gun & Pawn | Ramsey, MN",
+    return head("Gun Pawn FAQ | Twin Cities Gun & Pawn | Twin Cities, MN",
         "Answers to common questions about pawning firearms in Minnesota: required ID, valuations, loan terms, background checks, and reclaiming your gun.",
         "faq-gun-pawns.html",
-        "pawn a gun Minnesota, gun pawn FAQ, firearm pawn loan Ramsey MN, how to pawn a firearm, get pawned gun back",
+        "pawn a gun Minnesota, gun pawn FAQ, firearm pawn loan Twin Cities MN, how to pawn a firearm, get pawned gun back",
         ) + body
 
 
@@ -1005,7 +1007,7 @@ def page_employment():
         {label}
         <h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Why Work With Us</h2>
         <div class="mt-5 space-y-4" style="color:#374151">
-          <p>Twin Cities Gun &amp; Pawn has been a Ramsey fixture since 2010, and our team is the reason customers keep coming back. We're looking for friendly, honest, hard-working people who enjoy helping others.</p>
+          <p>Twin Cities Gun &amp; Pawn has been a Twin Cities fixture since 2010, and our team is the reason customers keep coming back. We're looking for friendly, honest, hard-working people who enjoy helping others.</p>
           <p>Firearms enthusiasts are especially welcome &mdash; but a great attitude and a willingness to learn matter most. We offer a supportive environment, competitive pay, and the chance to work with an amazing selection of firearms, tools, electronics, and collectibles every day.</p>
           <ul class="space-y-3 mt-6">
             <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>Friendly, team-oriented workplace</li>
@@ -1050,12 +1052,12 @@ def page_employment():
     </section>
     </div>""".format(label=label("Careers"), xh=crosshairs(), opts=opts)
     body = (nav() + ticker() +
-            page_hero("pawn-counter-guitars.webp", "Inside Twin Cities Gun & Pawn store", "Careers", "Join Our Team", "Twin Cities Gun &amp; Pawn is always looking for great people. Apply below to become part of our Ramsey crew.") +
+            page_hero("pawn-counter-guitars.webp", "Inside Twin Cities Gun & Pawn store", "Careers", "Join Our Team", "Twin Cities Gun &amp; Pawn is always looking for great people. Apply below to become part of our Twin Cities crew.") +
             form + footer())
-    return head("Employment Application | Twin Cities Gun & Pawn | Ramsey, MN",
-        "Apply to join the team at Twin Cities Gun & Pawn in Ramsey, MN. We're hiring sales associates, firearms specialists, pawn specialists, and more.",
+    return head("Employment Application | Twin Cities Gun & Pawn | Twin Cities, MN",
+        "Apply to join the team at Twin Cities Gun & Pawn in the Twin Cities. We're hiring sales associates, firearms specialists, pawn specialists, and more.",
         "employment.html",
-        "Twin Cities Pawn jobs, gun store jobs Ramsey MN, pawn shop employment Minnesota, firearms specialist job, apply now",
+        "Twin Cities Pawn jobs, gun store jobs Twin Cities MN, pawn shop employment Minnesota, firearms specialist job, apply now",
         ) + body
 
 
@@ -1107,7 +1109,7 @@ def page_resources():
             content +
             cta_band("Still Have Questions?", "Our knowledgeable staff is happy to walk you through the details. Give us a call or stop in.", "Contact Us", "contact.html") +
             footer())
-    return head("Resources | Twin Cities Gun & Pawn | Ramsey, MN",
+    return head("Resources | Twin Cities Gun & Pawn | Twin Cities, MN",
         "Gun law resources from Twin Cities Gun & Pawn: 2026 checklist, MN gun licensing, rules for pawning a firearm, and firearm registration law explained.",
         "resources.html",
         "gun pawn resources, Minnesota firearm law, gun license guide, pawn a gun rules, Twin Cities Pawn resources, 2026 gun laws",
@@ -1137,7 +1139,7 @@ def page_rules_for_pawning():
     ])
     return info_page("rules-for-pawning.html", "Rules for Pawning a Gun in Minnesota | Twin Cities Gun & Pawn",
         "A plain-English guide to pawning a firearm in Minnesota: who qualifies, what ID to bring, how valuation works, hold periods, and reclaiming your gun.",
-        "rules for pawning a gun, pawn a firearm Minnesota, gun pawn requirements Ramsey MN, how to pawn a gun, reclaim pawned firearm",
+        "rules for pawning a gun, pawn a firearm Minnesota, gun pawn requirements Twin Cities MN, how to pawn a gun, reclaim pawned firearm",
         "rules-pawning-hero.webp", "Vintage revolver with wood grips on wooden surface", 
         "Guide", "Rules for Pawning a Gun", "What you need to know before pawning a firearm in Minnesota.", c,
         quick_facts=["Valid government photo ID required", "18+ for long guns &mdash; 21+ for handguns", "ATF Form 4473 required on redemption", "Non-recourse loan &mdash; no credit impact if you forfeit"])

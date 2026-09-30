@@ -69,7 +69,7 @@ def head(title, desc, canonical, keywords, schema=""):
   <meta property="og:image" content="{base}/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Twin Cities Gun &amp; Pawn storefront in Ramsey, Minnesota" />
+  <meta property="og:image:alt" content="Twin Cities Gun &amp; Pawn storefront in the Twin Cities, Minnesota" />
   <meta property="og:type" content="business.business" />
   <meta property="og:url" content="{base}/{canon}" />
   <meta property="og:locale" content="en_US" />
@@ -78,9 +78,9 @@ def head(title, desc, canonical, keywords, schema=""):
   <meta name="twitter:title" content="{title}" />
   <meta name="twitter:description" content="{desc}" />
   <meta name="twitter:image" content="{base}/images/og-image.jpg" />
-  <meta name="twitter:image:alt" content="Twin Cities Gun &amp; Pawn storefront in Ramsey, Minnesota" />
+  <meta name="twitter:image:alt" content="Twin Cities Gun &amp; Pawn storefront in the Twin Cities, Minnesota" />
   <meta name="geo.region" content="US-MN" />
-  <meta name="geo.placename" content="Ramsey, Minnesota" />
+  <meta name="geo.placename" content="Twin Cities, Minnesota" />
   <meta name="geo.position" content="45.2619;-93.4499" />
   <meta name="ICBM" content="45.2619, -93.4499" />
   <link rel="icon" type="image/png" href="images/logo.png" />
@@ -112,7 +112,7 @@ def nav():
         <img src="images/logo.png" alt="Twin Cities Gun &amp; Pawn logo" class="h-12 w-auto" />
         <div class="hidden sm:flex flex-col">
           <span class="font-headline text-sm font-bold tracking-wider uppercase text-on-surface">Twin Cities Gun &amp; Pawn</span>
-          <span class="font-mono text-[9px] text-outline tracking-widest uppercase">Licensed FFL Dealer &middot; Ramsey, MN</span>
+          <span class="font-mono text-[9px] text-outline tracking-widest uppercase">Licensed FFL Dealer &middot; Twin Cities, MN</span>
         </div>
       </a>
       <nav class="hidden md:flex items-center space-x-6" aria-label="Main navigation">
@@ -225,7 +225,7 @@ def nav():
               <span class="text-lg">&#128188;</span>
               <div>
                 <div class="font-headline font-bold text-sm text-on-surface">Employment</div>
-                <div class="text-xs text-on-surface-variant">Join our team in Ramsey, MN</div>
+                <div class="text-xs text-on-surface-variant">Join our team in the Twin Cities</div>
               </div>
             </a>
           </div>
@@ -277,7 +277,7 @@ def nav():
 
 def ticker():
     items = ("&#128299; 300+ FIREARMS IN STOCK &nbsp;&middot;&nbsp; &#9989; LICENSED FFL DEALER &nbsp;&middot;&nbsp; "
-             "&#127942; SERVING RAMSEY MN SINCE 2010 &nbsp;&middot;&nbsp; "
+             "&#127942; SERVING TWIN CITIES MN SINCE 2010 &nbsp;&middot;&nbsp; "
              "&#128230; SHOP ONLINE: ARMSLIST &amp; GUNBROKER &nbsp;&middot;&nbsp; &#9742; (763) 427-4100 &nbsp;&middot;&nbsp; ")
     span = '<span class="font-mono text-[11px] tracking-widest text-on-surface-variant uppercase px-4">%s</span>' % items
     return """
@@ -454,7 +454,7 @@ def online_cta():
           <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4">
             <span class="w-8 h-px bg-primary-container inline-block"></span>Shop Our Inventory Online<span class="w-8 h-px bg-primary-container inline-block"></span>
           </div>
-          <h2 class="font-headline font-bold text-headline-lg text-on-surface">Buy Firearms Online &mdash; Ramsey, MN</h2>
+          <h2 class="font-headline font-bold text-headline-lg text-on-surface">Buy Firearms Online &mdash; Twin Cities, MN</h2>
           <p class="mt-4 text-on-surface-variant max-w-2xl mx-auto">
             Twin Cities Gun &amp; Pawn lists handguns, pistols, rifles, shotguns, and collectible firearms on Armslist and GunBroker. Browse current in-stock inventory, place bids, or call us to verify availability. New guns added regularly &mdash; inventory moves fast.
           </p>
@@ -531,7 +531,7 @@ def keyword_entity_table():
          'firearm consignment, ATF Form 4 &amp; tax stamp guidance',
          "pawn-loans.html"),
         ("Location &amp; Service Area",
-         'Ramsey, Minnesota (MN) &middot; Twin Cities &middot; Minneapolis&ndash;St. Paul metro &middot; '
+         'Twin Cities, Minnesota (MN) &middot; Minneapolis&ndash;St. Paul metro &middot; '
          'Anoka County &middot; serving a 30-mile radius &middot; 6650 US-10, Ramsey, MN 55303',
          "contact.html"),
         ("Compliance &amp; Resources",
@@ -556,7 +556,7 @@ def keyword_entity_table():
           <span class="w-8 h-px bg-primary-container inline-block"></span>What We Offer<span class="w-8 h-px bg-primary-container inline-block"></span>
         </div>
         <h2 id="semantic-heading" class="font-headline font-bold text-headline-lg text-on-surface">Guns, Pawn Loans &amp; Firearm Services in Minnesota</h2>
-        <p class="mt-4 text-on-surface-variant max-w-3xl mx-auto">A complete look at the firearms, brands, ammunition, and pawn services Twin Cities Gun &amp; Pawn offers throughout Ramsey and the greater Twin Cities metro.</p>
+        <p class="mt-4 text-on-surface-variant max-w-3xl mx-auto">A complete look at the firearms, brands, ammunition, and pawn services Twin Cities Gun &amp; Pawn offers throughout the Twin Cities and greater metro.</p>
       </div>
       <div class="seo-table-wrap crosshair-card border border-outline-variant/40">
         {xh}
