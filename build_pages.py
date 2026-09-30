@@ -345,7 +345,7 @@ def page_index():
     return head(
         "Twin Cities Gun & Pawn | Firearms & Pawn Loans, Twin Cities MN",
         "Hundreds of guns, rifles & accessories in stock in the Twin Cities. Licensed FFL dealer \u2014 $50 transfers & pawn loans since 2010.",
-        "index.html",
+        "",
         "pawn shop Twin Cities MN, gun store Twin Cities, firearms dealer Minnesota, pawn loans Twin Cities, FFL transfer, buy guns Twin Cities, Twin Cities Pawn",
         schema=schema) + body
 
@@ -912,7 +912,7 @@ def page_faq():
 
 def page_sitemap():
     links = [
-        ("index.html", "Home"), ("about.html", "About Us"),
+        ("/", "Home"), ("about.html", "About Us"),
         ("guns-rifles.html", "Guns &amp; Rifles"), ("guns-rifles.html#handguns", "&rsaquo; Handguns &amp; Pistols"),
         ("guns-rifles.html#revolvers", "&rsaquo; Revolvers"), ("guns-rifles.html#rifles", "&rsaquo; Rifles"),
         ("guns-rifles.html#shotguns", "&rsaquo; Shotguns"), ("guns-rifles.html#archery", "&rsaquo; Archery"),
@@ -1350,7 +1350,7 @@ def page_gun_law_checklist():
 
 # ---------- WRITE-OUT ----------
 PAGES = {
-    "index.html": page_index,
+    "": page_index,
     "about.html": page_about,
     "guns-rifles.html": page_guns,
     "accessories.html": page_accessories,
@@ -1372,7 +1372,7 @@ PAGES = {
 
 # Priority hints for sitemap.xml (Cheirank / canonical consistency)
 SITEMAP_PRIORITY = {
-    "index.html": "1.0",
+    "": "1.0",
     "guns-rifles.html": "0.9", "pawn-loans.html": "0.9", "accessories.html": "0.9",
     "contact.html": "0.8", "about.html": "0.8",
     "resources.html": "0.7", "gun-law-checklist.html": "0.7", "gun-license-mn.html": "0.7",
@@ -1388,7 +1388,7 @@ def write_sitemap_xml():
     today = datetime.date.today().isoformat()
     urls = ""
     for fname in PAGES:
-        loc = "%s/%s" % (BASE_URL, fname)
+        loc = BASE_URL + "/" + fname if fname else BASE_URL + "/"
         prio = SITEMAP_PRIORITY.get(fname, "0.5")
         urls += ('  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n'
                  '    <changefreq>weekly</changefreq>\n    <priority>%s</priority>\n  </url>\n'
@@ -1413,9 +1413,10 @@ def write_robots_txt():
 if __name__ == "__main__":
     for fname, fn in PAGES.items():
         html = fn()
-        with open(os.path.join(OUT, fname), "w", encoding="utf-8") as f:
+        out_fname = "index.html" if fname == "" else fname
+        with open(os.path.join(OUT, out_fname), "w", encoding="utf-8") as f:
             f.write(html)
-        print("wrote", fname, len(html), "bytes")
+        print("wrote", out_fname, len(html), "bytes")
     # remove old services.html (replaced by pawn-loans.html)
     old = os.path.join(OUT, "services.html")
     if os.path.exists(old):

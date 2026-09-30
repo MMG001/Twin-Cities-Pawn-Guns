@@ -366,104 +366,104 @@ INDEX_CARD_SERVICES = ["firearms", "accessories", "pawn-loans"]
 # primary_image: relative image path -> WebPage.primaryImageOfPage.
 # ---------------------------------------------------------------------------
 PAGES = {
-    "index.html": {
+    "": {
         "webpage_type": "WebPage",
         "name": "Twin Cities Gun & Pawn | Firearms, Pawn Loans & Guns in the Twin Cities, MN",
         "description": ("Twin Cities trusted firearms dealer and pawn shop since 2010. 300+ guns, rifles, "
                         "shotguns. Licensed FFL dealer serving the Twin Cities metro."),
-        "breadcrumb": [("Home", "index.html")],
+        "breadcrumb": [("Home", "")],
         "primary_image": "images/storefront.webp",
     },
     "about.html": {
         "webpage_type": "AboutPage",
         "name": "About Twin Cities Gun & Pawn | Twin Cities, MN Firearms & Pawn Shop Since 2010",
-        "breadcrumb": [("Home", "index.html"), ("About", "about.html")],
+        "breadcrumb": [("Home", ""), ("About", "about.html")],
     },
     "guns-rifles.html": {
         "webpage_type": "CollectionPage",
         "name": "Guns & Rifles | 300+ Firearms In Stock | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Guns & Rifles", "guns-rifles.html")],
+        "breadcrumb": [("Home", ""), ("Inventory", "guns-rifles.html"), ("Guns & Rifles", "guns-rifles.html")],
         "main_entity": "firearms",
     },
     "accessories.html": {
         "webpage_type": "CollectionPage",
         "name": "Firearms Accessories | Ammo, Optics, Holsters & Safes | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Accessories", "accessories.html")],
+        "breadcrumb": [("Home", ""), ("Inventory", "guns-rifles.html"), ("Accessories", "accessories.html")],
         "main_entity": "accessories",
     },
     "pawn-loans.html": {
         "webpage_type": "WebPage",
         "name": "Pawn Loans & $50 FFL Transfers | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Inventory", "guns-rifles.html"), ("Pawn & Loans", "pawn-loans.html")],
+        "breadcrumb": [("Home", ""), ("Inventory", "guns-rifles.html"), ("Pawn & Loans", "pawn-loans.html")],
         "main_entity": "pawn-loans",
     },
     "contact.html": {
         "webpage_type": "ContactPage",
         "name": "Contact Twin Cities Gun & Pawn | Twin Cities, MN | (763) 427-4100",
-        "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html")],
+        "breadcrumb": [("Home", ""), ("Contact", "contact.html")],
         "actions": ["ask", "apply"],
     },
     "faq.html": {
         "webpage_type": "WebPage",
         "name": "FAQ | Twin Cities Gun & Pawn | Twin Cities, MN",
-        "breadcrumb": [("Home", "index.html"), ("FAQ", "faq.html")],
+        "breadcrumb": [("Home", ""), ("FAQ", "faq.html")],
         "faq": True,
     },
     "faq-gun-pawns.html": {
         "webpage_type": "WebPage",
         "name": "FAQ: Pawning Guns | Twin Cities Gun & Pawn | Twin Cities, MN",
-        "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html"), ("FAQ \u2013 Gun Pawns", "faq-gun-pawns.html")],
+        "breadcrumb": [("Home", ""), ("Contact", "contact.html"), ("FAQ \u2013 Gun Pawns", "faq-gun-pawns.html")],
         "faq": True,
     },
     "employment.html": {
         "webpage_type": "WebPage",
         "name": "Employment Application | Join Our Team | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Contact", "contact.html"), ("Employment", "employment.html")],
+        "breadcrumb": [("Home", ""), ("Contact", "contact.html"), ("Employment", "employment.html")],
         "actions": ["apply"],
     },
     "resources.html": {
         "webpage_type": "CollectionPage",
         "name": "Firearms & Pawn Resources | Twin Cities Gun & Pawn | Twin Cities, MN",
-        "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html")],
+        "breadcrumb": [("Home", ""), ("Resources", "resources.html")],
     },
     "rules-for-pawning.html": {
         "webpage_type": "WebPage",
         "name": "Rules for Pawning a Gun in Minnesota | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Rules for Pawning a Gun", "rules-for-pawning.html")],
+        "breadcrumb": [("Home", ""), ("Resources", "resources.html"), ("Rules for Pawning a Gun", "rules-for-pawning.html")],
     },
     "gun-license-mn.html": {
         "webpage_type": "WebPage",
         "name": "Gun License & Permit Requirements in Minnesota | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Gun License in Minnesota", "gun-license-mn.html")],
+        "breadcrumb": [("Home", ""), ("Resources", "resources.html"), ("Gun License in Minnesota", "gun-license-mn.html")],
     },
     "unregistered-gun.html": {
         "webpage_type": "WebPage",
         "name": "Unregistered Firearms in Minnesota: Legal Consequences | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("Unregistered Firearms", "unregistered-gun.html")],
+        "breadcrumb": [("Home", ""), ("Resources", "resources.html"), ("Unregistered Firearms", "unregistered-gun.html")],
     },
     "gun-law-checklist.html": {
         "webpage_type": "WebPage",
         "name": "2026 Gun Law Checklist | Minnesota | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Resources", "resources.html"), ("2026 Gun Law Checklist", "gun-law-checklist.html")],
+        "breadcrumb": [("Home", ""), ("Resources", "resources.html"), ("2026 Gun Law Checklist", "gun-law-checklist.html")],
     },
     "terms.html": {
         "webpage_type": "WebPage",
         "name": "Terms & Conditions | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Terms & Conditions", "terms.html")],
+        "breadcrumb": [("Home", ""), ("Terms & Conditions", "terms.html")],
     },
     "privacy.html": {
         "webpage_type": "WebPage",
         "name": "Privacy Policy | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Privacy Policy", "privacy.html")],
+        "breadcrumb": [("Home", ""), ("Privacy Policy", "privacy.html")],
     },
     "sitemap.html": {
         "webpage_type": "WebPage",
         "name": "Sitemap | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Sitemap", "sitemap.html")],
+        "breadcrumb": [("Home", ""), ("Sitemap", "sitemap.html")],
     },
     "equal-opportunity.html": {
         "webpage_type": "WebPage",
         "name": "Equal Opportunity Employer | Twin Cities Gun & Pawn",
-        "breadcrumb": [("Home", "index.html"), ("Equal Opportunity Employer", "equal-opportunity.html")],
+        "breadcrumb": [("Home", ""), ("Equal Opportunity Employer", "equal-opportunity.html")],
     },
 }

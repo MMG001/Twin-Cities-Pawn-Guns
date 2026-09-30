@@ -88,7 +88,7 @@ def service_level(key, slug):
     svc = cfg.SERVICES[key]
     if slug == svc["own_page"]:
         return "full"
-    if slug == "index.html" and key in cfg.INDEX_CARD_SERVICES:
+    if slug == "" and key in cfg.INDEX_CARD_SERVICES:
         return "card"
     return "stub"
 
@@ -210,7 +210,8 @@ def build_graph(slug, page, html):
 
 
 def inject(slug, page):
-    path = os.path.join(ROOT, slug)
+    fname = "index.html" if slug == "" else slug
+    path = os.path.join(ROOT, fname)
     with open(path, "r", encoding="utf-8") as fh:
         html = fh.read()
 
@@ -233,8 +234,9 @@ def inject(slug, page):
 def main():
     for slug, page in cfg.PAGES.items():
         inject(slug, page)
+        fname = "index.html" if slug == "" else slug
         print("injected %-26s (%d nodes)" % (
-            slug, len(build_graph(slug, page, open(os.path.join(ROOT, slug), encoding="utf-8").read())["@graph"])))
+            fname, len(build_graph(slug, page, open(os.path.join(ROOT, fname), encoding="utf-8").read())["@graph"])))
     print("Done: %d pages." % len(cfg.PAGES))
 
 

@@ -111,7 +111,8 @@ def check_rule11(graph):
 
 
 def check_page(slug):
-    path = os.path.join(ROOT, slug)
+    fname = "index.html" if slug == "" else slug
+    path = os.path.join(ROOT, fname)
     with open(path, "r", encoding="utf-8") as fh:
         html = fh.read()
 
@@ -153,8 +154,9 @@ def main():
     all_pass = True
     for slug in cfg.PAGES:
         ok, errors = check_page(slug)
+        fname = "index.html" if slug == "" else slug
         status = "PASS" if ok else "FAIL"
-        print("[%s] %s" % (status, slug))
+        print("[%s] %s" % (status, fname))
         if not ok:
             all_pass = False
             for e in errors:
