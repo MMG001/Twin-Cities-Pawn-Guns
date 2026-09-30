@@ -456,7 +456,7 @@ img { max-width: 100%; height: auto; }
 
 /* Disclaimer text at end */
 .guide-article .text-outline {
-  color: #9ca3af;
+  color: #4b5563;
   font-size: 13px;
 }
 
@@ -478,4 +478,4 @@ img { max-width: 100%; height: auto; }
 .guide-article-dark li { margin-bottom: 0.4rem; line-height: 1.7; font-size: 15px; }
 .guide-article-dark .guide-h2 { color: #facc15; }
 .guide-article-dark .guide-rule { background: #2e2c28; }
-.guide-article-dark .text-outline { color: #6b7280; font-size: 13px; }
+.guide-article-dark .text-outline { color: #d1d5db; font-size: 13px; }
