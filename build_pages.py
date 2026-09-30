@@ -729,7 +729,7 @@ def page_contact():
     </div>""".format(label=label("Get In Touch"), xh=crosshairs(), gmaps=GMAPS)
 
     body = (nav() + ticker() +
-            page_hero("contact-hero.webp", "Handguns with yellow price tags on display counter", "Contact", "Contact Us", "Stop by, call, or send us a message. We're here to help with firearms, pawn loans, and FFL transfers.") +
+            page_hero("contact-hero.webp", "Glock pistol and AR-15 rifle laid out on dark surface — Twin Cities Gun &amp; Pawn contact", "Contact", "Contact Us", "Stop by, call, or send us a message. We're here to help with firearms, pawn loans, and FFL transfers.") +
             form + online_cta() + footer())
     return head(
         "Contact Us | Twin Cities Gun & Pawn \u2014 Ramsey, MN | (763) 427-4100",
