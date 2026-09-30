@@ -1228,7 +1228,7 @@ def page_gun_law_checklist():
     </div>"""
 
     _cat_counter = [0]
-    def law_cat(title, laws):
+    def law_cat(title, laws, icon="gavel"):
         _cat_counter[0] += 1
         n = _cat_counter[0]
         cards = "".join(
@@ -1242,10 +1242,11 @@ def page_gun_law_checklist():
         <div class="mb-14">
           <div class="flex items-center gap-4 mb-6 pb-4 border-b" style="border-color:#2e2c28">
             <span class="font-mono font-bold text-2xl flex-shrink-0" style="color:#facc15">%02d</span>
-            <h2 class="font-headline font-bold text-headline-sm" style="color:#e5e1e6">%s</h2>
+            <span class="material-symbols-outlined flex-shrink-0" style="color:#facc15;font-size:1.35rem">%s</span>
+            <h2 class="font-headline font-bold text-headline-sm" style="color:#facc15">%s</h2>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">%s</div>
-        </div>""" % (n, title, cards)
+        </div>""" % (n, icon, title, cards)
 
     cats = "".join([
         law_cat("Foundational Laws", [
@@ -1254,7 +1255,7 @@ def page_gun_law_checklist():
             "<strong style='color:#e5e1e6'>Extreme Risk law</strong> allows temporary gun removal for individuals in crisis",
             "<strong style='color:#e5e1e6'>No Shoot First law</strong> in place",
             "<strong style='color:#e5e1e6'>Secure storage required</strong> when a child under 18 may access the firearm"
-        ]),
+        ], icon="gavel"),
         law_cat("Gun Industry &amp; Product Safety", [
             "<strong style='color:#e5e1e6'>Assault weapons prohibited</strong> — military-style weapons banned",
             "<strong style='color:#e5e1e6'>Auto sears / Glock switches prohibited</strong>",
@@ -1265,7 +1266,7 @@ def page_gun_law_checklist():
             "<strong style='color:#e5e1e6'>High-capacity magazines prohibited</strong>",
             "<strong style='color:#e5e1e6'>Legal accountability for gun industry</strong> allowed",
             "<strong style='color:#e5e1e6'>Microstamping for new handguns</strong> required"
-        ]),
+        ], icon="factory"),
         law_cat("Guns in Public", [
             "<strong style='color:#e5e1e6'>No carry after violent offense</strong> — 3-year ban for assault/violent misdemeanor",
             "<strong style='color:#e5e1e6'>No guns mandate on college campuses</strong>",
@@ -1274,7 +1275,7 @@ def page_gun_law_checklist():
             "<strong style='color:#e5e1e6'>No guns in K-12 schools</strong> by staff or permit holders",
             "<strong style='color:#e5e1e6'>Open carry regulated</strong> — permit required for all firearms",
             "<strong style='color:#e5e1e6'>Strong concealed carry authority</strong> — officials can deny for public safety"
-        ]),
+        ], icon="location_city"),
         law_cat("Keeping Guns Out of the Wrong Hands", [
             "<strong style='color:#e5e1e6'>Emergency restraining order prohibitor</strong> — domestic abusers barred",
             "<strong style='color:#e5e1e6'>Felony prohibitor</strong> indefinite",
@@ -1288,7 +1289,7 @@ def page_gun_law_checklist():
             "<strong style='color:#e5e1e6'>Relinquishment required</strong> for convicted abusers and those under restraining orders",
             "<strong style='color:#e5e1e6'>School threat assessment teams</strong> required by law",
             "<strong style='color:#e5e1e6'>Stalker prohibitor</strong> — 3-year ban"
-        ]),
+        ], icon="shield"),
         law_cat("Policing &amp; Civil Rights", [
             "<strong style='color:#e5e1e6'>Funding for victims of gun violence</strong> via VOCA funds",
             "<strong style='color:#e5e1e6'>Local gun laws allowed</strong> — no state preemption",
@@ -1297,7 +1298,7 @@ def page_gun_law_checklist():
             "<strong style='color:#e5e1e6'>Qualified immunity limited</strong>",
             "<strong style='color:#e5e1e6'>Tools to address crime guns:</strong> tracing + trafficking/straw purchase crimes",
             "<strong style='color:#e5e1e6'>Violence intervention program funding</strong> in state budget"
-        ]),
+        ], icon="balance"),
         law_cat("Sales &amp; Permitting", [
             "<strong style='color:#e5e1e6'>Authority to deny gun purchase</strong> if buyer poses danger",
             "<strong style='color:#e5e1e6'>Charleston Loophole closed</strong> — 30-day waiting period for handguns/assault weapons",
@@ -1306,7 +1307,7 @@ def page_gun_law_checklist():
             "<strong style='color:#e5e1e6'>Sales records sent to law enforcement</strong> for handguns",
             "<strong style='color:#e5e1e6'>Training required to purchase guns</strong>",
             "<strong style='color:#e5e1e6'>Waiting periods</strong> enforced"
-        ])
+        ], icon="sell")
     ])
 
     dark_content = """
