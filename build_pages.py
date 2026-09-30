@@ -61,17 +61,14 @@ def cta_band(title, sub, btn_text, btn_href, external=False, bg_img=None):
     tgt = ' target="_blank" rel="noopener"' if external else ""
     if bg_img:
         return """
-    <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
-      <div class="crosshair-card relative border border-outline-variant/40 p-10 md:p-14 text-center gold-glow overflow-hidden" style="background:#111">
-        {xh}
-        <img src="images/{bg_img}" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none" loading="lazy" />
-        <div class="relative z-10">
-          <h2 class="font-headline font-bold text-headline-lg" style="color:#ffffff">{title}</h2>
-          <p class="mt-3 max-w-2xl mx-auto" style="color:#d1d5db">{sub}</p>
-          <a href="{href}"{tgt} class="inline-flex items-center gap-2 mt-7 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider gold-hover">{btn} <span class="material-symbols-outlined text-base">arrow_outward</span></a>
-        </div>
+    <section class="relative py-24 overflow-hidden" style="background:#111">
+      <img src="images/{bg_img}" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style="opacity:0.35" loading="lazy" />
+      <div class="relative z-10 max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
+        <h2 class="font-headline font-bold text-headline-lg" style="color:#ffffff">{title}</h2>
+        <p class="mt-3 max-w-2xl mx-auto" style="color:#d1d5db">{sub}</p>
+        <a href="{href}"{tgt} class="inline-flex items-center gap-2 mt-7 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-8 py-3.5 font-bold tracking-wider gold-hover">{btn} <span class="material-symbols-outlined text-base">arrow_outward</span></a>
       </div>
-    </section>""".format(xh=crosshairs(), bg_img=bg_img, title=title, sub=sub, href=btn_href, tgt=tgt, btn=btn_text)
+    </section>""".format(bg_img=bg_img, title=title, sub=sub, href=btn_href, tgt=tgt, btn=btn_text)
     return """
     <section class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16">
       <div class="crosshair-card relative bg-surface-container-low border border-outline-variant/40 p-10 md:p-14 text-center gold-glow">
