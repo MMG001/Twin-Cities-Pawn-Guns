@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Static site generator for Twin Cities Pawn & Gun (Stitch neo-brutalist design).
+"""Static site generator for Twin Cities Gun & Pawn (Stitch neo-brutalist design).
 Generates all HTML pages with shared nav / ticker / footer. Run: python3 build.py"""
 import os
 
@@ -31,7 +31,7 @@ TAILWIND_CONFIG = """tailwind.config = {
     borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
     spacing: { "gutter": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem",
       "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem" },
-    fontFamily: { "headline": ["Space Grotesk"], "body": ["Hanken Grotesk"], "mono": ["JetBrains Mono"] },
+    fontFamily: { "headline": ["Barlow Condensed"], "body": ["Montserrat"], "mono": ["JetBrains Mono"] },
     fontSize: {
       "display-hero": ["72px", { lineHeight: "80px", letterSpacing: "-0.03em", fontWeight: "700" }],
       "display-hero-mobile": ["40px", { lineHeight: "46px", letterSpacing: "-0.02em", fontWeight: "700" }],
@@ -69,16 +69,16 @@ def head(title, desc, canonical, keywords, schema=""):
   <meta property="og:image" content="{base}/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Twin Cities Pawn &amp; Gun storefront in Ramsey, Minnesota" />
+  <meta property="og:image:alt" content="Twin Cities Gun &amp; Pawn storefront in Ramsey, Minnesota" />
   <meta property="og:type" content="business.business" />
   <meta property="og:url" content="{base}/{canon}" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="Twin Cities Pawn &amp; Gun" />
+  <meta property="og:site_name" content="Twin Cities Gun &amp; Pawn" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{title}" />
   <meta name="twitter:description" content="{desc}" />
   <meta name="twitter:image" content="{base}/images/og-image.jpg" />
-  <meta name="twitter:image:alt" content="Twin Cities Pawn &amp; Gun storefront in Ramsey, Minnesota" />
+  <meta name="twitter:image:alt" content="Twin Cities Gun &amp; Pawn storefront in Ramsey, Minnesota" />
   <meta name="geo.region" content="US-MN" />
   <meta name="geo.placename" content="Ramsey, Minnesota" />
   <meta name="geo.position" content="45.2619;-93.4499" />
@@ -87,8 +87,8 @@ def head(title, desc, canonical, keywords, schema=""):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Async font load: doesn't block render -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" /></noscript>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -109,10 +109,10 @@ def nav():
   <header class="sticky top-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant/30">
     <div class="max-w-[1360px] mx-auto px-6 lg:px-margin flex justify-between items-center py-4">
       <a href="index.html" class="flex items-center gap-3 group">
-        <img src="images/logo.png" alt="Twin Cities Pawn &amp; Gun logo" class="h-12 w-auto" />
+        <img src="images/logo.png" alt="Twin Cities Gun &amp; Pawn logo" class="h-12 w-auto" />
         <div class="hidden sm:flex flex-col">
-          <span class="font-headline text-sm font-bold tracking-wider uppercase text-on-surface">Twin Cities Pawn &amp; Gun</span>
-          <span class="font-mono text-[9px] text-outline tracking-widest uppercase">Home of the 0% Pawn &middot; Ramsey, MN</span>
+          <span class="font-headline text-sm font-bold tracking-wider uppercase text-on-surface">Twin Cities Gun &amp; Pawn</span>
+          <span class="font-mono text-[9px] text-outline tracking-widest uppercase">Licensed FFL Dealer &middot; Ramsey, MN</span>
         </div>
       </a>
       <nav class="hidden md:flex items-center space-x-6" aria-label="Main navigation">
@@ -122,113 +122,112 @@ def nav():
           <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
             Inventory <span class="material-symbols-outlined text-base leading-none">expand_more</span>
           </button>
-          <div class="mega-menu" role="menu">
-            <!-- Column Headers -->
-            <div class="mega-headers">
-              <a href="guns-rifles.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">local_police</span>
-                <div class="mega-col-title">Guns &amp; Rifles</div>
-              </a>
-              <a href="accessories.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">target</span>
-                <div class="mega-col-title">Accessories</div>
-              </a>
-              <a href="pawn-loans.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">payments</span>
-                <div class="mega-col-title">Pawn &amp; Loans</div>
-              </a>
-            </div>
-            <!-- Sub-items -->
-            <div class="mega-items">
-              <div class="mega-col" role="group">
-                <a href="guns-rifles.html#handguns" class="mega-item">Handguns &amp; Pistols</a>
-                <a href="guns-rifles.html#revolvers" class="mega-item">Revolvers</a>
-                <a href="guns-rifles.html#rifles" class="mega-item">Semi-Automatic</a>
-                <a href="guns-rifles.html#rifles" class="mega-item">Hunting &amp; Tactical Rifles</a>
-                <a href="guns-rifles.html#shotguns" class="mega-item">Shotguns</a>
-                <a href="guns-rifles.html#archery" class="mega-item">Archery</a>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="guns-rifles.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128299;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Guns &amp; Rifles</div>
+                <div class="text-xs text-on-surface-variant">300+ firearms in stock</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="accessories.html#ammo" class="mega-item">Ammunition &amp; Ammo</a>
-                <a href="accessories.html#optics" class="mega-item">Sights, Scopes &amp; Optics</a>
-                <a href="accessories.html#holsters" class="mega-item">Holsters, Slings &amp; Cases</a>
-                <a href="accessories.html#magazines" class="mega-item">Magazines &amp; Safes</a>
+            </a>
+            <a href="accessories.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#127919;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Accessories</div>
+                <div class="text-xs text-on-surface-variant">Ammo, optics &amp; gear</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="pawn-loans.html#tools" class="mega-item">Power Tools</a>
-                <a href="pawn-loans.html#electronics" class="mega-item">Electronics</a>
-                <a href="pawn-loans.html#jewelry" class="mega-item">Jewelry &amp; Gold</a>
-                <a href="pawn-loans.html#loans" class="mega-item">Pawn Loans (0%)</a>
+            </a>
+            <a href="pawn-loans.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#128176;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Pawn &amp; Loans</div>
+                <div class="text-xs text-on-surface-variant">0% interest pawn loans</div>
               </div>
-            </div>
-            <!-- Footer Action Bar -->
-            <div class="mega-footer">
-              <a href="guns-rifles.html" class="mega-footer-all">Browse All Inventory <span class="material-symbols-outlined text-sm leading-none">arrow_forward</span></a>
-              <div class="mega-footer-right">
-                <a href="{armslist}" target="_blank" rel="noopener" class="mega-footer-link">Shop Armslist</a>
-                <span class="mega-footer-sep">|</span>
-                <a href="{gunbroker}" target="_blank" rel="noopener" class="mega-footer-link">Shop GunBroker</a>
-                <a href="contact.html" class="mega-footer-cta">Get a Quote &rarr;</a>
+            </a>
+          </div>
+        </div>
+        <div class="dropdown relative" id="store-dropdown">
+          <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+            Online Store <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+          </button>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="{armslist}" target="_blank" rel="noopener" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128299;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Armslist</div>
+                <div class="text-xs text-on-surface-variant">Browse our live gun listings</div>
               </div>
-            </div>
+            </a>
+            <a href="{gunbroker}" target="_blank" rel="noopener" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#127991;&#65039;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">GunBroker</div>
+                <div class="text-xs text-on-surface-variant">Bid &amp; buy on GunBroker</div>
+              </div>
+            </a>
           </div>
         </div>
         <div class="dropdown relative" id="res-dropdown">
           <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
             Resources <span class="material-symbols-outlined text-base leading-none">expand_more</span>
           </button>
-          <div class="mega-menu" role="menu">
-            <!-- Column Headers -->
-            <div class="mega-headers">
-              <a href="resources.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">menu_book</span>
-                <div class="mega-col-title">MN Gun Laws &amp; Guides</div>
-              </a>
-              <a href="faq.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">quiz</span>
-                <div class="mega-col-title">FAQ</div>
-              </a>
-              <a href="contact.html" class="mega-col-hd" role="menuitem">
-                <span class="mega-col-icon material-symbols-outlined">support_agent</span>
-                <div class="mega-col-title">Contact &amp; Help</div>
-              </a>
-            </div>
-            <!-- Sub-items -->
-            <div class="mega-items">
-              <div class="mega-col" role="group">
-                <a href="gun-law-checklist.html" class="mega-item">2026 Gun Law Checklist</a>
-                <a href="rules-for-pawning.html" class="mega-item">Rules for Pawning a Gun</a>
-                <a href="gun-license-mn.html" class="mega-item">Gun License in Minnesota</a>
-                <a href="unregistered-gun.html" class="mega-item">Unregistered Firearms</a>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="gun-law-checklist.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128203;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">2026 Gun Law Checklist</div>
+                <div class="text-xs text-on-surface-variant">MN firearms laws updated for 2026</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="faq.html" class="mega-item">General FAQ</a>
-                <a href="faq-gun-pawns.html" class="mega-item">Gun Pawn FAQ</a>
+            </a>
+            <a href="rules-for-pawning.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#129309;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Rules for Pawning a Gun</div>
+                <div class="text-xs text-on-surface-variant">What to bring &amp; what to expect</div>
               </div>
-              <div class="mega-col" role="group">
-                <a href="contact.html" class="mega-item">Contact Us</a>
-                <a href="employment.html" class="mega-item">Employment</a>
-                <a href="about.html" class="mega-item">About Us</a>
+            </a>
+            <a href="gun-license-mn.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#129370;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Gun License in Minnesota</div>
+                <div class="text-xs text-on-surface-variant">Permit to purchase &amp; carry laws</div>
               </div>
-            </div>
-            <!-- Footer Action Bar -->
-            <div class="mega-footer">
-              <a href="resources.html" class="mega-footer-all">Browse All Resources <span class="material-symbols-outlined text-sm leading-none">arrow_forward</span></a>
-              <div class="mega-footer-right">
-                <a href="{armslist}" target="_blank" rel="noopener" class="mega-footer-link">Shop Armslist</a>
-                <span class="mega-footer-sep">|</span>
-                <a href="{gunbroker}" target="_blank" rel="noopener" class="mega-footer-link">Shop GunBroker</a>
+            </a>
+            <a href="unregistered-gun.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#128274;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Unregistered Firearms</div>
+                <div class="text-xs text-on-surface-variant">MN laws on unregistered guns</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="dropdown relative">
-          <button class="nav-link flex items-center gap-1">Contact <span class="material-symbols-outlined text-base leading-none">expand_more</span></button>
-          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:240px">
-            <a href="contact.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">Contact Us</a>
-            <a href="faq.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">FAQ</a>
-            <a href="faq-gun-pawns.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container border-b border-outline-variant/20 font-headline font-bold">Gun Pawn FAQ</a>
-            <a href="employment.html" class="block px-4 py-3 text-sm text-on-surface hover:text-primary-container font-headline font-bold">Employment</a>
+          <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+            Contact <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+          </button>
+          <div class="dropdown-menu bg-surface-container-lowest border border-outline-variant/40 shadow-2xl" style="min-width:320px" role="menu">
+            <a href="contact.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128205;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Contact Us</div>
+                <div class="text-xs text-on-surface-variant">Hours, location &amp; directions</div>
+              </div>
+            </a>
+            <a href="faq-gun-pawns.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container border-b border-outline-variant/20" role="menuitem">
+              <span class="text-lg">&#128299;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">FAQ Gun Pawns</div>
+                <div class="text-xs text-on-surface-variant">Common questions about pawning guns</div>
+              </div>
+            </a>
+            <a href="employment.html" class="flex items-start gap-3 px-4 py-3 hover:bg-surface-container" role="menuitem">
+              <span class="text-lg">&#128188;</span>
+              <div>
+                <div class="font-headline font-bold text-sm text-on-surface">Employment</div>
+                <div class="text-xs text-on-surface-variant">Join our team in Ramsey, MN</div>
+              </div>
+            </a>
           </div>
         </div>
       </nav>
@@ -245,12 +244,14 @@ def nav():
         <a href="about.html" class="py-2 font-headline text-on-surface hover:text-primary-container">About</a>
         <button data-accordion-toggle="m-inv" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Inventory <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
         <div id="m-inv" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
-          <a href="guns-rifles.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Guns &amp; Rifles</a>
-          <a href="guns-rifles.html#handguns" class="block py-1 text-xs text-on-surface-variant hover:text-primary-container">&rsaquo; Handguns &amp; Pistols</a>
-          <a href="guns-rifles.html#rifles" class="block py-1 text-xs text-on-surface-variant hover:text-primary-container">&rsaquo; Rifles</a>
-          <a href="guns-rifles.html#shotguns" class="block py-1 text-xs text-on-surface-variant hover:text-primary-container">&rsaquo; Shotguns</a>
-          <a href="accessories.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Accessories &amp; Ammo</a>
-          <a href="pawn-loans.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Pawn &amp; Loans</a>
+          <a href="guns-rifles.html" class="block py-1 text-on-surface-variant hover:text-primary-container">&#128299; Guns &amp; Rifles</a>
+          <a href="accessories.html" class="block py-1 text-on-surface-variant hover:text-primary-container">&#127919; Accessories</a>
+          <a href="pawn-loans.html" class="block py-1 text-on-surface-variant hover:text-primary-container">&#128176; Pawn &amp; Loans</a>
+        </div>
+        <button data-accordion-toggle="m-store" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Online Store <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
+        <div id="m-store" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
+          <a href="{armslist}" target="_blank" rel="noopener" class="block py-1 text-on-surface-variant hover:text-primary-container">&#128299; Armslist</a>
+          <a href="{gunbroker}" target="_blank" rel="noopener" class="block py-1 text-on-surface-variant hover:text-primary-container">&#127991;&#65039; GunBroker</a>
         </div>
         <button data-accordion-toggle="m-res" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Resources <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
         <div id="m-res" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
@@ -258,11 +259,13 @@ def nav():
           <a href="rules-for-pawning.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Rules for Pawning a Gun</a>
           <a href="gun-license-mn.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Gun License in Minnesota</a>
           <a href="unregistered-gun.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Unregistered Firearms</a>
-          <a href="faq.html" class="block py-1 text-on-surface-variant hover:text-primary-container">General FAQ</a>
-          <a href="faq-gun-pawns.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Gun Pawn FAQ</a>
+        </div>
+        <button data-accordion-toggle="m-contact" class="flex justify-between items-center py-2 font-headline text-on-surface w-full">Contact <span class="material-symbols-outlined acc-chevron text-base">expand_more</span></button>
+        <div id="m-contact" class="hidden pl-3 border-l border-outline-variant/30 space-y-1 pb-2">
+          <a href="contact.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Contact Us</a>
+          <a href="faq-gun-pawns.html" class="block py-1 text-on-surface-variant hover:text-primary-container">FAQ Gun Pawns</a>
           <a href="employment.html" class="block py-1 text-on-surface-variant hover:text-primary-container">Employment</a>
         </div>
-        <a href="contact.html" class="py-2 font-headline text-on-surface hover:text-primary-container">Contact</a>
         <a href="contact.html" class="mt-2 bg-primary-container text-surface-container-lowest font-headline text-xs uppercase px-5 py-3 font-bold tracking-wider text-center">Get a Quote</a>
         <a href="tel:7634274100" class="mt-1 font-mono text-sm text-primary-container text-center py-2">(763) 427-4100</a>
       </div>
@@ -274,7 +277,7 @@ def nav():
 
 def ticker():
     items = ("&#128299; 300+ FIREARMS IN STOCK &nbsp;&middot;&nbsp; &#9989; LICENSED FFL DEALER &nbsp;&middot;&nbsp; "
-             "&#128176; HOME OF THE 0% PAWN &nbsp;&middot;&nbsp; &#127942; SERVING RAMSEY MN SINCE 2010 &nbsp;&middot;&nbsp; "
+             "&#127942; SERVING RAMSEY MN SINCE 2010 &nbsp;&middot;&nbsp; "
              "&#128230; SHOP ONLINE: ARMSLIST &amp; GUNBROKER &nbsp;&middot;&nbsp; &#9742; (763) 427-4100 &nbsp;&middot;&nbsp; ")
     span = '<span class="font-mono text-[11px] tracking-widest text-on-surface-variant uppercase px-4">%s</span>' % items
     return """
@@ -292,8 +295,8 @@ def footer():
   <footer class="bg-surface-container-lowest border-t border-outline-variant/30">
     <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <img src="images/logo.png" alt="Twin Cities Pawn &amp; Gun" class="h-12 mb-4" />
-        <p class="text-on-surface-variant text-sm mb-4">Home of the 0% Pawn. Serving the Minneapolis&ndash;St. Paul area with honesty and integrity since 2010.</p>
+        <img src="images/logo.png" alt="Twin Cities Gun &amp; Pawn" class="h-12 mb-4" />
+        <p class="text-white/80 text-sm mb-4">Serving the Minneapolis&ndash;St. Paul area with honesty and integrity since 2010.</p>
         <div class="font-mono text-xs text-primary-container">(763) 427-4100</div>
         <div class="text-xs text-on-surface-variant mt-1">6650 US-10, Ramsey, MN 55303</div>
       </div>
@@ -347,14 +350,14 @@ def footer():
           <a href="resources.html" class="hover:text-primary-container">Resources</a><span class="text-outline-variant">|</span>
           <a href="sitemap.html" class="hover:text-primary-container">Sitemap</a>
         </div>
-        <div class="text-center font-mono text-[11px] text-outline">&copy; <span id="year">2026</span> Twin Cities Pawn &amp; Gun &middot; 6650 US-10, Ramsey, MN 55303 | Designed by <a href="https://webcreativeseo.com" class="hover:text-primary-container" target="_blank" rel="noopener">Webcreativeseo.com</a></div>
+        <div class="text-center font-mono text-[11px] text-outline">&copy; <span id="year">2026</span> Twin Cities Gun &amp; Pawn &middot; 6650 US-10, Ramsey, MN 55303 | Designed by <a href="https://webcreativeseo.com" class="hover:text-primary-container" target="_blank" rel="noopener">Webcreativeseo.com</a></div>
       </div>
       <!-- Social validation signals -->
       <div class="flex justify-center gap-5 py-2">
-        <a href="https://www.facebook.com/twincitiespawn" target="_blank" rel="noopener me" aria-label="Twin Cities Pawn &amp; Gun on Facebook" class="text-outline hover:text-primary-container transition-colors">
+        <a href="https://www.facebook.com/twincitiespawn" target="_blank" rel="noopener me" aria-label="Twin Cities Gun &amp; Pawn on Facebook" class="text-outline hover:text-primary-container transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <a href="https://www.instagram.com/twincities_pawn/" target="_blank" rel="noopener me" aria-label="Twin Cities Pawn &amp; Gun on Instagram" class="text-outline hover:text-primary-container transition-colors">
+        <a href="https://www.instagram.com/twincities_pawn/" target="_blank" rel="noopener me" aria-label="Twin Cities Gun &amp; Pawn on Instagram" class="text-outline hover:text-primary-container transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
       </div>
@@ -417,7 +420,7 @@ def inv_card(img, alt, badge, title, cond, cdn=False, lazy=True, light=False):
 
 
 def page_hero(img, alt, label_text, h1, sub=""):
-    sub_html = ('<p class="mt-4 text-on-surface-variant text-body-lg max-w-2xl">%s</p>' % sub) if sub else ""
+    sub_html = ('<p class="mt-4 text-white/80 text-body-lg max-w-2xl">%s</p>' % sub) if sub else ""
     return """
     <section class="relative min-h-[46vh] flex items-end blueprint-grid" aria-label="Page header">
       <img src="images/{img}" alt="{alt}" class="absolute inset-0 w-full h-full object-cover" />
@@ -431,7 +434,7 @@ def page_hero(img, alt, label_text, h1, sub=""):
 
 
 def text_hero(label_text, h1, sub=""):
-    sub_html = ('<p class="mt-4 text-on-surface-variant text-body-lg max-w-2xl">%s</p>' % sub) if sub else ""
+    sub_html = ('<p class="mt-4 text-white/80 text-body-lg max-w-2xl">%s</p>' % sub) if sub else ""
     return """
     <section class="relative blueprint-grid bg-surface-container-lowest border-b border-outline-variant/30" aria-label="Page header">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-20">
@@ -453,7 +456,7 @@ def online_cta():
           </div>
           <h2 class="font-headline font-bold text-headline-lg text-on-surface">Buy Firearms Online &mdash; Ramsey, MN</h2>
           <p class="mt-4 text-on-surface-variant max-w-2xl mx-auto">
-            Twin Cities Pawn &amp; Gun lists handguns, pistols, rifles, shotguns, and collectible firearms on Armslist and GunBroker. Browse current in-stock inventory, place bids, or call us to verify availability. New guns added regularly &mdash; inventory moves fast.
+            Twin Cities Gun &amp; Pawn lists handguns, pistols, rifles, shotguns, and collectible firearms on Armslist and GunBroker. Browse current in-stock inventory, place bids, or call us to verify availability. New guns added regularly &mdash; inventory moves fast.
           </p>
         </div>
         <!-- Marketplace cards -->
@@ -553,7 +556,7 @@ def keyword_entity_table():
           <span class="w-8 h-px bg-primary-container inline-block"></span>What We Offer<span class="w-8 h-px bg-primary-container inline-block"></span>
         </div>
         <h2 id="semantic-heading" class="font-headline font-bold text-headline-lg text-on-surface">Guns, Pawn Loans &amp; Firearm Services in Minnesota</h2>
-        <p class="mt-4 text-on-surface-variant max-w-3xl mx-auto">A complete look at the firearms, brands, ammunition, and pawn services Twin Cities Pawn &amp; Gun offers throughout Ramsey and the greater Twin Cities metro.</p>
+        <p class="mt-4 text-on-surface-variant max-w-3xl mx-auto">A complete look at the firearms, brands, ammunition, and pawn services Twin Cities Gun &amp; Pawn offers throughout Ramsey and the greater Twin Cities metro.</p>
       </div>
       <div class="seo-table-wrap crosshair-card border border-outline-variant/40">
         {xh}
