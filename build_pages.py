@@ -247,8 +247,89 @@ def page_index():
       </div>
     </section>""".format(label=label("Minnesota Gun Broker"))
 
+    reviews = """
+    <section class="bg-surface-container-lowest border-y border-outline-variant/20 py-16">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-3 font-mono text-[11px] tracking-widest text-primary-container uppercase mb-4">
+            <span class="w-8 h-px bg-primary-container inline-block"></span>Google Reviews<span class="w-8 h-px bg-primary-container inline-block"></span>
+          </div>
+          <h2 class="font-headline font-bold text-headline-lg text-on-surface">What Our Customers Say</h2>
+          <div class="flex items-center justify-center gap-2 mt-3">
+            <span class="text-primary-container text-xl">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="font-mono text-sm text-on-surface-variant">5.0 &middot; Verified Google Reviews</span>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="crosshair-card relative bg-surface-container-low border border-outline-variant/40 p-7 gold-aura-hover">
+            {xh0}
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-headline font-bold text-surface-container-lowest text-base flex-shrink-0">F</div>
+              <div>
+                <div class="font-headline font-bold text-on-surface text-sm">Freeman P.</div>
+                <div class="text-primary-container text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">&ldquo;Best priced firearms I&rsquo;ve found. Tyler is an awesome salesman &mdash; I&rsquo;ve never had any issues. They have new and used so you don&rsquo;t have to worry about getting someone&rsquo;s poorly maintained sloppy seconds.&rdquo;</p>
+          </div>
+          <div class="crosshair-card relative bg-surface-container-low border border-outline-variant/40 p-7 gold-aura-hover">
+            {xh1}
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-headline font-bold text-surface-container-lowest text-base flex-shrink-0">R</div>
+              <div>
+                <div class="font-headline font-bold text-on-surface text-sm">Ryan R.</div>
+                <div class="text-primary-container text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">&ldquo;The staff here is amazing. Friendly and willing to answer any questions and assist however they can. I purchased a SCCy 9mm and was in and out in less than 30 minutes. I will continue coming back to this store.&rdquo;</p>
+          </div>
+          <div class="crosshair-card relative bg-surface-container-low border border-outline-variant/40 p-7 gold-aura-hover">
+            {xh2}
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-headline font-bold text-surface-container-lowest text-base flex-shrink-0">D</div>
+              <div>
+                <div class="font-headline font-bold text-on-surface text-sm">Dan</div>
+                <div class="text-primary-container text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">&ldquo;Found the shop searching for a specific gun. Called up the shop and talked to the guys &mdash; they made it a great experience. Very helpful and the gun was exactly as described. Very pleased with the purchase. A+ from me.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+    </section>""".format(xh0=crosshairs(), xh1=crosshairs(), xh2=crosshairs())
+
+    hours_compact = """
+    <section class="py-14" style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+        <div class="lg:col-span-2">
+          {label}
+          <h2 class="font-headline font-bold text-headline-lg mt-1" style="color:#111827">Hours &amp; Location</h2>
+          <address class="not-italic mt-4" style="color:#4b5563">
+            <p class="text-base font-semibold" style="color:#111827">6650 US-10, Ramsey, MN 55303</p>
+            <p class="mt-1"><a href="tel:7634274100" class="font-mono text-primary-container hover:underline">(763) 427-4100</a></p>
+            <p class="mt-1"><a href="{gmaps}" target="_blank" rel="noopener" class="text-primary-container text-sm hover:underline">Get directions &rarr;</a></p>
+          </address>
+        </div>
+        <div>
+          <div class="font-mono text-[11px] tracking-widest text-primary-container uppercase mb-3">Store Hours</div>
+          <table class="w-full font-mono text-sm" style="border:1px solid #e2e8f0">
+            <tbody>
+              <tr style="border-bottom:1px solid #e2e8f0"><td class="py-2.5 px-4" style="color:#4b5563">Mon &ndash; Fri</td><td class="py-2.5 px-4 text-right" style="color:#111827">10 AM &ndash; 7 PM</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0"><td class="py-2.5 px-4" style="color:#4b5563">Saturday</td><td class="py-2.5 px-4 text-right" style="color:#111827">10 AM &ndash; 5 PM</td></tr>
+              <tr><td class="py-2.5 px-4" style="color:#4b5563">Sunday</td><td class="py-2.5 px-4 text-right" style="color:#9ca3af">Closed</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="font-mono text-[11px] tracking-widest text-primary-container uppercase mb-1">Find Us</div>
+          <a href="{gmaps}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary-container font-headline text-xs uppercase px-5 py-3 font-bold tracking-wider gold-hover" style="color:#131316"><span class="material-symbols-outlined text-base">location_on</span>Open in Maps</a>
+          <a href="contact.html" class="inline-flex items-center gap-2 font-headline text-xs uppercase px-5 py-3 font-bold tracking-wider" style="border:1px solid #e2e8f0;color:#374151;">Contact &amp; Directions <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+        </div>
+      </div>
+    </section>""".format(label=label("Visit The Vault"), gmaps=GMAPS)
+
     body = (nav() + ticker() + hero + trust + store_split + cat_cards + pawn_loan_split + showcase + gold_cta +
-            online_cta() + hours_location() + footer())
+            online_cta() + reviews + hours_compact + footer())
     return head(
         "Twin Cities Gun & Pawn | Firearms & Pawn Loans, Ramsey MN",
         "Hundreds of guns, rifles & accessories in stock in Ramsey, MN. Licensed FFL dealer \u2014 $50 transfers & pawn loans since 2010.",
