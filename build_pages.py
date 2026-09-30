@@ -150,7 +150,7 @@ def page_index():
         <div class="flex flex-col md:flex-row gap-0 items-stretch">
           <!-- Image left -->
           <div class="md:w-1/2 relative overflow-hidden" style="min-height:420px">
-            <img src="images/hero-guns-counter.jpg" alt="Twin Cities Gun & Pawn staff and customer completing a firearm transaction in Ramsey, MN" class="absolute inset-0 w-full h-full object-cover" />
+            <img src="images/gun-pawn-transaction.webp" alt="Twin Cities Gun & Pawn staff and customer completing a firearm transaction in Ramsey, MN" class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <!-- Content right -->
           <div class="md:w-1/2 flex flex-col justify-center px-8 py-14" style="background:#f8f9fa">
