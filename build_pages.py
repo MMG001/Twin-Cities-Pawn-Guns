@@ -404,10 +404,10 @@ def page_about():
     why = """
     <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0">
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
-        <div class="mb-10">{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Why Choose Us</h2></div>
+        <div class="mb-10">{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Twin Cities Largest Used Gun Broker</h2></div>
         {grid}
       </div>
-    </section>""".format(label=label("The Difference"), grid=grid(reason_cards))
+    </section>""".format(label=label("Buy &amp; Sell Guns, Rifles &amp; Shotguns in Minnesota"), grid=grid(reason_cards))
 
     body = (nav() + ticker() +
             page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Gun & Pawn", "About Us", "About Twin Cities Gun &amp; Pawn", "Licensed FFL dealer &mdash; buying, selling &amp; pawn loans since 2010.") +

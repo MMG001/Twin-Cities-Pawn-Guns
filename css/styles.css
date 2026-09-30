@@ -326,7 +326,7 @@ input[type=range]::-webkit-slider-thumb {
   font-size: 13px;
   padding: 10px 16px;
   border: 1px solid #4d4632;
-  color: #d1c6ab;
+  color: #ffffff;
   background: #1b1b1e;
   border-radius: 2px;
   transition: all .2s ease;
