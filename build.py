@@ -18,7 +18,7 @@ TAILWIND_CONFIG = """tailwind.config = {
       "surface-container-lowest": "#0e0e11", "surface-container-low": "#1b1b1e",
       "surface-container": "#1f1f22", "surface-container-high": "#2a2a2d",
       "surface-container-highest": "#353438", "surface-bright": "#39393c",
-      "surface-tint": "#eec200", "on-surface": "#e5e1e6", "on-surface-variant": "#d1c6ab",
+      "surface-tint": "#eec200", "on-surface": "#e5e1e6", "on-surface-variant": "#cac4d0",
       "primary": "#ffecb9", "on-primary": "#3c2f00", "primary-fixed": "#ffe083",
       "primary-fixed-dim": "#eec200", "inverse-primary": "#735c00",
       "secondary": "#c7c5d0", "secondary-container": "#46464f", "on-secondary-container": "#b6b4bf",
@@ -141,7 +141,7 @@ def nav():
               <span class="text-lg">&#128176;</span>
               <div>
                 <div class="font-headline font-bold text-sm text-on-surface">Pawn &amp; Loans</div>
-                <div class="text-xs text-on-surface-variant">0% interest pawn loans</div>
+                <div class="text-xs text-on-surface-variant">Fair pawn valuations &amp; loans</div>
               </div>
             </a>
           </div>
@@ -523,7 +523,7 @@ def keyword_entity_table():
          'gun cases, cleaning kits, <a href="accessories.html">gun safes</a>',
          "accessories.html"),
         ("Pawn &amp; Loans",
-         '<a href="pawn-loans.html">0% interest pawn loans</a>, collateral loans, buy &amp; sell, '
+         '<a href="pawn-loans.html">Fair pawn loans</a>, collateral loans, buy &amp; sell, '
          'power tools, electronics, jewelry &amp; gold, fair appraisals, fast cash',
          "pawn-loans.html"),
         ("Licensed Services",
