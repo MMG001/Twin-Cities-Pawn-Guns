@@ -755,8 +755,12 @@ def legal_page(canon, title, meta_desc, keywords, label_text, h1, sub, content_h
     return head(title, meta_desc, canon, keywords) + body
 
 
-def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html, quick_facts=None):
-    """Info page: hero + quick-facts bar + full-width dark numbered content. No sidebar."""
+def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html, quick_facts=None, related=None):
+    """Info page: hero + quick-facts bar + full-width dark numbered content. No sidebar.
+
+    `related` = optional list of (href, label, desc) tuples rendered as a contextual
+    'Related Pages' interlinking module before the footer (internal-linking / indexing).
+    """
     import re
 
     counter_val = [0]
@@ -793,6 +797,7 @@ def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text,
         <div class="guide-article-dark">%s</div>
       </div>
     </div>""" % anchored +
+            (related_links(related) if related else "") +
             footer())
     return head(title, meta_desc, canon, keywords) + body
 
@@ -1140,7 +1145,12 @@ def page_rules_for_pawning():
         "rules for pawning a gun, pawn a firearm Minnesota, gun pawn requirements Twin Cities MN, how to pawn a gun, reclaim pawned firearm",
         "rules-pawning-hero.webp", "Vintage revolver with wood grips on wooden surface", 
         "Guide", "Rules for Pawning a Gun", "What you need to know before pawning a firearm in Minnesota.", c,
-        quick_facts=["Valid government photo ID required", "18+ for long guns &mdash; 21+ for handguns", "ATF Form 4473 required on redemption", "Non-recourse loan &mdash; no credit impact if you forfeit"])
+        quick_facts=["Valid government photo ID required", "18+ for long guns &mdash; 21+ for handguns", "ATF Form 4473 required on redemption", "Non-recourse loan &mdash; no credit impact if you forfeit"],
+        related=[
+            ("pawn-loans.html", "Pawn Loans", "How collateral loans work at our Twin Cities, MN shop."),
+            ("gun-license-mn.html", "Gun License in Minnesota", "Permits, background checks, and buying or carrying legally."),
+            ("faq-gun-pawns.html", "Gun Pawn FAQ", "Answers to the most common questions about pawning firearms."),
+        ])
 
 
 def page_gun_license_mn():
@@ -1169,7 +1179,12 @@ def page_gun_license_mn():
         "Minnesota gun license, permit to purchase MN, permit to carry Minnesota, MN firearms permit, how to apply gun permit Minnesota",
         "gun-license-mn-hero.webp", "Handgun with scattered ammunition on dark blue surface",
         "Guide", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally in Minnesota.", c,
-        quick_facts=["Permit to Purchase (PTP) is free &mdash; valid 1 year", "Permit to Carry (PTC) valid 5 years statewide", "Must be 21+ to carry", "NICS background check required at every purchase"])
+        quick_facts=["Permit to Purchase (PTP) is free &mdash; valid 1 year", "Permit to Carry (PTC) valid 5 years statewide", "Must be 21+ to carry", "NICS background check required at every purchase"],
+        related=[
+            ("guns-rifles.html", "Guns &amp; Rifles", "Browse our firearm selection and FFL transfer services."),
+            ("rules-for-pawning.html", "Rules for Pawning a Gun", "ID, valuation, hold periods, and redeeming a pawned firearm."),
+            ("unregistered-gun.html", "Unregistered Firearms", "What registration means under federal NFA law in Minnesota."),
+        ])
 
 
 def page_unregistered_gun():
@@ -1196,7 +1211,12 @@ def page_unregistered_gun():
         "unregistered firearms Minnesota, NFA registration, unregistered suppressor, SBR laws, illegal firearm consequences MN, stay legal firearms",
         "unregistered-gun-hero.webp", "Firearms laid out on a table — unregistered firearms Minnesota guide",
         "Guide", "Unregistered Firearms in Minnesota", "Understanding firearm registration, NFA items, and how to stay on the right side of the law.", c,
-        quick_facts=["No general firearm registry in Minnesota", "NFA items must be federally registered", "Unregistered NFA item = serious federal felony", "Work with a licensed FFL for legal NFA ownership"])
+        quick_facts=["No general firearm registry in Minnesota", "NFA items must be federally registered", "Unregistered NFA item = serious federal felony", "Work with a licensed FFL for legal NFA ownership"],
+        related=[
+            ("gun-license-mn.html", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally."),
+            ("gun-law-checklist.html", "2026 MN Gun Law Checklist", "A quick-reference checklist for staying compliant in Minnesota."),
+            ("guns-rifles.html", "Guns &amp; Rifles", "Browse our firearm selection and FFL transfer services."),
+        ])
 
 
 def page_gun_law_checklist():
