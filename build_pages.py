@@ -409,7 +409,12 @@ def page_about():
 
     body = (nav() + ticker() +
             page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Gun & Pawn", "About Us", "About Twin Cities Gun &amp; Pawn", "Licensed FFL dealer &mdash; buying, selling &amp; pawn loans since 2010.") +
-            stats + story + why + brands_section() + keyword_entity_table() + footer())
+            stats + story + why + brands_section() + keyword_entity_table() +
+            related_links([
+                ("guns-rifles.html", "Guns &amp; Rifles", "Browse hundreds of firearms in stock with $50 FFL transfers."),
+                ("pawn-loans.html", "Pawn Loans", "Turn firearms, tools, and valuables into fast collateral loans."),
+                ("contact.html", "Visit or Contact Us", "Store hours, directions, and how to reach our Twin Cities, MN shop."),
+            ]) + footer())
     return head(
         "About Us | Twin Cities Gun & Pawn \u2014 Twin Cities, MN Since 2010",
         "Learn about Twin Cities Gun & Pawn, the Twin Cities' trusted licensed FFL firearms dealer and pawn shop since 2010. Licensed FFL dealer.",
@@ -730,7 +735,12 @@ def page_contact():
 
     body = (nav() + ticker() +
             page_hero("contact-hero.webp", "Glock pistol and AR-15 rifle laid out on dark surface — Twin Cities Gun &amp; Pawn contact", "Contact", "Contact Us", "Stop by, call, or send us a message. We're here to help with firearms, pawn loans, and FFL transfers.") +
-            form + online_cta() + footer())
+            form + online_cta() +
+            related_links([
+                ("guns-rifles.html", "Guns &amp; Rifles", "See what's in stock before you stop by the shop."),
+                ("pawn-loans.html", "Pawn Loans", "How collateral loans work and what we accept."),
+                ("faq.html", "FAQ", "Quick answers about hours, transfers, and buying."),
+            ]) + footer())
     return head(
         "Contact Us | Twin Cities Gun & Pawn \u2014 Twin Cities, MN | (763) 427-4100",
         "Contact Twin Cities Gun & Pawn in the Twin Cities. Visit us at 6650 US-10, call (763) 427-4100, or send a message. Open Mon\u2013Fri 10\u20137, Sat 10\u20135.",
@@ -902,7 +912,11 @@ def page_faq():
             text_hero("Help Center", "Frequently Asked Questions", "Answers to common questions about our firearms, pawn loans, transfers, and store.") +
             content +
             cta_band("Still Have Questions?", "We're happy to help. Give us a call or stop by the store and our team will get you sorted.", "Contact Us", "contact.html") +
-            footer())
+            related_links([
+                ("faq-gun-pawns.html", "Gun Pawn FAQ", "In-depth answers about pawning firearms in Minnesota."),
+                ("pawn-loans.html", "Pawn Loans", "How collateral loans work and what we accept."),
+                ("guns-rifles.html", "Guns &amp; Rifles", "Browse our firearm inventory and FFL transfer service."),
+            ]) + footer())
     return head("FAQ | Twin Cities Gun & Pawn \u2014 Twin Cities, MN",
         "Frequently asked questions about Twin Cities Gun & Pawn: pawn loans, FFL transfers, buying firearms, hours, location, and more.",
         "faq.html",
@@ -992,7 +1006,11 @@ def page_faq_gun_pawns():
             text_hero("Help Center", "FAQ &ndash; Gun Pawns", "Everything you need to know about pawning a firearm at Twin Cities Gun &amp; Pawn in the Twin Cities.") +
             content +
             cta_band("Ready to Pawn Your Firearm?", "Stop by with a valid photo ID for a free, no-obligation valuation, or call us with any questions.", "Contact Us", "contact.html") +
-            footer())
+            related_links([
+                ("rules-for-pawning.html", "Rules for Pawning a Gun", "ID, valuation, hold periods, and reclaiming a pawned firearm."),
+                ("pawn-loans.html", "Pawn Loans", "How collateral loans work at our Twin Cities, MN shop."),
+                ("gun-license-mn.html", "Gun License in Minnesota", "Permits and background checks for buying or carrying."),
+            ]) + footer())
     return head("Gun Pawn FAQ | Twin Cities Gun & Pawn | Twin Cities, MN",
         "Answers to common questions about pawning firearms in Minnesota: required ID, valuations, loan terms, background checks, and reclaiming your gun.",
         "faq-gun-pawns.html",
@@ -1056,7 +1074,12 @@ def page_employment():
     </div>""".format(label=label("Careers"), xh=crosshairs(), opts=opts)
     body = (nav() + ticker() +
             page_hero("pawn-counter-guitars.webp", "Inside Twin Cities Gun & Pawn store", "Careers", "Join Our Team", "Twin Cities Gun &amp; Pawn is always looking for great people. Apply below to become part of our Twin Cities crew.") +
-            form + footer())
+            form +
+            related_links([
+                ("about.html", "About Us", "Our story as the Twin Cities' trusted FFL dealer since 2010."),
+                ("equal-opportunity.html", "Equal Opportunity Employer", "Our commitment to a fair and inclusive workplace."),
+                ("contact.html", "Contact Us", "Store hours, directions, and how to reach our team."),
+            ]) + footer())
     return head("Employment Application | Twin Cities Gun & Pawn | Twin Cities, MN",
         "Apply to join the team at Twin Cities Gun & Pawn in the Twin Cities. We're hiring sales associates, firearms specialists, pawn specialists, and more.",
         "employment.html",
@@ -1121,7 +1144,7 @@ def page_resources():
 
 def page_rules_for_pawning():
     c = "".join([
-        p("Pawning a firearm can be a fast, discreet way to get a short-term loan using something you already own. But because firearms are involved, the process is governed by both federal and Minnesota law. Here's what you need to know before you visit Twin Cities Gun &amp; Pawn."),
+        p('Pawning a firearm can be a fast, discreet way to get a short-term <a href="pawn-loans.html" class="text-primary-container hover:underline font-semibold">pawn loan</a> using something you already own. But because firearms are involved, the process is governed by both federal and Minnesota law. Here\'s what you need to know before you visit Twin Cities Gun &amp; Pawn.'),
         h3("Who Can Pawn a Firearm"),
         p("You must be the lawful owner of the firearm and legally allowed to possess it. You must be at least 18 years old for long guns and 21 for handguns. Individuals prohibited from possessing firearms under federal or Minnesota law &mdash; including certain felony convictions, domestic-violence orders, or adjudications &mdash; cannot pawn a firearm."),
         h3("What to Bring"),
@@ -1169,7 +1192,7 @@ def page_gun_license_mn():
         h3("Who Cannot Obtain a Permit"),
         p("Prohibited persons &mdash; including those with certain felony or domestic-violence convictions, active restraining orders, or specific mental-health adjudications &mdash; are not eligible. Federal and state law both apply."),
         h3("The Role of Your FFL Dealer"),
-        p("As a licensed dealer, we help ensure your purchase is legal and properly documented. Our staff can answer general questions about permits, transfers, and the paperwork involved, and we handle incoming FFL transfers for a flat $50 fee."),
+        p('As a licensed dealer, we help ensure your purchase is legal and properly documented. Our staff can answer general questions about permits, transfers, and the paperwork involved, and we handle incoming <a href="guns-rifles.html" class="text-primary-container hover:underline font-semibold">FFL transfers</a> for a flat $50 fee.'),
         h3("Common Questions"),
         p("Do I need a permit to buy a rifle? Usually no, for standard long guns. Does a Permit to Carry let me buy handguns? Yes. How long does a Permit to Purchase last? One year. Where do I apply? Your local sheriff or police department."),
         p('<span class="text-outline text-sm">This overview is for general information only and is not legal advice. Permit rules and timelines can change &mdash; confirm current requirements with your local sheriff\'s office or the Minnesota Bureau of Criminal Apprehension.</span>'),
@@ -1201,7 +1224,7 @@ def page_unregistered_gun():
         h3("Consequences of Getting Caught"),
         p("Illegally possessing an unregistered NFA item or an otherwise prohibited firearm can lead to felony charges, forfeiture of the firearm, loss of firearm rights, heavy fines, and imprisonment. Serial-number tampering and possession of stolen firearms are also criminal offenses."),
         h3("How to Stay Legal"),
-        p("Buy from a licensed FFL dealer, keep your purchase records, and never alter a firearm in a way that would make it an unregistered NFA item. If you want a suppressor or SBR, work with a dealer like Twin Cities Gun &amp; Pawn to complete the proper ATF Form 4, trust or individual registration, and tax stamp before you take possession."),
+        p('Buy from a licensed <a href="guns-rifles.html" class="text-primary-container hover:underline font-semibold">FFL dealer</a>, keep your purchase records, and never alter a firearm in a way that would make it an unregistered NFA item. If you want a suppressor or SBR, work with a dealer like Twin Cities Gun &amp; Pawn to complete the proper ATF Form 4, trust or individual registration, and tax stamp before you take possession.'),
         h3("We Can Help"),
         p("Our staff can walk you through the legal path to owning NFA items and make sure every transaction is fully compliant. When in doubt, ask us before you buy, modify, or sell."),
         p('<span class="text-outline text-sm">This information is for educational purposes only and does not constitute legal advice. Firearms laws are complex and change over time &mdash; consult the ATF or a qualified attorney regarding your specific circumstances.</span>'),
@@ -1340,7 +1363,11 @@ def page_gun_law_checklist():
             stats +
             dark_content +
             cta_band("Questions About Minnesota Gun Laws?", "Our knowledgeable team can help you navigate firearms regulations in Minnesota. Give us a call or stop in.", "Contact Us", "contact.html") +
-            footer())
+            related_links([
+                ("gun-license-mn.html", "Gun License in Minnesota", "Permit to Purchase, Permit to Carry, and how to apply."),
+                ("unregistered-gun.html", "Unregistered Firearms", "What registration means under federal NFA law in Minnesota."),
+                ("rules-for-pawning.html", "Rules for Pawning a Gun", "ID, valuation, hold periods, and reclaiming a firearm."),
+            ]) + footer())
     return head("2026 Gun Law Checklist | Minnesota | Twin Cities Gun & Pawn",
         "Minnesota's 2026 gun law rankings: #14 in the nation for gun law strength. See how the state stacks up on background checks, permits, and gun safety policies.",
         "gun-law-checklist.html",
