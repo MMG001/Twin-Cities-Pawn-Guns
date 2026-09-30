@@ -118,6 +118,14 @@ def page_index():
           <a href="guns-rifles.html" class="inline-flex items-center gap-2 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Browse Inventory <span class="material-symbols-outlined text-base">arrow_outward</span></a>
           <a href="pawn-loans.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider hover:border-primary-container hover:text-primary-container transition-colors">Get a Pawn Loan</a>
         </div>
+        <!-- Trust badge strip — immediate credibility -->
+        <div class="mt-10 flex flex-wrap gap-3" aria-label="Trust signals">
+          <span class="inline-flex items-center gap-2 bg-black/60 border border-primary-container/60 text-primary-container font-mono text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 backdrop-blur-sm"><span class="material-symbols-outlined text-sm" aria-hidden="true">verified</span>Licensed FFL Dealer</span>
+          <span class="inline-flex items-center gap-2 bg-black/60 border border-white/20 text-white font-mono text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 backdrop-blur-sm"><span class="material-symbols-outlined text-sm" aria-hidden="true">history</span>Serving MN Since 2010</span>
+          <span class="inline-flex items-center gap-2 bg-black/60 border border-white/20 text-white font-mono text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 backdrop-blur-sm"><span class="material-symbols-outlined text-sm" aria-hidden="true">storefront</span>300+ Firearms In Stock</span>
+          <span class="inline-flex items-center gap-2 bg-black/60 border border-white/20 text-white font-mono text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 backdrop-blur-sm"><span class="material-symbols-outlined text-sm" aria-hidden="true">swap_horiz</span>$50 FFL Transfers</span>
+          <span class="inline-flex items-center gap-2 bg-black/60 border border-white/20 text-white font-mono text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 backdrop-blur-sm"><span class="material-symbols-outlined text-sm" aria-hidden="true">lock</span>Secure Background Checks</span>
+        </div>
       </div>
     </section>""".format(label=label("Twin Cities Gun &amp; Pawns"))
 
@@ -765,7 +773,7 @@ def legal_page(canon, title, meta_desc, keywords, label_text, h1, sub, content_h
     return head(title, meta_desc, canon, keywords) + body
 
 
-def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html, quick_facts=None, related=None):
+def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text, h1, sub, content_html, quick_facts=None, related=None, author_topic=None):
     """Info page: hero + quick-facts bar + full-width dark numbered content. No sidebar.
 
     `related` = optional list of (href, label, desc) tuples rendered as a contextual
@@ -798,9 +806,11 @@ def info_page(canon, title, meta_desc, keywords, hero_img, hero_alt, label_text,
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin py-5 flex flex-wrap gap-x-8 gap-y-3">%s</div>
     </div>""" % facts_html
 
+    author_block = guide_author(author_topic) if author_topic else ""
     body = (nav() + ticker() +
             page_hero(hero_img, hero_alt, label_text, h1, sub) +
             qf +
+            author_block +
             """
     <div style="background:#131316">
       <div class="max-w-[860px] mx-auto px-6 lg:px-margin py-16">
@@ -818,6 +828,29 @@ def h3(t):
 
 def p(t):
     return '<p>%s</p>' % t
+
+
+def guide_author(topic_label="Firearms &amp; MN Law"):
+    """E-E-A-T author byline displayed above guide body content to establish expertise &amp; trust."""
+    return """
+    <div style="background:#f0f4f8;border-top:3px solid #facc15;border-bottom:1px solid #e2e8f0">
+      <div class="max-w-[880px] mx-auto px-6 lg:px-margin py-5 flex flex-col sm:flex-row sm:items-center gap-4">
+        <div class="flex items-center gap-4 flex-1">
+          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center" style="background:#111827;border:2px solid #facc15">
+            <span class="material-symbols-outlined text-2xl" style="color:#facc15">badge</span>
+          </div>
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-widest mb-0.5" style="color:#6c5700">Expert Guide</div>
+            <div class="font-headline font-bold text-sm" style="color:#111827">Twin Cities Gun &amp; Pawn Staff</div>
+            <div class="text-xs" style="color:#4b5563">Licensed FFL Dealer &bull; Serving the Twin Cities, MN since 2010 &bull; {topic}</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 flex-shrink-0">
+          <span class="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1.5" style="background:#facc15;color:#000000"><span class="material-symbols-outlined text-xs">verified</span>&nbsp;FFL Licensed</span>
+          <span class="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1.5" style="border:1px solid #d1d5db;color:#374151"><span class="material-symbols-outlined text-xs">history_edu</span>&nbsp;Est. 2010</span>
+        </div>
+      </div>
+    </div>""".format(topic=topic_label)
 
 
 def page_terms():
@@ -1173,7 +1206,8 @@ def page_rules_for_pawning():
             ("pawn-loans.html", "Pawn Loans", "How collateral loans work at our Twin Cities, MN shop."),
             ("gun-license-mn.html", "Gun License in Minnesota", "Permits, background checks, and buying or carrying legally."),
             ("faq-gun-pawns.html", "Gun Pawn FAQ", "Answers to the most common questions about pawning firearms."),
-        ])
+        ],
+        author_topic="Pawn Regulations &amp; Firearm Law")
 
 
 def page_gun_license_mn():
@@ -1207,7 +1241,8 @@ def page_gun_license_mn():
             ("guns-rifles.html", "Guns &amp; Rifles", "Browse our firearm selection and FFL transfer services."),
             ("rules-for-pawning.html", "Rules for Pawning a Gun", "ID, valuation, hold periods, and redeeming a pawned firearm."),
             ("unregistered-gun.html", "Unregistered Firearms", "What registration means under federal NFA law in Minnesota."),
-        ])
+        ],
+        author_topic="MN Firearm Permits &amp; Licensing")
 
 
 def page_unregistered_gun():
@@ -1239,7 +1274,8 @@ def page_unregistered_gun():
             ("gun-license-mn.html", "Gun License in Minnesota", "Permits, background checks, and how to buy or carry legally."),
             ("gun-law-checklist.html", "2026 MN Gun Law Checklist", "A quick-reference checklist for staying compliant in Minnesota."),
             ("guns-rifles.html", "Guns &amp; Rifles", "Browse our firearm selection and FFL transfer services."),
-        ])
+        ],
+        author_topic="Federal NFA &amp; MN Firearm Law")
 
 
 def page_gun_law_checklist():
@@ -1361,6 +1397,7 @@ def page_gun_law_checklist():
     body = (nav() + ticker() +
             page_hero("gun-law-checklist-hero.webp", "Classic hunting shotguns displayed in wooden rack", "2026 Checklist", "Gun Law Checklist", "How Minnesota ranks on gun safety laws, background checks, concealed carry, and more.") +
             stats +
+            guide_author("2026 Minnesota Gun Law &amp; Compliance") +
             dark_content +
             cta_band("Questions About Minnesota Gun Laws?", "Our knowledgeable team can help you navigate firearms regulations in Minnesota. Give us a call or stop in.", "Contact Us", "contact.html") +
             related_links([
