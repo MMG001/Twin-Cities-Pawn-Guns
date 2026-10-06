@@ -109,7 +109,7 @@ def page_index():
     hero = """
     <section class="relative min-h-[70vh] flex items-center blueprint-grid overflow-hidden" aria-label="Homepage hero">
       <img src="images/home-page-hero.jpg" alt="Interior of Twin Cities Gun & Pawn — hundreds of firearms in stock in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
-      <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
+      <div class="absolute inset-0" style="background:rgba(0,0,0,0.70)"></div>
       <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin py-24 w-full">
         {label}
         <h1 class="font-headline font-bold text-display-hero-mobile md:text-display-hero text-on-surface">Gun &amp; Firearms Pawn Shop &mdash; Buy &amp; Sell Guns, Rifles &amp; Shotguns in Minnesota</h1>
