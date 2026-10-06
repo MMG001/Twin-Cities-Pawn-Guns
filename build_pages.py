@@ -190,10 +190,10 @@ def page_index():
     </section>""".format(label=label("Gun Pawn Loans"))
 
     showcase_cards = [
-        inv_card("gun-room-rifles.webp", "Rifle room with tactical and hunting rifles", "In Stock", "Tactical &amp; Hunting Rifles", "New &amp; Used", light=True),
-        inv_card("1911-pistols.webp", "1911 pistols in display case", "In Stock", "1911 Pistols", "New &amp; Used", light=True),
-        inv_card("revolver-showcase.webp", "Revolver showcase display", "In Stock", "Revolvers", "New &amp; Used", light=True),
-        inv_card("shotgun-rack.webp", "Rack of shotguns", "In Stock", "Shotguns", "New &amp; Used", light=True),
+        inv_card("ar-rifles-display.webp", "Rifle room with tactical and hunting rifles", "In Stock", "Tactical &amp; Hunting Rifles", "New &amp; Used", light=True),
+        inv_card("1911-handgun-display-case.webp", "1911 pistols in display case", "In Stock", "1911 Pistols", "New &amp; Used", light=True),
+        inv_card("handgun-revolver-display-case.webp", "Revolver showcase display", "In Stock", "Revolvers", "New &amp; Used", light=True),
+        inv_card("shotgun-rack-display.webp", "Rack of shotguns", "In Stock", "Shotguns", "New &amp; Used", light=True),
     ]
     showcase = """
     <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0">
