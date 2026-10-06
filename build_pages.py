@@ -468,8 +468,11 @@ def page_guns():
     shotguns = inv_section("shotguns", "Field &amp; Home Defense", "Shotguns",
         "Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.",
         grid([
-            inv_card("shotguns-store.webp", "Shotgun display rack at Twin Cities Gun &amp; Pawn", "In Stock", "Pump-Action Shotguns", "New &amp; Used", light=True),
             inv_card("shotguns-02.webp", "Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition", "In Stock", "We Carry a Variety of Shotguns", "New &amp; Used", light=True),
+            inv_card("shotgun-rack-display-01.webp", "Pump-action shotguns with wood, synthetic and camo stocks in a rolling rack at Twin Cities Gun &amp; Pawn", "In Stock", "Pump-Action Shotguns", "New &amp; Used", light=True),
+            inv_card("shotgun-rack-camo.webp", "Semi-auto and over/under shotguns with camo and wood stocks in a store rack at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto &amp; Over/Under Shotguns", "New &amp; Used", light=True),
+            inv_card("shotgun-rack-display.webp", "Rack of priced shotguns on the sales floor at Twin Cities Gun &amp; Pawn", "In Stock", "Waterfowl &amp; Field Shotguns", "New &amp; Used", light=True),
+            inv_card("showroom-displays-01.webp", "Rolling shotgun racks and long-gun wall in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Shop Our Shotgun Racks In Store", "New &amp; Used", light=True),
         ]), bg="white")
 
     archery = """
