@@ -459,11 +459,12 @@ def page_guns():
     rifles = inv_section("rifles", "Hunting &amp; Tactical", "Hunting &amp; Tactical Rifles",
         "AR-platform rifles, bolt-action hunting rifles, and everything in between from Ruger, Daniel Defense, Remington and more.",
         grid([
-            inv_card("rifle-rack-ammo-display.webp", "Rack of synthetic-stock bolt-action and semi-auto rifles above ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True),
+            inv_card("rifle-rack-ammo-display.webp", "Rack of hunting rifles above boxes of ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifles &amp; Ammo", "New &amp; Used", light=True),
             inv_card("vibrant-hunting-store-display.webp", "Bolt-action and lever-action hunting rifles on a wall rack at Twin Cities Gun &amp; Pawn", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used", light=True),
             inv_card("hunting-rifle-display-wall.webp", "Wall of wood-stock hunting long guns with price tags at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifle Wall", "New &amp; Used", light=True),
-            inv_card("organized-gun-shop-display.webp", "Organized rack of wood-stock long guns above Winchester ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Classic Wood-Stock Long Guns", "New &amp; Used", light=True),
-        ], cols="sm:grid-cols-2 lg:grid-cols-4"), bg="gray")
+            inv_card("ar-rifles-display.webp", "AR-15 rifles and pistol-caliber carbines on a slatwall display at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True),
+            inv_card("tactical-firearms-carousel.webp", "Rotating carousel of AR rifles and tactical shotguns in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Tactical Rifles &amp; Shotguns", "New &amp; Used", light=True),
+        ]), bg="gray")
 
     shotguns = inv_section("shotguns", "Field &amp; Home Defense", "Shotguns",
         "Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.",
