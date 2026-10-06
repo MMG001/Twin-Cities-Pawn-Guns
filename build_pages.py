@@ -441,9 +441,11 @@ def page_guns():
     handguns = inv_section("handguns", "Pistols &amp; Semi-Autos", "Handguns &amp; Pistols",
         "From everyday carry to full-size duty pistols &mdash; Glock, Sig Sauer, Smith &amp; Wesson, Springfield and more.",
         grid([
-            inv_card("semi-auto-pistols.webp", "Semi-automatic pistols in glass display case at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto Pistols", "New &amp; Used"),
-            inv_card("1911-pistols-store.webp", "1911 semi-automatic pistols on display at Twin Cities Gun &amp; Pawn", "In Stock", "1911 Pistols", "New &amp; Used"),
-            inv_card("semi-auto-pistols-2.webp", "Compact and concealed carry pistols in display case", "In Stock", "Concealed Carry Pistols", "New &amp; Used"),
+            inv_card("handgun-display-behind-glass.webp", "Semi-automatic pistols with price tags on glass shelves at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto Pistols", "New &amp; Used"),
+            inv_card("handgun-ammo-display.webp", "1911 pistols and ammunition in a display case at Twin Cities Gun &amp; Pawn", "In Stock", "1911 Pistols", "New &amp; Used"),
+            inv_card("handgun-display-case-02.webp", "Compact and concealed carry pistols in a lighted counter case at Twin Cities Gun &amp; Pawn", "In Stock", "Concealed Carry Pistols", "New &amp; Used"),
+            inv_card("handgun-display-case-01.webp", "Full-size and compact handguns in a lighted counter display case at Twin Cities Gun &amp; Pawn", "In Stock", "Full-Size &amp; Compact Pistols", "New &amp; Used"),
+            inv_card("handgun-display-case.webp", "Glass tower showcase of handguns inside Twin Cities Gun &amp; Pawn", "In Stock", "Handgun Showcase", "New &amp; Used"),
         ]))
 
     revolvers = inv_section("revolvers", "Wheelguns", "Revolvers",
