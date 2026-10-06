@@ -552,7 +552,7 @@ def page_accessories():
             inv_card("optics-sights.jpg", "Red dot and rifle sights at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Sights &amp; Red Dots", "New &amp; Used", light=True),
             inv_card("optics-scope-kit.jpg", "Scope kit with mounts at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Scope Kits &amp; Mounts", "New &amp; Used", light=True),
             inv_card("retail-optics-accessories-display.webp", "Glass case of rifle scopes, rangefinders and binoculars at Twin Cities Gun &amp; Pawn", "In Stock", "Scopes, Rangefinders &amp; Binoculars", "New &amp; Used", light=True),
-            inv_card("bright-hunting-gear-display.webp", "Display case of rifle scopes, binoculars, fishing reels and gun cleaning kits at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Gear &amp; Cleaning Kits", "New &amp; Used", light=True),
+            inv_card("outdoor-gear-firearm-display-cabinet.webp", "Display cabinet with binoculars, fishing reels, rangefinders, gun cleaning kits and rifles at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Gear &amp; Cleaning Kits", "New &amp; Used", light=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters &amp; Slings",
