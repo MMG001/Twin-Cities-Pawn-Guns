@@ -1455,7 +1455,6 @@ GALLERY_PHOTOS = [
     ("rifle-rack-ammo-display.webp", "Hunting Rifles &amp; Ammo"),
     ("vibrant-hunting-store-display.webp", "Bolt-Action Hunting Rifles"),
     ("hunting-rifle-display-wall.webp", "Hunting Rifle Wall"),
-    ("organized-gun-shop-display.webp", "Classic Wood-Stock Long Guns"),
     ("shotgun-rack-display.webp", "Shotgun Rack"),
     ("shotgun-rack-display-01.webp", "Pump-Action Shotguns"),
     ("shotgun-rack-camo.webp", "Semi-Auto &amp; Over/Under Shotguns"),
@@ -1463,7 +1462,6 @@ GALLERY_PHOTOS = [
     ("rifle-scope-display.webp", "Rifle Scope Display Case"),
     ("retail-optics-accessories-display.webp", "Optics &amp; Accessories"),
     ("ammo-retail-shelf-display.webp", "Ammunition Wall"),
-    ("bright-hunting-gear-display.webp", "Hunting Gear Display"),
 ]
 
 GALLERY_CSS = """
