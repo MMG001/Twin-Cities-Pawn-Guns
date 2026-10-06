@@ -82,8 +82,10 @@ def cta_band(title, sub, btn_text, btn_href, external=False, bg_img=None):
 
 def brands_section():
     return """
-    <section class="py-16" style="background:#1b1b1e;border-top:1px solid #2e2c28;border-bottom:1px solid #2e2c28">
-      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
+    <section class="relative py-16" style="border-top:1px solid #2e2c28;border-bottom:1px solid #2e2c28">
+      <div class="absolute inset-0" style="background-image:url('images/firearms-store-interior.webp');background-size:cover;background-position:center"></div>
+      <div class="absolute inset-0" style="background:rgba(0,0,0,0.65)"></div>
+      <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
         {label_center}
         <h2 class="font-headline font-bold text-headline-lg" style="color:#ffffff">Brands We Carry</h2>
         <p class="mt-2 max-w-2xl mx-auto" style="color:#a0a0a8">A rotating selection from the most trusted names in the industry &mdash; inventory changes daily.</p>
