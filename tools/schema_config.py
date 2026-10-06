@@ -415,6 +415,11 @@ PAGES = {
         "breadcrumb": [("Home", ""), ("Inventory", "guns-rifles.html"), ("Pawn & Loans", "pawn-loans.html")],
         "main_entity": "pawn-loans",
     },
+    "gallery.html": {
+        "webpage_type": "CollectionPage",
+        "name": "Store Gallery | Photos of Our Showroom | Twin Cities Gun & Pawn",
+        "breadcrumb": [("Home", ""), ("Inventory", "guns-rifles.html"), ("Gallery", "gallery.html")],
+    },
     "contact.html": {
         "webpage_type": "ContactPage",
         "name": "Contact Twin Cities Gun & Pawn | Twin Cities, MN | (763) 427-4100",

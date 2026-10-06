@@ -983,6 +983,7 @@ def page_sitemap():
         ("pawn-loans.html", "Pawn &amp; Loans"), ("pawn-loans.html#pawn", "&rsaquo; Pawn Your Items"),
         ("pawn-loans.html#tools", "&rsaquo; Power Tools"), ("pawn-loans.html#electronics", "&rsaquo; Electronics"),
         ("pawn-loans.html#jewelry", "&rsaquo; Jewelry &amp; Gold"),
+        ("/gallery", "Store Gallery"),
         ("contact.html", "Contact"), ("faq.html", "FAQ"),
         ("faq-gun-pawns.html", "FAQ &ndash; Gun Pawns"), ("employment.html", "Employment"),
         ("resources.html", "Resources"), ("gun-law-checklist.html", "&rsaquo; 2026 Gun Law Checklist"),
@@ -1426,6 +1427,148 @@ def page_gun_law_checklist():
         ) + body
 
 
+# ---------- GALLERY ----------
+GALLERY_PHOTOS = [
+    # (filename in images/, caption)
+    ("home-page-hero.jpg", "Store Panorama"),
+    ("firearms-store-interior.webp", "Showroom Overview"),
+    ("store-showroom.webp", "Long-Gun Wall &amp; Pistol Counters"),
+    ("showroom-display-01.webp", "Tactical Carousel &amp; Rifle Walls"),
+    ("firearms-showroom-display.webp", "Corner Rifle Wall &amp; Handgun Tower"),
+    ("gun-shop-showroom.webp", "Gun Shop Showroom"),
+    ("showroom-displays-01.webp", "Shotgun Racks &amp; Showroom Displays"),
+    ("handgun-display-behind-glass.webp", "Semi-Auto Pistols Behind Glass"),
+    ("1911-handgun-display-case.webp", "1911 Pistols &amp; Ammunition"),
+    ("handgun-revolver-display-case.webp", "Handgun &amp; Revolver Display Case"),
+    ("handgun-display-case.webp", "Handgun Tower Showcase"),
+    ("handgun-display-case-01.webp", "Full-Size &amp; Compact Pistols"),
+    ("handgun-display-case-02.webp", "Concealed Carry Pistols"),
+    ("ar-rifles-display.webp", "AR-Platform Rifles"),
+    ("tactical-firearms-carousel.webp", "Tactical Firearms Carousel"),
+    ("rifle-rack-ammo-display.webp", "Hunting Rifles &amp; Ammo"),
+    ("vibrant-hunting-store-display.webp", "Bolt-Action Hunting Rifles"),
+    ("hunting-rifle-display-wall.webp", "Hunting Rifle Wall"),
+    ("organized-gun-shop-display.webp", "Classic Wood-Stock Long Guns"),
+    ("shotgun-rack-display.webp", "Shotgun Rack"),
+    ("shotgun-rack-display-01.webp", "Pump-Action Shotguns"),
+    ("shotgun-rack-camo.webp", "Semi-Auto &amp; Over/Under Shotguns"),
+    ("compound-bow-display-rack.webp", "Compound Bows"),
+    ("rifle-scope-display.webp", "Rifle Scope Display Case"),
+    ("retail-optics-accessories-display.webp", "Optics &amp; Accessories"),
+    ("ammo-retail-shelf-display.webp", "Ammunition Wall"),
+    ("bright-hunting-gear-display.webp", "Hunting Gear Display"),
+]
+
+GALLERY_CSS = """
+  <style>
+    .tc-gallery{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:480px){.tc-gallery{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.tc-gallery{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:1200px){.tc-gallery{grid-template-columns:repeat(4,1fr)}}
+    .tc-gal-item{display:block;width:100%;padding:0;border:1px solid #e2e8f0;background:#fff;cursor:zoom-in;text-align:left;overflow:hidden}
+    .tc-gal-item:focus-visible{outline:3px solid #facc15;outline-offset:2px}
+    .tc-gal-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+    .tc-gal-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .tc-gal-item:hover .tc-gal-img img{transform:scale(1.05)}
+    .tc-gal-cap{padding:.75rem 1rem;font-weight:700;font-size:.9rem;color:#111827;border-top:3px solid #facc15}
+    .tc-lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:4rem 4.5rem}
+    .tc-lb.open{display:flex}
+    .tc-lb img{max-width:100%;max-height:calc(100vh - 9rem);object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+    .tc-lb-cap{margin-top:1rem;color:#fff;font-weight:700;text-align:center}
+    .tc-lb-cap span{color:#facc15;font-family:monospace;font-size:.8rem;margin-left:.6rem}
+    .tc-lb button{position:absolute;background:rgba(0,0,0,.55);color:#fff;border:2px solid rgba(255,255,255,.35);cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+    .tc-lb button:hover,.tc-lb button:focus-visible{background:#facc15;color:#000;border-color:#facc15;outline:none}
+    .tc-lb-close{top:1rem;right:1rem;width:48px;height:48px;font-size:2rem}
+    .tc-lb-prev,.tc-lb-next{top:50%;transform:translateY(-50%);width:52px;height:72px;font-size:3rem}
+    .tc-lb-prev{left:.75rem}.tc-lb-next{right:.75rem}
+    @media(max-width:640px){.tc-lb{padding:4rem .5rem}.tc-lb-prev,.tc-lb-next{width:40px;height:56px;font-size:2.2rem;top:auto;bottom:1rem;transform:none}}
+  </style>"""
+
+GALLERY_JS = """
+  <script>
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.tc-gal-item'));
+    var lb = document.getElementById('tc-lightbox');
+    if (!lb || !items.length) return;
+    var img = lb.querySelector('img'), cap = lb.querySelector('.tc-lb-cap');
+    var idx = 0, lastFocus = null;
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      var it = items[idx];
+      img.src = it.getAttribute('data-full');
+      img.alt = it.querySelector('img').alt;
+      cap.innerHTML = it.getAttribute('data-caption') + '<span>' + (idx + 1) + ' / ' + items.length + '</span>';
+    }
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lb.querySelector('.tc-lb-close').focus();
+    }
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      img.src = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    items.forEach(function (it, i) { it.addEventListener('click', function () { open(i); }); });
+    lb.querySelector('.tc-lb-close').addEventListener('click', close);
+    lb.querySelector('.tc-lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+    lb.querySelector('.tc-lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    var sx = null;
+    lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, {passive: true});
+    lb.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    });
+  })();
+  </script>"""
+
+
+def page_gallery():
+    tiles = "".join("""
+          <button type="button" class="tc-gal-item" data-full="images/{f}" data-caption="{c}" aria-label="View larger: {c}">
+            <div class="tc-gal-img"><img src="images/{f}" alt="{c} at Twin Cities Gun &amp; Pawn" loading="lazy" decoding="async" /></div>
+            <div class="tc-gal-cap">{c}</div>
+          </button>""".format(f=f, c=c) for f, c in GALLERY_PHOTOS)
+    content = """
+    <section class="py-16" style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin">
+        <div class="mb-10 text-center">{label}<h2 class="font-headline font-bold text-headline-lg" style="color:#111827">Inside Our Showroom</h2><p class="mt-4 max-w-3xl mx-auto" style="color:#374151">Take a look around Twin Cities Gun &amp; Pawn &mdash; handgun counters, rifle and shotgun walls, optics, ammunition and more. Click any photo to view it full size.</p></div>
+        <div class="tc-gallery">{tiles}
+        </div>
+      </div>
+    </section>
+    <div id="tc-lightbox" class="tc-lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+      <button type="button" class="tc-lb-close" aria-label="Close">&times;</button>
+      <button type="button" class="tc-lb-prev" aria-label="Previous photo">&lsaquo;</button>
+      <img src="" alt="" />
+      <div class="tc-lb-cap"></div>
+      <button type="button" class="tc-lb-next" aria-label="Next photo">&rsaquo;</button>
+    </div>""".format(label=label("Gallery"), tiles=tiles)
+    body = (nav() + ticker() + GALLERY_CSS +
+            text_hero("Gallery", "Our Store Gallery", "Step inside Twin Cities Gun &amp; Pawn &mdash; real photos of our firearms, displays and showroom.") +
+            content +
+            cta_band("See It In Person", "Our inventory changes daily. Stop by the store or give us a call to check what&rsquo;s in stock.", "Visit Our Store", "contact.html") +
+            footer().replace("</body>", GALLERY_JS + "\n</body>", 1))
+    return head("Store Gallery | Photos of Our Showroom | Twin Cities Gun & Pawn",
+        "Photo gallery of Twin Cities Gun & Pawn \u2014 handgun counters, rifle and shotgun walls, optics, ammunition and our full firearms showroom in the Twin Cities.",
+        "gallery.html",
+        "Twin Cities Gun & Pawn photos, gun store gallery, firearms showroom Minnesota, pawn shop pictures",
+        ) + body
+
+
 # ---------- WRITE-OUT ----------
 PAGES = {
     "": page_index,
@@ -1433,6 +1576,7 @@ PAGES = {
     "guns-rifles.html": page_guns,
     "accessories.html": page_accessories,
     "pawn-loans.html": page_pawn,
+    "gallery.html": page_gallery,
     "contact.html": page_contact,
     "terms.html": page_terms,
     "privacy.html": page_privacy,
@@ -1452,7 +1596,7 @@ PAGES = {
 SITEMAP_PRIORITY = {
     "": "1.0",
     "guns-rifles.html": "0.9", "pawn-loans.html": "0.9", "accessories.html": "0.9",
-    "contact.html": "0.8", "about.html": "0.8",
+    "contact.html": "0.8", "about.html": "0.8", "gallery.html": "0.6",
     "resources.html": "0.7", "gun-law-checklist.html": "0.7", "gun-license-mn.html": "0.7",
     "rules-for-pawning.html": "0.7", "unregistered-gun.html": "0.6",
     "faq.html": "0.6", "faq-gun-pawns.html": "0.6", "employment.html": "0.5",
