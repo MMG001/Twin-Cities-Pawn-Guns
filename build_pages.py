@@ -378,6 +378,11 @@ def page_about():
           <a href="contact.html" class="inline-flex items-center gap-2 mt-8 bg-primary-container text-surface-container-lowest font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider gold-hover">Visit Us <span class="material-symbols-outlined text-base">arrow_outward</span></a>
         </div>
       </div>
+      <div class="max-w-[1360px] mx-auto px-6 lg:px-margin mt-10 grid grid-cols-1 md:grid-cols-3 gap-6" aria-label="See our store">
+          <div class="overflow-hidden" style="border:1px solid #e2e8f0;border-radius:6px"><img src="images/showroom-displays-01b.webp" alt="Shotgun racks and showroom displays inside Twin Cities Gun &amp; Pawn" class="w-full object-cover" style="height:230px" loading="lazy" decoding="async" /></div>
+          <div class="overflow-hidden" style="border:1px solid #e2e8f0;border-radius:6px"><img src="images/firearms-showroom-display.webp" alt="Rifle wall and handgun display cases at Twin Cities Gun &amp; Pawn" class="w-full object-cover" style="height:230px" loading="lazy" decoding="async" /></div>
+          <div class="overflow-hidden" style="border:1px solid #e2e8f0;border-radius:6px"><img src="images/vibrant-hunting-store-display.webp" alt="Hunting rifles on the wall rack at Twin Cities Gun &amp; Pawn" class="w-full object-cover" style="height:230px" loading="lazy" decoding="async" /></div>
+      </div>
     </section>""".format(xh=crosshairs(), label=label("Our Story"))
 
     stats = """
@@ -416,7 +421,7 @@ def page_about():
     </section>""".format(label=label("Buy &amp; Sell Guns, Rifles &amp; Shotguns in Minnesota"), grid=grid(reason_cards))
 
     body = (nav() + ticker() +
-            page_hero("about-hero-rifles.webp", "Rifles with price tags on display at Twin Cities Gun & Pawn", "About Us", "About Twin Cities Gun &amp; Pawn", "Licensed FFL dealer &mdash; buying, selling &amp; pawn loans since 2010.") +
+            page_hero("about-page-bg.webp", "Inside the Twin Cities Gun &amp; Pawn firearms showroom", "About Us", "About Twin Cities Gun &amp; Pawn", "Licensed FFL dealer &mdash; buying, selling &amp; pawn loans since 2010.") +
             stats + story + why + brands_section() + keyword_entity_table() +
             related_links([
                 ("guns-rifles.html", "Guns &amp; Rifles", "Browse hundreds of firearms in stock with $50 FFL transfers."),
