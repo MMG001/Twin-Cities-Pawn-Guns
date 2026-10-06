@@ -490,6 +490,10 @@ def page_guns():
             {xh}
             <img src="images/archery-bows-02.webp" alt="Compound bows and arrows at Twin Cities Gun &amp; Pawn Twin Cities, MN" class="w-full h-full object-cover" />
           </div>
+          <div class="crosshair-card relative border border-outline-variant/40 gold-glow archery-frame overflow-hidden" style="grid-column:span 2 / span 2">
+            {xh}
+            <img src="images/compound-bow-display-rack.webp" alt="Rotating tree-style rack of compound bows with price tags at Twin Cities Gun &amp; Pawn" class="w-full h-full object-cover" style="object-position:center 35%" loading="lazy" />
+          </div>
         </div>
         <div>
           <h3 class="font-headline font-bold text-headline-sm text-on-surface">Compound Bows &amp; Gear</h3>
