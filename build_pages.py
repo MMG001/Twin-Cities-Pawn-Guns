@@ -1091,6 +1091,9 @@ def page_employment():
             <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>On-the-job training &amp; growth</li>
             <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>Equal opportunity employer</li>
           </ul>
+          <div class="mt-8 overflow-hidden" style="border-radius:4px">
+            <img src="images/tc-firearms-store-interior.webp" alt="Twin Cities Gun &amp; Pawn firearms store interior &mdash; rifles, handguns and display cases" class="w-full object-cover" loading="lazy" decoding="async" />
+          </div>
         </div>
       </div>
       <div class="crosshair-card relative border border-outline-variant/40 bg-surface-container-low p-7 gold-glow">
