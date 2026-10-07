@@ -782,6 +782,29 @@
     <div class="ticker-inner"><span class="font-mono text-[11px] tracking-widest text-on-surface-variant uppercase px-4">&#128299; 300+ FIREARMS IN STOCK &nbsp;&middot;&nbsp; &#9989; LICENSED FFL DEALER &nbsp;&middot;&nbsp; &#127942; SERVING TWIN CITIES MN SINCE 2010 &nbsp;&middot;&nbsp; &#128230; SHOP ONLINE: ARMSLIST &amp; GUNBROKER &nbsp;&middot;&nbsp; &#9742; (763) 427-4100 &nbsp;&middot;&nbsp; </span><span class="font-mono text-[11px] tracking-widest text-on-surface-variant uppercase px-4">&#128299; 300+ FIREARMS IN STOCK &nbsp;&middot;&nbsp; &#9989; LICENSED FFL DEALER &nbsp;&middot;&nbsp; &#127942; SERVING TWIN CITIES MN SINCE 2010 &nbsp;&middot;&nbsp; &#128230; SHOP ONLINE: ARMSLIST &amp; GUNBROKER &nbsp;&middot;&nbsp; &#9742; (763) 427-4100 &nbsp;&middot;&nbsp; </span></div>
   </div>
 
+  <style>
+    .tc-gallery{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:480px){.tc-gallery{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.tc-gallery{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:1200px){.tc-gallery{grid-template-columns:repeat(4,1fr)}}
+    .tc-gal-item{display:block;width:100%;padding:0;border:1px solid #e2e8f0;background:#fff;cursor:zoom-in;text-align:left;overflow:hidden}
+    .tc-gal-item:focus-visible{outline:3px solid #facc15;outline-offset:2px}
+    .tc-gal-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+    .tc-gal-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .tc-gal-item:hover .tc-gal-img img{transform:scale(1.05)}
+    .tc-gal-cap{padding:.75rem 1rem;font-weight:700;font-size:.9rem;color:#111827;border-top:3px solid #facc15}
+    .tc-lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:4rem 4.5rem}
+    .tc-lb.open{display:flex}
+    .tc-lb img{max-width:100%;max-height:calc(100vh - 9rem);object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+    .tc-lb-cap{margin-top:1rem;color:#fff;font-weight:700;text-align:center}
+    .tc-lb-cap span{color:#facc15;font-family:monospace;font-size:.8rem;margin-left:.6rem}
+    .tc-lb button{position:absolute;background:rgba(0,0,0,.55);color:#fff;border:2px solid rgba(255,255,255,.35);cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+    .tc-lb button:hover,.tc-lb button:focus-visible{background:#facc15;color:#000;border-color:#facc15;outline:none}
+    .tc-lb-close{top:1rem;right:1rem;width:48px;height:48px;font-size:2rem}
+    .tc-lb-prev,.tc-lb-next{top:50%;transform:translateY(-50%);width:52px;height:72px;font-size:3rem}
+    .tc-lb-prev{left:.75rem}.tc-lb-next{right:.75rem}
+    @media(max-width:640px){.tc-lb{padding:4rem .5rem}.tc-lb-prev,.tc-lb-next{width:40px;height:56px;font-size:2.2rem;top:auto;bottom:1rem;transform:none}}
+  </style>
     <section class="relative min-h-[46vh] flex items-end blueprint-grid" aria-label="Page header">
       <img src="images/pawn-tools.jpg" alt="Pawn shop merchandise at Twin Cities Gun & Pawn" class="absolute inset-0 w-full h-full object-cover" />
       <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
@@ -837,40 +860,47 @@
       <h2 class="font-headline font-bold text-headline-md text-on-surface mb-2">What We Buy &amp; Sell</h2>
       <p class="text-on-surface-variant text-sm mb-8">Rotating inventory &mdash; stop in or call to check current stock.</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        <div class="relative overflow-hidden group">
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-tools.jpg" data-caption="Power Tools">
           <img src="images/pawn-tools.jpg" alt="Power tools at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Power Tools</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-tvs.jpg" data-caption="TVs &amp; Electronics">
           <img src="images/pawn-tvs.jpg" alt="TVs and electronics at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">TVs &amp; Electronics</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-speakers.jpg" data-caption="Audio &amp; Speakers">
           <img src="images/pawn-speakers.jpg" alt="Speakers and audio at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Audio &amp; Speakers</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-instruments.jpg" data-caption="Instruments">
           <img src="images/pawn-instruments.jpg" alt="Musical instruments at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Instruments</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-jewelry.jpg" data-caption="Jewelry &amp; Watches">
           <img src="images/pawn-jewelry.jpg" alt="Jewelry and watches at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Jewelry &amp; Watches</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-jewelry-01.jpg" data-caption="Gold &amp; Diamonds">
           <img src="images/pawn-jewelry-01.jpg" alt="Gold and diamond jewelry at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Gold &amp; Diamonds</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-knives.jpg" data-caption="Knives &amp; Collectibles">
           <img src="images/pawn-knives.jpg" alt="Knives and collectibles at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Knives &amp; Collectibles</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-bikes.jpg" data-caption="Bikes &amp; Sporting Goods">
           <img src="images/pawn-bikes.jpg" alt="Bikes and sporting goods at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Bikes &amp; Sporting Goods</span></div>
-        </div>
+        </button>
       </div>
     </section>
+    <div id="tc-lightbox" class="tc-lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+      <button type="button" class="tc-lb-close" aria-label="Close">&times;</button>
+      <button type="button" class="tc-lb-prev" aria-label="Previous photo">&lsaquo;</button>
+      <img src="" alt="" />
+      <div class="tc-lb-cap"></div>
+      <button type="button" class="tc-lb-next" aria-label="Next photo">&rsaquo;</button>
+    </div>
     <section class="relative py-24 overflow-hidden" style="background:#111">
       <img src="images/cta-rifles-bg.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" style="opacity:0.35" loading="lazy" />
       <div class="relative z-10 max-w-[1360px] mx-auto px-6 lg:px-margin text-center">
@@ -958,5 +988,55 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+
+  <script>
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.tc-gal-item'));
+    var lb = document.getElementById('tc-lightbox');
+    if (!lb || !items.length) return;
+    var img = lb.querySelector('img'), cap = lb.querySelector('.tc-lb-cap');
+    var idx = 0, lastFocus = null;
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      var it = items[idx];
+      img.src = it.getAttribute('data-full');
+      img.alt = it.querySelector('img').alt;
+      cap.innerHTML = it.getAttribute('data-caption') + '<span>' + (idx + 1) + ' / ' + items.length + '</span>';
+    }
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lb.querySelector('.tc-lb-close').focus();
+    }
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      img.src = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    items.forEach(function (it, i) { it.addEventListener('click', function () { open(i); }); });
+    lb.querySelector('.tc-lb-close').addEventListener('click', close);
+    lb.querySelector('.tc-lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+    lb.querySelector('.tc-lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    var sx = null;
+    lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, {passive: true});
+    lb.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    });
+  })();
+  </script>
 </body>
 </html>

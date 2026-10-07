@@ -448,39 +448,39 @@ def page_guns():
     handguns = inv_section("handguns", "Pistols &amp; Semi-Autos", "Handguns &amp; Pistols",
         "From everyday carry to full-size duty pistols &mdash; Glock, Sig Sauer, Smith &amp; Wesson, Springfield and more.",
         grid([
-            inv_card("handgun-display-behind-glass.webp", "Semi-automatic pistols with price tags on glass shelves at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto Pistols", "New &amp; Used"),
-            inv_card("handgun-ammo-display.webp", "1911 pistols and ammunition in a display case at Twin Cities Gun &amp; Pawn", "In Stock", "1911 Pistols", "New &amp; Used"),
-            inv_card("handgun-display-case-02.webp", "Compact and concealed carry pistols in a lighted counter case at Twin Cities Gun &amp; Pawn", "In Stock", "Concealed Carry Pistols", "New &amp; Used"),
-            inv_card("handgun-display-case-01.webp", "Full-size and compact handguns in a lighted counter display case at Twin Cities Gun &amp; Pawn", "In Stock", "Full-Size &amp; Compact Pistols", "New &amp; Used"),
-            inv_card("handgun-display-case.webp", "Glass tower showcase of handguns inside Twin Cities Gun &amp; Pawn", "In Stock", "Handgun Showcase", "New &amp; Used"),
+            inv_card("handgun-display-behind-glass.webp", "Semi-automatic pistols with price tags on glass shelves at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto Pistols", "New &amp; Used", lightbox=True),
+            inv_card("handgun-ammo-display.webp", "1911 pistols and ammunition in a display case at Twin Cities Gun &amp; Pawn", "In Stock", "1911 Pistols", "New &amp; Used", lightbox=True),
+            inv_card("handgun-display-case-02.webp", "Compact and concealed carry pistols in a lighted counter case at Twin Cities Gun &amp; Pawn", "In Stock", "Concealed Carry Pistols", "New &amp; Used", lightbox=True),
+            inv_card("handgun-display-case-01.webp", "Full-size and compact handguns in a lighted counter display case at Twin Cities Gun &amp; Pawn", "In Stock", "Full-Size &amp; Compact Pistols", "New &amp; Used", lightbox=True),
+            inv_card("handgun-display-case.webp", "Glass tower showcase of handguns inside Twin Cities Gun &amp; Pawn", "In Stock", "Handgun Showcase", "New &amp; Used", lightbox=True),
         ]))
 
     revolvers = inv_section("revolvers", "Wheelguns", "Revolvers",
         "Classic and modern revolvers from Smith &amp; Wesson, Ruger, Colt, Taurus and more.",
         grid([
-            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Gun &amp; Pawn, Twin Cities MN", "In Stock", "Double-Action Revolvers", "New &amp; Used", light=True),
-            inv_card("revolver-01.webp", "Multiple revolvers on display including single-action and double-action wheelguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used", light=True),
-            inv_card("revolver-single.webp", "Smith &amp; Wesson stainless steel revolver with wood grips", "In Stock", "Magnum Revolvers", "New &amp; Used", light=True),
+            inv_card("revolvers-store.webp", "Revolver selection at Twin Cities Gun &amp; Pawn, Twin Cities MN", "In Stock", "Double-Action Revolvers", "New &amp; Used", light=True, lightbox=True),
+            inv_card("revolver-01.webp", "Multiple revolvers on display including single-action and double-action wheelguns", "In Stock", "Concealed Carry Revolvers", "New &amp; Used", light=True, lightbox=True),
+            inv_card("revolver-single.webp", "Smith &amp; Wesson stainless steel revolver with wood grips", "In Stock", "Magnum Revolvers", "New &amp; Used", light=True, lightbox=True),
         ]), bg="white")
 
     rifles = inv_section("rifles", "Hunting &amp; Tactical", "Hunting &amp; Tactical Rifles",
         "AR-platform rifles, bolt-action hunting rifles, and everything in between from Ruger, Daniel Defense, Remington and more.",
         grid([
-            inv_card("rifle-rack-ammo-display.webp", "Rack of hunting rifles above boxes of ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifles &amp; Ammo", "New &amp; Used", light=True),
-            inv_card("vibrant-hunting-store-display.webp", "Bolt-action and lever-action hunting rifles on a wall rack at Twin Cities Gun &amp; Pawn", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used", light=True),
-            inv_card("hunting-rifle-display-wall.webp", "Wall of wood-stock hunting long guns with price tags at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifle Wall", "New &amp; Used", light=True),
-            inv_card("ar-rifles-display.webp", "AR-15 rifles and pistol-caliber carbines on a slatwall display at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True),
-            inv_card("tactical-firearms-carousel.webp", "Rotating carousel of AR rifles and tactical shotguns in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Tactical Rifles &amp; Shotguns", "New &amp; Used", light=True),
+            inv_card("rifle-rack-ammo-display.webp", "Rack of hunting rifles above boxes of ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifles &amp; Ammo", "New &amp; Used", light=True, lightbox=True),
+            inv_card("vibrant-hunting-store-display.webp", "Bolt-action and lever-action hunting rifles on a wall rack at Twin Cities Gun &amp; Pawn", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used", light=True, lightbox=True),
+            inv_card("hunting-rifle-display-wall.webp", "Wall of wood-stock hunting long guns with price tags at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifle Wall", "New &amp; Used", light=True, lightbox=True),
+            inv_card("ar-rifles-display.webp", "AR-15 rifles and pistol-caliber carbines on a slatwall display at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True, lightbox=True),
+            inv_card("tactical-firearms-carousel.webp", "Rotating carousel of AR rifles and tactical shotguns in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Tactical Rifles &amp; Shotguns", "New &amp; Used", light=True, lightbox=True),
         ]), bg="gray")
 
     shotguns = inv_section("shotguns", "Field &amp; Home Defense", "Shotguns",
         "Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.",
         grid([
-            inv_card("shotguns-02.webp", "Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition", "In Stock", "We Carry a Variety of Shotguns", "New &amp; Used", light=True),
-            inv_card("shotgun-rack-display-01.webp", "Pump-action shotguns with wood, synthetic and camo stocks in a rolling rack at Twin Cities Gun &amp; Pawn", "In Stock", "Pump-Action Shotguns", "New &amp; Used", light=True),
-            inv_card("shotgun-rack-camo.webp", "Semi-auto and over/under shotguns with camo and wood stocks in a store rack at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto &amp; Over/Under Shotguns", "New &amp; Used", light=True),
-            inv_card("shotgun-rack-display.webp", "Rack of priced shotguns on the sales floor at Twin Cities Gun &amp; Pawn", "In Stock", "Waterfowl &amp; Field Shotguns", "New &amp; Used", light=True),
-            inv_card("showroom-displays-01.webp", "Rolling shotgun racks and long-gun wall in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Shop Our Shotgun Racks In Store", "New &amp; Used", light=True),
+            inv_card("shotguns-02.webp", "Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition", "In Stock", "We Carry a Variety of Shotguns", "New &amp; Used", light=True, lightbox=True),
+            inv_card("shotgun-rack-display-01.webp", "Pump-action shotguns with wood, synthetic and camo stocks in a rolling rack at Twin Cities Gun &amp; Pawn", "In Stock", "Pump-Action Shotguns", "New &amp; Used", light=True, lightbox=True),
+            inv_card("shotgun-rack-camo.webp", "Semi-auto and over/under shotguns with camo and wood stocks in a store rack at Twin Cities Gun &amp; Pawn", "In Stock", "Semi-Auto &amp; Over/Under Shotguns", "New &amp; Used", light=True, lightbox=True),
+            inv_card("shotgun-rack-display.webp", "Rack of priced shotguns on the sales floor at Twin Cities Gun &amp; Pawn", "In Stock", "Waterfowl &amp; Field Shotguns", "New &amp; Used", light=True, lightbox=True),
+            inv_card("showroom-displays-01.webp", "Rolling shotgun racks and long-gun wall in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Shop Our Shotgun Racks In Store", "New &amp; Used", light=True, lightbox=True),
         ]), bg="white")
 
     archery = """
@@ -514,7 +514,7 @@ def page_guns():
 
 
 
-    body = (nav() + ticker() +
+    body = (nav() + ticker() + GALLERY_CSS +
             page_hero("guns-rifles-hero.webp", "Winchester ammunition box with classic shotgun and rifle", "Firearms Inventory", "Guns &amp; Rifles", "Hundreds of handguns, rifles, shotguns, revolvers and more in stock. Inventory changes daily &mdash; shop online or visit us in the Twin Cities.") +
             chips + handguns + revolvers + rifles + shotguns + archery +
             online_cta() + cta_band("Can't Find What You're Looking For?", "Our inventory turns over fast and much of it never makes it online. Call us or stop by &mdash; we'll help you find the right firearm.", "Contact Us", "contact.html", bg_img="cta-rifles-bg.webp") +
@@ -522,7 +522,7 @@ def page_guns():
                 ("accessories.html", "Ammo &amp; Accessories", "Ammunition, optics, holsters, magazines and gun safes."),
                 ("pawn-loans.html", "FFL Transfers ($50)", "Buy online? Ship it to us for a fast, licensed FFL transfer."),
                 ("gun-license-mn.html", "MN Gun License", "What you need to legally buy a firearm in Minnesota."),
-            ]) + footer())
+            ]) + LIGHTBOX_HTML + footer().replace("</body>", GALLERY_JS + "\n</body>", 1))
     return head(
         "Guns & Rifles for Sale | Twin Cities Gun & Pawn \u2014 Twin Cities, MN",
         "Shop handguns, rifles, shotguns, and revolvers at Twin Cities Gun & Pawn in the Twin Cities. Licensed FFL dealer with hundreds of guns in stock.",
@@ -540,36 +540,36 @@ def page_accessories():
     ammo = inv_section("ammo", "Rounds &amp; Calibers", "Ammunition &amp; Ammo",
         "Handgun, rifle, and shotgun ammunition in popular calibers. Stock and pricing change frequently &mdash; call for current availability.",
         grid([
-            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used"),
-            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Ammo", "New &amp; Used"),
-            inv_card("ammo-retail-shelf-display.webp", "Shelves of Winchester, Federal, Sig Sauer and Sellier &amp; Bellot rifle and pistol ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting &amp; Pistol Ammo Wall", "New"),
+            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used", lightbox=True),
+            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Ammo", "New &amp; Used", lightbox=True),
+            inv_card("ammo-retail-shelf-display.webp", "Shelves of Winchester, Federal, Sig Sauer and Sellier &amp; Bellot rifle and pistol ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting &amp; Pistol Ammo Wall", "New", lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
     optics = inv_section("optics", "Glass &amp; Electronics", "Sights, Scopes &amp; Optics",
         "Red dots, rifle scopes, thermal and night vision optics to complete your build.",
         grid([
-            inv_card("optics-scope.jpg", "Rifle scope at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Scopes", "New &amp; Used", light=True),
-            inv_card("optics-sights.jpg", "Red dot and rifle sights at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Sights &amp; Red Dots", "New &amp; Used", light=True),
-            inv_card("optics-scope-kit.jpg", "Scope kit with mounts at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Scope Kits &amp; Mounts", "New &amp; Used", light=True),
-            inv_card("retail-optics-accessories-display.webp", "Glass case of rifle scopes, rangefinders and binoculars at Twin Cities Gun &amp; Pawn", "In Stock", "Scopes, Rangefinders &amp; Binoculars", "New &amp; Used", light=True),
-            inv_card("outdoor-gear-firearm-display-cabinet.webp", "Display cabinet with binoculars, fishing reels, rangefinders, gun cleaning kits and rifles at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Gear &amp; Cleaning Kits", "New &amp; Used", light=True),
+            inv_card("optics-scope.jpg", "Rifle scope at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Scopes", "New &amp; Used", light=True, lightbox=True),
+            inv_card("optics-sights.jpg", "Red dot and rifle sights at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Sights &amp; Red Dots", "New &amp; Used", light=True, lightbox=True),
+            inv_card("optics-scope-kit.jpg", "Scope kit with mounts at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Scope Kits &amp; Mounts", "New &amp; Used", light=True, lightbox=True),
+            inv_card("retail-optics-accessories-display.webp", "Glass case of rifle scopes, rangefinders and binoculars at Twin Cities Gun &amp; Pawn", "In Stock", "Scopes, Rangefinders &amp; Binoculars", "New &amp; Used", light=True, lightbox=True),
+            inv_card("outdoor-gear-firearm-display-cabinet.webp", "Display cabinet with binoculars, fishing reels, rangefinders, gun cleaning kits and rifles at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Gear &amp; Cleaning Kits", "New &amp; Used", light=True, lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     holsters = inv_section("holsters", "Carry &amp; Storage", "Holsters &amp; Slings",
         "Concealed carry holsters and rifle slings to keep your firearm secure and accessible.",
         grid([
-            inv_card("holsters-owb.jpg", "OWB holsters for pistols at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "OWB Holsters", "New", light=True),
-            inv_card("holsters-iwb.jpg", "IWB concealed carry holsters at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "IWB Holsters", "New", light=True),
+            inv_card("holsters-owb.jpg", "OWB holsters for pistols at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "OWB Holsters", "New", light=True, lightbox=True),
+            inv_card("holsters-iwb.jpg", "IWB concealed carry holsters at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "IWB Holsters", "New", light=True, lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
     magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines",
         "Factory and aftermarket pistol and rifle magazines.",
         grid([
-            inv_card("magazines-pistol.jpg", "Pistol magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Magazines", "New &amp; Used", light=True),
-            inv_card("magazines-rifle.jpg", "Rifle magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Magazines", "New &amp; Used", light=True),
+            inv_card("magazines-pistol.jpg", "Pistol magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Magazines", "New &amp; Used", light=True, lightbox=True),
+            inv_card("magazines-rifle.jpg", "Rifle magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Magazines", "New &amp; Used", light=True, lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
-    body = (nav() + ticker() +
+    body = (nav() + ticker() + GALLERY_CSS +
             page_hero("accessories-hero.webp", "Leupold rifle scope mounted on precision firearm", "Gear &amp; Accessories", "Accessories &amp; Ammo", "Ammunition, optics, holsters, magazines, safes and more &mdash; everything you need to run and maintain your firearms.") +
             chips + ammo + optics + holsters + magazines +
             cta_band("Need Something Specific?", "We stock far more than we can list online. Give us a call and we'll let you know what's in stock or help you order it.", "Contact Us", "contact.html", bg_img="cta-rifles-bg.webp") +
@@ -578,7 +578,7 @@ def page_accessories():
                 ("guns-rifles.html", "Guns &amp; Rifles", "300+ handguns, rifles and shotguns in stock in the Twin Cities."),
                 ("pawn-loans.html", "Pawn &amp; Loans", "Pawn your items or shop our store &mdash; firearms, tools, electronics &amp; more."),
                 ("contact.html", "Visit The Store", "6650 US-10, Ramsey, MN &mdash; hours, map and directions."),
-            ]) + footer())
+            ]) + LIGHTBOX_HTML + footer().replace("</body>", GALLERY_JS + "\n</body>", 1))
     return head(
         "Ammo & Firearm Accessories | Twin Cities Gun & Pawn, Twin Cities MN",
         "Ammunition, optics, holsters, magazines, and gun safes at Twin Cities Gun & Pawn in the Twin Cities. Everything you need for your firearms in one place.",
@@ -640,51 +640,51 @@ def page_pawn():
       <h2 class="font-headline font-bold text-headline-md text-on-surface mb-2">What We Buy &amp; Sell</h2>
       <p class="text-on-surface-variant text-sm mb-8">Rotating inventory &mdash; stop in or call to check current stock.</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        <div class="relative overflow-hidden group">
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-tools.jpg" data-caption="Power Tools">
           <img src="images/pawn-tools.jpg" alt="Power tools at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Power Tools</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-tvs.jpg" data-caption="TVs &amp; Electronics">
           <img src="images/pawn-tvs.jpg" alt="TVs and electronics at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">TVs &amp; Electronics</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-speakers.jpg" data-caption="Audio &amp; Speakers">
           <img src="images/pawn-speakers.jpg" alt="Speakers and audio at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Audio &amp; Speakers</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-instruments.jpg" data-caption="Instruments">
           <img src="images/pawn-instruments.jpg" alt="Musical instruments at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Instruments</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-jewelry.jpg" data-caption="Jewelry &amp; Watches">
           <img src="images/pawn-jewelry.jpg" alt="Jewelry and watches at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Jewelry &amp; Watches</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-jewelry-01.jpg" data-caption="Gold &amp; Diamonds">
           <img src="images/pawn-jewelry-01.jpg" alt="Gold and diamond jewelry at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Gold &amp; Diamonds</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-knives.jpg" data-caption="Knives &amp; Collectibles">
           <img src="images/pawn-knives.jpg" alt="Knives and collectibles at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Knives &amp; Collectibles</span></div>
-        </div>
-        <div class="relative overflow-hidden group">
+        </button>
+        <button type="button" class="tc-gal-item relative overflow-hidden group w-full text-left p-0 border-0 bg-transparent cursor-pointer" data-full="images/pawn-bikes.jpg" data-caption="Bikes &amp; Sporting Goods">
           <img src="images/pawn-bikes.jpg" alt="Bikes and sporting goods at Twin Cities Gun &amp; Pawn" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           <div class="absolute bottom-0 inset-x-0 bg-black/60 px-3 py-2"><span class="font-headline font-bold text-sm text-white">Bikes &amp; Sporting Goods</span></div>
-        </div>
+        </button>
       </div>
     </section>"""
 
-    body = (nav() + ticker() +
+    body = (nav() + ticker() + GALLERY_CSS +
             page_hero("pawn-tools.jpg", "Pawn shop merchandise at Twin Cities Gun & Pawn", "Pawn &amp; Loans", "Pawn &amp; Loans", "Licensed FFL dealer. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
-            featured + ffl + photo_grid +
+            featured + ffl + photo_grid + LIGHTBOX_HTML +
             cta_band("Have Something to Pawn or Sell?", "Bring it in for a free, no-obligation valuation. We loan on and buy firearms, tools, electronics, jewelry, and more.", "Get a Quote", "contact.html", bg_img="cta-rifles-bg.webp") +
             related_links([
                 ("rules-for-pawning.html", "Rules for Pawning a Gun", "Minnesota pawn laws, ID requirements and hold periods."),
                 ("guns-rifles.html", "Shop Firearms", "Browse 300+ guns, rifles and shotguns in stock."),
                 ("faq-gun-pawns.html", "Gun Pawn FAQ", "Answers to common questions about pawning firearms."),
             ]) +
-            footer())
+            footer().replace("</body>", GALLERY_JS + "\n</body>", 1))
     return head(
         "Pawn Your Items or Shop Our Store | Twin Cities Gun & Pawn, MN",
         "Pawn your firearms, tools, electronics or jewelry at Twin Cities Gun & Pawn in the Twin Cities. Fair valuations, no credit check. Plus $50 FFL transfers and a huge rotating inventory.",
@@ -1488,6 +1488,15 @@ GALLERY_CSS = """
     .tc-lb-prev{left:.75rem}.tc-lb-next{right:.75rem}
     @media(max-width:640px){.tc-lb{padding:4rem .5rem}.tc-lb-prev,.tc-lb-next{width:40px;height:56px;font-size:2.2rem;top:auto;bottom:1rem;transform:none}}
   </style>"""
+
+LIGHTBOX_HTML = """
+    <div id="tc-lightbox" class="tc-lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+      <button type="button" class="tc-lb-close" aria-label="Close">&times;</button>
+      <button type="button" class="tc-lb-prev" aria-label="Previous photo">&lsaquo;</button>
+      <img src="" alt="" />
+      <div class="tc-lb-cap"></div>
+      <button type="button" class="tc-lb-next" aria-label="Next photo">&rsaquo;</button>
+    </div>"""
 
 GALLERY_JS = """
   <script>

@@ -403,26 +403,32 @@ def crosshairs():
             '<span class="xh bl">+</span><span class="xh br">+</span>')
 
 
-def inv_card(img, alt, badge, title, cond, cdn=False, lazy=True, light=False):
+def inv_card(img, alt, badge, title, cond, cdn=False, lazy=True, light=False, lightbox=False):
     src = img if cdn else ("images/" + img)
     loading = ' loading="lazy"' if lazy else ''
     card_class = "inv-card-light" if light else "inv-card"
     title_style = "color:#111827" if light else ""
     cond_style = "color:#6b7280" if light else "color:#9a9078"
-    return """
-        <article class="{card_class} group">
-          <div class="relative overflow-hidden h-56">
+    inner = """
+        <div class="relative overflow-hidden h-56">
             <img src="{src}" alt="{alt}" class="w-full h-56 object-cover"{loading} />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="{title_style}">{title}</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="{cond_style}">{cond}</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">{icon}</span>
             </div>
-          </div>
-        </article>""".format(card_class=card_class, src=src, alt=alt, badge=badge, title=title,
-                             cond=cond, loading=loading, title_style=title_style, cond_style=cond_style)
+          </div>""".format(src=src, alt=alt, badge=badge, title=title, cond=cond,
+                           loading=loading, title_style=title_style, cond_style=cond_style,
+                           icon="zoom_in" if lightbox else "arrow_outward")
+    if lightbox:
+        return """
+        <button type="button" class="tc-gal-item {card_class} group text-left w-full" data-full="{src}" data-caption="{title}" aria-label="View larger: {title}" style="cursor:pointer">{inner}
+        </button>""".format(card_class=card_class, src=src, title=title, inner=inner)
+    return """
+        <article class="{card_class} group">{inner}
+        </article>""".format(card_class=card_class, inner=inner)
 
 
 def page_hero(img, alt, label_text, h1, sub=""):

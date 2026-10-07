@@ -769,6 +769,29 @@
     <div class="ticker-inner"><span class="font-mono text-[11px] tracking-widest text-on-surface-variant uppercase px-4">&#128299; 300+ FIREARMS IN STOCK &nbsp;&middot;&nbsp; &#9989; LICENSED FFL DEALER &nbsp;&middot;&nbsp; &#127942; SERVING TWIN CITIES MN SINCE 2010 &nbsp;&middot;&nbsp; &#128230; SHOP ONLINE: ARMSLIST &amp; GUNBROKER &nbsp;&middot;&nbsp; &#9742; (763) 427-4100 &nbsp;&middot;&nbsp; </span><span class="font-mono text-[11px] tracking-widest text-on-surface-variant uppercase px-4">&#128299; 300+ FIREARMS IN STOCK &nbsp;&middot;&nbsp; &#9989; LICENSED FFL DEALER &nbsp;&middot;&nbsp; &#127942; SERVING TWIN CITIES MN SINCE 2010 &nbsp;&middot;&nbsp; &#128230; SHOP ONLINE: ARMSLIST &amp; GUNBROKER &nbsp;&middot;&nbsp; &#9742; (763) 427-4100 &nbsp;&middot;&nbsp; </span></div>
   </div>
 
+  <style>
+    .tc-gallery{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:480px){.tc-gallery{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.tc-gallery{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:1200px){.tc-gallery{grid-template-columns:repeat(4,1fr)}}
+    .tc-gal-item{display:block;width:100%;padding:0;border:1px solid #e2e8f0;background:#fff;cursor:zoom-in;text-align:left;overflow:hidden}
+    .tc-gal-item:focus-visible{outline:3px solid #facc15;outline-offset:2px}
+    .tc-gal-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+    .tc-gal-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .tc-gal-item:hover .tc-gal-img img{transform:scale(1.05)}
+    .tc-gal-cap{padding:.75rem 1rem;font-weight:700;font-size:.9rem;color:#111827;border-top:3px solid #facc15}
+    .tc-lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:4rem 4.5rem}
+    .tc-lb.open{display:flex}
+    .tc-lb img{max-width:100%;max-height:calc(100vh - 9rem);object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+    .tc-lb-cap{margin-top:1rem;color:#fff;font-weight:700;text-align:center}
+    .tc-lb-cap span{color:#facc15;font-family:monospace;font-size:.8rem;margin-left:.6rem}
+    .tc-lb button{position:absolute;background:rgba(0,0,0,.55);color:#fff;border:2px solid rgba(255,255,255,.35);cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+    .tc-lb button:hover,.tc-lb button:focus-visible{background:#facc15;color:#000;border-color:#facc15;outline:none}
+    .tc-lb-close{top:1rem;right:1rem;width:48px;height:48px;font-size:2rem}
+    .tc-lb-prev,.tc-lb-next{top:50%;transform:translateY(-50%);width:52px;height:72px;font-size:3rem}
+    .tc-lb-prev{left:.75rem}.tc-lb-next{right:.75rem}
+    @media(max-width:640px){.tc-lb{padding:4rem .5rem}.tc-lb-prev,.tc-lb-next{width:40px;height:56px;font-size:2.2rem;top:auto;bottom:1rem;transform:none}}
+  </style>
     <section class="relative min-h-[46vh] flex items-end blueprint-grid" aria-label="Page header">
       <img src="images/guns-rifles-hero.webp" alt="Winchester ammunition box with classic shotgun and rifle" class="absolute inset-0 w-full h-full object-cover" />
       <div class="absolute inset-0" style="background:rgba(0,0,0,0.60)"></div>
@@ -795,66 +818,66 @@
         <p class="mt-2 text-on-surface-variant max-w-2xl">From everyday carry to full-size duty pistols &mdash; Glock, Sig Sauer, Smith &amp; Wesson, Springfield and more.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="inv-card group">
-          <div class="relative overflow-hidden h-56">
+        <button type="button" class="tc-gal-item inv-card group text-left w-full" data-full="images/handgun-display-behind-glass.webp" data-caption="Semi-Auto Pistols" aria-label="View larger: Semi-Auto Pistols" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/handgun-display-behind-glass.webp" alt="Semi-automatic pistols with price tags on glass shelves at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="">Semi-Auto Pistols</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card group text-left w-full" data-full="images/handgun-ammo-display.webp" data-caption="1911 Pistols" aria-label="View larger: 1911 Pistols" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/handgun-ammo-display.webp" alt="1911 pistols and ammunition in a display case at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="">1911 Pistols</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card group text-left w-full" data-full="images/handgun-display-case-02.webp" data-caption="Concealed Carry Pistols" aria-label="View larger: Concealed Carry Pistols" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/handgun-display-case-02.webp" alt="Compact and concealed carry pistols in a lighted counter case at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="">Concealed Carry Pistols</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card group text-left w-full" data-full="images/handgun-display-case-01.webp" data-caption="Full-Size &amp; Compact Pistols" aria-label="View larger: Full-Size &amp; Compact Pistols" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/handgun-display-case-01.webp" alt="Full-size and compact handguns in a lighted counter display case at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="">Full-Size &amp; Compact Pistols</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card group text-left w-full" data-full="images/handgun-display-case.webp" data-caption="Handgun Showcase" aria-label="View larger: Handgun Showcase" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/handgun-display-case.webp" alt="Glass tower showcase of handguns inside Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="">Handgun Showcase</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#9a9078">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
+        </button>
         </div>
     </section><div style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
     <section id="revolvers" data-section="revolvers" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -864,42 +887,42 @@
         <p class="mt-2 max-w-2xl" style="color:#4b5563">Classic and modern revolvers from Smith &amp; Wesson, Ruger, Colt, Taurus and more.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/revolvers-store.webp" data-caption="Double-Action Revolvers" aria-label="View larger: Double-Action Revolvers" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/revolvers-store.webp" alt="Revolver selection at Twin Cities Gun &amp; Pawn, Twin Cities MN" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Double-Action Revolvers</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/revolver-01.webp" data-caption="Concealed Carry Revolvers" aria-label="View larger: Concealed Carry Revolvers" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/revolver-01.webp" alt="Multiple revolvers on display including single-action and double-action wheelguns" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Concealed Carry Revolvers</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/revolver-single.webp" data-caption="Magnum Revolvers" aria-label="View larger: Magnum Revolvers" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/revolver-single.webp" alt="Smith &amp; Wesson stainless steel revolver with wood grips" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Magnum Revolvers</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
+        </button>
         </div>
     </section></div><div style="background:#f8f9fa;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
     <section id="rifles" data-section="rifles" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -909,66 +932,66 @@
         <p class="mt-2 max-w-2xl" style="color:#4b5563">AR-platform rifles, bolt-action hunting rifles, and everything in between from Ruger, Daniel Defense, Remington and more.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/rifle-rack-ammo-display.webp" data-caption="Hunting Rifles &amp; Ammo" aria-label="View larger: Hunting Rifles &amp; Ammo" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/rifle-rack-ammo-display.webp" alt="Rack of hunting rifles above boxes of ammunition at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Hunting Rifles &amp; Ammo</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/vibrant-hunting-store-display.webp" data-caption="Bolt-Action Hunting Rifles" aria-label="View larger: Bolt-Action Hunting Rifles" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/vibrant-hunting-store-display.webp" alt="Bolt-action and lever-action hunting rifles on a wall rack at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Bolt-Action Hunting Rifles</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/hunting-rifle-display-wall.webp" data-caption="Hunting Rifle Wall" aria-label="View larger: Hunting Rifle Wall" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/hunting-rifle-display-wall.webp" alt="Wall of wood-stock hunting long guns with price tags at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Hunting Rifle Wall</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/ar-rifles-display.webp" data-caption="AR-Platform &amp; Semi-Auto Rifles" aria-label="View larger: AR-Platform &amp; Semi-Auto Rifles" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/ar-rifles-display.webp" alt="AR-15 rifles and pistol-caliber carbines on a slatwall display at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">AR-Platform &amp; Semi-Auto Rifles</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/tactical-firearms-carousel.webp" data-caption="Tactical Rifles &amp; Shotguns" aria-label="View larger: Tactical Rifles &amp; Shotguns" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/tactical-firearms-carousel.webp" alt="Rotating carousel of AR rifles and tactical shotguns in the Twin Cities Gun &amp; Pawn showroom" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Tactical Rifles &amp; Shotguns</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
+        </button>
         </div>
     </section></div><div style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
     <section id="shotguns" data-section="shotguns" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -978,66 +1001,66 @@
         <p class="mt-2 max-w-2xl" style="color:#4b5563">Pump-action, semi-auto, and over/under shotguns from Mossberg, Remington, Browning and more.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/shotguns-02.webp" data-caption="We Carry a Variety of Shotguns" aria-label="View larger: We Carry a Variety of Shotguns" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/shotguns-02.webp" alt="Pump-action shotguns with wood stocks laid out with Winchester and Remington ammunition" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">We Carry a Variety of Shotguns</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/shotgun-rack-display-01.webp" data-caption="Pump-Action Shotguns" aria-label="View larger: Pump-Action Shotguns" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/shotgun-rack-display-01.webp" alt="Pump-action shotguns with wood, synthetic and camo stocks in a rolling rack at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Pump-Action Shotguns</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/shotgun-rack-camo.webp" data-caption="Semi-Auto &amp; Over/Under Shotguns" aria-label="View larger: Semi-Auto &amp; Over/Under Shotguns" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/shotgun-rack-camo.webp" alt="Semi-auto and over/under shotguns with camo and wood stocks in a store rack at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Semi-Auto &amp; Over/Under Shotguns</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/shotgun-rack-display.webp" data-caption="Waterfowl &amp; Field Shotguns" aria-label="View larger: Waterfowl &amp; Field Shotguns" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/shotgun-rack-display.webp" alt="Rack of priced shotguns on the sales floor at Twin Cities Gun &amp; Pawn" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Waterfowl &amp; Field Shotguns</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
-        <article class="inv-card-light group">
-          <div class="relative overflow-hidden h-56">
+        </button>
+        <button type="button" class="tc-gal-item inv-card-light group text-left w-full" data-full="images/showroom-displays-01.webp" data-caption="Shop Our Shotgun Racks In Store" aria-label="View larger: Shop Our Shotgun Racks In Store" style="cursor:pointer">
+        <div class="relative overflow-hidden h-56">
             <img src="images/showroom-displays-01.webp" alt="Rolling shotgun racks and long-gun wall in the Twin Cities Gun &amp; Pawn showroom" class="w-full h-56 object-cover" loading="lazy" />
           </div>
           <div class="p-5">
             <h3 class="font-headline font-semibold text-lg" style="color:#111827">Shop Our Shotgun Racks In Store</h3>
             <div class="mt-2 flex items-center justify-between">
               <span class="font-mono text-[11px] uppercase tracking-wider" style="color:#6b7280">New &amp; Used</span>
-              <span class="material-symbols-outlined text-primary-container text-lg">arrow_outward</span>
+              <span class="material-symbols-outlined text-primary-container text-lg">zoom_in</span>
             </div>
           </div>
-        </article>
+        </button>
         </div>
     </section></div>
     <section id="archery" data-section="archery" class="max-w-[1360px] mx-auto px-6 lg:px-margin py-14 scroll-mt-24">
@@ -1134,6 +1157,13 @@
       <div class="font-mono text-[11px] tracking-widest text-primary-container uppercase mb-6">Related Pages</div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><a href="accessories.html" class="related-card crosshair-card border border-outline-variant/40 bg-surface-container-low p-5 gold-aura-hover block"><span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span><div class="flex items-center gap-2 font-headline font-bold text-on-surface">Ammo &amp; Accessories <span class="material-symbols-outlined text-primary-container text-base">arrow_outward</span></div><p class="text-sm text-on-surface-variant mt-1">Ammunition, optics, holsters, magazines and gun safes.</p></a><a href="pawn-loans.html" class="related-card crosshair-card border border-outline-variant/40 bg-surface-container-low p-5 gold-aura-hover block"><span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span><div class="flex items-center gap-2 font-headline font-bold text-on-surface">FFL Transfers ($50) <span class="material-symbols-outlined text-primary-container text-base">arrow_outward</span></div><p class="text-sm text-on-surface-variant mt-1">Buy online? Ship it to us for a fast, licensed FFL transfer.</p></a><a href="gun-license-mn.html" class="related-card crosshair-card border border-outline-variant/40 bg-surface-container-low p-5 gold-aura-hover block"><span class="xh tl">+</span><span class="xh tr">+</span><span class="xh bl">+</span><span class="xh br">+</span><div class="flex items-center gap-2 font-headline font-bold text-on-surface">MN Gun License <span class="material-symbols-outlined text-primary-container text-base">arrow_outward</span></div><p class="text-sm text-on-surface-variant mt-1">What you need to legally buy a firearm in Minnesota.</p></a></div>
     </section>
+    <div id="tc-lightbox" class="tc-lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+      <button type="button" class="tc-lb-close" aria-label="Close">&times;</button>
+      <button type="button" class="tc-lb-prev" aria-label="Previous photo">&lsaquo;</button>
+      <img src="" alt="" />
+      <div class="tc-lb-cap"></div>
+      <button type="button" class="tc-lb-next" aria-label="Next photo">&rsaquo;</button>
+    </div>
   </main>
   <!-- ===== FOOTER ===== -->
   <footer class="bg-surface-container-lowest border-t border-outline-variant/30">
@@ -1209,5 +1239,55 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+
+  <script>
+  (function () {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.tc-gal-item'));
+    var lb = document.getElementById('tc-lightbox');
+    if (!lb || !items.length) return;
+    var img = lb.querySelector('img'), cap = lb.querySelector('.tc-lb-cap');
+    var idx = 0, lastFocus = null;
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      var it = items[idx];
+      img.src = it.getAttribute('data-full');
+      img.alt = it.querySelector('img').alt;
+      cap.innerHTML = it.getAttribute('data-caption') + '<span>' + (idx + 1) + ' / ' + items.length + '</span>';
+    }
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lb.querySelector('.tc-lb-close').focus();
+    }
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      img.src = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    items.forEach(function (it, i) { it.addEventListener('click', function () { open(i); }); });
+    lb.querySelector('.tc-lb-close').addEventListener('click', close);
+    lb.querySelector('.tc-lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+    lb.querySelector('.tc-lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    var sx = null;
+    lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, {passive: true});
+    lb.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    });
+  })();
+  </script>
 </body>
 </html>
