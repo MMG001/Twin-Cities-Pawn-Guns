@@ -561,13 +561,16 @@ def page_accessories():
         grid([
             inv_card("holsters-owb.jpg", "OWB holsters for pistols at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "OWB Holsters", "New", light=True, lightbox=True),
             inv_card("holsters-iwb.jpg", "IWB concealed carry holsters at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "IWB Holsters", "New", light=True, lightbox=True),
+            inv_card("accessories-slatwall.webp", "Outdoor gear slatwall display with holsters, ear protection and cleaning kits at Twin Cities Gun &amp; Pawn", "In Stock", "Gear &amp; Accessories Wall", "New", light=True, lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="gray")
 
     magazines = inv_section("magazines", "Feed &amp; Secure", "Magazines",
         "Factory and aftermarket pistol and rifle magazines.",
         grid([
-            inv_card("magazines-pistol.jpg", "Pistol magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Magazines", "New &amp; Used", light=True, lightbox=True),
-            inv_card("magazines-rifle.jpg", "Rifle magazines at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Rifle Magazines", "New &amp; Used", light=True, lightbox=True),
+            inv_card("mag-pistol-01.webp", "Pistol magazines and 1911 handgun at Twin Cities Gun &amp; Pawn", "In Stock", "Pistol Magazines", "New &amp; Used", light=True, lightbox=True),
+            inv_card("mag-pistol-02.webp", "Pistol magazine with 9mm rounds at Twin Cities Gun &amp; Pawn", "In Stock", "9mm &amp; Pistol Mags", "New &amp; Used", light=True, lightbox=True),
+            inv_card("mag-rifle-01.webp", "Magpul PMAG rifle magazines with 5.56 ammo at Twin Cities Gun &amp; Pawn", "In Stock", "Rifle Magazines", "New &amp; Used", light=True, lightbox=True),
+            inv_card("mag-rifle-02.webp", "AR-15 rifle magazine loaded with .223 rounds at Twin Cities Gun &amp; Pawn", "In Stock", "AR-15 &amp; Rifle Mags", "New &amp; Used", light=True, lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"), bg="white")
 
     body = (nav() + ticker() + GALLERY_CSS +
