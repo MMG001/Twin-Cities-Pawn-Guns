@@ -541,8 +541,8 @@ def page_accessories():
     ammo = inv_section("ammo", "Rounds &amp; Calibers", "Ammunition &amp; Ammo",
         "Handgun, rifle, and shotgun ammunition in popular calibers. Stock and pricing change frequently &mdash; call for current availability.",
         grid([
-            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Handgun &amp; Rifle Ammo", "New &amp; Used", lightbox=True),
-            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Ammo", "New &amp; Used", lightbox=True),
+            inv_card("bullets-boxes.jpg", "Ammunition boxes in stock at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Handgun &amp; Rifle Ammo", "New", lightbox=True),
+            inv_card("bullets-handgun.jpg", "Handgun ammunition at Twin Cities Gun &amp; Pawn Twin Cities, MN", "In Stock", "Pistol Ammo", "New", lightbox=True),
             inv_card("ammo-retail-shelf-display.webp", "Shelves of Winchester, Federal, Sig Sauer and Sellier &amp; Bellot rifle and pistol ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting &amp; Pistol Ammo Wall", "New", lightbox=True),
         ], cols="sm:grid-cols-2 lg:grid-cols-3"))
 
