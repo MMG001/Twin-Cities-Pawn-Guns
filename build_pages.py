@@ -1129,7 +1129,7 @@ def page_employment():
     </section>
     </div>""".format(label=label("Careers"), xh=crosshairs(), opts=opts)
     body = (nav() + ticker() +
-            page_hero("pawn-counter-guitars.webp", "Inside Twin Cities Gun & Pawn store", "Careers", "Join Our Team", "Twin Cities Gun &amp; Pawn is always looking for great people. Apply below to become part of our Twin Cities crew.") +
+            page_hero("twin-cities-pawn-shop-interior.webp", "Inside Twin Cities Gun &amp; Pawn &mdash; the main counter with guitars and jewelry display", "Careers", "Join Our Team", "Twin Cities Gun &amp; Pawn is always looking for great people. Apply below to become part of our Twin Cities crew.") +
             form +
             related_links([
                 ("about.html", "About Us", "Our story as the Twin Cities' trusted FFL dealer since 2010."),
