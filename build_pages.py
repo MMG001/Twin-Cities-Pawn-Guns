@@ -677,7 +677,7 @@ def page_pawn():
     </section>"""
 
     body = (nav() + ticker() + GALLERY_CSS +
-            page_hero("pawn-tools.jpg", "Pawn shop merchandise at Twin Cities Gun & Pawn", "Pawn &amp; Loans", "Pawn &amp; Loans", "Licensed FFL dealer. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
+            page_hero("pawn-store-tools-display.webp", "Tools, TVs, and electronics for sale at Twin Cities Gun &amp; Pawn", "Pawn &amp; Loans", "Pawn &amp; Loans", "Licensed FFL dealer. Fair loans, honest valuations, and a rotating selection of tools, electronics, jewelry and more.") +
             featured + ffl + photo_grid + LIGHTBOX_HTML +
             cta_band("Have Something to Pawn or Sell?", "Bring it in for a free, no-obligation valuation. We loan on and buy firearms, tools, electronics, jewelry, and more.", "Get a Quote", "contact.html", bg_img="cta-rifles-bg.webp") +
             related_links([
