@@ -121,12 +121,12 @@ def page_index():
           <a href="pawn-loans.html" class="inline-flex items-center gap-2 border border-outline-variant/60 text-on-surface font-headline text-sm uppercase px-7 py-3.5 font-bold tracking-wider hover:border-primary-container hover:text-primary-container transition-colors">Get a Pawn Loan</a>
         </div>
         <!-- Trust badge strip — immediate credibility -->
-        <div class="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-y-2 gap-x-5" aria-label="Trust signals">
-          <span class="inline-flex items-center gap-2 text-primary-container font-mono text-[11px] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-sm" aria-hidden="true">verified</span>Licensed FFL Dealer</span>
-          <span class="inline-flex items-center gap-2 text-white font-mono text-[11px] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-sm" aria-hidden="true">history</span>Serving MN Since 2010</span>
-          <span class="inline-flex items-center gap-2 text-white font-mono text-[11px] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-sm" aria-hidden="true">storefront</span>300+ Firearms In Stock</span>
-          <span class="inline-flex items-center gap-2 text-white font-mono text-[11px] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-sm" aria-hidden="true">swap_horiz</span>$50 FFL Transfers</span>
-          <span class="inline-flex items-center gap-2 text-white font-mono text-[11px] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-sm" aria-hidden="true">lock</span>Secure Background Checks</span>
+        <div class="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-y-3 gap-x-6" aria-label="Trust signals">
+          <span class="inline-flex items-center gap-2 text-primary-container font-mono text-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-base" aria-hidden="true">verified</span>Licensed FFL Dealer</span>
+          <span class="inline-flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-base" aria-hidden="true">history</span>Serving MN Since 2010</span>
+          <span class="inline-flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-base" aria-hidden="true">storefront</span>300+ Firearms In Stock</span>
+          <span class="inline-flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-base" aria-hidden="true">swap_horiz</span>$50 FFL Transfers</span>
+          <span class="inline-flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-base" aria-hidden="true">lock</span>Secure Background Checks</span>
         </div>
       </div>
     </section>""".format(label=label("Twin Cities Gun &amp; Pawns"))
