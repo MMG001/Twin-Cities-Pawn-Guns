@@ -469,7 +469,7 @@ def page_guns():
             inv_card("rifle-rack-ammo-display.webp", "Rack of hunting rifles above boxes of ammunition at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifles &amp; Ammo", "New &amp; Used", light=True, lightbox=True),
             inv_card("vibrant-hunting-store-display.webp", "Bolt-action and lever-action hunting rifles on a wall rack at Twin Cities Gun &amp; Pawn", "In Stock", "Bolt-Action Hunting Rifles", "New &amp; Used", light=True, lightbox=True),
             inv_card("hunting-rifle-display-wall.webp", "Wall of wood-stock hunting long guns with price tags at Twin Cities Gun &amp; Pawn", "In Stock", "Hunting Rifle Wall", "New &amp; Used", light=True, lightbox=True),
-            inv_card("ar-rifles-display.webp", "AR-15 rifles and pistol-caliber carbines on a slatwall display at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True, lightbox=True),
+            inv_card("ar-platform-rifles-wall.webp", "AR-15 rifles and a lever-action rifle on a slatwall display at Twin Cities Gun &amp; Pawn", "In Stock", "AR-Platform &amp; Semi-Auto Rifles", "New &amp; Used", light=True, lightbox=True),
             inv_card("tactical-firearms-rack.webp", "Tactical firearms display rack with AR-15 rifles and shotguns at Twin Cities Gun &amp; Pawn", "In Stock", "Tactical Firearms Rack", "New &amp; Used", light=True, lightbox=True),
             inv_card("tactical-firearms-carousel.webp", "Rotating carousel of AR rifles and tactical shotguns in the Twin Cities Gun &amp; Pawn showroom", "In Stock", "Tactical Rifles &amp; Shotguns", "New &amp; Used", light=True, lightbox=True),
         ]), bg="gray")
