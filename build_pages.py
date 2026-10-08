@@ -110,7 +110,7 @@ def page_index():
 
     hero = """
     <section class="relative min-h-[70vh] flex items-center blueprint-grid overflow-hidden" aria-label="Homepage hero">
-      <img src="images/home-page-hero.jpg" alt="Interior of Twin Cities Gun & Pawn — hundreds of firearms in stock in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
+      <img src="images/home-page-hero.webp" alt="Interior of Twin Cities Gun & Pawn — hundreds of firearms in stock in the Twin Cities" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
       <div class="absolute inset-0" style="background:rgba(0,0,0,0.70)"></div>
       <div class="relative max-w-[1360px] mx-auto px-6 lg:px-margin py-24 w-full">
         {label}
