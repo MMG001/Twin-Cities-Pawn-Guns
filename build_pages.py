@@ -1457,7 +1457,7 @@ GALLERY_PHOTOS = [
     ("handgun-display-case.webp", "Handgun Tower Showcase"),
     ("handgun-display-case-01.webp", "Full-Size &amp; Compact Pistols"),
     ("handgun-display-case-02.webp", "Concealed Carry Pistols"),
-    ("ar-rifles-display.webp", "AR-Platform Rifles"),
+    ("ar-platform-rifles-wall.webp", "AR-Platform Rifles"),
     ("tactical-firearms-carousel.webp", "Tactical Firearms Carousel"),
     ("rifle-rack-ammo-display.webp", "Hunting Rifles &amp; Ammo"),
     ("vibrant-hunting-store-display.webp", "Bolt-Action Hunting Rifles"),
