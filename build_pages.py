@@ -192,7 +192,7 @@ def page_index():
     </section>""".format(label=label("Gun Pawn Loans"))
 
     showcase_cards = [
-        inv_card("ar-rifles-display.webp", "Rifle room with tactical and hunting rifles", "In Stock", "Tactical &amp; Hunting Rifles", "New &amp; Used", light=True),
+        inv_card("used-gun-showcase-rifles.webp", "Tactical and hunting rifles on a slatwall display at Twin Cities Gun &amp; Pawn", "In Stock", "Tactical &amp; Hunting Rifles", "New &amp; Used", light=True),
         inv_card("1911-handgun-display-case.webp", "1911 pistols in display case", "In Stock", "1911 Pistols", "New &amp; Used", light=True),
         inv_card("handgun-revolver-display-case.webp", "Revolver showcase display", "In Stock", "Revolvers", "New &amp; Used", light=True),
         inv_card("shotgun-rack-display.webp", "Rack of shotguns", "In Stock", "Shotguns", "New &amp; Used", light=True),
