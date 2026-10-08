@@ -9,7 +9,7 @@ and injects it into each HTML file. `check_schema.py` validates the output.
 Nothing in this file touches the filesystem — it is pure data + light helpers.
 """
 
-DOMAIN = "https://twin-cities-pawn-guns.pages.dev"
+DOMAIN = "https://twincitiesgunandpawn.com"
 
 
 def u(path=""):

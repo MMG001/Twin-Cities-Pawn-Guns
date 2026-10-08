@@ -4,7 +4,7 @@ Generates all HTML pages with shared nav / ticker / footer. Run: python3 build.p
 import os
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-BASE_URL = "https://twin-cities-pawn-guns.pages.dev"
+BASE_URL = "https://twincitiesgunandpawn.com"
 ARMSLIST = "https://www.armslist.com/store/227/twin-cities-pawn"
 GUNBROKER = "https://www.gunbroker.com/All/search?Keywords=twin%20cities%20pawn&Sort=13"
 GMAPS = "https://maps.app.goo.gl/QMvtTgS8PpCSxRGJ8"
