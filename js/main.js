@@ -33,6 +33,7 @@
 
     /* ---- Active nav link (desktop + mobile) by current page ---- */
     var path = window.location.pathname.split('/').pop() || 'index.html';
+    if (path.indexOf('.') === -1) path += '.html'; /* clean URLs: /about -> about.html */
     document.querySelectorAll('[data-nav]').forEach(function (link) {
       if (link.getAttribute('data-nav') === path) {
         link.classList.add('active');

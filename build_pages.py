@@ -1631,7 +1631,7 @@ def write_sitemap_xml():
     today = datetime.date.today().isoformat()
     urls = ""
     for fname in PAGES:
-        loc = BASE_URL + "/" + fname if fname else BASE_URL + "/"
+        loc = BASE_URL + "/" + clean_path(fname)
         prio = SITEMAP_PRIORITY.get(fname, "0.5")
         urls += ('  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n'
                  '    <changefreq>weekly</changefreq>\n    <priority>%s</priority>\n  </url>\n'
@@ -1655,7 +1655,7 @@ def write_robots_txt():
 
 if __name__ == "__main__":
     for fname, fn in PAGES.items():
-        html = fn()
+        html = clean_links(fn())
         out_fname = "index.html" if fname == "" else fname
         with open(os.path.join(OUT, out_fname), "w", encoding="utf-8") as f:
             f.write(html)

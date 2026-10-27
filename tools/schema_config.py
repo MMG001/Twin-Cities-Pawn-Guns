@@ -18,7 +18,11 @@ def u(path=""):
         return DOMAIN + "/" + path
     if path.startswith("http"):
         return path
-    return DOMAIN + "/" + path.lstrip("/")
+    # Clean URLs: 'about.html#x' -> 'about#x', 'index.html' -> '' (matches live routing)
+    import re
+    path = re.sub(r'^(?:index)?\.html(?=#|$)', '', path.lstrip("/"))
+    path = re.sub(r'([A-Za-z0-9_\-])\.html(?=#|$)', r'\1', path)
+    return DOMAIN + "/" + path
 
 
 # ---------------------------------------------------------------------------

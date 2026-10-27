@@ -50,7 +50,40 @@ TAILWIND_CONFIG = """tailwind.config = {
 }"""
 
 
+import re as _re
+
+# Cloudflare serves extensionless URLs and 307-redirects /page.html -> /page.
+# All canonicals, og:url, sitemap <loc>s and internal links must therefore use the
+# clean form, otherwise Google sees canonicals pointing at redirecting URLs.
+def clean_path(fname):
+    """'about.html' -> 'about', 'index.html'/'' -> '' (keeps '#frag')."""
+    fname = fname or ""
+    path, hsh, frag = fname.partition("#")
+    if path in ("", "index.html"):
+        path = ""
+    elif path.endswith(".html"):
+        path = path[:-5]
+    return path + (hsh + frag if hsh else "")
+
+
+_REL_LINK = _re.compile(r'href="(?!https?:|mailto:|tel:|//|/|#)([A-Za-z0-9_\-]+)\.html(#[^"]*)?"')
+_ABS_LINK = _re.compile(_re.escape(BASE_URL) + r'/([A-Za-z0-9_\-]+)\.html(?=[#"\'\s<])')
+
+
+def clean_links(html):
+    """Rewrite internal *.html links/URLs to clean root-relative / absolute URLs."""
+    def rel(m):
+        slug = "" if m.group(1) == "index" else m.group(1)
+        return 'href="/%s%s"' % (slug, m.group(2) or "")
+
+    def absu(m):
+        return BASE_URL + "/" + ("" if m.group(1) == "index" else m.group(1))
+
+    return _ABS_LINK.sub(absu, _REL_LINK.sub(rel, html))
+
+
 def head(title, desc, canonical, keywords, schema=""):
+    canonical = clean_path(canonical)
     schema_block = ""
     if schema:
         schema_block = '\n  <script type="application/ld+json">\n%s\n  </script>' % schema
