@@ -367,7 +367,7 @@ def page_about():
       <div class="max-w-[1360px] mx-auto px-6 lg:px-margin grid lg:grid-cols-2 gap-12 items-center">
         <div class="relative crosshair-card gold-glow" style="border:1px solid #e2e8f0">
           {xh}
-          <img src="images/storefront-exterior.webp" alt="Twin Cities Gun &amp; Pawn storefront exterior in the Twin Cities" class="w-full h-[420px] object-cover" />
+          <img src="images/storefront-exterior-v2.webp" alt="Twin Cities Gun &amp; Pawn storefront exterior in the Twin Cities" class="w-full h-[420px] object-cover" />
         </div>
         <div>
           {label}
