@@ -1,0 +1,14 @@
+# Files in the repo that must NOT be published by Cloudflare static assets.
+# (Build scripts, internal reports and the font mock-up were publicly reachable
+#  and indexable; font-mockup.html also carried a canonical pointing at /index.html.)
+.git
+.gitignore
+.abacus.donotdelete
+*.py
+*.md
+*.pdf
+*.docx
+tailwind.config.js
+tools/
+node_modules/
+font-mockup.html
